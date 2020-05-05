@@ -229,14 +229,10 @@ body {
     box-sizing: border-box;
 }
 
-.mySlides1,
-.mySlides2 {
-    display: none;
-}
-
 img {
     vertical-align: middle;
-    width: 100%;
+    width: 80%;
+    height: 70%;
     border-radius: 3%;
 }
 
@@ -248,6 +244,28 @@ img {
     position: relative;
     margin: auto;
     padding: 10px;
+    width: 100%;
+    float: center;
+    color: var(--color1);
+    text-align: left;
+    font-style: inherit;
+    background-color: inherit;
+}
+
+.mySlides1,
+.mySlides2,
+.mySlides3,
+.mySlides4,
+.mySlides5,
+.mySlides6,
+.mySlides7,
+.mySlides8,
+.mySlides9,
+.mySlides10 {
+    text-align: center;
+    font-size: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 
@@ -257,7 +275,7 @@ img {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 55%;
     width: 60px;
     height: 60px;
     padding: 16px;
@@ -270,13 +288,14 @@ img {
     border-radius: 90%;
     text-align: center;
     user-select: none;
+    right: 90%;
 }
 
 
 /* Position the "next button" to the right */
 
 .next {
-    right: 0;
+    right: 40px;
 }
 
 
