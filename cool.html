@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<div html-menu="/snippets/menu.html"></div>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="/images/favicon.ico">
+</head>
+
+<!--page title-->
+<div class="h1" style="font-size: 500;">
+    Maker Projects
+</div>
+
+<body>
+    <div class="slideshow-container">
+        <div class="mySlides1">
+            <img src="/images/decimal clock.png" style="width:100%">
+        </div>
+        <div class="mySlides1">
+            <img src="/images/heart.jpg" style="width:100%">
+        </div>
+        <div class="mySlides1">
+            <img src="/images/gluten.png" style="width:100%">
+        </div>
+        <div class="mySlides1">
+            <img src="/images/glowing.png" style="width:100%">
+        </div>
+        <div class="mySlides1">
+            <img src="/images/hammer.jpg" style="width:100%">
+        </div>
+        <div class="mySlides1">
+            <img src="/images/tokins.jpg" style="width:100%">
+        </div>
+        <div class="mySlides1">
+            <img src="/images/painting.png" style="width:100%">
+        </div>
+        <div class="mySlides1">
+            <img src="/images/sd.png" style="width:100%">
+        </div>
+        <div class="mySlides1">
+            <img src="/images/desk.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+
+
+
+
+    <div class="h1" style="font-size: 500; padding-top: 60px;">
+        Awards
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides2">
+            <img src="/images/QS award.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="/images/bradshaw.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="/images/service.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+    </div>
+
+
+    <div class="h1" style="font-size: 500; padding-top: 60px;">
+        Software
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides3">
+            <img src="/images/QS award.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides3">
+            <img src="/images/bradshaw.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides3">
+            <img src="/images/service.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+    </div>
+
+    <div class="h1" style="font-size: 500; padding-top: 60px;">
+        CAD
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides4">
+            <img src="/images/QS award.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides4">
+            <img src="/images/bradshaw.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides4">
+            <img src="/images/service.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+    </div>
+
+    <div class="h1" style="font-size: 500; padding-top: 60px;">
+        Laser food
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides5">
+            <img src="/images/QS award.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides5">
+            <img src="/images/bradshaw.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides5">
+            <img src="/images/service.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+    </div>
+
+
+    <div class="h1" style="font-size: 500; padding-top: 60px;">
+        Electronics
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides6">
+            <img src="/images/QS award.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides6">
+            <img src="/images/bradshaw.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides6">
+            <img src="/images/service.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 5)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 5)">&#10095;</a>
+    </div>
+
+
+
+
+
+
+
+    <div class="h1" style="font-size: 500; padding-top: 100px;"></div>
+    <script>
+        var slideIndex = [1, 1, 1, 1, 1, 1];
+        var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5", "mySlides6"]
+        showSlides(1, 0);
+        showSlides(1, 1);
+        showSlides(1, 2);
+        showSlides(1, 3);
+        showSlides(1, 4);
+        showSlides(1, 5);
+
+        function plusSlides(n, no) {
+            showSlides(slideIndex[no] += n, no);
+        }
+
+        function showSlides(n, no) {
+            var i;
+            var x = document.getElementsByClassName(slideId[no]);
+            if (n > x.length) {
+                slideIndex[no] = 1
+            }
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex[no] - 1].style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
+
+Skills, CV, Contact, earth sandwhich

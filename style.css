@@ -50,6 +50,7 @@
     padding-top: 1%;
     color: var(--color3);
     font-weight: bold;
+    font-size: 150%;
 }
 
 .columntext {
@@ -98,6 +99,7 @@ footer {
     text-align: center;
     margin: auto;
     z-index: 9;
+    align-items: center;
 }
 
 a {
@@ -219,6 +221,63 @@ body {
     display: block;
 }
 
+* {
+    box-sizing: border-box
+}
+
+.mySlides1,
+.mySlides2 {
+    display: none
+}
+
 img {
+    vertical-align: middle;
     border-radius: 3%;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 16px;
+    margin-top: -22px;
+    color: var(--color3);
+    background-color: var(--color1);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 1s ease;
+    border-radius: 90%;
+    text-align: center;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+}
+
+
+/* On hover, add a grey background color */
+
+.prev:hover,
+.next:hover {
+    background-color: var(--color3);
+    color: var(--color1);
 }
