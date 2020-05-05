@@ -1,31 +1,48 @@
 /*variables*/
-:root{
-    --color1: #454555   ;/*606075main text and highlights*/
-    --color2: #a0a0a6   ;/*secondard highlights*/
-    --color3: #e0e0e5   ;/*background*/
-    --color4: #212127   ;/*menu background*/
+
+:root {
+    --color1: #454555;
+    /*606075main text and highlights*/
+    --color2: #a0a0a6;
+    /*secondard highlights*/
+    --color3: #e0e0e5;
+    /*background*/
+    --color4: #212127;
+    /*menu background*/
 }
+
 
 /*columns formatting
   the number reperesents the items per column 
 */
-.column3,.column2,.column4,.footcol,.columntext,.column1,.columnImage {
+
+.column3,
+.column2,
+.column4,
+.footcol,
+.columntext,
+.column1,
+.columnImage {
     float: left;
     width: 30%;
     color: var(--color1);
-    font-size: 150%;  
-    padding: 1.11%;  
+    font-size: 150%;
+    padding: 1.11%;
     padding-bottom: 3%;
     background-color: inherit;
 }
-.column2{
+
+.column2 {
     width: 45%;
     padding: 2.5%;
 }
-.column4,.footcol{
+
+.column4,
+.footcol {
     width: 22%;
-    padding: 1.1%; 
+    padding: 1.1%;
 }
+
 .footcol {
     font-size: 100%;
     width: 18%;
@@ -35,27 +52,32 @@
     font-weight: bold;
 }
 
-.columntext{
+.columntext {
     width: 24%;
     padding-right: 2%;
     padding-left: 7%;
     text-align: left;
     font-size: 120%;
 }
-.column1{
+
+.column1 {
     text-align: left;
     padding: 10%;
     padding-left: 7%;
 }
-.columnImage{
+
+.columnImage {
     float: left;
     width: 40px;
     padding-top: 10%;
     padding-left: 60px;
     padding-right: 0px;
 }
+
+
 /*headings and footings*/
-.h1{
+
+.h1 {
     color: var(--color1);
     text-align: center;
     font-weight: bold;
@@ -64,6 +86,7 @@
     padding-top: -50px;
     background-color: var(--color3);
 }
+
 footer {
     position: fixed;
     left: 0;
@@ -74,100 +97,128 @@ footer {
     color: var(--color3);
     text-align: center;
     margin: auto;
-    z-index: 9; 
+    z-index: 9;
 }
-a{
-  background-color: inherit;
-  color: inherit;
-  border: none;
+
+a {
+    background-color: inherit;
+    color: inherit;
+    border: none;
 }
-.row,.textrow{
-  width: 100%;
-  float: left;
-  color: var(--color1);
-  font-weight: bold;
-  font-size: 150%;
-  text-align: center;  
-  background-color: inherit;
+
+.row,
+.textrow {
+    width: 100%;
+    float: left;
+    color: var(--color1);
+    font-weight: bold;
+    font-size: 150%;
+    text-align: center;
+    background-color: inherit;
 }
-body{
-  background-color: var(--color3);
+
+body {
+    background-color: var(--color3);
 }
-.textrow{
-  font-size: 300%;
-  text-align: center;   
+
+.textrow {
+    font-size: 300%;
+    text-align: center;
 }
+
+
 /* The side navigation menu */
+
 .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: var(--color4);
-  overflow-x: hidden; 
-  padding-top: 80px;
-  transition: 0.25s;
-  
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--color4);
+    overflow-x: hidden;
+    padding-top: 80px;
+    transition: 0.25s;
 }
+
+
 /* Side navigation links */
-.sidenav a,.subnav,.subnavbtn { 
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: var(--color2);
-  display: block;
+
+.sidenav a,
+.subnav,
+.subnavbtn {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--color2);
+    display: block;
 }
+
 .sidenav a:hover {
-  color: var(--color4);
-  background-color: var(--color2) ;
+    color: var(--color4);
+    background-color: var(--color2);
 }
+
 .sidenav .closebtn {
-padding: 10px 10px 10px 0px;
-  text-decoration: none;
-  font-size: 25px;
-  position: absolute;
-  top: 0;
-  right: 25px;
-  margin-left: 50px;
+    padding: 10px 10px 10px 0px;
+    text-decoration: none;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    margin-left: 50px;
 }
+
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
 
-} 
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+}
+
 
 /* Sub menu*/
-.subnav,.subnavbtn{
-  border: none;
-  outline: none;
-  padding: 8px 16px;
-  background-color: inherit;
-  font-family: inherit;
+
+.subnav,
+.subnavbtn {
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    background-color: inherit;
+    font-family: inherit;
 }
-.navbar a:hover, .subnav:hover .subnavbtn {
-  color: var(--color4);
-  background-color: var(--color2) ;
-  width: 100%;
+
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+    color: var(--color4);
+    background-color: var(--color2);
+    width: 100%;
 }
+
 .subnav-content {
-  display: none;
-  background-color: var(--color1);
-  color: var(--color3);
-  width: 100%;
+    display: none;
+    background-color: var(--color1);
+    color: var(--color3);
+    width: 100%;
 }
 
 .subnav-content a {
-  color: var(--color3);
-  text-decoration: none;
+    color: var(--color3);
+    text-decoration: none;
 }
 
 .subnav-content a:hover {
-  background-color: var(--color2);
-  color: var(--color4);
+    background-color: var(--color2);
+    color: var(--color4);
 }
+
 .subnav:hover .subnav-content {
-  display: block;
-} 
+    display: block;
+}
+
+img {
+    border-radius: 3%;
+}
