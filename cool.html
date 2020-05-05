@@ -215,8 +215,9 @@
     <script>
         var slideIndex = [];
         var slideId = [];
-        for (i = 1; i < 7; i++) {
+        for (i = 1; i < 10; i++) {
             slideIndex.push(1);
+            console.log("mySlides" + i);
             slideId.push("mySlides" + i);
             showSlides(1, i - 1);
         }
@@ -238,9 +239,6 @@
                 x[i].style.display = "none";
             }
             x[slideIndex[no] - 1].style.display = "block";
-            setTimeout(function() {
-                showSlides(n, no);
-            }, 2000);
         }
     </script>
 </body>

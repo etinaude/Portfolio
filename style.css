@@ -46,24 +46,27 @@
 .footcol {
     font-size: 100%;
     width: 18%;
-    padding: .2%;
+    padding: 0.2%;
     padding-top: 1%;
     color: var(--color3);
     font-weight: bold;
+    font-size: 150%;
 }
 
 .columntext {
     width: 24%;
     padding-right: 2%;
     padding-left: 7%;
+    margin: 50px;
     text-align: left;
     font-size: 120%;
 }
 
 .column1 {
+    width: 70%;
     text-align: left;
     padding: 10%;
-    padding-left: 7%;
+    padding-left: 20%;
 }
 
 .columnImage {
@@ -98,6 +101,7 @@ footer {
     text-align: center;
     margin: auto;
     z-index: 9;
+    align-items: center;
 }
 
 a {
@@ -191,6 +195,10 @@ body {
     font-family: inherit;
 }
 
+.sidenav {
+    width: 250px;
+}
+
 .navbar a:hover,
 .subnav:hover .subnavbtn {
     color: var(--color4);
@@ -219,6 +227,84 @@ body {
     display: block;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 img {
+    vertical-align: middle;
+    width: 80%;
+    height: 70%;
     border-radius: 3%;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+    float: center;
+    color: var(--color1);
+    text-align: left;
+    font-style: inherit;
+    background-color: inherit;
+}
+
+.mySlides1,
+.mySlides2,
+.mySlides3,
+.mySlides4,
+.mySlides5,
+.mySlides6,
+.mySlides7,
+.mySlides8,
+.mySlides9,
+.mySlides10 {
+    text-align: center;
+    font-size: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 55%;
+    width: 60px;
+    height: 60px;
+    padding: 16px;
+    margin-top: -22px;
+    color: var(--color3);
+    background-color: var(--color1);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 1s ease;
+    border-radius: 90%;
+    text-align: center;
+    user-select: none;
+    right: 90%;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 40px;
+}
+
+
+/* On hover, add a grey background color */
+
+.prev:hover,
+.next:hover {
+    background-color: var(--color3);
+    color: var(--color1);
 }
