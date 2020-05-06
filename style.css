@@ -1,20 +1,39 @@
 /*variables*/
 
 :root {
-    --color1: #454555;
+    --color2: #6E6362;
     /*606075main text and highlights*/
-    --color2: #a0a0a6;
+    --color1: #543a64;
     /*secondard highlights*/
-    --color3: #e0e0e5;
+    --color3: #BD93D8;
     /*background*/
-    --color4: #212127;
+    --color4: #BD93D8;
     /*menu background*/
+    --color5: #B5D2Cb --color6: #454555;
+    /*606075main text and highlights*/
+    --color7: #a0a0a6;
+    /*secondard highlights*/
+    --color8: #e0e0e5;
+    /*background*/
+    --color9: #212127;
+    /*menu background*/
+    --color10: #B5D2Cb
 }
 
 
 /*columns formatting
   the number reperesents the items per column 
 */
+
+body {
+    background-image: url('/images/background1.png');
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
 
 .column3,
 .column2,
@@ -87,7 +106,6 @@
     font-size: 300%;
     padding-bottom: 50px;
     padding-top: -50px;
-    background-color: var(--color3);
 }
 
 footer {
@@ -121,9 +139,11 @@ a {
     background-color: inherit;
 }
 
+
+/*
 body {
     background-color: var(--color3);
-}
+}*/
 
 .textrow {
     font-size: 300%;
