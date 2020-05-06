@@ -26,6 +26,9 @@ body {
     height: 100%;
     width: 100%;
     background-color: var(--background);
+    color: var(--text);
+    font-weight: bold;
+    font-size: 150%;
 }
 
 
@@ -40,13 +43,10 @@ body {
     background-position: center;
 }*/
 
-.column3,
 .column2,
-.column4,
 .footcol,
 .columntext,
-.column1,
-.columnImage {
+.column1 {
     float: left;
     width: 30%;
     color: var(--color1);
@@ -62,18 +62,13 @@ body {
     padding: 2.5%;
 }
 
-.column4 {
-    width: 1%;
-    margin: 0.5%;
-}
-
 .footcol {
     font-size: 100%;
-    width: 18%;
+    width: 17%;
     padding-top: 1%;
     color: var(--text);
     font-weight: bold;
-    font-size: 150%;
+    font-size: 100%;
     margin-top: 0px;
 }
 
@@ -90,15 +85,9 @@ body {
     width: 70%;
     text-align: left;
     padding: 10%;
-    padding-left: 20%;
-}
-
-.columnImage {
-    float: left;
-    width: 40px;
-    padding-top: 10%;
-    padding-left: 60px;
-    padding-right: 0px;
+    margin-left: 20%;
+    background-color: var(--back2);
+    border-radius: 30px;
 }
 
 
@@ -130,22 +119,6 @@ a {
     background-color: inherit;
     color: inherit;
     border: none;
-}
-
-.row,
-.textrow {
-    width: 100%;
-    float: left;
-    color: var(--text);
-    font-weight: bold;
-    font-size: 150%;
-    text-align: center;
-    background-color: inherit;
-}
-
-.textrow {
-    font-size: 300%;
-    text-align: center;
 }
 
 
@@ -202,16 +175,19 @@ a {
 
 img {
     vertical-align: middle;
-    width: 80%;
-    height: 70%;
-    border-radius: 3%;
+    border-radius: 30px;
     margin: 20px;
-    background-color: var(--acsent3);
     padding: 10px;
 }
 
+.slideshow-container img {
+    background-color: var(--acsent3);
+    width: 80%;
+    height: 70%;
+}
+
 iframe {
-    border-radius: 10px;
+    border-radius: 30px;
     margin: 20px;
     background-color: var(--acsent3);
     padding: 10px;
