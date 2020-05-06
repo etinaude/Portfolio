@@ -45,16 +45,13 @@ body {
 
 .column2,
 .footcol,
-.columntext,
-.column1 {
+.columntext {
     float: left;
     width: 30%;
-    color: var(--color1);
     font-size: 150%;
     padding: 1.11%;
     padding-bottom: 3%;
     margin: 20px;
-    background-color: inherit;
 }
 
 .column2 {
@@ -149,7 +146,7 @@ a {
 }
 
 .sidenav a:hover {
-    color: var(--color2);
+    color: var(--acsent2);
     background-color: var(--text);
 }
 
