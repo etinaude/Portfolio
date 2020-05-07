@@ -7,7 +7,7 @@
     --back2: #2e4058;
     --text: #aaaaff;
     --acsent1: #aaaaff;
-    --acsent2: #405a7c;
+    --acsent2: #49678f;
 }
 
 
@@ -35,7 +35,7 @@ body {
 .columntext {
     float: left;
     width: 30%;
-    font-size: 150%;
+    font-size: large;
     padding: 1.11%;
     padding-bottom: 3%;
     margin: 20px;
@@ -47,13 +47,13 @@ body {
 }
 
 .footcol {
-    font-size: 100%;
     width: 17%;
     padding-top: 1%;
     color: var(--text);
     font-weight: bold;
-    font-size: 100%;
+    text-align: center;
     margin-top: 0px;
+    vertical-align: middle;
 }
 
 .columntext {
@@ -106,21 +106,10 @@ a {
     border: none;
 }
 
-.button {
-    background-color: var(--back2);
-    margin: 10px;
-    border-radius: 500px;
-    padding: 7px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 .menu {
     margin: 1%;
     margin-top: 2%;
     margin-bottom: 4%;
-    padding-left: 55%;
-    align-items: center;
 }
 
 img {
@@ -176,9 +165,6 @@ iframe {
     padding-right: 100px;
 }
 
-
-/* Next & previous buttons */
-
 .prev,
 .next {
     cursor: pointer;
@@ -199,9 +185,6 @@ iframe {
     right: 90%;
 }
 
-
-/* Position the "next button" to the right */
-
 .next {
     right: 40px;
 }
@@ -210,9 +193,20 @@ iframe {
 /* On hover, add a grey background color */
 
 .prev:hover,
-.next:hover {
+.next:hover,
+.button:hover {
     background-color: var(--acsent2);
     color: var(--background);
+}
+
+.button {
+    background-color: var(--back2);
+    margin: 10px;
+    border-radius: 500px;
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: 0.5s ease;
 }
 
 
