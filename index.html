@@ -216,14 +216,17 @@
         <script>
             var slideIndex = [];
             var slideId = [];
+            var moved = [0];
             for (i = 1; i < 7; i++) {
                 slideIndex.push(1);
                 slideId.push("mySlides" + i);
                 showSlides(1, i - 1);
+                moved.push(0);
             }
 
             function plusSlides(n, no) {
                 showSlides((slideIndex[no] += n), no);
+                moved[no] = 1;
             }
 
             function showSlides(n, no) {
@@ -240,8 +243,10 @@
                 }
                 x[slideIndex[no] - 1].style.display = "block";
                 setTimeout(function() {
-                    showSlides(n, no);
-                }, 100); //*/
+                    if (moved[no] == 0) {
+                        showSlides((slideIndex[no] += 1), no);
+                    }
+                }, 2000);
             }
         </script>
     </body>
