@@ -1,25 +1,24 @@
 /*variables*/
 
 :root {
-    /*background*/
+    /*colours*/
     --background: #253242;
-    /*606075main text and highlights*/
-    --footer: #1f2936;
-    /*secondard highlights*/
-    --back2: #324762;
-    --nav: #1f2936;
-    /*background*/
+    --footer: #1b232e;
+    --back2: #2e4058;
     --text: #aaaaff;
     --acsent1: #aaaaff;
     --acsent2: #405a7c;
-    --acsent3: #405a7c;
-    /*menu background*/
 }
 
 
 /*columns formatting
   the number reperesents the items per column 
 */
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 body {
     background-repeat: no-repeat;
@@ -30,18 +29,6 @@ body {
     font-weight: bold;
     font-size: 150%;
 }
-
-
-/*
-body {
-    background-image: url('/images/background1.png');
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}*/
 
 .column2,
 .footcol,
@@ -76,6 +63,7 @@ body {
     margin: 50px;
     text-align: left;
     font-size: 120%;
+    line-height: 1.3;
 }
 
 .column1 {
@@ -118,56 +106,21 @@ a {
     border: none;
 }
 
-
-/* The side navigation menu */
-
-.sidenav {
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: var(--nav);
-    overflow-x: hidden;
-    padding-top: 80px;
-    transition: 0.25s;
-    width: 250px;
-}
-
-
-/* Side navigation links */
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: var(--text);
-    display: block;
-}
-
-.sidenav a:hover {
-    color: var(--acsent2);
-    background-color: var(--text);
-}
-
 .button {
-    background-color: var(--acsent2);
+    background-color: var(--back2);
     margin: 10px;
     border-radius: 500px;
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.closebtn {
-    text-decoration: none;
-    font-size: 25px;
-    position: absolute;
-    top: 0;
-    right: 25px;
-    margin-left: 50px;
-    border-radius: 10px;
-}
-
-* {
-    box-sizing: border-box;
+.menu {
+    margin: 1%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    padding-left: 55%;
+    align-items: center;
 }
 
 img {
@@ -178,7 +131,6 @@ img {
 }
 
 .slideshow-container img {
-    background-color: var(--acsent3);
     width: 80%;
     height: 70%;
 }
@@ -186,7 +138,7 @@ img {
 iframe {
     border-radius: 30px;
     margin: 20px;
-    background-color: var(--acsent3);
+    background-color: var(--acsent2);
     padding: 10px;
 }
 
@@ -199,7 +151,7 @@ iframe {
     margin: auto;
     padding: 0px;
     margin-top: 20px;
-    width: 100%;
+    width: 70%;
     float: center;
     color: var(--text);
     text-align: left;
