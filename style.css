@@ -2,11 +2,10 @@
 
 :root {
     /*colours*/
-    --background: #253242;
-    --footer: #1b232e;
+    --background: #1A222c;
+    --footer: #141a22;
     --back2: #2e4058;
-    --text: #aaaaff;
-    --acsent1: #aaaaff;
+    --text: #5f89c0;
     --acsent2: #49678f;
 }
 
@@ -47,13 +46,27 @@ body {
 }
 
 .footcol {
-    width: 17%;
+    width: 20%;
     padding-top: 1%;
     color: var(--text);
     font-weight: bold;
     text-align: center;
     margin-top: 0px;
     vertical-align: middle;
+    padding-top: 1%;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6%;
+    background-color: var(--footer);
+    text-align: center;
+    margin: auto;
+    z-index: 9;
+    align-items: center;
 }
 
 .columntext {
@@ -84,21 +97,9 @@ body {
     font-weight: bold;
     font-size: 400%;
     padding-bottom: 50px;
-    padding-top: -50px;
+    padding-top: 80px;
 }
 
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 6%;
-    background-color: var(--footer);
-    text-align: center;
-    margin: auto;
-    z-index: 9;
-    align-items: center;
-}
 
 a {
     background-color: inherit;
@@ -149,16 +150,7 @@ iframe {
     border-radius: 3%;
 }
 
-.mySlides1,
-.mySlides2,
-.mySlides3,
-.mySlides4,
-.mySlides5,
-.mySlides6,
-.mySlides7,
-.mySlides8,
-.mySlides9,
-.mySlides10 {
+.Slide {
     text-align: center;
     font-size: 50px;
     padding-left: 100px;
@@ -174,7 +166,7 @@ iframe {
     height: 60px;
     padding: 16px;
     margin-top: -22px;
-    color: var(--acsent1);
+    color: var(--text);
     background-color: var(--background);
     font-weight: bold;
     font-size: 18px;
@@ -212,8 +204,62 @@ iframe {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
+@media screen and (max-width: 1000px) {
+    .columntext {
+        width: 15%;
+        padding-right: 0%;
+        padding-left: 0%;
+        margin: 8%;
+        text-align: left;
+        font-size: 50%;
+        line-height: 1.3;
     }
+
+    .footcol {
+        padding-top: 1%;
+        width: auto;
+        margin-left: 2%;
+        margin-right: 0%;
+        padding-left: 0;
+    }
+
+    .footer {
+        padding-left: -60px;
+    }
+
+    .h1 {
+        color: var(--text);
+        text-align: center;
+        font-weight: bold;
+        font-size: 200%;
+        padding-bottom: 10px;
+        padding-top: 20px;
+    }
+
+    .Slide {
+        font-size: large;
+        margin: 0;
+    }
+
+    .Slide img {
+        padding: 0;
+        border-radius: 5%;
+    }
+
+    .next,
+    .prev {
+        font-size: 8px;
+        height: 30px;
+        width: 30px;
+        top: 55%;
+        margin-top: -22px;
+        padding: 10px;
+    }
+
+    .menu .button {
+        font-size: medium;
+        margin: 0;
+    }
+
+
 }
