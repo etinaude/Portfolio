@@ -203,7 +203,7 @@ iframe {
 
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-
+/*
 @media screen and (max-width: 1000px) {
     .columntext {
         width: 15%;
@@ -227,7 +227,7 @@ iframe {
         padding-left: -60px;
     }
 
-    .h1 {
+    /*.h1 {
         color: var(--text);
         text-align: center;
         font-weight: bold;
@@ -254,12 +254,12 @@ iframe {
         top: 55%;
         margin-top: -22px;
         padding: 10px;
-    }
+    }*/
 
-    .menu .button {
-        font-size: medium;
-        margin: 0;
-    }
+.menu .button {
+    font-size: medium;
+    margin: 0;
+}
 
 
 }
