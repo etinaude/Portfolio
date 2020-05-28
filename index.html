@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
-<div html-menu="/snippets/menu.html"></div>
 
 <head>
+    <link rel="icon" type="image/svg" href="/images/icons/drawing.svg" />
     <!-- <meta content="width=device-width, initial-scale=1" name="viewport" />-->
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-    <link rel="icon" href="/images/favicon.ico" />
+    <title>Etienne Naude</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Etienne Naude">
+    <meta name="description" content="portfolio website">
 </head>
+
+<!--Import menu-->
+<div html-menu="/snippets/menu.html"></div>
+
 <div class="back">
 
     <body>
@@ -62,7 +69,7 @@
             <div class="h1">
                 Software
             </div>
-            <div class="Slide  mySlides3">
+            <div class="Slide mySlides3">
                 <a href="https://github.com/etinaude/profile">This Site
                     <img src="/images/recursive.png" />
                 </a>
@@ -217,19 +224,21 @@
         </div>
 
         <div class="h1"></div>
-        <script>
-            var slideIndex = [];
-            var slideId = [];
-            var moved = [0];
-            for (i = 1; i < 7; i++) {
-                slideIndex.push(1);
-                slideId.push("mySlides" + i);
-                showSlides(1, i - 1);
-                moved.push(0);
-            }
-        </script>
     </body>
 </div>
 
+<!--javascipt-->
+<script>
+    includeHTML()
+    var slideIndex = [];
+    var slideId = [];
+    var moved = [0];
+    for (i = 1; i < 7; i++) {
+        slideIndex.push(1);
+        slideId.push("mySlides" + i);
+        showSlides(1, i - 1);
+        moved.push(0);
+    }
+</script>
 
 </html>

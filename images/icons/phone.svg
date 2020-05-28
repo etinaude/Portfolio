@@ -15,7 +15,7 @@
    version="1.1"
    id="svg14"
    sodipodi:docname="phone.svg"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    width="73.499916"
    height="90.010918"><metadata
      id="metadata18"><rdf:RDF><cc:Work
@@ -30,11 +30,11 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1055"
+     inkscape:window-height="1057"
      id="namedview16"
      showgrid="false"
      inkscape:zoom="3.776"
-     inkscape:cx="-41.325509"
+     inkscape:cx="-92.702628"
      inkscape:cy="-11.349675"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -51,7 +51,7 @@
     .fil0 {fill:black}
    
   </style></defs><path
-     style="opacity:1;fill:#aaaaff;fill-opacity:1;stroke:none;stroke-width:0.74905378;stroke-opacity:1"
+     style="opacity:1;fill:#6a91c5;fill-opacity:1;stroke:none;stroke-width:0.74905378;stroke-opacity:1"
      d="M 48.992081,88.891863 C 38.562501,85.954261 26.633244,74.683043 14.357173,56.167478 -2.6866643,30.460858 -4.00363,15.040055 9.9118619,4.1158018 17.572487,-1.8981147 20.060816,-0.55501976 26.763163,13.211419 c 2.535738,5.208338 3.546827,8.09592 3.208282,9.162578 -0.271882,0.856627 -1.94751,2.601098 -3.723617,3.876601 -6.136181,4.406672 -6.75859,8.840827 -2.363355,16.836974 3.665013,6.667674 9.890784,14.969006 14.163285,18.885073 4.456005,4.084261 7.754887,4.291384 13.746883,0.863111 2.757144,-1.577477 4.619551,-2.178818 5.81711,-1.878251 1.856494,0.465951 11.668843,10.483186 14.018137,14.310844 2.770001,4.513109 1.14517,7.285979 -6.728529,11.482621 -5.178167,2.759933 -10.952595,3.536987 -15.909278,2.140893 z"
      id="path814"
      inkscape:connector-curvature="0" /></svg>

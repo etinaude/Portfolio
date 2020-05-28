@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
-<div html-menu="/snippets/menu.html"></div>
 
 <head>
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg" href="/images/icons/drawing.svg" />
+    <!-- <meta content="width=device-width, initial-scale=1" name="viewport" />-->
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-    <link rel="icon" href="/images/favicon.ico">
+    <title>Etienne Naude</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Etienne Naude">
+    <meta name="description" content="portfolio website">
 </head>
+
+<!--Import menu-->
+<div html-menu="/snippets/menu.html"></div>
 <!--page title-->
 <div class="h1" style="font-size: 500;">
     Earth Sandwhich
@@ -18,7 +24,7 @@
 <body>
     <span class="row" style="display: block;">
         <div class="column2" style="display: block;">
-            <img style="display: block;" src="/images/earth sandwhich.png" alt="sandwhich" width="100%">
+            <img style="display: block; padding:0;" src="/images/earth sandwhich.png" alt="sandwhich" width="100%">
         </div>
         <div class="column2" style="display: block;">
             <div style="position:relative;padding-top:60%;">
@@ -29,15 +35,16 @@
             </div>
         </div>
     </span>
-    <span style="display: block;padding:10%;padding-top:35%;padding-bottom:2%;">
+    <span style="display: block;padding:10%;padding-top:38%;padding-bottom:2%;">
         <p>In early 2020 I completed a earth sandwich with Angel Sanchez organized entirely on Reddit, this had some
             news
             coverage from the BBC, CBS, TV1NZ and many more
         </p>
     </span>
     <div style=" margin: auto;
-            width: 50%;
-            padding: 10px;">
+            width: 80%;
+            padding: 10px;    
+            overflow: scroll;">
         <iframe height="8350" style=" margin: auto;
                 width: 100%;" frameborder="0"
             src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTnYMDrfIHfYDX78z5xWkA3hwrzUZlGp5t4SGxdTrbWDGnVWIv1GOL_rpZx1FRAV22MhK9bIy4S-6EH/pubhtml?gid=1016450158&amp;single=true&amp;widget=true&amp;headers=false">
@@ -47,5 +54,8 @@
         </P>
     </div>
 </body>
+<script>
+    includeHTML()
+</script>
 
 </html>
