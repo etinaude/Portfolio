@@ -196,7 +196,7 @@ iframe {
 }
 
 .button {
-    background-color: var(--back2);
+    background-color: var(--footer);
     margin: 10px;
     border-radius: 500px;
     padding: 7px;
