@@ -14,22 +14,23 @@
   <!--page title-->
   <body>
     <!--Import menu-->
-    <div html-menu="./snippets/menu.html"></div>
+    <div html-menu="menu.html"></div>
     <h1>
       Etienne Naude
     </h1>
     <div class="content">
     <img class="headshot" src="images/headshot2.png"></img>
-    <p>
-        Hardware Enthusiast<br>
-        Programmer <br>
-        Nerd <br>
-    </p>
+    <h2 class="statement">
+      Hardware Enthusiast<br>
+      Programmer <br>
+      Nerd <br>
+    </h2>
 </div>
 <img class="scroll" src="scroll.gif" >
     <div class="row" style="position: absoulte; left: 50%;">
         <div class="columntext" style="margin-left: 10%;">
           <h2>Equipment</h2>
+          <p>
           Laser cutters
           <br />
           Micro Controllers <br />
@@ -43,9 +44,11 @@
           Hand tools <br />
           Power tools <br />
           Electronics
+        </p>
         </div>
         <div class="columntext">
           <h2>Software</h2>
+          <p>
           Linux
           <br />
           Windows <br />
@@ -55,9 +58,11 @@
           Auto desk Fusion 360 <br />
           Auto desk Tinker Cad <br />
           VS code
+        </p>
         </div>
         <div class="columntext">
           <h2>Languages</h2>
+          <p>
           JavaScript
           <br />
           TypeScript <br />
@@ -70,16 +75,14 @@
           Arduino <br />
           Prolog <br />
           B***nFuck
+        </p>
         </div>
       </div>
-      <div class="CV_cont">
-        <iframe 
-        height="2550"
-        class="cv"
-        frameborder="0"
-        title="Articles lists"
-        src="https://docs.google.com/document/d/e/2PACX-1vRSAhpn_aq6TL0r-khpdizm1PRIy1pT9tqnFma1fvqhDzQtz_l7AftWZS5rBdcloWLZ1beUzbMbM7oL/pub?embedded=true"></iframe>
-      </div>
+      
+    <div class="cv_cont">
+    <embed class="cv" src="/Public CV v8.00.pdf" width="800" height="2280" 
+    type="application/pdf">
+  </div>
   </body>
   <script>
     includeHTML();
