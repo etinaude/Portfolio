@@ -1,61 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <link rel="icon" type="image/svg" href="./images/icons/drawing.svg" />
     <meta content="width=1000" name="viewport" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <title>Etienne Naude</title>
-    <meta charset="UTF-8">
-    <meta name="author" content="Etienne Naude">
-    <meta name="description" content="portfolio website">
-</head>
-<h1 href="#Null"></h1>
-<!--Import menu-->
-<div html-menu="./snippets/menu.html"></div>
-<!--page title-->
-<div class="h1" style="font-size: 500;">
-    Earth Sandwich
-</div>
-</div>
-<!--page content-->
+    <meta charset="UTF-8" />
+    <meta name="author" content="Etienne Naude" />
+    <meta name="description" content="portfolio website" />
+  </head>
 
-<body>
-    <span class="row" style="display: block;">
-        <div class="column2" style="display: block;">
-            <img style="display: block; padding:0;" src="./images/earth sandwhich.jpg" alt="sandwhich" width="100%">
+  <!--page content-->
+  <body>
+    <!--Import menu-->
+    <div html-menu="./snippets/menu.html"></div>
+    <!--page title-->
+    <h1 href="#Null">Earth Sandwich</h1>
+    <span class="row">
+      <div class="column2">
+        <img src="./images/earth sandwhich.jpg" alt="sandwhich" width="100%" />
+      </div>
+      <div class="column2">
+        <div style="position: relative; padding-top: 60%;">
+          <iframe
+            src="https://www.youtube.com/embed/EE-PaVwAzwY"
+            title="BBC interview"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="video"
+          >
+          </iframe>
         </div>
-        <div class="column2" style="display: block;">
-            <div style="position:relative;padding-top:60%;">
-                <iframe src="https://www.youtube.com/embed/EE-PaVwAzwY" title="BBC interview" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;" width="100%" height="100%">
-                </iframe>
-            </div>
-        </div>
+      </div>
     </span>
-    <span style="display: block;padding:10%;padding-top:38%;padding-bottom:2%;">
-        <p>In early 2020 I completed a earth sandwich with Angel Sanchez organized entirely on Reddit, this had some
-            news
-            coverage from the BBC, CBS, TV1NZ and many more
-        </p>
-    </span>
-    <div style=" margin: auto;
-            width: 80%;
-            padding: 10px;    
-            overflow: scroll;">
-        <iframe height="8350" style=" margin: auto;
-                width: 100%;" frameborder="0" title="Articles lists"
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTnYMDrfIHfYDX78z5xWkA3hwrzUZlGp5t4SGxdTrbWDGnVWIv1GOL_rpZx1FRAV22MhK9bIy4S-6EH/pubhtml?gid=1016450158&amp;single=true&amp;widget=true&amp;headers=false">
-        </iframe>
-        <P>
-            <br>
-        </P>
+    <p class="explain">
+      In early 2020 I completed a earth sandwich with Angel Sanchez organized
+      entirely on Reddit, this had some news coverage from the BBC, CBS, TV1NZ
+      and many more
+    </p>
+    <div class="list_cont">
+      <iframe
+        height="8350"
+        class="list"
+        frameborder="0"
+        title="Articles lists"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTnYMDrfIHfYDX78z5xWkA3hwrzUZlGp5t4SGxdTrbWDGnVWIv1GOL_rpZx1FRAV22MhK9bIy4S-6EH/pubhtml?gid=1016450158&amp;single=true&amp;widget=true&amp;headers=false"
+      >
+      </iframe>
+      <p>
+        <br />
+      </p>
     </div>
-</body>
-<script>
-    includeHTML()
-</script>
-
+  </body>
+  <script>
+    includeHTML();
+  </script>
 </html>

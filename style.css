@@ -2,33 +2,48 @@
 
 :root {
   /*colours*/
-  --background: rgb(24, 32, 41);
-  --footer: #11151b;
-  --back2: #293749;
-  --text: #6a91c5;
-  --acsent2: #49678f;
+  --background: #8ed2ec;
+  --footer: #1f2a38;
+  --back2: #1f2a38;
+  --text: #079aad;
 }
-
-/*columns formatting
-  the number reperesents the items per column 
-*/
 
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
-  background-repeat: no-repeat;
-  background-image: url("/images/back.svg");
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100%;
-  width: 100%;
   background-color: var(--background);
   color: var(--text);
   font-weight: bold;
   font-size: 150%;
+  margin: 0;
+}
+.content {
+  flex-direction: row;
+}
+p {
+  display: inline-flex;
+  text-align: left;
+}
+.scroll {
+  width: 100px;
+  margin-bottom: 50px;
+  float: right;
+  z-index: 1;
+  flex-wrap: wrap;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+.headshot {
+  width: 40%;
+  margin-left: 7%;
+  margin-top: -10px;
 }
 
 .column2,
@@ -36,7 +51,7 @@ body {
 .columntext {
   float: left;
   width: 30%;
-  font-size: large;
+  font-size: 100%;
   padding: 1.11%;
   padding-bottom: 3%;
   margin: 20px;
@@ -47,20 +62,26 @@ body {
   padding: 2.5%;
   margin: 1%;
 }
+.columntext {
+  padding: 0;
+  width: 26%;
+  text-align: left;
+  line-height: 1.3;
+}
 
 .footcol {
   width: auto;
-  padding: 5%;
-  padding-top: 1%;
   color: var(--text);
   font-weight: bold;
   text-align: center;
-  margin: 0px;
   vertical-align: middle;
   display: flex;
+  margin-top: 0;
+  padding-top: 5px;
 }
 
 footer {
+  flex-direction: row;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -72,34 +93,53 @@ footer {
   z-index: 9;
   align-items: center;
 }
-
-.columntext {
-  width: 24%;
-  padding-right: 2%;
-  padding-left: 10%;
-  text-align: left;
-  font-size: 120%;
-  line-height: 1.3;
+.row {
+  flex-direction: row;
 }
 
-.column1 {
-  width: 70%;
-  text-align: left;
-  padding: 10%;
-  margin-left: 20%;
-  background-color: var(--back2);
-  border-radius: 30px;
+.list_cont {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+.cv {
+  margin: auto;
+  margin: 10%;
+  width: 90%;
+  border-radius: 20px;
+}
+.list {
+  border-radius: 20px;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+  overflow: scroll;
 }
 
 /*headings and footings*/
+.slide_title {
+  text-align: center;
+  font-size: 130%;
+}
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  margin: 20px;
+  padding: 10px;
+}
 
-.h1 {
+h1 {
   color: var(--text);
   text-align: center;
   font-weight: bold;
-  font-size: 400%;
-  padding-bottom: 50px;
-  padding-top: 80px;
+  font-size: 200%;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 a {
@@ -116,7 +156,7 @@ a {
 
 img {
   vertical-align: middle;
-  border-radius: 30px;
+  border-radius: 20px;
   margin: 20px;
   padding: 10px;
 }
@@ -124,13 +164,6 @@ img {
 .slideshow-container img {
   width: 80%;
   height: 70%;
-}
-
-iframe {
-  border-radius: 30px;
-  margin: 20px;
-  background-color: var(--acsent2);
-  padding: 10px;
 }
 
 /* Slideshow container */
@@ -146,11 +179,11 @@ iframe {
   color: var(--text);
   text-align: left;
   font-style: inherit;
+  border-radius: 20px;
 }
 
 .Slide {
   text-align: center;
-  font-size: 50px;
   padding-left: 100px;
   padding-right: 100px;
 }
@@ -164,8 +197,8 @@ iframe {
   height: 60px;
   padding: 16px;
   margin-top: -22px;
-  color: var(--text);
-  background-color: var(--background);
+  color: var(--background);
+  background-color: var(--text);
   font-weight: bold;
   font-size: 18px;
   transition: 1s ease;
@@ -184,75 +217,21 @@ iframe {
 .prev:hover,
 .next:hover,
 .button:hover {
-  background-color: var(--acsent2);
-  color: var(--background);
+  background-color: var(--footer);
+  color: var(--text);
 }
 
 .button {
   background-color: var(--footer);
-  margin: 10px;
-  border-radius: 500px;
+  border-radius: 20px;
   padding: 7px;
   padding-left: 20px;
   padding-right: 20px;
   transition: 0.5s ease;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-/*
-@media screen and (max-width: 1000px) {
-    .columntext {
-        width: 15%;
-        padding-right: 0%;
-        padding-left: 0%;
-        margin: 8%;
-        text-align: left;
-        font-size: 50%;
-        line-height: 1.3;
-    }
-
-    .footcol {
-        padding-top: 1%;
-        width: auto;
-        margin-left: 2%;
-        margin-right: 0%;
-        padding-left: 0;
-    }
-
-    .footer {
-        padding-left: -60px;
-    }
-
-    /*.h1 {
-        color: var(--text);
-        text-align: center;
-        font-weight: bold;
-        font-size: 200%;
-        padding-bottom: 10px;
-        padding-top: 20px;
-    }
-
-    .Slide {
-        font-size: large;
-        margin: 0;
-    }
-
-    .Slide img {
-        padding: 0;
-        border-radius: 5%;
-    }
-
-    .next,
-    .prev {
-        font-size: 8px;
-        height: 30px;
-        width: 30px;
-        top: 55%;
-        margin-top: -22px;
-        padding: 10px;
-    }*/
-
-.menu .button {
   font-size: medium;
   margin: 0;
+}
+
+.explain {
+  margin: 5%;
 }
