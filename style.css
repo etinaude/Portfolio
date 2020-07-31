@@ -2,10 +2,9 @@
 
 :root {
   /*colours*/
-  --background: #8ed2ec;
-  --footer: #1f2a38;
-  --back2: #1f2a38;
-  --text: #079aad;
+  --background: #c3ebfc;
+  --footer: #0f131a;
+  --text: #008a9c;
 }
 
 * {
