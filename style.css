@@ -15,6 +15,7 @@ body {
 }
 .headshot {
   width: 40%;
+  height: 40%;
   margin: 6%;
 }
 .column {
@@ -42,6 +43,7 @@ body {
 }
 .info_col {
   width: 20%;
+  text-align: center;
 }
 button {
   background-color: var(--text);
@@ -106,9 +108,28 @@ a {
   transition: 0.5s ease;
   opacity: 0;
   position: absolute;
-  top: 20%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  button {
+    width: 30%;
+  }
+  #CV {
+    width: 20%;
+  }
+  .info_col {
+    width: 36%;
+    margin: 0;
+  }
+  .container {
+    width: 33%;
+  }
+  #bio {
+    width: 80%;
+    margin: 0;
+  }
 }
