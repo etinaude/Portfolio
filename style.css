@@ -1,6 +1,6 @@
 :root {
   /*colours*/
-  --background: #202530;
+  --background: #2c3038;
   --text: aliceblue;
   --acsent: #42506d;
 }
@@ -29,6 +29,9 @@ body {
   margin-top: 10%;
   margin-right: 15%;
   font-size: x-large;
+}
+#bio2 {
+  display: none;
 }
 #scroll {
   width: 8%;
@@ -73,7 +76,8 @@ a {
   border-radius: 20px;
   text-align: center;
   width: 40%;
-  vertical-align: middle;
+  height: 3.5%;
+  vertical-align: text-bottom;
   text-decoration: none;
 }
 
@@ -137,7 +141,7 @@ button:hover,
     width: 30%;
   }
   #CV {
-    width: 20%;
+    width: 50%;
   }
   .info_col {
     width: 36%;
@@ -147,7 +151,11 @@ button:hover,
     width: 33%;
   }
   #bio {
-    width: 80%;
-    margin: 0;
+    display: none;
+  }
+  #bio2 {
+    display: flex;
+    margin: 10%;
+    margin-top: 2%;
   }
 }
