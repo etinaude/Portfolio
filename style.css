@@ -1,7 +1,7 @@
 :root {
   /*colours*/
-  --background: #27292e;
-  --text: #bfcedb;
+  --background: #2f3238;
+  --text: #b2cee6;
   --acsent: #4a5468;
 }
 
@@ -17,6 +17,7 @@ body {
   width: 40%;
   height: 40%;
   margin: 6%;
+  border-radius: 1000px;
 }
 .column {
   flex-direction: column;
@@ -78,7 +79,7 @@ a {
   color: inherit;
   background-color: inherit;
 }
-#CV {
+.CV {
   background-color: var(--text);
   color: var(--background);
   border: none;
@@ -95,7 +96,7 @@ a {
 }
 
 button:hover,
-#CV:hover {
+.CV:hover {
   cursor: pointer;
   background-color: var(--acsent);
   color: var(--text);
@@ -153,11 +154,14 @@ button:hover,
   border-radius: 10px;
 }
 
+.space {
+  display: flex;
+}
 @media only screen and (max-width: 600px) {
   button {
     width: 30%;
   }
-  #CV {
+  .CV {
     width: 50%;
   }
   .info_col {
@@ -176,6 +180,9 @@ button:hover,
     margin-top: 2%;
   }
   #footer {
+    display: none;
+  }
+  .space {
     display: none;
   }
 }
