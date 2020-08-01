@@ -57,31 +57,33 @@ button {
   font-weight: bold;
   border-radius: 20px;
 }
+
+a {
+  color: inherit;
+  background-color: inherit;
+}
+#CV {
+  background-color: var(--text);
+  color: var(--background);
+  border: none;
+  margin-left: 5%;
+  margin-top: 5%;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 20px;
+  text-align: center;
+  width: 40%;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
 button:hover,
 #CV:hover {
   cursor: pointer;
   background-color: var(--acsent);
   color: var(--text);
 }
-a {
-  color: var(--text);
-  background-color: var(--background);
-}
-#CV {
-  background-color: var(--text);
-  color: var(--background);
-  border: none;
-  margin-left: 1%;
-  margin-top: 1%;
-  width: 8%;
-  height: 30px;
-  font-size: large;
-  font-weight: bold;
-  border-radius: 20px;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-}
+
 .sec_h {
   text-align: center;
 }
@@ -114,6 +116,22 @@ a {
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--text);
+  border-radius: 10px;
+}
+
 @media only screen and (max-width: 600px) {
   button {
     width: 30%;
