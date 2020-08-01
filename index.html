@@ -1,90 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" type="image/svg" href="./images/icons/drawing.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
     <title>Etienne Naude</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg" href="/icon.svg" />
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <meta name="author" content="Etienne Naude" />
     <meta name="description" content="portfolio website" />
   </head>
-  
-  <!--page title-->
   <body>
-    <!--Import menu-->
-    <div html-menu="menu.html"></div>
-    <h1>
-      Etienne Naude
-    </h1>
-    <div class="content">
-    <img alt="headshot" class="headshot" src="images/headshot2.png"></img>
-    <h2 class="statement">
-      Hardware Enthusiast<br>
-      Programmer <br>
-      Nerd <br>
-    </h2>
-</div>
-<img class="scroll" alt="scroll" src="scroll.gif" >
+    <div id="nav" class="row">
+      <button href="hiding(0)">Home</button>
+      <button href="hiding(1)">Sandwhich</button>
+      <button href="hiding(2)">Projects</button>
+      <a id="CV" download href="./Public CV.pdf">
+        CV
+      </a>
+    </div>
     <div class="row">
-        <div class="columntext">
-          <h2>Equipment</h2>
-          <p>
-          Laser cutters
-          <br />
-          Micro Controllers <br />
-          Single Board Computers <br />
-          3D printers <br />
-          CNC routers <br />
-          3D scanners <br />
-          Soldering irons <br />
-          Sewing machines <br />
-          Overlockers <br />
-          Hand tools <br />
-          Power tools <br />
-          Electronics
-        </p>
-        </div>
-        <div class="columntext">
-          <h2>Software</h2>
-          <p>
-          Linux
-          <br />
-          Windows <br />
-          Adobe Illustrator <br />
-          Inkscape <br />
-          Adobe Photoshop <br />
-          Auto desk Fusion 360 <br />
-          Auto desk Tinker Cad <br />
-          VS code
-        </p>
-        </div>
-        <div class="columntext">
-          <h2>Languages</h2>
-          <p>
-          JavaScript
-          <br />
-          TypeScript <br />
-          HTML/CSS <br />
-          Python <br />
-          VBA <br />
-          Visual Basic <br />
-          Bash <br />
-          C/C++ <br />
-          Arduino <br />
-          Prolog <br />
-          B***nFuck
-        </p>
+      <img class="headshot" src="headshot2.png" />
+      <div id="bio" class="column">
+        <h1>Etienne Naude</h1>
+        <a href="Tel: 0220 464 363"><p>p: 0220 464 363</p></a>
+        <a href="mailto: etinaude@gmail.com"><p>e: etinaude@gmail.com</p></a>
+        <a href="https://github.com/etinaude"><p>Github: etinaude</p></a>
+        <br />
+        I'm a second year Computer Science student and Creative Technologist who
+        is passionate about both hardware and software. I enjoy inventing and
+        creating in my spare time.
+      </div>
+    </div>
+    <br />
+    <br />
+    <div id="skill_cont" class="row">
+      <div class="column info_col">
+        <h2>Equipment</h2>
+        <p>3D printers</p>
+        <p>3D scanners</p>
+        <p>CNC routers</p>
+        <p>Soldering irons</p>
+        <p>Laser cutters</p>
+        <p>Power tools</p>
+        <p>Hand tools</p>
+      </div>
+      <div class="column info_col">
+        <h2>Software</h2>
+        <p>Linux</p>
+        <p>Windows</p>
+        <p>VS code</p>
+        <p>Inkscape</p>
+        <p>Adobe Illustrator</p>
+        <p>Auto desk Fusion 360</p>
+        <p>Auto desk Tinker Cad</p>
+      </div>
+      <div class="column info_col">
+        <h2>Languages</h2>
+        <p>JavaScript</p>
+        <p>Arduino</p>
+        <p>Bash</p>
+        <p>VBA</p>
+        <p>C/C++</p>
+        <p>Python</p>
+        <p>Visual Basic</p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="row projects">
+      <div class="container">
+        <img alt="130" class="project_pic" src="./images/130.webp" />
+        <div class="text">Basic Solitaire based game</div>
+      </div>
+      <div class="container">
+        <img alt="BF" class="project_pic" src="./images/BF.webp" />
+        <div class="text">Br**nFuck</div>
+      </div>
+      <div class="container">
+        <img alt="automata" class="project_pic" src="./images/cell.webp" />
+        <div class="text">Cellular automata</div>
+      </div>
+    </div>
+    <div class="row projects">
+      <div class="container">
+        <img alt="bradshaw" class="project_pic" src="./images/bradshaw.webp" />
+        <div class="text">Hannah-Bradshaw Award</div>
+      </div>
+      <div class="container">
+        <img alt="Queen's award" class="project_pic" src="./images/qs.webp" />
+        <div class="text">Quuen's Scout Award</div>
+      </div>
+      <div class="container">
+        <img alt="Service" class="project_pic" src="./images/service.webp" />
+        <div class="text">Service to the School Award</div>
+      </div>
+    </div>
+    <div class="row projects">
+      <div class="container">
+        <img alt="Loop" class="project_pic" src="./images/loop.webp" />
+        <div class="text">Shwoop Loop</div>
+      </div>
+      <div class="container">
+        <img alt="Clock" class="project_pic" src="./images/clock.webp" />
+        <div class="text">Decimal Time Clock</div>
+      </div>
+      <div class="container">
+        <img alt="Triangle" class="project_pic" src="./images/triangle.webp" />
+        <div class="text">Reuleaux Triangle Screw</div>
+      </div>
+    </div>
+    <div class="row projects">
+      <div class="container">
+        <img alt="Cube" class="project_pic" src="./images/cube.webp" />
+        <div class="text">Rubiks Cube Solver</div>
+      </div>
+      <div class="container">
+        <img
+          alt="Recursive"
+          class="project_pic"
+          src="./images/recursive.webp"
+        />
+        <div class="text">This Website</div>
+      </div>
+      <div class="container">
+        <img alt="Desk" class="project_pic" src="./images/desk.webp" />
+        <div class="text">Custom Desk Computer</div>
+      </div>
+    </div>
+    <div class="row projects">
+      <div class="container">
+        <img alt="Glowing" class="project_pic" src="./images/glowing.webp" />
+        <div class="text">Glowing Flowing Water</div>
+      </div>
+      <div class="container">
+        <img alt="vlad" class="project_pic" src="./images/gluten.webp" />
+        <div class="text">Vladimir Gluten</div>
+      </div>
+      <div class="container">
+        <img alt="Heart" class="project_pic" src="./images/heart.webp" />
+        <div class="text">String Heart Art</div>
+      </div>
+    </div>
+    <div class="row projects">
+      <div class="container">
+        <img alt="PCB" class="project_pic" src="./images/pcb.webp" />
+        <div class="text">Worlds Smallest Keyboard Design</div>
+      </div>
+      <div class="container">
+        <img alt="tokens" class="project_pic" src="./images/aoe.webp" />
+        <div class="text">DnD Character Tokens</div>
+      </div>
+      <div class="container">
+        <img alt="SD Holder" class="project_pic" src="./images/holder.webp" />
+        <div class="text">SD Card Holder</div>
+      </div>
+    </div>
+    <div class="row projects">
+      <div class="container">
+        <img alt="CPP" class="project_pic" src="./images/cpp.webp" />
+        <div class="text">Ugly C++ Code</div>
+      </div>
+      <div class="container">
+        <img alt="BF_comp" class="project_pic" src="./images/BF_comp.webp" />
+        <div class="text">Br**nFuck Computer PCB</div>
+      </div>
+      <div class="container">
+        <img alt="Pump" class="project_pic" src="./images/pump.webp" />
+        <div class="text">Peristaltic Pump</div>
+      </div>
+    </div>
+    <div class="row projects">
+      <div class="container">
+        <img alt="Hammer" class="project_pic" src="./images/hammer.webp" />
+        <div class="text">HAMMER PROJECT!!!</div>
+      </div>
+      <div class="container">
+        <img alt="Printing" class="project_pic" src="./images/printing.webp" />
+        <div class="text">3D Printing and Painting</div>
+      </div>
+      <div class="container">
+        <img
+          alt="Sandwhich"
+          class="project_pic"
+          src="./images/sandbread.webp"
+        />
+        <div class="text">Earth Sandwhich Bread</div>
+      </div>
+    </div>
+    <div class="row projects">
+      <div class="container">
+        <img alt="VEX" class="project_pic" src="./images/robot1.webp" />
+        <div class="text">
+          VEX Robotics Competition <br />2016 Kiwi Challenge Winner
         </div>
       </div>
-      
-    <div class="cv_cont">
-    <embed class="cv" src="/Public CV v8.00.pdf" width="200" height="2300" 
-    type="application/pdf">
-  </div>
+      <div class="container">
+        <img alt="MRR" class="project_pic" src="./images/robot2.webp" />
+        <div class="text">Mini Robot Rumble</div>
+      </div>
+      <div class="container">
+        <img alt="SD card" class="project_pic" src="./images/sd.webp" />
+        <div class="text">SD Card Holder Laser cut</div>
+      </div>
+    </div>
+    <img id="scroll" src="scroll2.gif" />
   </body>
-  <script>
-    includeHTML();
-  </script>
 </html>
