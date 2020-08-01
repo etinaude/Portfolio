@@ -61,6 +61,7 @@ p {
 .columntext {
   padding: 0;
   width: 26%;
+  margin-left: 5%;
   text-align: left;
   line-height: 1.3;
   flex-direction: column;
@@ -106,6 +107,8 @@ footer {
 .cv {
   margin: auto;
   border-radius: 20px;
+  width: 800px;
+  margin-left: -10%;
 }
 .cv_cont {
   padding: 10%;
@@ -239,45 +242,49 @@ img {
   margin-top: 0;
   margin-bottom: 0;
   display: inline-flex;
+  font-size: larger;
 }
 
 @media only screen and (max-width: 600px) {
   .columntext {
-    display: inline-flexbox;
-    float: left;
-    font-size: medium;
-    width: 40%;
+    display: inline-block;
+    float: center;
+    text-align: center;
+    width: 100%;
     font-size: 100%;
     padding-bottom: 3%;
-    margin: 5%;
+    margin: 2%;
+    margin-top: 0;
+    margin-bottom: 0;
     overflow: hidden;
   }
   .row {
-    width: 210%;
+    width: 100%;
     flex-direction: row;
-    display: inline-flex;
+    display: block;
   }
   p {
     width: 100%;
     overflow: hidden;
   }
+  .statement {
+    font-size: large;
+  }
   .footcol {
     margin: 0;
-    margin-left: 2%;
-    margin-top: 2%;
+    font-size: medium;
     margin-right: 5%;
   }
   footer {
-    flex-direction: row;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: 5%;
     background-color: var(--footer);
     padding-left: 8%;
     z-index: 2;
     align-items: center;
-    flex-direction: row;
   }
   .list_cont {
     width: 100%;
@@ -304,5 +311,38 @@ img {
     margin-top: 0;
     margin-bottom: 0;
     display: inline-flex;
+    font-size: medium;
+  }
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 90%;
+    width: 45px;
+    height: 45px;
+    padding-top: 10px;
+    margin-top: -22px;
+    color: var(--background);
+    background-color: var(--text);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 1s ease;
+    border-radius: 90%;
+    text-align: center;
+    right: 75%;
+  }
+  .Slide {
+    text-align: center;
+  }
+  .cv {
+    width: 100%;
+    display: block;
+  }
+  .cv_cont {
+    display: block;
+  }
+  .scroll {
+    width: 20%;
+    margin-right: 0;
   }
 }
