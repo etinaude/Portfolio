@@ -15,6 +15,7 @@ document.getElementById(
   "scroll"
 ).src = `${base}/${param}/v1596335553/scroll2_c1v0r4.gif`;
 
+/*
 //project images
 param = `w_${Math.round(width / 3)},f_auto,q_auto,c_scale`;
 var projects = document.getElementsByClassName("project_pic");
@@ -23,4 +24,15 @@ for (var i = 0; i < projects.length; i++) {
   img_url = `${base}/${param}/${projects[i].id}`;
   console.log(projects[i]);
   projects[i].src = img_url;
+}
+*/
+var body = document.body; // For Safari
+body.scrollHeight;
+var html = document.documentElement;
+function scroll() {
+  if (window.innerHeight + window.scrollY >= body.clientHeight) {
+    document.getElementById("scroll").style.display = "none";
+  } else {
+    document.getElementById("scroll").style.display = "flex";
+  }
 }

@@ -3,15 +3,24 @@
   --background: #2f3238;
   --text: #b2cee6;
   --acsent: #4a5468;
+  --button: #8eabc4;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+script {
+  display: none;
+}
 body {
   display: flex;
   flex-direction: column;
   color: var(--text);
   background-color: var(--background);
-  scroll-behavior: smooth;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  left: 0;
 }
 .headshot {
   width: 40%;
@@ -48,6 +57,7 @@ body {
   justify-content: center;
   bottom: 0;
   left: 0;
+  font-size: larger;
 }
 .contact {
   margin-left: 5%;
@@ -93,6 +103,15 @@ a {
   height: 3.5%;
   vertical-align: text-bottom;
   text-decoration: none;
+  padding: 0.8%;
+  padding-top: 1%;
+  border: medium;
+}
+.CV_inner {
+  background-color: inherit;
+  color: inherit;
+  text-decoration: none;
+  padding: 0.8%;
 }
 
 button:hover,
