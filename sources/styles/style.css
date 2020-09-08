@@ -188,7 +188,7 @@ button:hover,
 .space {
   margin-top: 8%;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   button {
     width: 30%;
   }
@@ -198,6 +198,7 @@ button:hover,
   .info_col {
     width: 36%;
     margin: 0;
+    margin-left: 20px;
   }
   .container {
     width: 33%;
