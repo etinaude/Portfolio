@@ -1,13 +1,8 @@
-var grid = document.querySelector(".grid");
+var grid = document.querySelector(".Mgrid");
 var msnry = new Masonry(grid, {
-  // options...
   itemSelector: ".grid-item",
-  columnWidth: document.clientHeight,
-});
-
-// init with selector
-var msnry = new Masonry(".grid", {
-  // options...
+  columnWidth: 100,
+  gutter: 0,
 });
 
 var base = "https://res.cloudinary.com/etienne-naude/image/upload";
@@ -33,7 +28,7 @@ var projects = document.getElementsByClassName("project_pic");
 var img_url = "";
 for (var i = 0; i < projects.length; i++) {
   img_url = `${base}/${param}/${projects[i].id}`;
-  console.log(projects[i]);
+  //console.log(projects[i]);
   projects[i].src = img_url;
 }
 
