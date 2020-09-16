@@ -40,6 +40,9 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
 }
+.top-row {
+  height: 100vh;
+}
 #bio {
   margin-top: 10%;
   margin-right: 5%;

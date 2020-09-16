@@ -1,3 +1,15 @@
+var grid = document.querySelector(".grid");
+var msnry = new Masonry(grid, {
+  // options...
+  itemSelector: ".grid-item",
+  columnWidth: document.clientHeight,
+});
+
+// init with selector
+var msnry = new Masonry(".grid", {
+  // options...
+});
+
 var base = "https://res.cloudinary.com/etienne-naude/image/upload";
 var width = `${Math.round(
   Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
