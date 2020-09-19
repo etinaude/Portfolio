@@ -1,3 +1,17 @@
+function getWidth() {
+  if (self.innerWidth) {
+    return self.innerWidth;
+  }
+
+  if (document.documentElement && document.documentElement.clientWidth) {
+    return document.documentElement.clientWidth;
+  }
+
+  if (document.body) {
+    return document.body.clientWidth;
+  }
+}
+
 function get_images() {
   var base = "https://res.cloudinary.com/etienne-naude/image/upload";
   var width = `${Math.round(
@@ -25,13 +39,13 @@ function get_images() {
     //console.log(projects[i]);
     projects[i].src = img_url;
   }
-
-  var grid = document.querySelector(".grid");
-  var msnry = new Masonry(grid, {
-    // options...
+  ///*
+  console.log(getWidth());
+  var msnry = new Masonry(document.querySelector(".Mgrid"), {
+    columnWidth: 50,
     itemSelector: ".grid-item",
-    columnWidth: 100,
-  });
+    gutter: -49,
+  }); //*/
 }
 
 var body = document.body;

@@ -23,10 +23,11 @@ body {
   flex-direction: column;
   color: var(--text);
   background-color: var(--background);
+  overflow-x: hidden;
 }
 #headshot-container {
-  width: 60%;
-  height: 60%;
+  width: 60vw;
+  height: 60vh;
   margin: 6%;
 }
 #headshot {
@@ -148,10 +149,6 @@ button:hover,
 .container:hover .text {
   opacity: 1;
 }
-.container {
-  position: relative;
-  width: 20%;
-}
 .text {
   transition: 0.5s ease;
   opacity: 0;
@@ -181,7 +178,9 @@ button:hover,
 .space {
   margin-top: 8%;
 }
-
+.Mgrid {
+  width: 100vw;
+}
 @media only screen and (max-width: 800px) {
   button {
     width: 30%;
