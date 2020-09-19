@@ -80,6 +80,7 @@ body {
   padding: 5%;
   padding-left: 15%;
   border: solid 0.5px var(--border);
+  border-radius: 5px;
   margin: 10%;
 }
 .info_col {
@@ -146,7 +147,12 @@ button:hover,
   transition: 0.5s ease;
   backface-visibility: hidden;
 }
-.container:hover .project_pic {
+.grid-item {
+  width: 24.8%;
+  flex-direction: column;
+}
+
+.grid-item:hover .project_pic {
   opacity: 0.1;
 }
 
@@ -154,7 +160,7 @@ button:hover,
   text-decoration: underline;
 }
 
-.container:hover .text {
+.grid-item:hover .text {
   opacity: 1;
 }
 .text {
@@ -190,9 +196,6 @@ button:hover,
   display: flex;
   flex-wrap: wrap;
 }
-.grid-item {
-  width: 24.8vw;
-}
 @media only screen and (max-width: 800px) {
   button {
     width: 30%;
@@ -204,9 +207,6 @@ button:hover,
     width: 36%;
     margin: 0;
     margin-left: 20px;
-  }
-  .container {
-    width: 33%;
   }
   #bio,
   #footer,
