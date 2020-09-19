@@ -188,6 +188,10 @@ button:hover,
 }
 .Mgrid {
   display: flex;
+  flex-wrap: wrap;
+}
+.grid-item {
+  width: 24.8vw;
 }
 @media only screen and (max-width: 800px) {
   button {

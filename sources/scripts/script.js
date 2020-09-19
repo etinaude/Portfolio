@@ -40,17 +40,18 @@ function get_images() {
     projects[i].src = img_url;
   }
   ///*
+  /*
   console.log(getWidth());
   var msnry = new Masonry(document.querySelector(".Mgrid"), {
     columnWidth: 50,
     itemSelector: ".grid-item",
     gutter: -49,
-  }); //*/
+  }); 
   document.getElementsByClassName("Mgrid")[0].style.margin = `0 0 0 10%`;
   console.log(
     "w",
     getWidth() % document.getElementsByClassName("grid-item")[0].clientWidth
-  );
+  );*/
 }
 
 var body = document.body;
