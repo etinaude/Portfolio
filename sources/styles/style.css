@@ -181,6 +181,7 @@ button:hover,
 .space {
   margin-top: 8%;
 }
+
 @media only screen and (max-width: 800px) {
   button {
     width: 30%;

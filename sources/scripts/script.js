@@ -1,38 +1,40 @@
-var grid = document.querySelector(".Mgrid");
-var msnry = new Masonry(grid, {
-  itemSelector: ".grid-item",
-  columnWidth: 100,
-  gutter: 0,
-});
+function get_images() {
+  var base = "https://res.cloudinary.com/etienne-naude/image/upload";
+  var width = `${Math.round(
+    Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+  )}`;
 
-var base = "https://res.cloudinary.com/etienne-naude/image/upload";
-var width = `${Math.round(
-  Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-)}`;
+  //Head shot
+  var param = `w_${Math.round(width * 0.4)},f_auto,q_auto,c_scale`;
+  document.getElementById(
+    "headshot"
+  ).src = `${base}/${param}/v1596330710/headshot2_kddrsi.png`;
 
-//Head shot
-var param = `w_${Math.round(width * 0.4)},f_auto,q_auto,c_scale`;
-document.getElementById(
-  "headshot"
-).src = `${base}/${param}/v1596330710/headshot2_kddrsi.png`;
+  //scroll gif
+  param = `w_${Math.round(width * 0.08)},q_auto`;
+  document.getElementById(
+    "scroll"
+  ).src = `${base}/${param}/v1596335553/scroll2_c1v0r4.gif`;
 
-//scroll gif
-param = `w_${Math.round(width * 0.08)},q_auto`;
-document.getElementById(
-  "scroll"
-).src = `${base}/${param}/v1596335553/scroll2_c1v0r4.gif`;
+  //project images
+  param = `w_${Math.round(width / 3)},f_auto,q_auto,c_scale`;
+  var projects = document.getElementsByClassName("project_pic");
+  var img_url = "";
+  for (var i = 0; i < projects.length; i++) {
+    img_url = `${base}/${param}/${projects[i].id}`;
+    //console.log(projects[i]);
+    projects[i].src = img_url;
+  }
 
-//project images
-param = `w_${Math.round(width / 3)},f_auto,q_auto,c_scale`;
-var projects = document.getElementsByClassName("project_pic");
-var img_url = "";
-for (var i = 0; i < projects.length; i++) {
-  img_url = `${base}/${param}/${projects[i].id}`;
-  //console.log(projects[i]);
-  projects[i].src = img_url;
+  var grid = document.querySelector(".grid");
+  var msnry = new Masonry(grid, {
+    // options...
+    itemSelector: ".grid-item",
+    columnWidth: 100,
+  });
 }
 
-var body = document.body; // For Safari
+var body = document.body;
 body.scrollHeight;
 var html = document.documentElement;
 function scroll() {
@@ -42,3 +44,5 @@ function scroll() {
     document.getElementById("scroll").style.display = "flex";
   }
 }
+
+get_images();
