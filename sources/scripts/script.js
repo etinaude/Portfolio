@@ -46,6 +46,11 @@ function get_images() {
     itemSelector: ".grid-item",
     gutter: -49,
   }); //*/
+  document.getElementsByClassName("Mgrid")[0].style.margin = `0 0 0 10%`;
+  console.log(
+    "w",
+    getWidth() % document.getElementsByClassName("grid-item")[0].clientWidth
+  );
 }
 
 var body = document.body;

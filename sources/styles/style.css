@@ -3,6 +3,7 @@
   --background: #2f3238;
   --text: #b2cee6;
   --acsent: #4a5468;
+  --border: #484e5a;
 }
 
 * {
@@ -74,8 +75,15 @@ body {
 .projects {
   justify-content: center;
 }
+
+#skill_cont {
+  padding: 5%;
+  padding-left: 15%;
+  border: solid 0.5px var(--border);
+  margin: 10%;
+}
 .info_col {
-  width: 20%;
+  width: 20vw;
   text-align: center;
 }
 button {
@@ -179,7 +187,7 @@ button:hover,
   margin-top: 8%;
 }
 .Mgrid {
-  width: 100vw;
+  display: flex;
 }
 @media only screen and (max-width: 800px) {
   button {
