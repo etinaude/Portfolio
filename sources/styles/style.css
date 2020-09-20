@@ -29,7 +29,7 @@ body {
 #headshot-container {
   width: 60vw;
   height: 60vh;
-  margin: 6%;
+  margin: 10vh 0 0 6%;
 }
 #headshot {
   width: 35vw;
@@ -46,9 +46,13 @@ body {
   height: 100vh;
 }
 #bio {
-  margin-top: 10%;
-  margin-right: 5%;
+  margin: 10vh 6% 0% 6%;
   font-size: x-large;
+  padding: 4% 3% 2% 5%;
+
+  border: solid 0.5px var(--border);
+  border-radius: 5px;
+  height: 50vh;
 }
 #scroll {
   width: 8%;
