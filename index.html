@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="./sources/styles/normalize.css" />
     <link rel="stylesheet" href="./sources/styles/style.css" />
     <link rel="icon" type="image/svg" href="./sources/images/icon.svg" />
+
+    <script src="./sources/scripts/masonry.js"></script>
     <script src="./sources/scripts/script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
@@ -16,7 +18,7 @@
     />
   </head>
   <body onscroll="scroll()">
-    <div class="row">
+    <div class="row top-row">
       <div id="headshot-container">
         <img alt="headshot" id="headshot" src="" />
       </div>
@@ -51,7 +53,6 @@
         <a download class="CV_inner" href="./Public CV.pdf"> ᐁ Download CV </a>
       </div>
     </div>
-    <div class="space"></div>
     <div id="skill_cont" class="row">
       <div class="column info_col">
         <h2>Equipment</h2>
@@ -84,11 +85,8 @@
         <p>Visual Basic</p>
       </div>
     </div>
-    <br />
-    <br />
-    <br />
-    <div class="row projects">
-      <div class="container">
+    <div class="Mgrid">
+      <div class="grid-item">
         <img
           id="v1596330692/130_mkjcfw.jpg"
           alt="130"
@@ -97,7 +95,7 @@
         />
         <div class="text">Basic Solitaire based game</div>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <a
           rel="noopener"
           target="_blank"
@@ -107,7 +105,7 @@
           <div class="text link">Br**nFuck</div>
         </a>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <a
           rel="noopener"
           target="_blank"
@@ -122,9 +120,7 @@
           <div class="text link">Cellular automata</div>
         </a>
       </div>
-    </div>
-    <div class="row projects">
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330693/bradshaw_soaasj"
           alt="bradshaw"
@@ -133,7 +129,7 @@
         />
         <div class="text">Hannah-Bradshaw Award</div>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <a
           rel="noopener"
           target="_blank"
@@ -148,7 +144,7 @@
           <div class="text link">Queen's Scout Award</div>
         </a>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330692/service_ae68rn"
           alt="Service"
@@ -157,9 +153,7 @@
         />
         <div class="text">Service to the School Award</div>
       </div>
-    </div>
-    <div class="row projects">
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330687/loop_v2.0_rq23gm"
           alt="Loop"
@@ -168,7 +162,7 @@
         />
         <div class="text">Shwoop Loop</div>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <a
           rel="noopener"
           target="_blank"
@@ -183,7 +177,7 @@
           <div class="text link">Decimal Time Clock</div>
         </a>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330691/triangle_t8rvgg"
           alt="Triangle"
@@ -192,9 +186,7 @@
         />
         <div class="text">Reuleaux Triangle Screw</div>
       </div>
-    </div>
-    <div class="row projects">
-      <div class="container">
+      <div class="grid-item">
         <a
           rel="noopener"
           target="_blank"
@@ -209,7 +201,7 @@
           <div class="text link">Rubik's Cube Solver</div>
         </a>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <a rel="noopener" target="_blank" href="https://etinaude.tk">
           <img
             alt="Recursive"
@@ -220,7 +212,7 @@
           <div class="text link">This Website</div>
         </a>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330686/desk_myspxh"
           alt="Desk"
@@ -229,9 +221,7 @@
         />
         <div class="text">Custom Desk Computer</div>
       </div>
-    </div>
-    <div class="row projects">
-      <div class="container">
+      <div class="grid-item">
         <a
           rel="noopener"
           target="_blank"
@@ -246,7 +236,7 @@
           <div class="text link">Glowing Flowing Water</div>
         </a>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330686/gluten_uftu42"
           alt="vlad"
@@ -255,7 +245,7 @@
         />
         <div class="text">Vladimir Gluten</div>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330687/heart_pyyuml"
           alt="Heart"
@@ -264,9 +254,7 @@
         />
         <div class="text">String Heart Art</div>
       </div>
-    </div>
-    <div class="row projects">
-      <div class="container">
+      <div class="grid-item">
         <a
           rel="noopener"
           target="_blank"
@@ -281,7 +269,7 @@
           <div class="text link">Worlds Smallest Keyboard Design</div>
         </a>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           alt="tokens"
           id="v1596330693/aoe_an5j5w"
@@ -290,7 +278,7 @@
         />
         <div class="text">DnD Character Tokens</div>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330687/holder_design_n3qfoa"
           alt="SD Holder"
@@ -299,9 +287,7 @@
         />
         <div class="text">SD Card Holder</div>
       </div>
-    </div>
-    <div class="row projects">
-      <div class="container">
+      <div class="grid-item">
         <a
           rel="noopener"
           target="_blank"
@@ -316,7 +302,7 @@
           <div class="text link">Ugly C++ Code</div>
         </a>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <a
           rel="noopener"
           target="_blank"
@@ -331,7 +317,7 @@
           <div class="text link">Br**n Fuck Computer PCB</div>
         </a>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596333146/pump_hgh1jq"
           alt="Pump"
@@ -340,9 +326,7 @@
         />
         <div class="text">Peristaltic Pump</div>
       </div>
-    </div>
-    <div class="row projects">
-      <div class="container">
+      <div class="grid-item">
         <img
           alt="Hammer"
           id="v1596330687/hammer_t0rpfg"
@@ -351,7 +335,7 @@
         />
         <div class="text">HAMMER PROJECT!!!</div>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330689/printing_tpmt0z"
           alt="Printing"
@@ -360,7 +344,7 @@
         />
         <div class="text">3D Printing and Painting</div>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <a
           rel="noopener"
           target="_blank"
@@ -375,9 +359,7 @@
           <div class="text link">Earth Sandwich Bread</div>
         </a>
       </div>
-    </div>
-    <div class="row projects">
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330691/robot1_df7l4t"
           alt="VEX"
@@ -388,7 +370,7 @@
           VEX Robotics Competition <br />2016 Kiwi Challenge Winner
         </div>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330691/robot2_lv8gd1"
           alt="MRR"
@@ -397,7 +379,7 @@
         />
         <div class="text">Mini Robot Rumble</div>
       </div>
-      <div class="container">
+      <div class="grid-item">
         <img
           id="v1596330691/sd_lscxyt"
           alt="SD card"
@@ -407,9 +389,7 @@
         <div class="text">SD Card Holder Laser Cut</div>
       </div>
     </div>
-    <br />
-    <br />
-    <br />
+
     <div class="row" id="footer">
       <p class="contact">Etienne Naude</p>
       <a class="contact" href="Tel: 0220 464 363"><p>0220 464 363</p></a>
