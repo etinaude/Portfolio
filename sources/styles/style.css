@@ -223,6 +223,25 @@ button:hover,
     margin-top: 2%;
   }
   #headshot-container {
-    width: 80%;
+    width: 100%;
+    margin: 10%;
+  }
+  #headshot {
+    width: 80vw;
+    height: 80vw;
+  }
+  .top-row {
+    height: 90vw;
+  }
+  #skill_cont {
+    padding: 0;
+    border: none;
+    margin: 5% 2% 8% 2%;
+  }
+  p {
+    text-align: left;
+  }
+  h2 {
+    font-size: medium;
   }
 }
