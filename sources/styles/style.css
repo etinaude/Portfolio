@@ -91,6 +91,27 @@ body {
   width: 20vw;
   text-align: center;
 }
+
+ul {
+  flex-direction: column;
+}
+#ed {
+  flex-direction: row;
+  padding: 5%;
+  padding-left: 15%;
+  border: solid 0.5px var(--border);
+  border-radius: 5px;
+  margin: 5% 10% 10% 10%;
+}
+#c1 {
+  margin-right: 20%;
+}
+#c2 {
+  margin-top: 2%;
+}
+li {
+  display: list-item;
+}
 button {
   background-color: var(--text);
   color: var(--background);
