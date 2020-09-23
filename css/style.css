@@ -265,16 +265,19 @@ body {
 }
 
 .primary-black--hover {
-  background: #ff8b00;
+  background: #008cff;
   color: #fff;
 }
 .primary-black--hover:hover {
   background: #000;
   color: #fff;
 }
-
+a,
+.text-primary {
+  color: #008cff;
+}
 .primary-dark--hover {
-  background: #ff8b00;
+  background: #008cff;
   color: #fff;
 }
 .primary-dark--hover:hover {
@@ -283,21 +286,21 @@ body {
 }
 
 .primary-primary-outline--hover {
-  background: #ff8b00;
+  background: #008cff;
   color: #fff;
 }
 .primary-primary-outline--hover:hover {
-  border-color: #ff8b00;
+  border-color: #008cff;
   background: transparent;
 }
 
 .primary-outline-primary--hover {
   background: transparent;
-  border-color: #ff8b00;
+  border-color: #008cff;
 }
 .primary-outline-primary--hover:hover {
   color: #fff;
-  background: #ff8b00;
+  background: #008cff;
 }
 
 body {
@@ -623,7 +626,7 @@ h5,
   color: #71bc42;
 }
 .ul-check.primary li:before {
-  color: #ff8b00;
+  color: #008cff;
 }
 
 .select-wrap,
@@ -693,7 +696,7 @@ h5,
   margin-bottom: 0;
 }
 .site-navbar .site-navigation .site-menu .active {
-  color: #ff8b00 !important;
+  color: #008cff !important;
 }
 .site-navbar .site-navigation .site-menu a {
   text-decoration: none !important;
@@ -711,7 +714,7 @@ h5,
   text-decoration: none !important;
 }
 .site-navbar .site-navigation .site-menu > li > a:hover {
-  color: #ff8b00;
+  color: #008cff;
 }
 .site-navbar .site-navigation .site-menu .has-children {
   position: relative;
@@ -737,7 +740,7 @@ h5,
   top: 100%;
   position: absolute;
   text-align: left;
-  border-top: 2px solid #ff8b00;
+  border-top: 2px solid #008cff;
   -webkit-box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
   padding: 0px 0;
@@ -785,7 +788,7 @@ h5,
   color: #000 !important;
 }
 .site-navbar .site-navigation .site-menu .has-children .dropdown a.active {
-  color: #ff8b00 !important;
+  color: #008cff !important;
   background: #f8f9fa;
 }
 .site-navbar .site-navigation .site-menu .has-children .dropdown > li {
@@ -862,7 +865,7 @@ h5,
 .site-navbar .site-navigation .site-menu .has-children:hover > a,
 .site-navbar .site-navigation .site-menu .has-children:focus > a,
 .site-navbar .site-navigation .site-menu .has-children:active > a {
-  color: #ff8b00;
+  color: #008cff;
 }
 .site-navbar .site-navigation .site-menu .has-children:hover,
 .site-navbar .site-navigation .site-menu .has-children:focus,
@@ -962,14 +965,14 @@ h5,
   color: #212529;
 }
 .site-mobile-menu .site-nav-wrap a:hover {
-  color: #ff8b00;
+  color: #008cff;
 }
 .site-mobile-menu .site-nav-wrap li {
   position: relative;
   display: block;
 }
 .site-mobile-menu .site-nav-wrap li .nav-link.active {
-  color: #ff8b00;
+  color: #008cff;
 }
 .site-mobile-menu .site-nav-wrap .arrow-collapse {
   position: absolute;
@@ -1079,13 +1082,13 @@ h5,
   box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.2);
 }
 .sticky-wrapper.is-sticky .site-navbar .site-logo a {
-  color: #ff8b00;
+  color: #008cff;
 }
 .sticky-wrapper.is-sticky .site-navbar ul li a {
   color: #fff !important;
 }
 .sticky-wrapper.is-sticky .site-navbar ul li a.active {
-  color: #ff8b00 !important;
+  color: #008cff !important;
 }
 .sticky-wrapper .shrink {
   padding-top: 0px !important;
@@ -1199,7 +1202,7 @@ h5,
 
 .block-heading-1 h2 {
   font-size: 3rem;
-  color: #ff8b00;
+  color: #008cff;
 }
 
 .block-feature-1-wrap {
@@ -1337,7 +1340,7 @@ h5,
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
 }
 .block-team-member-1 h3 {
-  color: #ff8b00 !important;
+  color: #008cff !important;
 }
 
 .block-social-1 > a {
@@ -1380,7 +1383,7 @@ h5,
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  background: #ff8b00;
+  background: #008cff;
   height: 2px;
 }
 .block-testimony-1 figure img {
@@ -1415,7 +1418,7 @@ h5,
 }
 .block-13 .owl-dots .owl-dot.active span {
   width: 20px;
-  background: #ff8b00;
+  background: #008cff;
 }
 
 .post-entry {
@@ -1443,7 +1446,7 @@ h5,
   border-bottom: 1px dotted #ccc;
 }
 .by:hover {
-  border-bottom: 1px dotted #ff8b00;
+  border-bottom: 1px dotted #008cff;
 }
 
 .sidebar-box {
@@ -1674,7 +1677,7 @@ h5,
 }
 .block__35630 .icon > span {
   font-size: 3rem;
-  color: #ff8b00;
+  color: #008cff;
 }
 
 .block__35630 h3 {
@@ -1709,9 +1712,9 @@ h5,
 }
 
 .footer-suscribe-form .btn {
-  background: #ff8b00;
+  background: #008cff;
   color: #fff;
-  border-color: #ff8b00;
+  border-color: #008cff;
 }
 
 .pricing {
@@ -1723,7 +1726,7 @@ h5,
 }
 .pricing .price > span > span {
   font-size: 3rem;
-  color: #ff8b00;
+  color: #008cff;
 }
 .pricing ul li {
   margin-bottom: 20px;
