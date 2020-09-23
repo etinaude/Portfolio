@@ -459,6 +459,11 @@ h5,
     padding: 8em 0;
   }
 }
+@media (min-width: 768px) {
+  #conway-section {
+    display: none;
+  }
+}
 .site-footer .border-top {
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
 }

@@ -1,3 +1,4 @@
+//By Etienne Naude
 const WIDTH = Math.round(window.innerWidth * 0.6);
 const HEIGHT = 200;
 const GRID_WIDTH = Math.round(WIDTH / 20);
@@ -6,7 +7,7 @@ const CELL_SIZE = 20;
 const FR = 30;
 var cells = new Array(GRID_HEIGHT)
   .fill(0)
-  .map(() => new Array(GRID_HEIGHT).fill(0));
+  .map(() => new Array(GRID_WIDTH).fill(0));
 var old = [];
 var paused = false;
 var looper = 0;
@@ -14,15 +15,40 @@ var looper = 0;
 function defaultGrid() {
   cells = new Array(GRID_HEIGHT)
     .fill(0)
-    .map(() => new Array(GRID_HEIGHT).fill(0));
-  cells[2][0] = 1;
-  cells[2][1] = 1;
-  cells[2][2] = 1;
-  cells[1][2] = 1;
-  cells[0][1] = 1;
+    .map(() => new Array(GRID_WIDTH).fill(0));
+  console.log(cells.length);
+  console.log(cells[0].length);
+  cells.forEach((i) => (i[i % 5] = 1));
+  var x = cells[0].length - 3;
+  var y = cells.length - 1;
+
+  cells[4][x] = 1;
+  cells[5][x] = 1;
+  cells[6][x] = 1;
+
+  //occelator
+  for (let i = 0; i < cells[0].length - 10; i++) {
+    if (i % 6 == 0) {
+      cells[6][i] = 1;
+      cells[1][i] = 1;
+    } else if (i % 6 == 1) {
+      cells[7][i] = 1;
+      cells[2][i] = 1;
+    } else if (i % 6 == 2) {
+      cells[5][i] = 1;
+      cells[6][i] = 1;
+      cells[7][i] = 1;
+
+      cells[0][i] = 1;
+      cells[1][i] = 1;
+      cells[2][i] = 1;
+    }
+  }
+
   display();
 }
 function pauseToggle() {
+  //Handles the pause button
   paused = !paused;
   if (paused) {
     document.getElementById("pauseBtn").text = "Play";
@@ -32,6 +58,7 @@ function pauseToggle() {
 }
 
 function setup() {
+  //sets up the canvas
   noStroke();
   defaultGrid();
   background(32);
@@ -64,7 +91,7 @@ function countNeighbours(x, y) {
   count += old[y][left];
   count += old[y][right];
 
-  if (count > 0) return count;
+  return count;
 }
 
 function update() {
@@ -82,6 +109,8 @@ function update() {
       if (cells[y][x]) {
         if (alive > 3 || alive < 2) {
           cells[y][x] = 0;
+        } else {
+          console.log(alive);
         }
       }
       //if cells dead and has 3 it alive
