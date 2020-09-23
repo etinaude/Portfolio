@@ -151,14 +151,32 @@ function draw() {
       update();
     }
   }
-
+  /*
   if (mouseIsPressed) {
     if (mouseX < CELL_SIZE * GRID_WIDTH && mouseY < CELL_SIZE * GRID_HEIGHT) {
-      fill(0, 140, 255);
       var xPos = mouseX - (mouseX % CELL_SIZE);
       var yPos = mouseY - (mouseY % CELL_SIZE);
-      cells[yPos / CELL_SIZE][xPos / CELL_SIZE] = 1;
+      fill(0, 80, 255);
+      if (cells[yPos / CELL_SIZE][xPos / CELL_SIZE] == 1) {
+        cells[yPos / CELL_SIZE][xPos / CELL_SIZE] = 0;
+      } else {
+        cells[yPos / CELL_SIZE][xPos / CELL_SIZE] = 1;
+      }
       rect(xPos, yPos, CELL_SIZE, CELL_SIZE);
     }
+  }*/
+}
+function mouseClicked(event) {
+  if (mouseX < CELL_SIZE * GRID_WIDTH && mouseY < CELL_SIZE * GRID_HEIGHT) {
+    var xPos = mouseX - (mouseX % CELL_SIZE);
+    var yPos = mouseY - (mouseY % CELL_SIZE);
+    if (cells[yPos / CELL_SIZE][xPos / CELL_SIZE] == 1) {
+      fill(225, 40, 40);
+      cells[yPos / CELL_SIZE][xPos / CELL_SIZE] = 0;
+    } else {
+      fill(0, 80, 255);
+      cells[yPos / CELL_SIZE][xPos / CELL_SIZE] = 1;
+    }
+    rect(xPos, yPos, CELL_SIZE, CELL_SIZE);
   }
 }
