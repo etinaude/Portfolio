@@ -451,12 +451,12 @@ h5,
 }
 
 .site-footer {
-  padding: 4em 0;
+  padding: 0;
   background: #333;
 }
 @media (min-width: 768px) {
   .site-footer {
-    padding: 8em 0;
+    padding: 6em 0 1em 0;
   }
 }
 @media (min-width: 768px) {
@@ -470,6 +470,7 @@ h5,
 .site-footer p {
   color: #fff;
 }
+
 .site-footer h2,
 .site-footer h3,
 .site-footer h4,
@@ -489,7 +490,6 @@ h5,
   font-size: 16px;
   color: #fff;
 }
-
 .bg-text-line {
   display: inline;
   background: #000;
