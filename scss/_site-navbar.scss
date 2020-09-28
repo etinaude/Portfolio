@@ -1,6 +1,6 @@
 .site-navbar {
 
-	margin-bottom: 0px;
+	margin-bottom: 0;
 	z-index: 1999;
 	position: relative;
 	width: 100%;
@@ -12,7 +12,7 @@
 	}
 	.toggle-button {
 		position: absolute;
-		right: 0px;
+		right: 0;
 	}
 	.site-logo {
 		position: absolute;
@@ -54,7 +54,7 @@
 				> a {
 					margin-left: 15px;
 					margin-right: 15px;
-					padding: 20px 0px;
+					padding: 20px 0;
 					color: $white!important;
 					display: inline-block;
 					text-decoration: none!important;
@@ -70,7 +70,7 @@
 				position: relative;
 				> a {
 					position: relative;
-					padding-right: 20px;						
+					padding-right: 20px;
 					&:before {
 						position: absolute;
 						content: "\e313";
@@ -89,9 +89,9 @@
 					text-align: left;
 					border-top: 2px solid $primary;
 					box-shadow: 0 2px 10px -2px rgba(0,0,0,.1);
-					padding: 0px 0;
+					padding: 0;
 					margin-top: 20px;
-					margin-left: 0px;
+					margin-left: 0;
 					background: $white;
 					transition: 0.2s 0s;
 
@@ -114,7 +114,7 @@
 							border-bottom-color: $white;
 							border-width: 10px;
 							margin-left: -10px;
-						}	
+						}
 					}
 					
 
@@ -178,7 +178,7 @@
 					cursor: pointer;
 					> .dropdown {
 						transition-delay: 0s;
-						margin-top: 0px;
+						margin-top: 0;
 						visibility: visible;
 						opacity: 1;
 
@@ -223,7 +223,7 @@
 				font-size: 30px;
 				display: inline-block;
 				padding-left: 10px;
-				padding-right: 0px;
+				padding-right: 0;
 				line-height: 1;
 				cursor: pointer;
 				transition: .3s all ease;
@@ -235,7 +235,7 @@
 		.site-mobile-menu-logo {
 			float: left;
 			margin-top: 10px;
-			margin-left: 0px;
+			margin-left: 0;
 			a {
 				display: inline-block;
 				text-transform: uppercase;
@@ -253,7 +253,7 @@
 		overflow-y: scroll;
 		-webkit-overflow-scrolling: touch;
 		position: relative;
-		padding: 0 20px 20px 20px;
+		padding: 0 20px 20px;
 
 		height: calc(100vh - 52px);
 		padding-bottom: 150px;
@@ -295,7 +295,7 @@
 		}
 		.arrow-collapse {
 			position: absolute;
-			right: 0px;
+			right: 0;
 			top: 10px;
 			z-index: 20;
 			width: 36px;
@@ -319,7 +319,7 @@
 			}
 			&.collapsed {
 				&:before {
-					transform: translate(-50%, -50%);	
+					transform: translate(-50%, -50%);
 				}
 			}
 		}
@@ -350,7 +350,7 @@
 							display: block;
 							> a {
 								font-size: 16px;
-								padding-left: 60px;			
+								padding-left: 60px;
 							}
 						}
 					}
@@ -408,7 +408,7 @@
 				}
 			}
 		}
-	}	
+	}
 	&.is-sticky {
 		
 		.site-navbar {
