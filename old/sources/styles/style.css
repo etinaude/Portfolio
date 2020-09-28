@@ -46,7 +46,7 @@ body {
   height: 100vh;
 }
 #bio {
-  margin: 10vh 6% 0% 6%;
+  margin: 10vh 6% 0%;
   font-size: x-large;
   padding: 4% 3% 2% 5%;
 
@@ -101,7 +101,7 @@ ul {
   padding-left: 15%;
   border: solid 0.5px var(--border);
   border-radius: 5px;
-  margin: 5% 10% 10% 10%;
+  margin: 5% 10% 10%;
 }
 #c1 {
   margin-right: 20%;
@@ -257,7 +257,7 @@ button:hover,
   #skill_cont {
     padding: 0;
     border: none;
-    margin: 5% 2% 8% 2%;
+    margin: 5% 2% 8%;
   }
   p {
     text-align: left;
