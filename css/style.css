@@ -1764,11 +1764,14 @@ h5,
   width: 2em;
   margin: 0.51em;
 }
-.cdn-icon-small-img {
+.cdn-icon-small-img,
+.cdn-icon-link-img {
   width: 1em;
   margin-top: -0.5em;
   margin-right: 0.5em;
 }
 .cdn-icon-link-img {
-  padding: 1%;
+  width: 1.2em;
+  margin-top: -0.2em;
+  margin-left: 0.4em;
 }
