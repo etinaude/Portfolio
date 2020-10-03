@@ -1775,3 +1775,6 @@ h5,
   margin-top: -0.2em;
   margin-left: 0.4em;
 }
+.hover-white:hover {
+  color: white;
+}
