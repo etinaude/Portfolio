@@ -65,12 +65,6 @@ function setup() {
   var myCanvas = createCanvas(WIDTH, HEIGHT);
   myCanvas.parent("conway");
   frameRate(FR);
-  var resetButton = createButton("Reset");
-  resetButton.position(0, GRID_HEIGHT * CELL_SIZE + 20);
-  resetButton.mousePressed(defaultGrid);
-  var pauseButton = createButton("Pause/Play");
-  pauseButton.position(60, GRID_HEIGHT * CELL_SIZE + 20);
-  pauseButton.mousePressed(pauseToggle);
 }
 
 function countNeighbours(x, y) {
@@ -136,12 +130,6 @@ function display() {
   }
 }
 
-/*
-Any live cell with two or three live neighbours survives.
-Any dead cell with three live neighbours becomes a live cell.
-All other live cells die in the next generation. Similarly, all other dead cells stay dead.
-*/
-
 function draw() {
   looper += 1;
   if (looper == 10) {
@@ -151,20 +139,6 @@ function draw() {
       update();
     }
   }
-  /*
-  if (mouseIsPressed) {
-    if (mouseX < CELL_SIZE * GRID_WIDTH && mouseY < CELL_SIZE * GRID_HEIGHT) {
-      var xPos = mouseX - (mouseX % CELL_SIZE);
-      var yPos = mouseY - (mouseY % CELL_SIZE);
-      fill(0, 80, 255);
-      if (cells[yPos / CELL_SIZE][xPos / CELL_SIZE] == 1) {
-        cells[yPos / CELL_SIZE][xPos / CELL_SIZE] = 0;
-      } else {
-        cells[yPos / CELL_SIZE][xPos / CELL_SIZE] = 1;
-      }
-      rect(xPos, yPos, CELL_SIZE, CELL_SIZE);
-    }
-  }*/
 }
 function mouseClicked(event) {
   if (mouseX < CELL_SIZE * GRID_WIDTH && mouseY < CELL_SIZE * GRID_HEIGHT) {
