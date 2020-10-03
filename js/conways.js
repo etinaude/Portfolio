@@ -16,8 +16,8 @@ function defaultGrid() {
   cells = new Array(GRID_HEIGHT)
     .fill(0)
     .map(() => new Array(GRID_WIDTH).fill(0));
-  console.log(cells.length);
-  console.log(cells[0].length);
+  //console.log(cells.length);
+  //console.log(cells[0].length);
   cells.forEach((i) => (i[i % 5] = 1));
   var x = cells[0].length - 3;
   var y = cells.length - 1;
@@ -110,7 +110,7 @@ function update() {
         if (alive > 3 || alive < 2) {
           cells[y][x] = 0;
         } else {
-          console.log(alive);
+          //console.log(alive);
         }
       }
       //if cells dead and has 3 it alive
