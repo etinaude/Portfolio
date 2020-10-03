@@ -12,7 +12,7 @@ function setWidth(percent) {
   return width - (width % 10);
 }
 
-function addImage(paramters) {
+function addBackgroundImage(paramters) {
   var arr = paramters[0];
   var width = paramters[1];
   var mod = paramters[2];
@@ -23,7 +23,7 @@ function addImage(paramters) {
   }
 }
 
-function addSmallImage(paramters) {
+function addForegroundImage(paramters) {
   var arr = paramters[0];
   var width = paramters[1];
   var mod = paramters[2];
@@ -57,6 +57,18 @@ var small = [
   setWidth(15),
   mod,
 ];
-addImage(large);
-addImage(medium);
-addSmallImage(small);
+
+var icons = [document.getElementsByClassName("cdn-icon-img"), 45, mod];
+var SmallIcons = [
+  document.getElementsByClassName("cdn-icon-small-img"),
+  20,
+  mod,
+];
+var linkIcons = [document.getElementsByClassName("cdn-icon-link-img"), 20, mod];
+
+addBackgroundImage(large);
+addBackgroundImage(medium);
+addForegroundImage(small);
+addForegroundImage(icons);
+addForegroundImage(SmallIcons);
+addForegroundImage(linkIcons);
