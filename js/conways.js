@@ -121,7 +121,7 @@ function display() {
   for (var y = 0; y < GRID_HEIGHT; y++) {
     for (var x = 0; x < GRID_WIDTH; x++) {
       if (cells[y][x]) {
-        fill(0, 140, 255);
+        fill(73, 173, 255);
       } else {
         fill(22);
       }
@@ -145,10 +145,10 @@ function mouseClicked(event) {
     var xPos = mouseX - (mouseX % CELL_SIZE);
     var yPos = mouseY - (mouseY % CELL_SIZE);
     if (cells[yPos / CELL_SIZE][xPos / CELL_SIZE] == 1) {
-      fill(225, 40, 40);
+      fill(255, 84, 84);
       cells[yPos / CELL_SIZE][xPos / CELL_SIZE] = 0;
     } else {
-      fill(0, 80, 255);
+      fill(0, 110, 255);
       cells[yPos / CELL_SIZE][xPos / CELL_SIZE] = 1;
     }
     rect(xPos, yPos, CELL_SIZE, CELL_SIZE);
