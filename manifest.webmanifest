@@ -1,0 +1,24 @@
+{
+  "background_color": "#222222",
+  "theme_color": "#0080ff",
+  "display": "fullscreen",
+  "manifest_version": "1",
+  "version": "1",
+  "short_name": "Etienne Naude",
+  "name": "Etienne Naude Portfolio",
+  "description": "A portfolio website",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "images/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/offline.svg",
+      "sizes": "240x240",
+      "type": "image/svg"
+    }
+  ]
+}
