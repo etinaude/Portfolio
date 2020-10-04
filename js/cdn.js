@@ -1,15 +1,16 @@
 var base = "https://res.cloudinary.com/etienne-naude/image/upload";
 var mod = "f_auto,q_auto,c_scale";
+var width = Math.max(
+  document.documentElement.clientWidth || 0,
+  window.innerWidth || 0
+);
 
-function setWidth(percent) {
-  var width = Math.round(
-    Math.max(
-      document.documentElement.clientWidth || 0,
-      window.innerWidth || 0
-    ) *
-      (percent / 100)
-  );
-  return width - (width % 10);
+function setWidth(percent, mobile = 0) {
+  if (mobile && width < 800) {
+    percent = mobile;
+  }
+  var imgWidth = Math.round(width * (percent / 100));
+  return imgWidth - (imgWidth % 10);
 }
 
 function addBackgroundImage(paramters) {
@@ -17,8 +18,13 @@ function addBackgroundImage(paramters) {
   var width = paramters[1];
   var mod = paramters[2];
   for (let i = 0; i < arr.length; i++) {
+    var id;
     const e = arr[i];
-    var id = e.id;
+    if (width < 800 && e.className.includes("cdn-mobile")) {
+      id = "mobile-" + e.id;
+    } else {
+      id = e.id;
+    }
     e.style.backgroundImage = `url("${base}/w_${width},${mod}/${id}")`;
   }
 }
@@ -48,13 +54,13 @@ var large = [
 //medium images (55%)
 var medium = [
   document.getElementsByClassName("cdn-medium-img"),
-  setWidth(55),
+  setWidth(55, 150),
   mod,
 ];
 //small images (15%)
 var small = [
   document.getElementsByClassName("cdn-small-img"),
-  setWidth(15),
+  setWidth(15, 65),
   mod,
 ];
 

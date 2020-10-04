@@ -141,7 +141,7 @@
 
 .font-gray-7,
 body {
-  color: #939393;
+  color: #aaaaaa;
 }
 
 .font-gray-8 {
@@ -459,7 +459,7 @@ h5,
     padding: 6em 0 1em;
   }
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   #conway-section {
     display: none;
   }
@@ -1777,4 +1777,14 @@ h5,
 }
 .hover-white:hover {
   color: white;
+}
+
+P {
+  color: #aaaaaa;
+}
+
+@media (max-width: 800px) {
+  .col-md-8 {
+    padding: 50px 30px;
+  }
 }
