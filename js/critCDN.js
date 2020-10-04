@@ -51,29 +51,4 @@ var large = [
   setWidth(100),
   "q_auto,c_scale",
 ];
-//medium images (55%)
-var medium = [
-  document.getElementsByClassName("cdn-medium-img"),
-  setWidth(55, 150),
-  mod,
-];
-//small images (15%)
-var small = [
-  document.getElementsByClassName("cdn-small-img"),
-  setWidth(15, 65),
-  mod,
-];
-
-var icons = [document.getElementsByClassName("cdn-icon-img"), 45, mod];
-var SmallIcons = [
-  document.getElementsByClassName("cdn-icon-small-img"),
-  20,
-  mod,
-];
-var linkIcons = [document.getElementsByClassName("cdn-icon-link-img"), 20, mod];
 addBackgroundImage(large);
-addBackgroundImage(medium);
-addForegroundImage(small);
-addForegroundImage(icons);
-addForegroundImage(SmallIcons);
-addForegroundImage(linkIcons);
