@@ -1760,7 +1760,8 @@ h5,
   transform: translate(-50%, -50%);
 }
 
-.cdn-icon-img {
+.cdn-icon-img,
+.icon-img {
   width: 2em;
   margin: 0.51em;
 }
