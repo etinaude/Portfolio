@@ -9,3 +9,5 @@
 This website highlights my work with software projects, hardware projects and maker projects. The website also shows notable awards I've won, my skills in different areas as well as my contact details and public CV
 
 It is constantly in a state of redesign, please follow the link in the title to view the page.
+
+I will unveil and update my finished projects on the projects page.
