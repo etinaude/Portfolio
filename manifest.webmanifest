@@ -1,8 +1,8 @@
 {
-  "short_name": "Etienne Naude",
+  "short_name": "Etinaude",
   "name": "Etienne Naude Portfolio",
-  "description": "My portfolio website",
-  "start_url": "/",
+  "description": "etienne naude portfolio website",
+  "start_url": "./offline/offline-page.html",
   "version": "1",
   "manifest_version": "1",
   "display": "fullscreen",
@@ -10,10 +10,17 @@
   "theme_color": "#0080ff",
   "orientation": "landscape-primary",
   "lang": "en-US",
-  "categories": ["portfolio", "portfolio website"],
+  "categories": [
+    "portfolio",
+    "portfolio website",
+    "etinaude",
+    "Etienne Naude",
+    "etinaude dev",
+    "development"
+  ],
   "icons": [
     {
-      "src": "icons/icon.png",
+      "src": "./icons/icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
