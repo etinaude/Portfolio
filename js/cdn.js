@@ -4,6 +4,10 @@ var width = Math.max(
   document.documentElement.clientWidth || 0,
   window.innerWidth || 0
 );
+var height = Math.max(
+  document.documentElement.clientHeight || 0,
+  window.innerHeight || 0
+);
 
 function setWidth(percent, mobile = 0) {
   if (mobile && width < 800) {
@@ -13,10 +17,19 @@ function setWidth(percent, mobile = 0) {
   return imgWidth - (imgWidth % 10);
 }
 
-function addBackgroundImage(paramters) {
-  var arr = paramters[0];
-  var width = paramters[1];
-  var mod = paramters[2];
+function setWidth(percent, mobile = 0) {
+  if (mobile && height < 800) {
+    percent = mobile;
+  }
+  var imgWidth = Math.round(height * (percent / 100));
+  return imgWidth - (imgWidth % 10);
+}
+
+function addBackgroundImage(parameters) {
+  var arr = parameters[0];
+  var width = parameters[1];
+  var height = parameters[3];
+  var mod = parameters[2];
   for (let i = 0; i < arr.length; i++) {
     var id;
     const e = arr[i];
@@ -25,14 +38,14 @@ function addBackgroundImage(paramters) {
     } else {
       id = e.id;
     }
-    e.style.backgroundImage = `url("${base}/w_${width},${mod}/${id}")`;
+    e.style.backgroundImage = `url("${base}/w_${width},h${height},${mod}/${id}")`;
   }
 }
 
-function addForegroundImage(paramters) {
-  var arr = paramters[0];
-  var width = paramters[1];
-  var mod = paramters[2];
+function addForegroundImage(parameters) {
+  var arr = parameters[0];
+  var width = parameters[1];
+  var mod = parameters[2];
   for (let i = 0; i < arr.length; i++) {
     const e = arr[i];
     var id = e.id;
@@ -50,18 +63,21 @@ var large = [
   document.getElementsByClassName("cdn-large-img"),
   setWidth(100),
   "q_auto,c_scale",
+  setHeight(50)
 ];
 //medium images (55%)
 var medium = [
   document.getElementsByClassName("cdn-medium-img"),
   setWidth(55, 150),
   mod,
+  setHeight(55)
 ];
 //small images (15%)
 var small = [
   document.getElementsByClassName("cdn-small-img"),
   setWidth(15, 65),
   mod,
+  setHeight(15)
 ];
 
 var icons = [document.getElementsByClassName("cdn-icon-img"), 45, mod];

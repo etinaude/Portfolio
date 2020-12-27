@@ -4,37 +4,6 @@
 .font-size-20 {
   font-size: 20px;
 }
-.gradient-2,
-.top-bar {
-  background: #7a5e86;
-  background: -moz-linear-gradient(left, #7a5e86 0%, #0059a1 51%, #f77b2e 100%);
-  background: -webkit-gradient(
-    left top,
-    right top,
-    color-stop(0%, #7a5e86),
-    color-stop(51%, #0059a1),
-    color-stop(100%, #f77b2e)
-  );
-  background: -webkit-linear-gradient(
-    left,
-    #7a5e86 0%,
-    #0059a1 51%,
-    #f77b2e 100%
-  );
-  background: -o-linear-gradient(left, #7a5e86 0%, #0059a1 51%, #f77b2e 100%);
-  background: -ms-linear-gradient(left, #7a5e86 0%, #0059a1 51%, #f77b2e 100%);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#7a5e86),
-    color-stop(51%, #0059a1),
-    to(#f77b2e)
-  );
-  background: linear-gradient(to right, #7a5e86 0%, #0059a1 51%, #f77b2e 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a5e86', endColorstr='#f77b2e', GradientType=1 );
-}
-
 .font-gray-5,
 .block-heading-1 span {
   color: #b8b8b8;
@@ -615,7 +584,8 @@ h5,
   padding: 2em 0;
 }
 .site-section-cover.img-bg-section {
-  background-size: cover;
+  background-size: 100%;
+  background-position: 0% 0%;
   background-repeat: no-repeat;
 }
 .site-section-cover h1 {
