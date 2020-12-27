@@ -18,27 +18,29 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />
 
-    <!-- <link rel="stylesheet" href="./css/bootstrap/sizes/min576.min.css" />
-    <link rel="stylesheet" href="./css/bootstrap/sizes/min768.min.css" />
-    <link rel="stylesheet" href="./css/bootstrap/sizes/min992.min.css" />
-    <link rel="stylesheet" href="./css/bootstrap/sizes/min1200.min.css" /> -->
+    <!-- <lin      rel="stylesheet"      media="screen and (min-device-width: 576px)  and (max-width: 768px)"
+      href="./css/bootstrap/sizes/min576.min.css"    />
+    <link      rel="stylesheet"      media="screen and (min-device-width: 768px)  and (max-width: 900px)"
+      href="./css/bootstrap/sizes/min768.min.css"    />
+    <link      rel="stylesheet"      media="screen and (min-device-width: 992px)  and (max-width: 1200px)"      href="./css/bootstrap/sizes/min992.min.css"    />
+    <link      rel="stylesheet"      media="screen and (min-device-width: 1200px)"href="./css/bootstrap/sizes/min1200.min.css"/> -->
 
-    <link rel="stylesheet" href="./css/aos.css" />
+    <link rel="stylesheet" href="./css/aos.min.css" />
 
-    <noscript id="deferred-styles">
-      <link rel="stylesheet" href="./css/jquery.fancybox.min.css" />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Rubik:300,400,700|Oswald:400,700"
-      />
-      <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
-      <link rel="stylesheet" href="./fonts/flaticon/font/flaticon.css" />
-    </noscript>
+    <!-- <noscript id="deferred-styles"> -->
+    <link rel="stylesheet" href="./css/jquery.fancybox.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Rubik:300,400,700|Oswald:400,700"
+    />
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
+    <!-- </noscript> -->
 
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.min.css" />
 
-    <script async src="./js/jquery/jquery.min.js"></script>
-    <script async src="./js/aos.js"></script>
+    <script src="./js/aos.min.js"></script>
+    <script src="./js/jquery/jquery.min.js"></script>
+
     <script async src="./js/popper.min.js"></script>
     <script async src="./js/owl.carousel.min.js"></script>
     <script async src="./js/bootstrap.min.js"></script>
@@ -46,11 +48,11 @@
     <script async src="./js/jquery/jquery.fancybox.min.js"></script>
     <script async src="./js/jquery/jquery.sticky.js"></script>
     <script async src="./js/jquery/jquery.waypoints.min.js"></script>
-    <script defer src="./js/cdn.js"></script>
+    <script defer src="./js/cdn.min.js"></script>
     <script defer src="./js/jquery/jquery.easing.1.3.js"></script>
-    <script defer src="./js/main.js"></script>
-    <script defer src="./js/conways.js"></script>
-    <script defer src="./js/deferCSS.js"></script>
+    <script defer src="./js/main.min.js"></script>
+    <!-- <script defer src="./js/conways.js"></script> -->
+    <!-- <script defer src="./js/deferCSS.js"></script> -->
 
     <script defer>
       if ("serviceWorker" in navigator) {
@@ -66,27 +68,14 @@
         console.log("Service worker can not be registered on this device");
       }
     </script>
-
-    <script
-      defer
-      src="https://www.googletagmanager.com/gtag/js?id=UA-179511028-1"
-    ></script>
-
-    <script defer>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-179511028-1");
-    </script>
-
-    <!-- <script defer src="/js/p5.js"></script> -->
   </head>
 
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <body
+    data-spy="scroll"
+    data-target=".site-navbar-target"
+    data-offset="300"
+    style="width: 105vw"
+  >
     <div id="overlayer"></div>
     <div class="loader">
       <div class="spinner-border" role="status">
@@ -106,9 +95,10 @@
 
       <header
         class="site-navbar js-sticky-header site-navbar-target"
+        style="width: 100vw"
         role="banner"
       >
-        <div class="container">
+        <div class="container" style="width: 100vw">
           <div class="row align-items-center position-relative">
             <div class="site-logo">
               <a href="index.html" class="text-black"
@@ -159,7 +149,7 @@
           class="site-section-cover overlay img-bg-section cdn-large-img cdn-mobile"
           id="profileImg"
         >
-          <div class="container">
+          <div class="container" width="100%">
             <div
               class="row align-items-center justify-content-center text-center"
             >
@@ -173,13 +163,12 @@
                 >
                   Full Stack Software Developer and Hardware Developer
                 </p>
-
                 <p data-aos="fade-up" data-aos-delay="200">
                   <a
                     href="#contact-section"
                     class="btn btn-primary border-w-2 btn-md"
-                    >Get in touch</a
-                  >
+                    >Get in touch
+                  </a>
                 </p>
               </div>
             </div>
@@ -203,7 +192,6 @@
                 >
                   Full Stack Software Developer and Hardware Developer
                 </p>
-
                 <p data-aos="fade-up" data-aos-delay="200">
                   <a
                     href="#contact-section"
@@ -223,12 +211,6 @@
             <div class="col-md-7 text-center">
               <div class="block-heading-1" data-aos="fade-up" data-aos-delay="">
                 <h2>Skills</h2>
-                <!-- <p>This is a highlighting of the skills I have developed</p> -->
-                <!-- <img
-                  id="tracker"
-                  alt=""
-                  src="https://etvps.tk/tracker/api/v1/openimage/idwebsite"
-                /> -->
               </div>
             </div>
           </div>
@@ -511,10 +493,6 @@
           <div class="col-md-7 text-center">
             <div class="block-heading-1" data-aos="fade-up" data-aos-delay="">
               <h2>Projects</h2>
-              <!-- <p>
-                This is a range of extra projects highlighting my skills in
-                various fields
-              </p> -->
             </div>
           </div>
         </div>
@@ -650,39 +628,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="site-section" id="conway-section">
-        <div class="container">
-          <div class="row" id="conway"></div>
-          <p></p>
-          <div class="row">
-            <p
-              data-aos="fade-up"
-              data-aos-delay="200"
-              style="padding-left: 20px"
-            >
-              <a
-                onclick="defaultGrid()"
-                class="btn btn-outline-white border-w-2 btn-md"
-                >Reset</a
-              >
-            </p>
-            <p
-              data-aos="fade-up"
-              data-aos-delay="200"
-              style="padding-left: 20px"
-            >
-              <a
-                onclick="pauseToggle()"
-                class="btn btn-outline-white border-w-2 btn-md"
-                id="pauseBtn"
-                >Pause</a
-              >
-            </p>
-          </div>
-        </div>
-      </div> -->
-
       <div class="site-section" id="projects-extra-section">
         <div class="container">
           <div class="row">
@@ -1048,7 +993,6 @@
               data-aos-delay=""
             >
               <div class="block-heading-1">
-                <!-- <span>Get In Touch</span> -->
                 <h2>Contact Me</h2>
               </div>
             </div>
@@ -1112,7 +1056,6 @@
               </div>
             </div>
 
-            <!--change to col-lg-3-->
             <div
               class="col-lg-3 ml-auto"
               data-aos="fade-up"
