@@ -62,7 +62,7 @@ function addForegroundImage(parameters) {
 var large = [
   document.getElementsByClassName("cdn-large-img"),
   setWidth(100),
-  "q_auto,c_scale",
+  "q_100,c_scale",
   setHeight(50)
 ];
 //medium images (55%)
