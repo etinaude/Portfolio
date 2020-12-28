@@ -7,7 +7,7 @@
 
   [plugins.inputs]
   buildDir = "./"
-  filePath = "./sitemap.xml"
+  filePath = "baseUrl"
 
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"
