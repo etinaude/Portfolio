@@ -50,6 +50,10 @@
         console.log("Service worker can not be registered on this device");
       }
     </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
   </head>
   <body
     data-spy="scroll"
@@ -140,7 +144,7 @@
                 <h1 data-aos="fade-up" data-aos-delay=""></h1>
                 <h1 data-aos="fade-up" data-aos-delay="">Hi I'm Etienne</h1>
                 <p data-aos="fade-up" data-aos-delay="100">
-                  Full Stack Software Developer and Hardware Developer
+                  A Full Stack Developer, Hardware Developer and Contractor
                 </p>
                 <p data-aos="fade-up" data-aos-delay="200">
                   <a
@@ -164,7 +168,7 @@
               <div class="col-md-12 col-lg-8">
                 <h1 data-aos="fade-up" data-aos-delay="">Hi I'm Etienne</h1>
                 <p data-aos="fade-up" data-aos-delay="100">
-                  Full Stack Software Developer and Hardware Developer
+                  A Full Stack Developer, Hardware Developer and Contractor
                 </p>
                 <p data-aos="fade-up" data-aos-delay="200">
                   <a
@@ -202,7 +206,7 @@
                     src=""
                   />
                 </div>
-                <h3 class="mb-3 text-white">Node Js</h3>
+                <h3 class="mb-3 text-white">Node JS</h3>
                 I have created an
                 <a
                   target="_blank"
@@ -323,7 +327,7 @@
                   rel="noreferrer"
                   href="https://github.com/etinaude/"
                   >Github</a
-                >, Bitbucket and CI/CD integration tools such as Travis
+                >, Bitbucket and CI/CD integration tools such as Travis CI
               </div>
             </div>
             <div
@@ -853,7 +857,7 @@
                   />
                 </figure>
                 <h3 class="font-size-20 text-black">Science Scholars</h3>
-                Stream in Science Scholars focusing of advance research
+                Stream in Science Scholars focusing on advanced research
               </div>
             </div>
           </div>
@@ -937,8 +941,8 @@
           </div>
           <div class="row">
             <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="100">
-              <form action="mailto:etinaude@gmail.com" method="post"
-              enctype=”multipart/form-data” name=”EmailForm” />
+              <form name="EmailForm" action="mailto:etinaude@gmail.com"
+              method="post" enctype=”multipart/form-data” id="EmailForm" />
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
                   <input
@@ -985,6 +989,7 @@
                     style="background-color: #49adff"
                     value="Send Message"
                   />
+                  <!-- onclick="submitEmail()" -->
                 </div>
               </div>
             </div>

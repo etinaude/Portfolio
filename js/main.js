@@ -128,9 +128,9 @@ jQuery(document).ready(function ($) {
     });
     $("#amount").val(
       "$" +
-        $("#slider-range").slider("values", 0) +
-        " - $" +
-        $("#slider-range").slider("values", 1)
+      $("#slider-range").slider("values", 0) +
+      " - $" +
+      $("#slider-range").slider("values", 1)
     );
   };
   // siteSliderRange();
@@ -196,11 +196,11 @@ jQuery(document).ready(function ($) {
       var $this = $(this).html(
         event.strftime(
           "" +
-            '<span class="countdown-block"><span class="label">%w</span> weeks </span>' +
-            '<span class="countdown-block"><span class="label">%d</span> days </span>' +
-            '<span class="countdown-block"><span class="label">%H</span> hr </span>' +
-            '<span class="countdown-block"><span class="label">%M</span> min </span>' +
-            '<span class="countdown-block"><span class="label">%S</span> sec</span>'
+          '<span class="countdown-block"><span class="label">%w</span> weeks </span>' +
+          '<span class="countdown-block"><span class="label">%d</span> days </span>' +
+          '<span class="countdown-block"><span class="label">%H</span> hr </span>' +
+          '<span class="countdown-block"><span class="label">%M</span> min </span>' +
+          '<span class="countdown-block"><span class="label">%S</span> sec</span>'
         )
       );
     });
@@ -287,3 +287,18 @@ jQuery(document).ready(function ($) {
   };
   counter();
 });
+
+
+
+// function submitEmail() {
+//   var form = document.getElementById("EmailForm");
+
+//   // form.contact_number.value = Math.random() * 100000 | 0;
+//   // these IDs from the previous steps
+//   emailjs.sendForm('contact_service', 'EmailForm', form)
+//     .then(function () {
+//       console.log('SUCCESS!');
+//     }, function (error) {
+//       console.log('FAILED...', error);
+//     });
+// }
