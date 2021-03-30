@@ -31,6 +31,6 @@
 
   # optional, fails build when a category is below a threshold
   [plugins.inputs.thresholds]
-    accessibility = 0.85
-    best-practices = 0.85
-    seo = 0.85
+    accessibility = 0.75
+    best-practices = 0.75
+    seo = 0.75
