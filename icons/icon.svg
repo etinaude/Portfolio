@@ -14,7 +14,7 @@
    id="svg8"
    inkscape:version="1.0.1 (1.0.1+r73)"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="/home/etienne/Pictures/icons/no back.png"
+   inkscape:export-filename="/home/etienne/Documents/git/Portfolio/icons/icon.png"
    inkscape:export-xdpi="46.309296"
    inkscape:export-ydpi="46.309296">
   <defs
@@ -137,9 +137,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1171031"
-     inkscape:cx="65.347904"
-     inkscape:cy="252.05463"
+     inkscape:zoom="0.27927578"
+     inkscape:cx="91.754327"
+     inkscape:cy="848.60718"
      inkscape:document-units="mm"
      inkscape:current-layer="g6105-1"
      inkscape:document-rotation="0"
@@ -161,7 +161,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -194,15 +194,15 @@
        inkscape:export-xdpi="14.818977"
        inkscape:export-ydpi="14.818977">
       <rect
-         style="fill:#222222;fill-opacity:1;stroke:none;stroke-width:16.4414;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:19.1622"
+         style="fill:#222222;fill-opacity:1;stroke:none;stroke-width:61.6553;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:19.1622"
          id="rect873"
-         width="247.89922"
-         height="247.89922"
-         x="-4401.1816"
+         width="929.62201"
+         height="929.62201"
+         x="-4399.2837"
          y="-7.3976989" />
       <g
          id="g13190-0-5-8-4"
-         transform="matrix(1.2447727,0,0,1.2447727,-3285.8912,-1581.0092)"
+         transform="matrix(4.6678976,0,0,4.6678976,-217.94409,-5915.5551)"
          style="fill:#49adff;fill-opacity:1">
         <g
            id="g12586-6-3-0-2-74-9"
