@@ -288,7 +288,8 @@ jQuery(document).ready(function ($) {
   counter();
 });
 
-
+console.clear()
+console.log("version - %c1.0", "color:blue;font-weight:bold;")
 
 // function submitEmail() {
 //   var form = document.getElementById("EmailForm");

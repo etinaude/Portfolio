@@ -1052,3 +1052,8 @@ body {
 .center * {
   margin-bottom: 20px;
 }
+
+.icon {
+  width: 60px;
+  margin-right: 20px;
+}
