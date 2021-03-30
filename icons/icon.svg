@@ -7,16 +7,16 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="120.12905mm"
-   height="120mm"
-   viewBox="0 0 120.12905 120"
+   width="450mm"
+   height="450mm"
+   viewBox="0 0 450 450"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (1.0.1+r73)"
    sodipodi:docname="icon.svg"
    inkscape:export-filename="/home/etienne/Documents/git/Portfolio/icons/icon.png"
-   inkscape:export-xdpi="46.309296"
-   inkscape:export-ydpi="46.309296">
+   inkscape:export-xdpi="28.209999"
+   inkscape:export-ydpi="28.209999">
   <defs
      id="defs2">
     <rect
@@ -138,14 +138,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.27927578"
-     inkscape:cx="91.754327"
-     inkscape:cy="848.60718"
+     inkscape:cx="88.281566"
+     inkscape:cy="722.12827"
      inkscape:document-units="mm"
-     inkscape:current-layer="g6105-1"
+     inkscape:current-layer="g909"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1019"
+     inkscape:window-height="1018"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -161,7 +161,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -169,7 +169,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-229.29603,-14.035006)">
+     transform="translate(-230.21486,-47.499218)">
     <text
        xml:space="preserve"
        id="text888"
@@ -196,14 +196,8 @@
       <g
          id="g909">
         <g
-           id="g895">
-          <rect
-             style="fill:#222222;fill-opacity:1;stroke:none;stroke-width:61.6553;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:19.1622"
-             id="rect873"
-             width="929.62201"
-             height="929.62201"
-             x="-4399.2837"
-             y="-7.3976989" />
+           id="g895"
+           transform="translate(0,74.335353)">
           <g
              id="g12586-6-3-0-2-74-9"
              transform="matrix(-0.90579223,0,0,0.90579223,-5031.2341,1.6194033)"
