@@ -33,4 +33,4 @@
   [plugins.inputs.thresholds]
     accessibility = 0.80
     best-practices = 0.80
-    seo = 0.80
+    seo = 0.70
