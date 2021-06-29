@@ -39,7 +39,7 @@
     <script defer>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-          .register("/service-worker.js")
+          .register("./service-worker.js")
           .then(function (reg) {
             console.log("Successfully registered. Scope is " + reg.scope);
           })
@@ -87,7 +87,8 @@
               <a href="index.html" class="text-black"
                 ><span class="text-primary"
                   ><span
-                    ><img src="icons/icon.png" class="icon" />etinaude dev</span
+                    ><img src="/assets/icons/icon.png" class="icon" />etinaude
+                    dev</span
                   ></span
                 ></a
               >
@@ -170,7 +171,7 @@
         <div class="center">
           <h1 data-aos="fade-up" data-aos-delay="">Hi I'm Etienne</h1>
           <h2 data-aos="fade-up" data-aos-delay="100">
-            A Hardware and Product Developer.
+            A Fullstack, Hardware and Product Developer.
           </h2>
           <p data-aos="fade-up" data-aos-delay="200">
             <a href="#contact-section" class="btn btn-primary border-w-2 btn-md"
@@ -290,6 +291,7 @@
           </div>
         </div>
       </div>
+
       <div class="site-section" id="skills-section">
         <div class="container">
           <div class="row mb-5 justify-content-center">
@@ -308,15 +310,22 @@
               <div class="block__35630">
                 <div class="icon mb-3">
                   <img
-                    class="icon-img"
+                    class="cdn-icon-img"
                     alt="icon"
-                    src="/assets/icons/3dImg.svg"
+                    id="icon/nodeImg.svg"
+                    src=""
                   />
                 </div>
-                <h3 class="mb-3 text-white">Fusion 360</h3>
-                I have designed a range of projects using Fusion 360 for 3D CAD.
-                Currently I am working on a automated zen garden using Fusion
-                360 for components.
+                <h3 class="mb-3 text-white">Node JS</h3>
+                I have created an
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/natisha99/9spokes"
+                  >Excel add-on</a
+                >
+                which uses APIs to retrieve public data about SME from various
+                sources
               </div>
             </div>
             <div
@@ -327,14 +336,15 @@
               <div class="block__35630">
                 <div class="icon mb-3">
                   <img
-                    class="icon-img"
+                    class="cdn-icon-img"
                     alt="icon"
-                    src="/assets/icons/inkscapeImg.svg"
+                    id="icon/angularImg.svg"
+                    src=""
                   />
                 </div>
-                <h3 class="mb-3 text-white">Inkscape & Illustrator</h3>
-                I routinely design things in both Inkscape and Adobe Illustrator
-                for 2D CAD mainly focussing on technical drawings.
+                <h3 class="mb-3 text-white">Angular</h3>
+                I have created multiple web apps and websites using angular and
+                the angular materials library
               </div>
             </div>
             <div
@@ -345,18 +355,15 @@
               <div class="block__35630">
                 <div class="icon mb-3">
                   <img
-                    class="icon-img"
+                    class="cdn-icon-img"
                     alt="icon"
-                    src="/assets/icons/easyEDA.svg"
+                    id="icon/ionicImg.svg"
+                    src=""
                   />
                 </div>
-                <h3 class="mb-3 text-white">Easy EDA</h3>
-                I use easy EDA to produce electronics designs such as the
-                <a
-                  href="https://easyeda.com/editor#id=acc808495626471597d6a2b9eac3a03b|8f7f3fe5fee74a0d841b159a67674db5"
-                >
-                  worlds smallest keyboard</a
-                >
+                <h3 class="mb-3 text-white">Ionic</h3>
+                I am currently working on an Ionic-angular mobile app which uses
+                a wide range of ionic features
               </div>
             </div>
             <div
@@ -391,11 +398,22 @@
             >
               <div class="block__35630">
                 <div class="icon mb-3">
-                  <img class="icon-img" alt="icon" src="/assets/icons/pi.svg" />
+                  <img
+                    class="icon-img"
+                    alt="icon"
+                    id="icon/arduinoImg.svg"
+                    src="/assets/icons/ardiunoImg.svg"
+                  />
                 </div>
                 <h3 class="mb-3 text-white">Embedded Systems</h3>
-                I have created various projects using Raspberry PIs and Orange
-                PIs such as a the a stand alone kiosk known as a "shwoop boop"
+                I have created various projects using Arduinos, Raspberry PIs
+                and Orange PIs such as a
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/etinaude/Decimal-Clock"
+                  >decimal clock</a
+                >
               </div>
             </div>
             <div
@@ -408,13 +426,18 @@
                   <img
                     class="icon-img"
                     alt="icon"
+                    id="icon/gitImg.svg"
                     src="/assets/icons/gitImg.svg"
                   />
                 </div>
-                <h3 class="mb-3 text-white">Workflows</h3>
-                I have extensive knowledge of different workflows such as agile
-                and waterfall as well as workflow management tools such as git,
-                jira, trello etc
+                <h3 class="mb-3 text-white">Git</h3>
+                I have extensive knowledge of Git,
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/etinaude/"
+                  >Github</a
+                >, Bitbucket.
               </div>
             </div>
             <div
@@ -425,13 +448,15 @@
               <div class="block__35630">
                 <div class="icon mb-3">
                   <img
-                    class="icon-img"
+                    class="cdn-icon-img"
                     alt="icon"
-                    src="/assets/icons/laser.svg"
+                    id="icon/3dImg.svg"
+                    src=""
                   />
                 </div>
-                <h3 class="mb-3 text-white">Laser Cutters</h3>
-                I am experienced using and designing for Laser cutters.
+                <h3 class="mb-3 text-white">UI/UX</h3>
+                I'm experienced in designing for providing a great user
+                experience by creating more engaging designs.
               </div>
             </div>
             <div
@@ -442,14 +467,21 @@
               <div class="block__35630">
                 <div class="icon mb-3">
                   <img
-                    class="icon-img"
+                    class="cdn-icon-img"
                     alt="icon"
-                    src="/assets/icons/ardiunoImg.svg"
+                    id="icon/inkscapeImg.svg"
+                    src=""
                   />
                 </div>
-                <h3 class="mb-3 text-white">Micro processors</h3>
-                I have completed a range of projects using micro processors such
-                as Arduinos and Espressif Systems
+                <h3 class="mb-3 text-white">Design</h3>
+                I have experience using a range of
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/etinaude/Maker-Stuff"
+                  >design tools</a
+                >
+                for web design and 2D design
               </div>
             </div>
             <div
@@ -466,9 +498,9 @@
                     src=""
                   />
                 </div>
-                <h3 class="mb-3 text-white">3D printers</h3>
-                I have years of experience using a range of 3D printers
-                including FDM and SLA printers
+                <h3 class="mb-3 text-white">CD/CI</h3>
+                I have experience working with continuous integration and
+                deployment with tools such as Travis.
               </div>
             </div>
           </div>
@@ -510,9 +542,9 @@
                 >
                   <div class="block-counter-1">
                     <span class="number text-primary"
-                      ><span data-number="20">0</span><span>+</span></span
+                      ><span data-number="5">0</span><span>+</span></span
                     >
-                    <span class="caption">Hardware projects</span>
+                    <span class="caption">Web apps</span>
                   </div>
                 </div>
                 <div
@@ -522,9 +554,9 @@
                 >
                   <div class="block-counter-1">
                     <span class="number text-primary"
-                      ><span data-number="10">0</span><span>+</span></span
+                      ><span data-number="1000">0</span><span>+</span></span
                     >
-                    <span class="caption">Robots</span>
+                    <span class="caption">Commits</span>
                   </div>
                 </div>
               </div>
@@ -582,12 +614,11 @@
             <div class="row d-flex no-gutters align-items-stretch">
               <a
                 class="col-12 col-lg-6 block__73422 order-lg-2 cdn-medium-img"
-                id="decimalClockImg"
+                id="TKDPImg"
                 data-aos="fade-right"
                 data-aos-delay=""
                 target="_blank"
                 rel="noreferrer"
-                href="https://github.com/natisha99/9spokes"
               >
               </a>
               <div
@@ -596,20 +627,11 @@
                 data-aos-delay=""
               >
                 <h2 class="mb-3 text-primary">
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://github.com/etinaude/Decimal-Clock"
-                    >Decimal Clock</a
-                  >
+                  <a target="_blank" rel="noreferrer">Te Kaha</a>
                 </h2>
                 <p>
-                  This is an Arduino project which displays time in a decimal
-                  time system as well as the standard time system
-                </p>
-                <p>
-                  The Decimal system is based heavily off the original metric
-                  system
+                  Dashboard application for Te Kaha to improve the workflow of
+                  their staff and creating a platform for Rangatahi
                 </p>
                 <p></p>
                 <p></p>
@@ -622,12 +644,11 @@
             <div class="row d-flex no-gutters align-items-stretch">
               <a
                 class="col-12 col-lg-6 block__73422 cdn-medium-img"
-                id="sandwhichImg"
+                id="unleashAppImg"
                 data-aos="fade-right"
                 data-aos-delay=""
                 target="_blank"
                 rel="noreferrer"
-                href="https://github.com/natisha99/9spokes"
               >
               </a>
               <div
@@ -636,18 +657,13 @@
                 data-aos-delay=""
               >
                 <h2 class="mb-3 text-primary">
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.bbc.com/news/world-asia-51171834"
-                    >Earth Sandwich</a
-                  >
+                  <a target="_blank" rel="noreferrer">Trainings App</a>
                 </h2>
                 <p></p>
-                <p>I made an earth Sandwich!</p>
                 <p>
-                  This was reported in by over 250 media outlets including the
-                  BBC, NZ Herald, PBS, fox, and Popular Mechanics
+                  I worked on creating a dashboard to help the staff members of
+                  Unleash Space work more efficiently for logging members
+                  attendance.
                 </p>
                 <p></p>
                 <p></p>
