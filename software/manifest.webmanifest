@@ -1,0 +1,29 @@
+{
+  "short_name": "etinaude",
+  "name": "Etienne Naude Portfolio",
+  "description": "etienne naude portfolio website",
+  "start_url": "/offline/offline-page.html",
+  "version": "1",
+  "manifest_version": "1",
+  "display": "fullscreen",
+  "background_color": "#222222",
+  "theme_color": "#0080ff",
+  "orientation": "landscape-primary",
+  "lang": "en-US",
+  "categories": [
+    "portfolio",
+    "portfolio website",
+    "etinaude",
+    "Etienne Naude",
+    "etinaude dev",
+    "hardware"
+  ],
+  "icons": [
+    {
+      "src": "/assets/icons/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
