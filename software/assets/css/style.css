@@ -1134,7 +1134,20 @@ body {
   line-height: 2em;
 }
 
-/* !REMOVE IN PROD  */
+/* !REMOVE IN PROD */
 .red {
   color: rgb(255, 61, 61) !important;
+}
+
+.medium-img {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 1px 1px 0px #151515;
+}
+
+.medium-img:hover {
+  transform: scale(1.5) !important;
+
+  z-index: 99;
+  box-shadow: 0px 1px 13px 2px #151515;
 }
