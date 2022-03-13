@@ -970,12 +970,11 @@ h5,
   transform: translate(-50%, -50%);
 }
 
-.cdn-icon-img,
 .icon-img {
   width: 2em;
   margin: 0.51em;
 }
-.cdn-icon-small-img,
+.icon-small-img,
 .cdn-icon-link-img {
   width: 1em;
   margin-top: -0.5em;
