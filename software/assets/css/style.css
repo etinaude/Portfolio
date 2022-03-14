@@ -186,7 +186,15 @@ h5,
 .site-footer {
   padding: 0;
   background: #333;
+  height: 100vh;
+  padding: 9em 0 1em;
 }
+
+.site-footer {
+  padding-top: 2vh;
+  height: calc(100vh - 75px);
+}
+
 @media (min-width: 768px) {
   .site-footer {
     padding: 6em 0 1em;
@@ -1142,27 +1150,23 @@ h3 {
   margin: auto;
 }
 
-.medium-image a {
+.medium-image div {
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
 }
 
-.medium-image:hover a.still {
+.medium-image:hover .still {
   display: none;
 }
 
-.medium-image:hover a.hover {
+.medium-image:hover .hover {
   display: block;
 }
 
-.medium-image a.hover {
+.medium-image .hover {
   display: none;
-}
-
-.medium-image.right {
-  place-self: end;
 }
 
 .medium-image:hover {
@@ -1182,7 +1186,7 @@ h3 {
   height: calc(100vh - 100px);
 }
 
-.skill {
+.grey-text {
   color: #aaa;
 }
 
@@ -1192,12 +1196,53 @@ h3 {
   }
 
   .project-row .text {
-    margin: 40px 40px;
+    margin: 40px 70px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .sect {
+    width: 40%;
+  }
+
+  .project-row .text {
+    margin: 40px 70px;
+  }
+}
+
+@media (min-width: 2300px) {
+  .project-row .text {
+    margin: 40px 100px;
   }
 }
 
 @media (max-width: 1412px) {
   .sect {
     width: 90%;
+  }
+}
+
+.mobile {
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+@media (max-width: 1000px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
   }
 }
