@@ -60,7 +60,6 @@
   <link rel="icon" type="image/svg" href="/assets/icons/icon.png" />
   <link rel="apple-touch-icon" href="/assets/images/icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
   <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="/assets/css/aos.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,700|Oswald:400,700" />
@@ -79,14 +78,6 @@
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
         .register("./service-worker.js")
-        .then(function (reg) {
-          console.log("Successfully registered. Scope is " + reg.scope);
-        })
-        .catch(function (error) {
-          console.log("Registering failed " + error);
-        });
-    } else {
-      console.log("Service worker can not be registered on this device");
     }
   </script>
 </head>
@@ -99,31 +90,18 @@
     </div>
   </div>
   <div class="site-wrap" id="home-section">
-    <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div>
     <header class="site-navbar js-sticky-header site-navbar-target" style="width: 100vw" role="banner">
       <div class="container" style="width: 100vw">
         <div class="row align-items-center position-relative">
           <div class="site-logo">
-            <a href="index.html" class="text-black"><span class="text-primary"><span><img src="/assets/icons/icon.png"
-                    class="icon" />etinaude
-                  dev</span></span></a>
+            <a href="index.html" class="text-black"><span class="text-primary"><img loading="lazy"
+                  src="/assets/icons/icon.png" class="icon" />etinaude
+                dev</span></a>
           </div>
+
           <div class="col-12">
             <nav class="site-navigation text-right ml-auto" role="navigation">
-              <ul class="
-                    site-menu
-                    main-menu
-                    js-clone-nav
-                    ml-auto
-                    d-none d-lg-block
-                  ">
+              <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                 <li>
                   <a href="#home-section" class="nav-link">Home</a>
                 </li>
@@ -145,21 +123,16 @@
               </ul>
             </nav>
           </div>
-          <div class="toggle-button d-inline-block d-lg-none">
-            <a href="#" class="site-menu-toggle py-5 js-menu-toggle text-white"><span class="icon-menu h3"></span></a>
-          </div>
         </div>
       </div>
     </header>
-    <div class="
-            site-section-cover
-            overlay
-            img-bg-section"
-      style="background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/thoughtfulImg')">
-      <div class="container" width="100%">
-        <div class="row align-items-center justify-content-center text-center"></div>
-      </div>
-    </div>
+    <div class="desktop site-section-cover overlay img-bg-section" style="
+          background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/thoughtfulImg');
+        "></div>
+
+    <div class="mobile site-section-cover overlay img-bg-section" style="
+          background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/portraitImg');
+        "></div>
 
     <div class="main-text">
       <div class="center">
@@ -168,7 +141,7 @@
           A Fullstack Developer focussing on great user experiences.
         </h2>
         <p data-aos="fade-up" data-aos-delay="200">
-          <a href="#contact-section" class="btn btn-primary  btn-md">Get in touch</a>
+          <a href="#contact-section" class="btn btn-primary btn-md">Get in touch</a>
         </p>
       </div>
     </div>
@@ -183,71 +156,86 @@
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="skill">
+          <div class="grey-text">
             <div class="icon mb-3">
-              <img class="icon-img" src="https://res.cloudinary.com/etienne-naude/image/upload/icon/nodeImg" />
+              <img loading="lazy" class="icon-img"
+                src="https://res.cloudinary.com/etienne-naude/image/upload/icon/nodeImg" />
             </div>
             <h3 class="mb-3 text-white">Node JS</h3>
             I have created an
             <a target="_blank" rel="noreferrer" href="https://github.com/natisha99/9spokes">Excel add-on</a>
             which uses APIs to retrieve public data about SME from various
-            sources
+            sources.
           </div>
         </div>
+
         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="">
-          <div class="skill">
+          <div class="grey-text">
             <div class="icon mb-3">
-              <img class="icon-img" src="https://res.cloudinary.com/etienne-naude/image/upload/icon/angularImg" />
+              <img loading="lazy" class="icon-img"
+                src="https://res.cloudinary.com/etienne-naude/image/upload/icon/angularImg" />
             </div>
             <h3 class="mb-3 text-white">Angular</h3>
             I have created multiple web apps and websites using angular and
-            the angular materials library. One example is <a href="https://github.com/Unleash-Space/Training-app">a
-              web app to track the trainings</a> of students and staff members at <a
-              href="https://www.cie.auckland.ac.nz/unleash-space/">Unleash Space.</a>
+            the angular materials library. One example is
+            <a href="https://github.com/Unleash-Space/Training-app">a web app to track the trainings</a>
+            of students and staff members at
+            <a href="https://www.cie.auckland.ac.nz/unleash-space/">Unleash Space.</a>
           </div>
         </div>
+
         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="skill">
+          <div class="grey-text">
             <div class="icon mb-3">
-              <img class="icon-img" src="https://res.cloudinary.com/etienne-naude/image/upload/icon/ionicImg" />
+              <img loading="lazy" class="icon-img"
+                src="https://res.cloudinary.com/etienne-naude/image/upload/icon/ionicImg" />
             </div>
             <h3 class="mb-3 text-white">Ionic</h3>
-            I am currently working on an Ionic-angular mobile app which uses
-            a wide range of ionic features.
+            I am currently working on an Ionic-angular mobile app which uses a
+            wide range of ionic features.
           </div>
         </div>
+
         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="">
-          <div class="skill">
+          <div class="grey-text">
             <div class="icon mb-3">
-              <img class="icon-img" src="https://res.cloudinary.com/etienne-naude/image/upload/icon/pythonImg" />
+              <img loading="lazy" class="icon-img"
+                src="https://res.cloudinary.com/etienne-naude/image/upload/icon/pythonImg" />
             </div>
             <h3 class="mb-3 text-white">Python</h3>
-            I have worked on a few Python based projects such as <a target="_blank" rel="noreferrer"
-              href="https://github.com/etinaude/Zona">Zona</a> - a occupancy tracker designed for the UoA Design space.
+            I have worked on a few Python based projects such as
+            <a target="_blank" rel="noreferrer" href="https://github.com/etinaude/Zona">Zona</a>
+            - a occupancy tracker designed for the UoA Design space.
           </div>
         </div>
+
         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="skill">
+          <div class="grey-text">
             <div class="icon mb-3">
-              <img class="icon-img" src="https://res.cloudinary.com/etienne-naude/image/upload/icon/ardiunoImg" />
+              <img loading="lazy" class="icon-img"
+                src="https://res.cloudinary.com/etienne-naude/image/upload/icon/ardiunoImg" />
             </div>
             <h3 class="mb-3 text-white">Embedded Systems</h3>
-            I have created various projects using Arduinos, Raspberry PIs
-            and Orange PIs such as a
+            I have created various projects using Arduinos, Raspberry PIs and
+            Orange PIs such as a
             <a target="_blank" rel="noreferrer" href="https://github.com/etinaude/Decimal-Clock">decimal clock.</a>
           </div>
         </div>
+
         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="skill">
+          <div class="grey-text">
             <div class="icon mb-3">
-              <img class="icon-img" src="https://res.cloudinary.com/etienne-naude/image/upload/icon/gitImg" />
+              <img loading="lazy" class="icon-img"
+                src="https://res.cloudinary.com/etienne-naude/image/upload/icon/gitImg" />
             </div>
             <h3 class="mb-3 text-white">CI/CD</h3>
             I have extensively used Git,
             <a target="_blank" rel="noreferrer" href="https://github.com/etinaude/">Github</a>, Bitbucket and other
-            tools for continuous integration such as Travis CI and Jenkins.
+            tools for continuous integration such as
+            Travis CI and Jenkins.
           </div>
         </div>
       </div>
@@ -256,32 +244,30 @@
 
   <div class="site-section" id="about-section">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="row">
-            <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="">
-              <div class="block-counter-1">
-                <span class="number text-primary"><span data-number="7">0</span><span>+</span></span>
-                <span class="caption">Years of Experience</span>
-              </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="">
+            <div class="block-counter-1">
+              <span class="number text-primary"><span data-number="7">0</span><span>+</span></span>
+              <span class="caption">Years of Experience</span>
             </div>
-            <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-              <div class="block-counter-1">
-                <span class="number text-primary"><span data-number="30">0</span><span>+</span></span>
-                <span class="caption">Open Source Projects</span>
-              </div>
+          </div>
+          <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="block-counter-1">
+              <span class="number text-primary"><span data-number="30">0</span><span>+</span></span>
+              <span class="caption">Open Source Projects</span>
             </div>
-            <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="block-counter-1">
-                <span class="number text-primary"><span data-number="10">0</span><span>+</span></span>
-                <span class="caption">Web apps</span>
-              </div>
+          </div>
+          <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="block-counter-1">
+              <span class="number text-primary"><span data-number="10">0</span><span>+</span></span>
+              <span class="caption">Web apps</span>
             </div>
-            <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="block-counter-1">
-                <span class="number text-primary"><span data-number="3000">0</span><span>+</span></span>
-                <span class="caption">Commits</span>
-              </div>
+          </div>
+          <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="block-counter-1">
+              <span class="number text-primary"><span data-number="3000">0</span><span>+</span></span>
+              <span class="caption">Commits</span>
             </div>
           </div>
         </div>
@@ -302,104 +288,102 @@
       <div class="project-row" data-aos-delay=""
         onclick="openLink('https://appadvice.com/app/habits-messenger/1550723158')">
         <div class="text">
-          <h2 class="red">
-            HABITS Messenger
-          </h2>
+          <h2 class="red">HABITS Messenger</h2>
           <p>
-            I am part of a research team which created an interactive
-            Ionic chatbot app to help struggling teen with depression and
-            anxiety.
+            I am part of a research team which created an interactive Ionic
+            chatbot app to help struggling teen with depression and anxiety.
           </p>
-          <p>I am currently heading front end development for
-            this project, using Ionic and Angular
+          <p>
+            I am currently heading front end development for this project,
+            using Ionic and Angular
           </p>
         </div>
 
         <div class="medium-image">
-          <a class="still"
-            style="background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/habitsImg')">
-          </a>
-          <a class="hover"
-            style="background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/habitsImg')">
-          </a>
+          <div class="still" style="
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/habitsImg');
+              ">
+          </div>
+          <div class="hover" style="
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/habitsImg');
+              ">
+          </div>
         </div>
       </div>
 
       <div class="project-row" data-aos-delay="" onclick="openLink('https://github.com/etinaude/zona')">
         <div class="medium-image">
-          <a class="still"
-            style="background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/TKDPImg')">
-          </a>
-          <a class="hover"
-            style="background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/TKDPImg')">
-          </a>
+          <div class="still" style="
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/TKDPImg');
+              ">
+          </div>
+          <div class="hover" style="
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/TKDPImg');
+              ">
+          </div>
         </div>
 
         <div class="text">
-          <h2 class="red">
-            Te Kaha
-          </h2>
+          <h2 class="red">Te Kaha</h2>
           <p>
-            Dashboard application for Te Kaha to improve the workflow of
-            their staff and creating a platform for Rangatahi
+            Dashboard application for Te Kaha to improve the workflow of their
+            staff and creating a platform for Rangatahi
           </p>
-          <p>Created with Angular and Material Libraries
-          </p>
+          <p>Created with Angular and Material Libraries</p>
         </div>
       </div>
 
       <div class="project-row" data-aos-delay="" onclick="openLink('https://github.com/etinaude/zona')">
         <div class="text">
-          <h2 class="red">
-            Zona
-          </h2>
+          <h2 class="red">Zona</h2>
           <p>
-            A computer vision tracking system to count the occupancy of the UoA deign space.
+            A computer vision tracking system to count the occupancy of the
+            UoA deign space.
           </p>
-          <p>Made with OpenCV, Flask, React and an esp32-cam
-          </p>
+          <p>Made with OpenCV, Flask, React and an esp32-cam</p>
         </div>
 
         <div class="medium-image">
-          <a class="still"
-            style="background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/zonaImg')">
-          </a>
-          <a class="hover"
-            style="background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/zonaImg')">
-          </a>
+          <div class="still" style="
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/zonaImg');
+              ">
+          </div>
+          <div class="hover" style="
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/zonaImg');
+              ">
+          </div>
         </div>
       </div>
 
       <div class="project-row" data-aos-delay="" onclick="openLink('https://github.com/etinaude/zona')">
         <div class="medium-image">
-          <a class="still"
-            style="background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/decimalClockImg')">
-          </a>
-          <a class="hover"
-            style="background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/cellularAutomationImg')">
-          </a>
+          <div class="still" style="
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/decimalClockImg');
+              ">
+          </div>
+          <div class="hover" style="
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/cellularAutomationImg');
+              ">
+          </div>
         </div>
 
         <div class="text">
-          <h2 class="red">
-            Embedded Systems
-          </h2>
+          <h2 class="red">Embedded Systems</h2>
+          <p>A series of embedded systems and hardware projects.</p>
           <p>
-            A series of embedded systems and hardware projects.
-          </p>
-          <p>Some examples of this are a Decimal clock - made with Arduino, a robot arm made with marlin and an esp-32
+            Some examples of this are a Decimal clock - made with Arduino, a
+            robot arm made with marlin and an esp-32
           </p>
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="site-section" id="projects-extra-section">
     <div class="cards sect">
       <div class="card" onclick="openLink('https://github.com/etinaude/cellular-automation')">
         <div class="image-container">
-          <img alt="Cellular Automation Img"
+          <img loading="lazy" alt="Cellular Automation Img"
             src="https://res.cloudinary.com/etienne-naude/image/upload/cellularAutomationImg" />
         </div>
         <h3>Cellular Automata</h3>
@@ -408,10 +392,10 @@
 
       <div class="card" onclick="openLink('https://github.com/etinaude/sandtable')">
         <div class="image-container">
-          <img alt="cube Img" class="still"
+          <img loading="lazy" alt="cube Img" class="still"
             src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/sandtableImg" />
-          <img alt="cube Img" class="animated" src="https://res.cloudinary.com/etienne-naude/image/upload/tableGif" />
-
+          <img loading="lazy" alt="cube Img" class="animated"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/tableGif" />
         </div>
         <h3>Automated Zen Garden</h3>
         An automated zen garden using a core XY mechanism
@@ -419,9 +403,9 @@
 
       <div class="card" onclick="openLink('https://des-240.etinaude.dev/')">
         <div class="image-container">
-          <img alt="fertility town Img" class="still"
+          <img loading="lazy" alt="fertility town Img" class="still"
             src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/uniImg" />
-          <img alt="fertility town Img" class="animated"
+          <img loading="lazy" alt="fertility town Img" class="animated"
             src="https://res.cloudinary.com/etienne-naude/image/upload/fertGif" />
         </div>
         <h3>Birth rate Simulator</h3>
@@ -430,36 +414,33 @@
 
       <div class="card" onclick="openLink('https://github.com/etinaude/')">
         <div class="image-container">
-
-          <img alt="fertility town Img" class="still"
+          <img loading="lazy" alt="fertility town Img" class="still"
             src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/enrolmentImg" />
-          <img alt="fertility town Img" class="animated"
+          <img loading="lazy" alt="fertility town Img" class="animated"
             src="https://res.cloudinary.com/etienne-naude/image/upload/enrolGif" />
         </div>
-        <h3 class="long-text">
-          Enrolment System Prototype
-        </h3>
-        Design for a much needed improvement to the UoA enrolment
-        interface
+        <h3 class="long-text">Enrolment System Prototype</h3>
+        Design for a much needed improvement to the UoA enrolment interface
       </div>
 
       <div class="card" onclick="openLink('https://github.com/etinaude/tracker')">
         <div class="image-container">
-          <img alt="tracker Img" src="https://res.cloudinary.com/etienne-naude/image/upload/trackerImg" />
+          <img loading="lazy" alt="tracker Img"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/trackerImg" />
         </div>
         <h3>Email Tracker</h3>
-        An email tracker frontend and backend using angular by
-        inserted 0px images
+        An email tracker frontend and backend using angular by inserted 0px
+        images
       </div>
 
       <div class="card">
         <div class="image-container" onclick="openLink('https://github.com/Unleash-Space/Training-app')">
-          <img alt="zona Img" src="https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/unleashAppImg" />
+          <img loading="lazy" alt="zona Img"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/unleashAppImg" />
         </div>
         <h3>Trainings App</h3>
-        I worked on creating a dashboard to help the staff members of
-        Unleash Space work more efficiently for logging members
-        attendance.
+        I worked on creating a dashboard to help the staff members of Unleash
+        Space work more efficiently for logging members attendance.
       </div>
     </div>
   </div>
@@ -470,9 +451,9 @@
         <div class="col-md-7 text-center">
           <div class="block-heading-1" data-aos="fade-up" data-aos-delay="">
             <h2>Education</h2>
-            <h3 class="text-center">
-              A Fourth Year Computer Science Honours and Design Student at
-              the University of Auckland scheduled to finish in 2023
+            <h3 class="text-center grey-text">
+              A Fourth Year Computer Science Honours and Design Student at the
+              University of Auckland scheduled to finish in 2023
             </h3>
           </div>
         </div>
@@ -482,7 +463,8 @@
     <div class="cards sect">
       <div class="card" onclick="openLink('https://github.com/etinaude/cellular-automation')">
         <div class="image-container">
-          <img alt="top in class award" src="https://res.cloudinary.com/etienne-naude/image/upload/TopInClassImg" />
+          <img loading="lazy" alt="top in class award"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/TopInClassImg" />
         </div>
         <h3>Top In Capstone</h3>
         Top grade in the computer science capstone project
@@ -490,7 +472,7 @@
 
       <div class="card" onclick="openLink('https://github.com/etinaude/cellular-automation')">
         <div class="image-container">
-          <img alt="outstanding achievements"
+          <img loading="lazy" alt="outstanding achievements"
             src="https://res.cloudinary.com/etienne-naude/image/upload/outstandingImg" />
         </div>
         <h3 class="long-text">Outstanding Achievements</h3>
@@ -500,7 +482,7 @@
       <div class="card"
         onclick="openLink('https://www.auckland.ac.nz/en/science/study-with-us/science-scholars-programme/science-scholars.html')">
         <div class="image-container">
-          <img alt="science scholars"
+          <img loading="lazy" alt="science scholars"
             src="https://res.cloudinary.com/etienne-naude/image/upload/c_crop,h_677,w_677/v1647177838/scholImg.png" />
         </div>
         <h3>Science Scholars</h3>
@@ -524,7 +506,8 @@
       <div class="card"
         onclick="openLink('https://www.macleans.school.nz/news/cup-winners-at-senior-prizegiving-2018')">
         <div class="image-container">
-          <img alt="hannah bradshaw award" src="https://res.cloudinary.com/etienne-naude/image/upload/bradshawImg" />
+          <img loading="lazy" alt="hannah bradshaw award"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/bradshawImg" />
         </div>
         <h3 class="long-text">Hannah-Bradshaw Award</h3>
         I was awarded this for 4 years of continued volunteer work
@@ -532,23 +515,25 @@
 
       <div class="card" onclick="openLink('https://scouts.nz/queens-scout-ceremony-2021/')">
         <div class="image-container">
-          <img alt="top in class award" src="https://res.cloudinary.com/etienne-naude/image/upload/qsImg" />
+          <img loading="lazy" alt="top in class award"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/qsImg" />
         </div>
         <h3>Queen's Scout Award</h3>
-        I was one of 44 recipients of the Queen's Scout Award nation wide for the past 3 years
+        I was one of 44 recipients of the Queen's Scout Award nation wide for
+        the past 3 years
       </div>
 
       <div class="card"
         onclick="openLink('https://www.auckland.ac.nz/en/on-campus/life-on-campus/leadership-and-volunteering/co-curricular-recognition-programme/ccr-programme-awards/university-of-auckland-award.html')">
         <div class="image-container">
-          <img alt="top in class award" src="https://res.cloudinary.com/etienne-naude/image/upload/serviceImg" />
+          <img loading="lazy" alt="top in class award"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/serviceImg" />
         </div>
         <h3 class="long-text red">Distinguished Graduate</h3>
-        I was awarded the 2020 Distinguished Graduate Award for engagement and leadership in extra curricular
-        activities
+        I was awarded the 2020 Distinguished Graduate Award for engagement and
+        leadership in extra curricular activities
       </div>
     </div>
-  </div>
   </div>
 
   <footer class="site-footer">
@@ -596,25 +581,25 @@
               <span>Contact Details</span>
             </h2>
             <p>
-              <span><img alt="icon" class="icon-small-img"
+              <span><img loading="lazy" alt="icon" class="icon-small-img"
                   src="https://res.cloudinary.com/etienne-naude/image/upload/icon/small/mailImg" /></span>
               Email:
               <a href="mailto:eti@naude.dev">eti@naude.dev</a>
             </p>
             <p>
-              <span><img alt="icon" class="icon-small-img"
+              <span><img loading="lazy" alt="icon" class="icon-small-img"
                   src="https://res.cloudinary.com/etienne-naude/image/upload/icon/small/linkedinImg" /></span>
               LinkedIn:
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/etinaude/">profile</a>
             </p>
             <p>
-              <span><img alt="icon" class="icon-small-img"
+              <span><img loading="lazy" alt="icon" class="icon-small-img"
                   src="https://res.cloudinary.com/etienne-naude/image/upload/icon/small/githubImg" /></span>
               GitHub:
               <a target="_blank" rel="noreferrer" href="https://github.com/etinaude">etinaude</a>
             </p>
             <p>
-              <span><img alt="icon" class="icon-small-img"
+              <span><img loading="lazy" alt="icon" class="icon-small-img"
                   src="https://res.cloudinary.com/etienne-naude/image/upload/icon/small/phoneImg" /></span>
               Phone:
               <a href="tel:0220 464 363">0220 464 363</a>
