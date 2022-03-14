@@ -1132,8 +1132,8 @@ body {
 .card > * {
   margin-top: 15px;
 }
-
-.card > h3 {
+h2,
+h3 {
   color: #49adff;
 }
 
@@ -1147,13 +1147,13 @@ body {
   color: rgb(255, 61, 61) !important;
 }
 
-.medium-img {
+.medium-image {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 1px 1px 0px #151515;
 }
 
-.medium-img:hover {
+.medium-image:hover {
   z-index: 99;
   transform: scale(1.3) !important;
   box-shadow: 0px 1px 13px 2px #151515;
@@ -1161,4 +1161,53 @@ body {
 
 .pointer {
   cursor: pointer;
+}
+
+.project-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  cursor: pointer;
+}
+
+.project-row .text {
+  width: 35%;
+  margin: 50px 70px;
+}
+
+.medium-image {
+  width: 554px;
+  height: 313px;
+  display: flex;
+  transition: 0.2s ease;
+}
+
+.medium-image a {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.medium-image:hover a.still {
+  display: none;
+}
+
+.medium-image:hover a.hover {
+  display: block;
+}
+
+.medium-image a.hover {
+  display: none;
+}
+
+.medium-image.right {
+  place-self: end;
+}
+
+.medium-image:hover {
+  z-index: 90;
 }
