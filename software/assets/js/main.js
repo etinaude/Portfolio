@@ -288,7 +288,7 @@ jQuery(document).ready(function ($) {
   counter();
 });
 
-console.log("version - %c1.0", "color:blue;font-weight:bold;")
+console.log("version - %c1.5", "color:#49adff;font-weight:bold;")
 
 
 function openLink(link) {
