@@ -946,8 +946,8 @@ h5,
   color: white;
 }
 
-P {
-  color: #aaaaaa;
+p {
+  color: #aaa;
 }
 
 @media (max-width: 800px) {
@@ -1034,8 +1034,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: repeat(2, 100px);
   grid-gap: 20px;
-  width: 50%;
-  margin: auto;
 }
 
 .card {
@@ -1051,6 +1049,8 @@ body {
   text-align: center;
   cursor: pointer;
   box-shadow: 0px 2px 2px #151513;
+
+  color: #aaa;
 }
 
 .card:hover {
@@ -1089,6 +1089,7 @@ body {
 .card > * {
   margin-top: 15px;
 }
+
 h2,
 h3 {
   color: #49adff;
@@ -1125,8 +1126,6 @@ h3 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
-  margin: auto;
   cursor: pointer;
 }
 
@@ -1140,6 +1139,7 @@ h3 {
   height: 313px;
   display: flex;
   transition: 0.2s ease;
+  margin: auto;
 }
 
 .medium-image a {
@@ -1167,4 +1167,37 @@ h3 {
 
 .medium-image:hover {
   z-index: 90;
+}
+
+.white-text {
+  color: white;
+}
+
+.sect {
+  width: 70%;
+  margin: auto;
+}
+
+.site-section-cover.img-bg-section {
+  height: calc(100vh - 100px);
+}
+
+.skill {
+  color: #aaa;
+}
+
+@media (min-width: 1555px) {
+  .sect {
+    width: 50%;
+  }
+
+  .project-row .text {
+    margin: 40px 40px;
+  }
+}
+
+@media (max-width: 1412px) {
+  .sect {
+    width: 90%;
+  }
 }
