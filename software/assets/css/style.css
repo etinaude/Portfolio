@@ -4,50 +4,7 @@
 .font-size-20 {
   font-size: 20px;
 }
-.font-gray-5,
-.block-heading-1 span {
-  color: #b8b8b8;
-}
-.font-gray-7,
-body {
-  color: #aaaaaa;
-}
-.letter-spacing-1 {
-  letter-spacing: 0.1em;
-}
 
-.letter-spacing-2 {
-  letter-spacing: 0.2em;
-}
-
-.border-w-1 {
-  border-width: 1px;
-}
-
-.border-w-2 {
-  border-width: 2px;
-}
-
-.border-w-3 {
-  border-width: 3px;
-}
-
-.border-w-4 {
-  border-width: 4px;
-}
-
-.border-w-5 {
-  border-width: 5px;
-}
-
-.primary-black--hover {
-  background: #49adff;
-  color: #fff;
-}
-.primary-black--hover:hover {
-  background: #000;
-  color: #fff;
-}
 a,
 .text-primary {
   color: #49adff;
