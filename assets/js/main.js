@@ -288,18 +288,9 @@ jQuery(document).ready(function ($) {
   counter();
 });
 
-console.clear()
-console.log("version - %c1.0", "color:blue;font-weight:bold;")
+console.log("version - %c1.5", "color:#49adff;font-weight:bold;")
 
-// function submitEmail() {
-//   var form = document.getElementById("EmailForm");
 
-//   // form.contact_number.value = Math.random() * 100000 | 0;
-//   // these IDs from the previous steps
-//   emailjs.sendForm('contact_service', 'EmailForm', form)
-//     .then(function () {
-//       console.log('SUCCESS!');
-//     }, function (error) {
-//       console.log('FAILED...', error);
-//     });
-// }
+function openLink(link) {
+  window.open(link, '_blank');
+}

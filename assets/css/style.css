@@ -4,50 +4,7 @@
 .font-size-20 {
   font-size: 20px;
 }
-.font-gray-5,
-.block-heading-1 span {
-  color: #b8b8b8;
-}
-.font-gray-7,
-body {
-  color: #aaaaaa;
-}
-.letter-spacing-1 {
-  letter-spacing: 0.1em;
-}
 
-.letter-spacing-2 {
-  letter-spacing: 0.2em;
-}
-
-.border-w-1 {
-  border-width: 1px;
-}
-
-.border-w-2 {
-  border-width: 2px;
-}
-
-.border-w-3 {
-  border-width: 3px;
-}
-
-.border-w-4 {
-  border-width: 4px;
-}
-
-.border-w-5 {
-  border-width: 5px;
-}
-
-.primary-black--hover {
-  background: #49adff;
-  color: #fff;
-}
-.primary-black--hover:hover {
-  background: #000;
-  color: #fff;
-}
 a,
 .text-primary {
   color: #49adff;
@@ -229,10 +186,19 @@ h5,
 .site-footer {
   padding: 0;
   background: #333;
+  height: 100vh;
+  padding: 9em 0 1em;
 }
+
+.site-footer {
+  padding-top: 2vh;
+  min-height: calc(100vh - 75px);
+  height: fit-content;
+}
+
 @media (min-width: 768px) {
   .site-footer {
-    padding: 6em 0 1em;
+    padding: 0em 0 1em;
   }
 }
 
@@ -970,12 +936,11 @@ h5,
   transform: translate(-50%, -50%);
 }
 
-.cdn-icon-img,
 .icon-img {
   width: 2em;
   margin: 0.51em;
 }
-.cdn-icon-small-img,
+.icon-small-img,
 .cdn-icon-link-img {
   width: 1em;
   margin-top: -0.5em;
@@ -990,8 +955,8 @@ h5,
   color: white;
 }
 
-P {
-  color: #aaaaaa;
+p {
+  color: #aaa;
 }
 
 @media (max-width: 800px) {
@@ -1056,4 +1021,229 @@ body {
 .icon {
   width: 60px;
   margin-right: 20px;
+}
+
+.aos-init:hover {
+  transform: none !important;
+}
+
+.cell-link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+}
+
+.block-team-member-1 {
+  height: 100%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: repeat(2, 100px);
+  grid-gap: 20px;
+}
+
+.card {
+  background: #333;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px #151513;
+
+  color: #aaa;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 4px #151513;
+}
+
+.card .image-container {
+  width: 70%;
+  place-self: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 1px 1px 0px #151515;
+
+  transition: 0.5s ease;
+}
+
+.card .image-container:hover {
+  transform: scale(1.8);
+  z-index: 5;
+
+  box-shadow: 0px 1px 13px 2px #151515;
+}
+
+.card .image-container > * {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .image-container:hover .still {
+  display: none;
+}
+
+.card .image-container:not(:hover) .hover {
+  display: none;
+}
+
+.card > * {
+  margin-top: 15px;
+}
+
+h2,
+h3 {
+  color: #49adff;
+}
+
+.card > h3.long-text {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+/* !REMOVE IN PROD */
+.red {
+  color: rgb(255, 61, 61) !important;
+}
+
+.medium-image {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 1px 1px 0px #151515;
+
+  width: 554px;
+  height: 313px;
+  display: flex;
+  transition: 0.2s ease;
+  margin: auto;
+}
+
+.medium-image:hover {
+  z-index: 99;
+  transform: scale(1.3) !important;
+  box-shadow: 0px 1px 13px 2px #151515;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.project-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.project-row .text {
+  width: 35%;
+  margin: 50px 70px;
+}
+
+.medium-image > * {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.medium-image:hover .still {
+  display: none;
+}
+
+.medium-image:hover .hover {
+  display: block;
+}
+
+.medium-image .hover {
+  display: none;
+}
+
+.medium-image:hover {
+  z-index: 90;
+}
+
+.white-text {
+  color: white;
+}
+
+.sect {
+  width: 70%;
+  margin: auto;
+}
+
+.site-section-cover.img-bg-section {
+  height: calc(100vh - 100px);
+}
+
+.grey-text {
+  color: #aaa;
+}
+
+@media (min-width: 1555px) {
+  .sect {
+    width: 50%;
+  }
+
+  .project-row .text {
+    margin: 40px 70px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .sect {
+    width: 40%;
+  }
+
+  .project-row .text {
+    margin: 40px 70px;
+  }
+}
+
+@media (min-width: 2300px) {
+  .project-row .text {
+    margin: 40px 100px;
+  }
+}
+
+@media (max-width: 1412px) {
+  .sect {
+    width: 90%;
+  }
+}
+
+.mobile {
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+@media (max-width: 1000px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
 }
