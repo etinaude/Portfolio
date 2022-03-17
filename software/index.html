@@ -16,7 +16,7 @@
       "@type": "Person",
       "name": "Etienne Naude",
       "url": "https://etinaude.dev",
-      "image": "https://res.cloudinary.com/etienne-naude/image/upload/v1601787653/mobile-profileImg.png",
+      "image": "https://res.cloudinary.com/etienne-naude/image/upload/portfolio/v1601787653/mobile-profileImg.png",
       "sameAs": [
         "https://www.github.com/etinaude",
         "https://www.linkedin.com/in/etinaude/"
@@ -127,11 +127,11 @@
       </div>
     </header>
     <div class="desktop site-section-cover overlay img-bg-section" style="
-          background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/thoughtfulImg');
+          background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/portfolio/thoughtfulImg');
         "></div>
 
     <div class="mobile site-section-cover overlay img-bg-section" style="
-          background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/portraitImg');
+          background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/portfolio/portraitImg');
         "></div>
 
     <div class="main-text">
@@ -288,7 +288,7 @@
       <div class="project-row" data-aos-delay=""
         onclick="openLink('https://appadvice.com/app/habits-messenger/1550723158')">
         <div class="text">
-          <h2 class="red">HABITS Messenger</h2>
+          <h2 class="red">Headstrong Messenger</h2>
           <p>
             I am part of a research team which created an interactive Ionic
             chatbot app to help struggling teen with depression and anxiety.
@@ -300,25 +300,27 @@
         </div>
 
         <div class="medium-image">
-          <div class="still" style="
-                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/habitsImg');
-              ">
-          </div>
-          <div class="hover" style="
-                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/habitsImg');
-              ">
-          </div>
+          <picture class="still">
+            <img src="https://res.cloudinary.com/etienne-naude/image/upload/portfolio/headstrongImg"
+              alt="headstrong Img" />
+          </picture>
+          <video class="hover" playsinline autoplay muted loop>
+            <source src="https://res.cloudinary.com/etienne-naude/video/upload/portfolio/headstrongVid.webm"
+              type="video/webm">
+            <source src="https://res.cloudinary.com/etienne-naude/video/upload/portfolio/headstrongVid.mp4"
+              type="video/mp4">
+          </video>
         </div>
       </div>
 
       <div class="project-row" data-aos-delay="" onclick="openLink('https://github.com/etinaude/zona')">
         <div class="medium-image">
           <div class="still" style="
-                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/TKDPImg');
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/portfolio/teKahaImg');
               ">
           </div>
           <div class="hover" style="
-                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/TKDPImg');
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/portfolio/teKahaImg');
               ">
           </div>
         </div>
@@ -345,24 +347,30 @@
 
         <div class="medium-image">
           <div class="still" style="
-                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/zonaImg');
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/portfolio/zonaImg');
               ">
           </div>
           <div class="hover" style="
-                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/zonaImg');
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/portfolio/zonaImg');
               ">
           </div>
+
+          <video class="hover" playsinline autoplay muted loop>
+            <source src="https://res.cloudinary.com/etienne-naude/video/upload/portfolio/zonaVid.webm"
+              type="video/webm">
+            <source src="https://res.cloudinary.com/etienne-naude/video/upload/portfolio/zonaVid.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
 
       <div class="project-row" data-aos-delay="" onclick="openLink('https://github.com/etinaude/zona')">
         <div class="medium-image">
           <div class="still" style="
-                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/decimalClockImg');
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/portfolio/decimalClockImg');
               ">
           </div>
           <div class="hover" style="
-                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/v1609109308/cellularAutomationImg');
+                background-image: url('https://res.cloudinary.com/etienne-naude/image/upload/portfolio/pcbImg');
               ">
           </div>
         </div>
@@ -384,7 +392,7 @@
       <div class="card" onclick="openLink('https://github.com/etinaude/cellular-automation')">
         <div class="image-container">
           <img loading="lazy" alt="Cellular Automation Img"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/cellularAutomationImg" />
+            src="https://res.cloudinary.com/etienne-naude/image/upload/portfolio/pcbImg" />
         </div>
         <h3>Cellular Automata</h3>
         Excel Elementary Cellular Automata Using VBA
@@ -392,10 +400,16 @@
 
       <div class="card" onclick="openLink('https://github.com/etinaude/sandtable')">
         <div class="image-container">
-          <img loading="lazy" alt="cube Img" class="still"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/sandtableImg" />
-          <img loading="lazy" alt="cube Img" class="animated"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/tableGif" />
+          <img loading="lazy" alt="sand table Img" class="still"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/portfolio/sandtableImg" />
+          <video class="hover" playsinline autoplay muted loop>
+            <source
+              src="https://res.cloudinary.com/etienne-naude/video/upload/c_fill,h_1000,w_1000/portfolio/tableVid.webm"
+              type="video/webm">
+            <source
+              src="https://res.cloudinary.com/etienne-naude/video/upload/c_fill,h_1000,w_1000/portfolio/tableVid.mp4"
+              type="video/mp4">
+          </video>
         </div>
         <h3>Automated Zen Garden</h3>
         An automated zen garden using a core XY mechanism
@@ -404,9 +418,9 @@
       <div class="card" onclick="openLink('https://des-240.etinaude.dev/')">
         <div class="image-container">
           <img loading="lazy" alt="fertility town Img" class="still"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/uniImg" />
-          <img loading="lazy" alt="fertility town Img" class="animated"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/fertGif" />
+            src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/portfolio/uniImg" />
+          <img loading="lazy" alt="fertility town Img" class="hover"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/v1647210040/portfolio/fertGif" />
         </div>
         <h3>Birth rate Simulator</h3>
         A basic interactive simulator for a countries fertility
@@ -414,10 +428,12 @@
 
       <div class="card" onclick="openLink('https://github.com/etinaude/')">
         <div class="image-container">
-          <img loading="lazy" alt="fertility town Img" class="still"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/enrolmentImg" />
-          <img loading="lazy" alt="fertility town Img" class="animated"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/enrolGif" />
+          <img loading="lazy" alt="EnrolmentImg" class="still"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/portfolio/enrolmentImg" />
+          <video class="hover" playsinline autoplay muted loop>
+            <source src="https://res.cloudinary.com/etienne-naude/video/upload/portfolio/enrolVid" type="video/webm">
+            <source src="https://res.cloudinary.com/etienne-naude/video/upload/portfolio/enrolVid" type="video/mp4">
+          </video>
         </div>
         <h3 class="long-text">Enrolment System Prototype</h3>
         Design for a much needed improvement to the UoA enrolment interface
@@ -425,8 +441,17 @@
 
       <div class="card" onclick="openLink('https://github.com/etinaude/tracker')">
         <div class="image-container">
-          <img loading="lazy" alt="tracker Img"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/trackerImg" />
+          <img loading="lazy" alt="tracker Img" class="still"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/portfolio/trackerImg" />
+
+          <video class="hover" playsinline autoplay muted loop>
+            <source
+              src="https://res.cloudinary.com/etienne-naude/video/upload/c_fill,h_1000,w_1000/portfolio/trackerVid.wepm"
+              type="video/webm">
+            <source
+              src="https://res.cloudinary.com/etienne-naude/video/upload/c_fill,h_1000,w_1000/portfolio/trackerVid.mp4"
+              type="video/mp4">
+          </video>
         </div>
         <h3>Email Tracker</h3>
         An email tracker frontend and backend using angular by inserted 0px
@@ -435,8 +460,17 @@
 
       <div class="card">
         <div class="image-container" onclick="openLink('https://github.com/Unleash-Space/Training-app')">
-          <img loading="lazy" alt="zona Img"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/unleashAppImg" />
+          <img loading="lazy" alt="zona Img" class="still"
+            src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/portfolio/unleashAppImg" />
+
+          <video class="hover" playsinline autoplay muted loop>
+            <source
+              src="https://res.cloudinary.com/etienne-naude/video/upload/c_fill,h_1000,w_1000/portfolio/trainingVid.wepm"
+              type="video/webm">
+            <source
+              src="https://res.cloudinary.com/etienne-naude/video/upload/c_fill,h_1000,w_1000/portfolio/trainingVid.mp4"
+              type="video/mp4">
+          </video>
         </div>
         <h3>Trainings App</h3>
         I worked on creating a dashboard to help the staff members of Unleash
@@ -464,7 +498,7 @@
       <div class="card" onclick="openLink('https://github.com/etinaude/cellular-automation')">
         <div class="image-container">
           <img loading="lazy" alt="top in class award"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/TopInClassImg" />
+            src="https://res.cloudinary.com/etienne-naude/image/upload/portfolio/TopInClassImg" />
         </div>
         <h3>Top In Capstone</h3>
         Top grade in the computer science capstone project
@@ -473,7 +507,7 @@
       <div class="card" onclick="openLink('https://github.com/etinaude/cellular-automation')">
         <div class="image-container">
           <img loading="lazy" alt="outstanding achievements"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/outstandingImg" />
+            src="https://res.cloudinary.com/etienne-naude/image/upload/portfolio/outstandingImg" />
         </div>
         <h3 class="long-text">Outstanding Achievements</h3>
         8 Outstanding achievement awards for high grades
@@ -483,7 +517,8 @@
         onclick="openLink('https://www.auckland.ac.nz/en/science/study-with-us/science-scholars-programme/science-scholars.html')">
         <div class="image-container">
           <img loading="lazy" alt="science scholars"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/c_crop,h_677,w_677/v1647177838/scholImg.png" />
+            src="https://res.cloudinary.com/etienne-naude/image/upload/portfolio/scholImg" />
+
         </div>
         <h3>Science Scholars</h3>
         Stream in Science Scholars focusing on advanced research
@@ -507,7 +542,7 @@
         onclick="openLink('https://www.macleans.school.nz/news/cup-winners-at-senior-prizegiving-2018')">
         <div class="image-container">
           <img loading="lazy" alt="hannah bradshaw award"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/bradshawImg" />
+            src="https://res.cloudinary.com/etienne-naude/image/upload/portfolio/bradshawImg" />
         </div>
         <h3 class="long-text">Hannah-Bradshaw Award</h3>
         I was awarded this for 4 years of continued volunteer work
@@ -516,9 +551,9 @@
       <div class="card" onclick="openLink('https://scouts.nz/queens-scout-ceremony-2021/')">
         <div class="image-container">
           <img loading="lazy" alt="top in class award"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/qsImg" />
+            src="https://res.cloudinary.com/etienne-naude/image/upload/portfolio/qsImg" />
         </div>
-        <h3>Queen's Scout Award</h3>
+        <h3 class="long-text">Queen's Scout Award</h3>
         I was one of 44 recipients of the Queen's Scout Award nation wide for
         the past 3 years
       </div>
@@ -527,9 +562,9 @@
         onclick="openLink('https://www.auckland.ac.nz/en/on-campus/life-on-campus/leadership-and-volunteering/co-curricular-recognition-programme/ccr-programme-awards/university-of-auckland-award.html')">
         <div class="image-container">
           <img loading="lazy" alt="top in class award"
-            src="https://res.cloudinary.com/etienne-naude/image/upload/serviceImg" />
+            src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,h_1000,w_1000/portfolio/distgradImg" />
         </div>
-        <h3 class="long-text red">Distinguished Graduate</h3>
+        <h3 class="long-text">Distinguished Graduate</h3>
         I was awarded the 2020 Distinguished Graduate Award for engagement and
         leadership in extra curricular activities
       </div>
