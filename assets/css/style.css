@@ -86,7 +86,6 @@ a:hover {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 .h1,
@@ -1108,7 +1107,7 @@ h3 {
 
 .card > h3.long-text {
   font-size: 1.5em;
-  line-height: 2em;
+  line-height: 1em;
 }
 
 /* !REMOVE IN PROD */
