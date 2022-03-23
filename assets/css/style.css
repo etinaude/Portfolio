@@ -1190,6 +1190,53 @@ h3 {
   color: #aaa;
 }
 
+.btn {
+  background: #49adff;
+  color: white;
+  outline: 3px solid #49adff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  color: #49adff;
+  background-color: white;
+
+  transform: translate(0px, 2px);
+}
+
+.contact-details {
+  background: #555;
+  border-radius: 10px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}
+
+.contact-details h2 {
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+
+.contact-details > div {
+  width: fit-content;
+  color: white;
+  place-self: center;
+  line-height: 3em;
+}
+
+input.form-control,
+textarea.form-control {
+  resize: none;
+  border-radius: 10px;
+}
 @media (min-width: 1555px) {
   .sect {
     width: 50%;
