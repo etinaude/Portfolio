@@ -29,32 +29,47 @@
 	</nav>
 
 	<div class="corner socails">
-		<div class="socail-link">
-			<a href="https://linkedin.com/in/etinaude" target=”_blank”>
-				<img src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg">
-				<div class="text">linkedin.com/in/etinaude</div>
-			</a>
-		</div>
+		<svg viewBox="0 0 2 3" aria-hidden="true">
+			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+		</svg>
+		<div class="nav-links">
+			<div class="socail-links-group">
+				<div class="socail-link">
+					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
+						<img
+							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
+						/>
+						<div class="text">linkedin.com/in/etinaude</div>
+					</a>
+				</div>
 
-		<div class="socail-link">
-			<a href="https://linkedin.com/in/etinaude" target=”_blank”>
-				<img src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg">
-				<div class="text">linkedin.com/in/etinaude</div>
-			</a>
-		</div>
+				<div class="socail-link">
+					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
+						<img
+							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
+						/>
+						<div class="text">linkedin.com/in/etinaude</div>
+					</a>
+				</div>
 
-		<div class="socail-link">
-			<a href="https://linkedin.com/in/etinaude" target=”_blank”>
-				<img src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg">
-				<div class="text">linkedin.com/in/etinaude</div>
-			</a>
-		</div>
+				<div class="socail-link">
+					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
+						<img
+							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
+						/>
+						<div class="text">linkedin.com/in/etinaude</div>
+					</a>
+				</div>
 
-		<div class="socail-link">
-			<a href="https://linkedin.com/in/etinaude" target=”_blank”>
-				<img src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg">
-				<div class="text">linkedin.com/in/etinaude</div>
-			</a>
+				<div class="socail-link">
+					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
+						<img
+							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
+						/>
+						<div class="text">linkedin.com/in/etinaude</div>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </header>
@@ -63,6 +78,10 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		position: fixed;
+		width: 100%;
+		background-image: linear-gradient(#222, #22222200);
+		z-index: 1000;
 	}
 
 	.corner {
@@ -84,35 +103,46 @@
 		object-fit: contain;
 	}
 
-	.socails{
+	.socails {
 		display: flex;
+
+		width: max-content;
+		--background: #222;
+	}
+
+	.socail-links-group {
+		display: flex;
+		background: #222;
+		height: 100%;
+
 		justify-content: space-between;
-		width: min-content;
+		width: max-content;
 	}
-
-	.socail-link{
+	.socail-link {
 		position: relative;
-		margin: 10px;
+		margin: 0 10px;
 	}
 
-	.socail-link .text{
+	.text {
 		position: absolute;
 		top: 105%;
 		left: 50%;
 		transform: translateX(-50%);
-		background: #222;
+		background: #111;
+
+		display: none;
 
 		align-items: center;
 		justify-content: center;
 		border-radius: 10px;
 		max-height: 0px;
 		padding: 0px;
-		display: flex;
+		/* display: flex; */
 		overflow: hidden;
 		transition: 0.2s ease;
 	}
 
-	.socail-link:hover .text{
+	.socail-link:hover .text {
 		max-height: calc(1em + 15px);
 		border: 2px solid #88ddff;
 		padding: 5px;
@@ -121,11 +151,12 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: #333;
+		--background: #222;
 		position: absolute;
 		top: 0;
 		left: 50%;
 		transform: translateX(-50%);
+		height: 90%;
 	}
 
 	svg {
@@ -181,7 +212,6 @@
 		text-decoration: none;
 		transition: color 0.2s linear;
 		color: #eee;
-
 	}
 	a:hover {
 		color: var(--accent-color);
