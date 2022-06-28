@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { spring } from 'svelte/motion';
-
 	export let title: string;
 	export let description: string;
 	export let image_url: string;
 </script>
 
-<div class="card">
+<div class="card tilt" id="card">
 	<a href="/projects">
 		<img src={image_url} alt="project" />
 
@@ -19,23 +17,23 @@
 </div>
 
 <style>
+	.card {
+		width: 30%;
+		margin-bottom: 60px;
+		overflow: hidden;
+		border-radius: 5px;
+	}
 	.card a {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 250px;
 		background-color: #fff;
-		border-radius: 5px;
 		box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 		overflow: hidden;
 		background-color: #444;
-		padding-bottom: 10px;
+		padding-bottom: 20px;
 		text-decoration: none;
-	}
-
-	.card:hover {
-		transform: scale(1.05);
 	}
 
 	h3 {
@@ -44,7 +42,7 @@
 	}
 
 	.read-more {
-		margin-top: 3px;
+		margin-top: 10px;
 		color: #bbb;
 		font-size: 0.9em;
 	}

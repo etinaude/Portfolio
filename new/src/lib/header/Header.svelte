@@ -37,6 +37,7 @@
 				<div class="socail-link">
 					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
 						<img
+							alt=""
 							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
 						/>
 						<div class="text">linkedin.com/in/etinaude</div>
@@ -46,6 +47,7 @@
 				<div class="socail-link">
 					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
 						<img
+							alt=""
 							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
 						/>
 						<div class="text">linkedin.com/in/etinaude</div>
@@ -55,6 +57,7 @@
 				<div class="socail-link">
 					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
 						<img
+							alt=""
 							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
 						/>
 						<div class="text">linkedin.com/in/etinaude</div>
@@ -64,6 +67,7 @@
 				<div class="socail-link">
 					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
 						<img
+							alt=""
 							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
 						/>
 						<div class="text">linkedin.com/in/etinaude</div>
