@@ -82,6 +82,7 @@
 		>
 	</div>
 	<h2>Education</h2>
+
 	<div class="flex-row">
 		<div class="education-card">
 			<img
@@ -138,19 +139,9 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="waves">
-		<svg viewBox="0 0 1440 190"
-			><path
-				d="M0,95L34.3,82.3C68.6,70,137,44,206,41.2C274.3,38,343,57,411,79.2C480,101,549,127,617,133C685.7,139,754,127,823,114C891.4,101,960,89,1029,82.3C1097.1,76,1166,76,1234,85.5C1302.9,95,1371,114,1440,101.3C1508.6,89,1577,44,1646,25.3C1714.3,6,1783,13,1851,22.2C1920,32,1989,44,2057,63.3C2125.7,82,2194,108,2263,114C2331.4,120,2400,108,2469,91.8C2537.1,76,2606,57,2674,44.3C2742.9,32,2811,25,2880,31.7C2948.6,38,3017,57,3086,66.5C3154.3,76,3223,76,3291,69.7C3360,63,3429,51,3497,50.7C3565.7,51,3634,63,3703,79.2C3771.4,95,3840,114,3909,123.5C3977.1,133,4046,133,4114,117.2C4182.9,101,4251,70,4320,53.8C4388.6,38,4457,38,4526,38C4594.3,38,4663,38,4731,50.7C4800,63,4869,89,4903,101.3L4937.1,114L4937.1,190L4902.9,190C4868.6,190,4800,190,4731,190C4662.9,190,4594,190,4526,190C4457.1,190,4389,190,4320,190C4251.4,190,4183,190,4114,190C4045.7,190,3977,190,3909,190C3840,190,3771,190,3703,190C3634.3,190,3566,190,3497,190C3428.6,190,3360,190,3291,190C3222.9,190,3154,190,3086,190C3017.1,190,2949,190,2880,190C2811.4,190,2743,190,2674,190C2605.7,190,2537,190,2469,190C2400,190,2331,190,2263,190C2194.3,190,2126,190,2057,190C1988.6,190,1920,190,1851,190C1782.9,190,1714,190,1646,190C1577.1,190,1509,190,1440,190C1371.4,190,1303,190,1234,190C1165.7,190,1097,190,1029,190C960,190,891,190,823,190C754.3,190,686,190,617,190C548.6,190,480,190,411,190C342.9,190,274,190,206,190C137.1,190,69,190,34,190L0,190Z"
-			/></svg
-		>
-	</div>
 </section>
 
 <section id="work">
-	<h2>Work</h2>
-
 	<div class="waves">
 		<svg viewBox="0 0 1440 190"
 			><path
@@ -158,9 +149,87 @@
 			/></svg
 		>
 	</div>
+
+	<h2>Work</h2>
+
+	<div class="flex-row">
+		<div class="education-card">
+			<img
+				class="tilt"
+				alt="UoA Science logo"
+				src="https://res.cloudinary.com/etienne-naude/image/upload/v1655021200/logos/fmhs.jpg"
+			/>
+			<div>
+				<h3>Software Developer at University of Auckland</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
+					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
+					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
+					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
+					Voluptatibus perferendis sint debitis.
+				</p>
+			</div>
+		</div>
+
+		<div class="education-card right">
+			<div>
+				<h3>Fullstack developer and designer at Kekeno Tech</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
+					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
+					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
+					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
+					Voluptatibus perferendis sint debitis.
+				</p>
+			</div>
+
+			<img
+				class="tilt"
+				alt="Kekeno logo"
+				src="https://res.cloudinary.com/etienne-naude/image/upload/v1655021200/logos/kekeno.jpg"
+			/>
+		</div>
+
+		<div class="education-card">
+			<img
+				class="tilt"
+				alt="UoA Engineering logo"
+				src="https://res.cloudinary.com/etienne-naude/image/upload/v1655021199/logos/engineering.png"
+			/>
+			<div>
+				<h3>Engineering at University of Auckland</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
+					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
+					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
+					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
+					Voluptatibus perferendis sint debitis.
+				</p>
+			</div>
+		</div>
+
+		<div class="education-card right">
+			<div>
+				<h3>Creative technologist at Unleash Space</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
+					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
+					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
+					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
+					Voluptatibus perferendis sint debitis.
+				</p>
+			</div>
+
+			<img
+				class="tilt"
+				alt="Unleash logo"
+				src="https://res.cloudinary.com/etienne-naude/image/upload/v1655021200/logos/unleash.png"
+			/>
+		</div>
+	</div>
 </section>
 
-<section id="hobbies">
+<!-- <section id="hobbies">
 	<h2>Hobbies</h2>
 
 	<div class="waves">
@@ -170,7 +239,7 @@
 			/></svg
 		>
 	</div>
-</section>
+</section> -->
 
 <section id="awards">
 	<div class="waves">
