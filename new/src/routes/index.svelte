@@ -45,24 +45,28 @@
 			/></svg
 		>
 	</div>
+
 	<h2>Projects</h2>
+
 	<div class="flex-row">
 		<Card
-			title="WOW"
+			title="Automated Zen Garden"
 			description="Wirelessly controlled automated zen garden"
 			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1624939827/portfolio/sandtableImg.jpg"
 		/>
 
 		<Card
-			title="WOW"
-			description="Wirelessly controlled automated zen garden"
-			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1624939827/portfolio/sandtableImg.jpg"
+			title="Headstrong Messenger"
+			description="I am part of a research team which created an interactive Ionic chatbot app to help struggling teen with depression and anxiety.
+
+			I am currently heading front end development for this project, using Ionic and Angular"
+			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1647521355/portfolio/headstrongImg.png"
 		/>
 
 		<Card
-			title="WOW"
+			title="Decimal Clock"
 			description="Wirelessly controlled automated zen garden"
-			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1624939827/portfolio/sandtableImg.jpg"
+			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1624922964/portfolio/clocksqrImg.jpg"
 		/>
 	</div>
 

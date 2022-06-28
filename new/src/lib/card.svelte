@@ -2,10 +2,14 @@
 	export let title: string;
 	export let description: string;
 	export let image_url: string;
+	export let hover_url: string = image_url;
+	export let hover_video: boolean = false;
+
+	export let follow_url: string = '/projects';
 </script>
 
 <div class="card tilt" id="card">
-	<a href="/projects">
+	<a href={follow_url}>
 		<img src={image_url} alt="project" />
 
 		<h3>{title}</h3>
@@ -22,23 +26,31 @@
 		margin-bottom: 60px;
 		overflow: hidden;
 		border-radius: 5px;
+		box-shadow: 0px 0px 10px 2px #0000004d;
+		background-color: #444;
+		display: flex;
 	}
 	.card a {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
 		background-color: #fff;
-		box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 		overflow: hidden;
 		background-color: #444;
-		padding-bottom: 20px;
 		text-decoration: none;
+		height: 100%;
+		padding-bottom: 20px;
+		margin-bottom: auto;
+		box-sizing: border-box;
 	}
 
 	h3 {
 		color: #43d0ff;
 		margin-bottom: 8px;
+	}
+
+	caption {
+		padding: 0px 30px;
 	}
 
 	.read-more {
