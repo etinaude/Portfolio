@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import logo from './icon.svg';
+	import linkedIn from './linkedinImg.svg';
+	import github from './githubImg.svg';
+	import mail from './mailImg.svg';
 </script>
 
 <header>
@@ -36,41 +39,19 @@
 			<div class="socail-links-group">
 				<div class="socail-link">
 					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
-						<img
-							alt=""
-							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
-						/>
-						<div class="text">linkedin.com/in/etinaude</div>
+						<img alt="" src={linkedIn} />
 					</a>
 				</div>
 
 				<div class="socail-link">
-					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
-						<img
-							alt=""
-							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
-						/>
-						<div class="text">linkedin.com/in/etinaude</div>
+					<a href="mailto:eti@naude.dev" target="”_blank”">
+						<img alt="" src={mail} />
 					</a>
 				</div>
 
 				<div class="socail-link">
-					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
-						<img
-							alt=""
-							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
-						/>
-						<div class="text">linkedin.com/in/etinaude</div>
-					</a>
-				</div>
-
-				<div class="socail-link">
-					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
-						<img
-							alt=""
-							src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg"
-						/>
-						<div class="text">linkedin.com/in/etinaude</div>
+					<a href="https://github.com/etinaude" target="”_blank”">
+						<img alt="" src={github} />
 					</a>
 				</div>
 			</div>
@@ -127,29 +108,8 @@
 		margin: 0 10px;
 	}
 
-	.text {
-		position: absolute;
-		top: 105%;
-		left: 50%;
-		transform: translateX(-50%);
-		background: #111;
-
-		display: none;
-
-		align-items: center;
-		justify-content: center;
-		border-radius: 10px;
-		max-height: 0px;
-		padding: 0px;
-		/* display: flex; */
-		overflow: hidden;
-		transition: 0.2s ease;
-	}
-
-	.socail-link:hover .text {
-		max-height: calc(1em + 15px);
-		border: 2px solid #88ddff;
-		padding: 5px;
+	.socail-link:hover {
+		transform: scale(1.1);
 	}
 
 	nav {
