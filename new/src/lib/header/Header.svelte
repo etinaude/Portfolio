@@ -16,11 +16,11 @@
 		</svg>
 		<ul>
 			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.url.pathname === '/about'}>
-				<a sveltekit:prefetch href="/about">About</a>
+			<li class:active={$page.url.pathname === '/projects'}>
+				<a sveltekit:prefetch href="/projects">Projects</a>
 			</li>
-			<li class:active={$page.url.pathname === '/todos'}>
-				<a sveltekit:prefetch href="/todos">Todos</a>
+			<li class:active={$page.url.pathname === '/contact'}>
+				<a sveltekit:prefetch href="/contact">Contact</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -28,8 +28,34 @@
 		</svg>
 	</nav>
 
-	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+	<div class="corner socails">
+		<div class="socail-link">
+			<a href="https://linkedin.com/in/etinaude" target=”_blank”>
+				<img src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg">
+				<div class="text">linkedin.com/in/etinaude</div>
+			</a>
+		</div>
+
+		<div class="socail-link">
+			<a href="https://linkedin.com/in/etinaude" target=”_blank”>
+				<img src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg">
+				<div class="text">linkedin.com/in/etinaude</div>
+			</a>
+		</div>
+
+		<div class="socail-link">
+			<a href="https://linkedin.com/in/etinaude" target=”_blank”>
+				<img src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg">
+				<div class="text">linkedin.com/in/etinaude</div>
+			</a>
+		</div>
+
+		<div class="socail-link">
+			<a href="https://linkedin.com/in/etinaude" target=”_blank”>
+				<img src="https://res.cloudinary.com/etienne-naude/image/upload/v1601727581/icon/small/linkedinImg.svg">
+				<div class="text">linkedin.com/in/etinaude</div>
+			</a>
+		</div>
 	</div>
 </header>
 
@@ -58,10 +84,48 @@
 		object-fit: contain;
 	}
 
+	.socails{
+		display: flex;
+		justify-content: space-between;
+		width: min-content;
+	}
+
+	.socail-link{
+		position: relative;
+		margin: 10px;
+	}
+
+	.socail-link .text{
+		position: absolute;
+		top: 105%;
+		left: 50%;
+		transform: translateX(-50%);
+		background: #222;
+
+		align-items: center;
+		justify-content: center;
+		border-radius: 10px;
+		max-height: 0px;
+		padding: 0px;
+		display: flex;
+		overflow: hidden;
+		transition: 0.2s ease;
+	}
+
+	.socail-link:hover .text{
+		max-height: calc(1em + 15px);
+		border: 2px solid #88ddff;
+		padding: 5px;
+	}
+
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: #333;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 
 	svg {
@@ -116,8 +180,9 @@
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;
-	}
+		color: #eee;
 
+	}
 	a:hover {
 		color: var(--accent-color);
 	}
