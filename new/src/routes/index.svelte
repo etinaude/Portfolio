@@ -17,8 +17,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Etienne Naude</title>
+	<meta name="description" content="Etienne Naude about page" />
 </svelte:head>
 
 <section id="about">
@@ -186,7 +186,21 @@
 		>
 	</div>
 
-	<h2>Call to Action</h2>
+	<h1>Contact Me</h1>
+
+	<div class="contacts">
+		<p>
+			Email: <a href="mailto:eti@naude.dev">eti@naude.dev</a>
+		</p>
+
+		<p>
+			Linked In: <a href="https://www.linkedin.com/in/etinaude/">linkedin.com/in/etinaude</a>
+		</p>
+
+		<p>
+			Github: <a href="https://www.github.com/etinaude">github.com/etinaude</a>
+		</p>
+	</div>
 </section>
 
 <style>
@@ -211,6 +225,10 @@
 		transform: translate(0, calc(-100% + 5px));
 	}
 
+	.waves svg {
+		filter: drop-shadow(0px -12px 4px #2222);
+	}
+
 	path {
 		fill: var(--background);
 	}
@@ -227,16 +245,21 @@
 		--background: #555;
 	}
 
-	#awards {
+	#hobbies {
 		--background: #444;
 	}
 
-	#hobbies {
+	#awards {
 		--background: #333;
 	}
 
 	#cta {
 		--background: #222;
+		justify-content: center;
+	}
+
+	.contacts {
+		font-size: 1.5em;
 	}
 
 	h2 {
