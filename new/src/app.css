@@ -45,6 +45,11 @@ a {
 	text-decoration: none;
 }
 
+b {
+	color: var(--accent-color);
+	font-weight: normal;
+}
+
 h1 {
 	font-size: 4rem;
 	text-align: center;
@@ -53,6 +58,10 @@ h1 {
 h2 {
 	font-size: 3rem;
 	margin-top: 1.5em;
+}
+
+h3 {
+	font-size: 1.5rem;
 }
 
 input {

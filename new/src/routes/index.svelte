@@ -92,11 +92,12 @@
 			<div>
 				<h3>Computer Science at University of Auckland</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
-					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
-					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
-					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
-					Voluptatibus perferendis sint debitis.
+					I am currently studying towards a Bachelor of Advanced Science (Honours) majoring in
+					Computer Science. While completing my Computer Science degree I have been awarded <b
+						>8 Outstanding Achievement awards</b
+					>
+					and was <b>top in class</b> for the undergraduate capstone project. I was also selected to
+					join the <b>Science Scholars</b> cohort.
 				</p>
 			</div>
 		</div>
@@ -105,11 +106,10 @@
 			<div>
 				<h3>Design at University of Auckland</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
-					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
-					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
-					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
-					Voluptatibus perferendis sint debitis.
+					I am also completing a conjoint degree in a Bachelor of Design focussing on designing with
+					<b>disruptive technologies</b>. My aim is to use the knowledge from my design degree to
+					bridge the gap between the technical and aesthetic aspects of my projects. I was awarded
+					with a <b>Design Scholarship</b> by the university in 2021.
 				</p>
 			</div>
 
@@ -127,13 +127,13 @@
 				src="https://res.cloudinary.com/etienne-naude/image/upload/v1655021199/logos/engineering.png"
 			/>
 			<div>
-				<h3>Engineering at University of Auckland</h3>
+				<h3>Additive Manufacturing at University of Auckland</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
-					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
-					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
-					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
-					Voluptatibus perferendis sint debitis.
+					My Honours Project is with the Department of Mechanical Engineering researching <b
+						>non-planar ironing</b
+					> in FDM 3d printing. Building on previous work we have been able to successfully combine two
+					prior techniques to create a novel process to smooth surface finishes on FDM prints and reduce
+					post processing.
 				</p>
 			</div>
 		</div>
