@@ -11,8 +11,6 @@
 	onMount(() => {
 		const elements = document.querySelectorAll('.tilt');
 
-		console.log(elements);
-
 		VanillaTilt.init(elements, { glare: true });
 	});
 </script>

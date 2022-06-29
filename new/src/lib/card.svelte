@@ -4,11 +4,12 @@
 	export let image_url: string;
 	export let hover_url: string = image_url;
 	export let hover_video: boolean = false;
+	export let small: string = 'false';
 
 	export let follow_url: string = '/projects';
 </script>
 
-<div class="card tilt" id="card">
+<div class="card tilt {small == 'true' ? 'small' : ''}" id="card">
 	<a href={follow_url}>
 		<img src={image_url} alt="project" />
 
@@ -29,7 +30,9 @@
 		box-shadow: 0px 0px 10px 2px #0000004d;
 		background-color: #444;
 		display: flex;
+		text-align: center;
 	}
+
 	.card a {
 		display: flex;
 		flex-direction: column;
@@ -63,5 +66,23 @@
 		width: 100%;
 		aspect-ratio: 1;
 		object-fit: cover;
+	}
+
+	.card.small {
+		width: 15%;
+	}
+
+	.card.small .read-more {
+		display: none;
+	}
+
+	.card.small h3 {
+		color: #43d0ff;
+		margin-bottom: 8px;
+		font-size: 1.2em;
+	}
+
+	.card.small caption {
+		padding: 0px 10px;
 	}
 </style>
