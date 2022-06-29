@@ -6,6 +6,7 @@
 	import VanillaTilt from 'vanilla-tilt';
 	import Card from '$lib/card.svelte';
 	import { onMount } from 'svelte';
+	import ChanglingText from '$lib/changling-text.svelte';
 
 	onMount(() => {
 		const elements = document.querySelectorAll('.tilt');
@@ -24,16 +25,14 @@
 <section id="about">
 	<div class="header-text">
 		<h1>Etienne Naude</h1>
-		<h2>Tech Enthusaist</h2>
-		<!-- CHANGING TAG LINE -->
-
-		<p>
+		<ChanglingText />
+		<!-- <p class="header-info">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus cumque fugiat quia
 			vero ex nesciunt vel officiis harum suscipit tempore repellat voluptates assumenda quae totam
 			quidem libero, fuga laboriosam dolor exercitationem rerum saepe. Culpa autem nihil
 			perspiciatis quo laudantium ullam iste odio blanditiis provident. Ad, quas laborum! Corporis,
 			minus nulla.
-		</p>
+		</p> -->
 	</div>
 </section>
 
@@ -370,6 +369,8 @@
 		height: 100vh;
 		padding: 0;
 		background-image: url(https://res.cloudinary.com/etienne-naude/image/upload/e_grayscale/v1647210756/portfolio/thoughtfulImg.jpg);
+		background-position: center;
+		background-size: cover;
 	}
 
 	.header-text {
@@ -387,10 +388,6 @@
 		margin: 0px;
 	}
 
-	.header-text h2 {
-		margin: 0.5em;
-	}
-
 	.flex-row {
 		display: flex;
 		flex-direction: row;
@@ -402,6 +399,10 @@
 
 	.more-projects {
 		margin-top: 4rem;
+		width: 300px;
+		text-align: center;
+		padding: 20px;
+		box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
 	}
 
 	.education-card {
