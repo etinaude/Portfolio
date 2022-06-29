@@ -5,6 +5,7 @@
 <script lang="ts">
 	import Card from '$lib/card.svelte';
 	import { onMount } from 'svelte';
+	import VanillaTilt from 'vanilla-tilt';
 
 	onMount(() => {
 		const elements = document.querySelectorAll('.tilt');

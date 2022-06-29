@@ -67,7 +67,7 @@
 		/>
 	</div>
 
-	<a class="button more-projects" href="/projects"> More Projects →</a>
+	<a class="button more-projects-btn" href="/projects"> More Projects →</a>
 </section>
 
 <section id="education">
@@ -81,7 +81,7 @@
 	<h2>Education</h2>
 
 	<div class="flex-row">
-		<div class="education-card">
+		<div class="long-card">
 			<img
 				class="tilt"
 				alt="UoA Science"
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 
-		<div class="education-card right">
+		<div class="long-card right">
 			<div>
 				<h3>Design at University of Auckland</h3>
 				<p>
@@ -118,7 +118,7 @@
 			/>
 		</div>
 
-		<div class="education-card">
+		<div class="long-card">
 			<img
 				class="tilt"
 				alt="UoA Engineering"
@@ -150,7 +150,7 @@
 	<h2>Work</h2>
 
 	<div class="flex-row">
-		<div class="education-card">
+		<div class="long-card">
 			<img
 				class="tilt"
 				alt="UoA Science logo"
@@ -168,7 +168,7 @@
 			</div>
 		</div>
 
-		<div class="education-card right">
+		<div class="long-card right">
 			<div>
 				<h3>Fullstack developer and designer at Kekeno Tech</h3>
 				<p>
@@ -187,7 +187,7 @@
 			/>
 		</div>
 
-		<div class="education-card">
+		<div class="long-card">
 			<img
 				class="tilt"
 				alt="UoA Engineering logo"
@@ -205,7 +205,7 @@
 			</div>
 		</div>
 
-		<div class="education-card right">
+		<div class="long-card right">
 			<div>
 				<h3>Creative technologist at Unleash Space</h3>
 				<p>
@@ -299,7 +299,7 @@
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	section {
 		display: flex;
 		align-items: center;
@@ -312,78 +312,83 @@
 		position: sticky;
 		top: 0;
 		background-color: var(--background);
-	}
 
-	.waves {
-		position: absolute;
-		width: 100%;
-		top: 0;
-		transform: translate(0, calc(-100% + 5px));
-	}
+		&#projects {
+			--background: #333;
 
-	.waves svg {
-		filter: drop-shadow(0px -12px 4px #2222);
-	}
+			.more-projects-btn {
+				margin-top: 4rem;
+				width: 300px;
+				text-align: center;
+				padding: 20px;
+				box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+			}
+		}
 
-	path {
-		fill: var(--background);
-	}
+		&#education {
+			--background: #444;
+		}
 
-	#projects {
-		--background: #333;
-	}
+		&#work {
+			--background: #555;
+		}
 
-	#education {
-		--background: #444;
-	}
+		&#hobbies {
+			--background: #444;
+		}
 
-	#work {
-		--background: #555;
-	}
+		&#awards {
+			--background: #333;
+		}
 
-	#hobbies {
-		--background: #444;
-	}
+		&#cta {
+			--background: #222;
+			justify-content: center;
 
-	#awards {
-		--background: #333;
-	}
+			.contacts {
+				font-size: 1.5em;
+			}
+		}
 
-	#cta {
-		--background: #222;
-		justify-content: center;
-	}
+		&#about {
+			width: 100%;
+			height: 100vh;
+			padding: 0;
+			background-image: url(https://res.cloudinary.com/etienne-naude/image/upload/e_grayscale/v1647210756/portfolio/thoughtfulImg.jpg);
+			background-position: center;
+			background-size: cover;
 
-	.contacts {
-		font-size: 1.5em;
+			.header-text {
+				box-sizing: border-box;
+				width: 100%;
+				height: 100vh;
+				padding: 20%;
+				padding-top: 15%;
+				text-align: center;
+				/* backdrop-filter: blur(2px); */
+				background-color: #2225;
+				h1 {
+					margin: 0px;
+				}
+			}
+		}
 	}
 
 	h2 {
 		margin-top: 3em;
 	}
-
-	#about {
+	.waves {
+		position: absolute;
 		width: 100%;
-		height: 100vh;
-		padding: 0;
-		background-image: url(https://res.cloudinary.com/etienne-naude/image/upload/e_grayscale/v1647210756/portfolio/thoughtfulImg.jpg);
-		background-position: center;
-		background-size: cover;
-	}
+		top: 0;
+		transform: translate(0, calc(-100% + 5px));
+		svg {
+			filter: drop-shadow(0px -12px 4px #2222);
 
-	.header-text {
-		box-sizing: border-box;
-		width: 100%;
-		height: 100vh;
-		padding: 20%;
-		padding-top: 15%;
-		text-align: center;
-		/* backdrop-filter: blur(2px); */
-		background-color: #2225;
-	}
-
-	.header-text h1 {
-		margin: 0px;
+			path {
+				fill: var(--background);
+			}
+		}
 	}
 
 	.flex-row {
@@ -395,29 +400,20 @@
 		max-width: 1200px;
 	}
 
-	.more-projects {
-		margin-top: 4rem;
-		width: 300px;
-		text-align: center;
-		padding: 20px;
-		box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-	}
-
-	.education-card {
+	.long-card {
 		display: flex;
 		text-decoration: none;
 		height: 180px;
 		margin: 10px;
-	}
 
-	.education-card img {
-		height: 100%;
-		margin-right: 50px;
-		box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-	}
-
-	.education-card.right img {
-		margin-left: 50px;
-		margin-right: 0;
+		img {
+			height: 100%;
+			margin-right: 50px;
+			box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+		}
+		&.right img {
+			margin-left: 50px;
+			margin-right: 0;
+		}
 	}
 </style>

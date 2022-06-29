@@ -21,7 +21,7 @@
 	</a>
 </div>
 
-<style>
+<style lang="scss">
 	.card {
 		width: 30%;
 		margin-bottom: 60px;
@@ -31,20 +31,19 @@
 		background-color: #444;
 		display: flex;
 		text-align: center;
-	}
-
-	.card a {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		background-color: #fff;
-		overflow: hidden;
-		background-color: #444;
-		text-decoration: none;
-		height: 100%;
-		padding-bottom: 20px;
-		margin-bottom: auto;
-		box-sizing: border-box;
+		a {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #fff;
+			overflow: hidden;
+			background-color: #444;
+			text-decoration: none;
+			height: 100%;
+			padding-bottom: 20px;
+			margin-bottom: auto;
+			box-sizing: border-box;
+		}
 	}
 
 	h3 {
@@ -70,19 +69,18 @@
 
 	.card.small {
 		width: 15%;
-	}
+		.read-more {
+			display: none;
+		}
 
-	.card.small .read-more {
-		display: none;
-	}
+		h3 {
+			color: #43d0ff;
+			margin-bottom: 8px;
+			font-size: 1.2em;
+		}
 
-	.card.small h3 {
-		color: #43d0ff;
-		margin-bottom: 8px;
-		font-size: 1.2em;
-	}
-
-	.card.small caption {
-		padding: 0px 10px;
+		caption {
+			padding: 0px 10px;
+		}
 	}
 </style>
