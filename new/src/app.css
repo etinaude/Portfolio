@@ -26,6 +26,7 @@ body {
 * {
 	color: var(--text-color);
 	scroll-behavior: smooth;
+	transition: 0.2s ease;
 }
 
 h1,
@@ -82,4 +83,20 @@ button:hover,
 .button:hover {
 	background-color: var(--accent-color);
 	color: #222;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #444;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #43d0ff;
 }

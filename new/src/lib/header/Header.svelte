@@ -7,10 +7,13 @@
 </script>
 
 <header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
+	<div class="corner logo">
+		<div class="img">
 			<img src={logo} alt="SvelteKit" />
-		</a>
+		</div>
+		<svg viewBox="0 0 2 3" aria-hidden="true">
+			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
+		</svg>
 	</div>
 
 	<nav>
@@ -65,7 +68,7 @@
 		justify-content: space-between;
 		position: fixed;
 		width: 100%;
-		background-image: linear-gradient(#222, #22222200);
+		background-image: linear-gradient(#2226, #22222200);
 		z-index: 1000;
 	}
 
@@ -93,6 +96,21 @@
 
 		width: max-content;
 		--background: #222;
+	}
+
+	.logo {
+		display: flex;
+		width: max-content;
+
+		--background: #222;
+	}
+
+	.img {
+		background: #222;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		padding-left: 10px;
 	}
 
 	.socail-links-group {
