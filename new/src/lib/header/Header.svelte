@@ -17,7 +17,7 @@
 	</div>
 
 	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
+		<svg viewBox="0 0 2 3" aria-hidden="true" class="left-slant">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
 		<ul>
@@ -91,6 +91,8 @@
 
 	.socials {
 		display: flex;
+		position: fixed;
+		right: 0;
 
 		width: max-content;
 		--background: #222;
@@ -193,6 +195,27 @@
 
 		path {
 			fill: var(--background);
+		}
+	}
+
+	@media only screen and (max-width: 800px) {
+		.logo {
+			display: none;
+		}
+
+		nav {
+			left: 0;
+			transform: none;
+
+			.left-slant {
+				display: none;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 550px) {
+		.socials {
+			display: none;
 		}
 	}
 </style>
