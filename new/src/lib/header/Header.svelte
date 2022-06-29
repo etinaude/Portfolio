@@ -34,35 +34,35 @@
 		</svg>
 	</nav>
 
-	<div class="corner socails">
+	<div class="corner socials">
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
 		<div class="nav-links">
-			<div class="socail-links-group">
-				<div class="socail-link">
+			<ul class="social-links-group">
+				<li class="social-link">
 					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
 						<img alt="" src={linkedIn} />
 					</a>
-				</div>
+				</li>
 
-				<div class="socail-link">
+				<li class="social-link">
 					<a href="mailto:eti@naude.dev" target="”_blank”">
 						<img alt="" src={mail} />
 					</a>
-				</div>
+				</li>
 
-				<div class="socail-link">
+				<li class="social-link">
 					<a href="https://github.com/etinaude" target="”_blank”">
 						<img alt="" src={github} />
 					</a>
-				</div>
-			</div>
+				</li>
+			</ul>
 		</div>
 	</div>
 </header>
 
-<style>
+<style lang="scss">
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -75,27 +75,41 @@
 	.corner {
 		width: 3em;
 		height: 3em;
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+		}
+		img {
+			width: 2em;
+			height: 2em;
+			object-fit: contain;
+		}
 	}
 
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
-
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
-
-	.socails {
+	.socials {
 		display: flex;
 
 		width: max-content;
 		--background: #222;
+
+		.social-links-group {
+			display: flex;
+			background: #222;
+			height: 100%;
+
+			justify-content: space-between;
+			width: max-content;
+			.social-link {
+				position: relative;
+				margin: 0 10px;
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
 	}
 
 	.logo {
@@ -103,31 +117,14 @@
 		width: max-content;
 
 		--background: #222;
-	}
 
-	.img {
-		background: #222;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		padding-left: 10px;
-	}
-
-	.socail-links-group {
-		display: flex;
-		background: #222;
-		height: 100%;
-
-		justify-content: space-between;
-		width: max-content;
-	}
-	.socail-link {
-		position: relative;
-		margin: 0 10px;
-	}
-
-	.socail-link:hover {
-		transform: scale(1.1);
+		.img {
+			background: #222;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			padding-left: 10px;
+		}
 	}
 
 	nav {
@@ -139,16 +136,21 @@
 		left: 50%;
 		transform: translateX(-50%);
 		height: 90%;
-	}
 
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
+		a {
+			display: flex;
+			height: 100%;
+			align-items: center;
+			padding: 0 1em;
+			color: var(--heading-color);
+			font-weight: 700;
+			font-size: 0.8rem;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			text-decoration: none;
+			transition: color 0.2s linear;
+			color: #eee;
+		}
 	}
 
 	ul {
@@ -162,40 +164,35 @@
 		list-style: none;
 		background: var(--background);
 		background-size: contain;
+
+		li {
+			position: relative;
+			height: 100%;
+			&.active::before {
+				--size: 6px;
+				content: '';
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: 0;
+				left: calc(50% - var(--size));
+				border: var(--size) solid transparent;
+				border-top: var(--size) solid var(--accent-color);
+			}
+		}
 	}
 
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	li.active::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--accent-color);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 1em;
-		color: var(--heading-color);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-		color: #eee;
-	}
 	a:hover {
 		color: var(--accent-color);
+	}
+
+	svg {
+		width: 2em;
+		height: 3em;
+		display: block;
+
+		path {
+			fill: var(--background);
+		}
 	}
 </style>
