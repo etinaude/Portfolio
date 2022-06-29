@@ -4,7 +4,14 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	let words = ['Programmer', 'Designer', 'Creative Technologist', 'Maker'];
+	let words = [
+		'Programmer',
+		'Tech Enthusiast',
+		'Nerd',
+		'Designer',
+		'Creative Technologist',
+		'Maker'
+	];
 
 	var textEl: HTMLElement;
 	var wordIndex = 0;
@@ -28,7 +35,7 @@
 		// Remove a charachter
 		textEl.innerText = currentText.substring(0, currentText.length - 1);
 
-		setTimeout(deleteWord, 150);
+		setTimeout(deleteWord, 120);
 	}
 
 	function addNextWord() {
@@ -44,7 +51,7 @@
 		// Add a charachter
 		textEl.innerText = currentText + words[wordIndex].substring(currentLength, currentLength + 1);
 
-		setTimeout(addNextWord, 200);
+		setTimeout(addNextWord, 180);
 	}
 </script>
 

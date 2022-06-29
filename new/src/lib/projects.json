@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Automated Zen Garden",
+		"description": "An coffee table designed to house an automated zen garden. This was done using a RAMPS board to control a core XY CNC mechanism underneath the table, this then moved a magnet on top of the table which moved and carved patterns in some sand.",
+		"image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624939827/portfolio/sandtableImg.jpg"
+	},
+	{
+		"title": "Headstrong Messenger",
+		"description": "I am part of a research team which created an interactive Ionic chatbot app to help struggling teen with depression and anxiety. I am currently heading front end development for this project, using Ionic and Angular.",
+		"image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1647521355/portfolio/headstrongImg.png"
+	},
+	{
+		"title": "Decimal Clock",
+		"description": "A clock which shows both standard 24hr time along side a time system which is based on the original metric time system. This is to show that different time units exist and that that 24hrs in a day is not a brilliant idea.",
+		"image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624922964/portfolio/clocksqrImg.jpg"
+	},
+	{
+		"title": "Decimal Clock",
+		"description": "Wirelessly controlled automated zen garden",
+		"image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624922964/portfolio/clocksqrImg.jpg"
+	}
+]

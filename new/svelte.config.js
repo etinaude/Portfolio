@@ -1,5 +1,7 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
+import json from '@rollup/plugin-json'
+
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,7 +16,11 @@ const config = {
 		methodOverride: {
 			allowed: ['PATCH', 'DELETE']
 		}
-	}
+	},
+	plugins: [
+		json({
+			compact: true
+		})]
 };
 
 export default config;

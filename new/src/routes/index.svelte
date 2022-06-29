@@ -7,6 +7,9 @@
 	import Card from '$lib/card.svelte';
 	import { onMount } from 'svelte';
 	import ChanglingText from '$lib/changling-text.svelte';
+	import projectsImport from '$lib/projects.json';
+
+	const projects = projectsImport.slice(0, 3);
 
 	onMount(() => {
 		const elements = document.querySelectorAll('.tilt');
@@ -24,13 +27,6 @@
 	<div class="header-text">
 		<h1>Etienne Naude</h1>
 		<ChanglingText />
-		<!-- <p class="header-info">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus cumque fugiat quia
-			vero ex nesciunt vel officiis harum suscipit tempore repellat voluptates assumenda quae totam
-			quidem libero, fuga laboriosam dolor exercitationem rerum saepe. Culpa autem nihil
-			perspiciatis quo laudantium ullam iste odio blanditiis provident. Ad, quas laborum! Corporis,
-			minus nulla.
-		</p> -->
 	</div>
 </section>
 
@@ -46,25 +42,9 @@
 	<h2>Projects</h2>
 
 	<div class="flex-row">
-		<Card
-			title="Automated Zen Garden"
-			description="Wirelessly controlled automated zen garden"
-			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1624939827/portfolio/sandtableImg.jpg"
-		/>
-
-		<Card
-			title="Headstrong Messenger"
-			description="I am part of a research team which created an interactive Ionic chatbot app to help struggling teen with depression and anxiety.
-
-			I am currently heading front end development for this project, using Ionic and Angular"
-			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1647521355/portfolio/headstrongImg.png"
-		/>
-
-		<Card
-			title="Decimal Clock"
-			description="Wirelessly controlled automated zen garden"
-			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1624922964/portfolio/clocksqrImg.jpg"
-		/>
+		{#each projects as project}
+			<Card title={project.title} description={project.description} image_url={project.image_url} />
+		{/each}
 	</div>
 
 	<a class="button more-projects-btn" href="/projects"> More Projects →</a>
@@ -147,7 +127,7 @@
 		>
 	</div>
 
-	<h2>Work</h2>
+	<h2>Current Work</h2>
 
 	<div class="flex-row">
 		<div class="long-card">
@@ -159,11 +139,10 @@
 			<div>
 				<h3>Software Developer at University of Auckland</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
-					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
-					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
-					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
-					Voluptatibus perferendis sint debitis.
+					While working at this role I focussed on <b>mobile app development</b> using <b>Ionic</b>
+					Framework. In this role I was the primary developer for <b>Headstrong Messenger</b> which is
+					a chatbot application designed to help teens and young adults struggling with depression and
+					anxiety build healthy habits.
 				</p>
 			</div>
 		</div>
@@ -172,11 +151,10 @@
 			<div>
 				<h3>Fullstack developer and designer at Kekeno Tech</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
-					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
-					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
-					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
-					Voluptatibus perferendis sint debitis.
+					At Kekeno Tech I am a fullstack developer and designer working mainly to create web
+					applications for clients around New Zealand. The primary technologies used for this role
+					is <b>Angular</b>, <b>Flask</b> and <b>Firebase</b>. On top of this I also often
+					<b>design webpages</b> or modify existing designs to fit the needs of the client.
 				</p>
 			</div>
 
@@ -194,26 +172,31 @@
 				src="https://res.cloudinary.com/etienne-naude/image/upload/v1655021199/logos/engineering.png"
 			/>
 			<div>
-				<h3>Engineering at University of Auckland</h3>
+				<h3>Robotics Research at University of Auckland</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
-					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
-					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
-					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
-					Voluptatibus perferendis sint debitis.
+					I am employed by the Department of Mechatronics to create a system allowing children to
+					interact with robots and provide the robots instructions using a novel <b
+						>tangible programming language</b
+					>. This enables them to programme the robots using cards before they are even able to use
+					a computer. The research is in using this system as an education tool and exploring how
+					children interact with robots. For this project I am making the <b>computer vision</b>
+					system, the <b>data server</b>, and the <b>interface</b> to explore all the data which has
+					been collected.
 				</p>
 			</div>
 		</div>
 
 		<div class="long-card right">
 			<div>
-				<h3>Creative technologist at Unleash Space</h3>
+				<h3>Lead Creative Technologist at Unleash Space</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt alias
-					dignissimos, dolor ab, sit debitis, culpa mollitia est consequuntur laborum exercitationem
-					temporibus. Minus sed ipsa nobis cumque ab molestiae ea aliquam maxime molestias deleniti
-					dicta, corrupti soluta eaque laudantium laborum delectus tenetur voluptate fuga est.
-					Voluptatibus perferendis sint debitis.
+					As A Creative Technologist I consult with students and staff members to create and design
+					a wide range projects using the latest creative technologies. This is done by providing
+					trainings on how each technology is used, when to use it and what its limitations are I
+					also provide advice individually to people who need further information on prototyping.
+					Some of the technologies I provide advice for are <b>3D printing</b>,
+					<b>laser cutting</b>, <b>5G</b>, <b>VR/AR</b>, <b>soldering</b> and <b>CNC routing</b>.
+					The projects which I help prototype for
 				</p>
 			</div>
 
@@ -252,21 +235,21 @@
 	<div class="flex-row">
 		<Card
 			title="Hannah-Bradshaw Award"
-			description="I was awarded this for my 4 years of continued volunteer work in different fields"
+			description="I was awarded this for 4 years of consistent volunteer work in different fields."
 			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1596330693/portfolio/bradshawImg.svg"
 			follow_url="https://www.macleans.school.nz/news/cup-winners-at-senior-prizegiving-2018"
 		/>
 
 		<Card
 			title="Queen's Scout Award"
-			description="I was one of 44 recipients of the Queen's Scout Award nation wide for the past 3 years"
+			description="I was one of the recipients of the Queen's Scout Award, this is the highest youth scouting honour, which was awarded to me for continuous work and commitment to scouting for 10 years"
 			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1624885852/portfolio/qsImg.png"
 			follow_url="https://scouts.nz/queens-scout-ceremony-2021/"
 		/>
 
 		<Card
 			title="Distinguished Graduate"
-			description="I was awarded the 2020 Distinguished Graduate Award for engagement and leadership in extra curricular activities"
+			description="I was awarded the 2020 Distinguished Graduate Award for engagement and leadership in a wide range extra curricular activities"
 			image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1647513032/portfolio/distgradImg.jpg"
 			follow_url="https://www.auckland.ac.nz/en/on-campus/life-on-campus/leadership-and-volunteering/co-curricular-recognition-programme/ccr-programme-awards/university-of-auckland-award.html"
 		/>
