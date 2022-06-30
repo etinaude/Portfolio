@@ -111,7 +111,7 @@
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	section {
 		display: flex;
 		align-items: center;
@@ -121,7 +121,6 @@
 		padding: 0 5rem;
 		padding-bottom: 10vh;
 		margin: auto;
-		position: sticky;
 		top: 0;
 		background-color: #333;
 	}
@@ -133,5 +132,33 @@
 		flex-wrap: wrap;
 		width: 100%;
 		max-width: 1200px;
+	}
+
+	// Mobile
+	@media (max-width: 700px) {
+		section {
+			padding: 3em;
+		}
+
+		h2 {
+			margin-top: 2em;
+		}
+	}
+
+	@media (max-width: 500px) {
+		section {
+			padding: 1em;
+		}
+
+		h2 {
+			margin-top: 1em;
+		}
+	}
+
+	// Large displays
+	@media (min-width: 1900px) {
+		h2 {
+			margin-top: 3em;
+		}
 	}
 </style>

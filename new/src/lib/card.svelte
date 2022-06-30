@@ -89,6 +89,10 @@
 		.card {
 			width: calc(50% - 20px);
 		}
+
+		.card.small {
+			width: calc(33% - 20px);
+		}
 	}
 
 	@media (max-width: 700px) {
@@ -96,6 +100,23 @@
 			width: 100%;
 			img {
 				aspect-ratio: 3/2;
+			}
+		}
+
+		.card.small {
+			width: calc(50% - 20px);
+
+			img {
+				aspect-ratio: 1;
+			}
+		}
+
+		@media (max-width: 450px) {
+			.card.small {
+				width: 100%;
+				img {
+					aspect-ratio: 3/2;
+				}
 			}
 		}
 	}
