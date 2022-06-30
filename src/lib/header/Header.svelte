@@ -1,221 +1,227 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import logo from './icon.svg';
-	import linkedIn from './linkedinImg.svg';
-	import github from './githubImg.svg';
-	import mail from './mailImg.svg';
+  import { page } from "$app/stores";
+  import logo from "./icon.svg";
+  import linkedIn from "./linkedinImg.svg";
+  import github from "./githubImg.svg";
+  import mail from "./mailImg.svg";
 </script>
 
 <header>
-	<div class="corner logo">
-		<div class="img">
-			<img src={logo} alt="SvelteKit" />
-		</div>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</div>
+  <div class="corner logo">
+    <div class="img">
+      <img src={logo} alt="SvelteKit" />
+    </div>
+    <svg viewBox="0 0 2 3" aria-hidden="true">
+      <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
+    </svg>
+  </div>
 
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true" class="left-slant">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.url.pathname === '/projects'}>
-				<a sveltekit:prefetch href="/projects">Projects</a>
-			</li>
-			<li class:active={$page.url.pathname === '/contact'}>
-				<a sveltekit:prefetch href="/#cta">Contact</a>
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</nav>
+  <nav>
+    <svg viewBox="0 0 2 3" aria-hidden="true" class="left-slant">
+      <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+    </svg>
+    <ul>
+      <li class:active={$page.url.pathname === "/"}>
+        <a sveltekit:prefetch href="/">Home</a>
+      </li>
+      <li class:active={$page.url.pathname === "/projects"}>
+        <a sveltekit:prefetch href="/projects">Projects</a>
+      </li>
+      <li class:active={$page.url.pathname === "/contact"}>
+        <a sveltekit:prefetch href="/#cta">Contact</a>
+      </li>
+    </ul>
+    <svg viewBox="0 0 2 3" aria-hidden="true">
+      <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
+    </svg>
+  </nav>
 
-	<div class="corner socials">
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<div class="nav-links">
-			<ul class="social-links-group">
-				<li class="social-link">
-					<a href="https://linkedin.com/in/etinaude" target="”_blank”">
-						<img alt="" src={linkedIn} />
-					</a>
-				</li>
+  <div class="corner socials">
+    <svg viewBox="0 0 2 3" aria-hidden="true">
+      <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+    </svg>
+    <div class="nav-links">
+      <ul class="social-links-group">
+        <li class="social-link">
+          <a
+            href="https://linkedin.com/in/etinaude"
+            target="_blank"
+            rel="noopener"
+          >
+            <img alt="linked in logo" src={linkedIn} />
+          </a>
+        </li>
 
-				<li class="social-link">
-					<a href="mailto:eti@naude.dev" target="”_blank”">
-						<img alt="" src={mail} />
-					</a>
-				</li>
+        <li class="social-link">
+          <a href="mailto:eti@naude.dev" target="_blank" rel="noopener">
+            <img alt="email icon" src={mail} />
+          </a>
+        </li>
 
-				<li class="social-link">
-					<a href="https://github.com/etinaude" target="”_blank”">
-						<img alt="" src={github} />
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+        <li class="social-link">
+          <a href="https://github.com/etinaude" target="_blank" rel="noopener">
+            <img alt="github logo" src={github} />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>
 
 <style lang="scss">
-	header {
-		display: flex;
-		justify-content: space-between;
-		position: fixed;
-		width: 100%;
-		background-image: linear-gradient(#2226, #22222200);
-		z-index: 1000;
-	}
+  header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    background-image: linear-gradient(#2226, #22222200);
+    z-index: 1000;
+  }
 
-	.corner {
-		width: 3em;
-		height: 3em;
-		a {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
-			height: 100%;
-		}
-		img {
-			width: 2em;
-			height: 2em;
-			object-fit: contain;
-		}
-	}
+  .corner {
+    width: 3em;
+    height: 3em;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      width: 2em;
+      height: 2em;
+      object-fit: contain;
+    }
+  }
 
-	.socials {
-		display: flex;
-		position: fixed;
-		right: 0;
+  .socials {
+    display: flex;
+    position: fixed;
+    right: 0;
 
-		width: max-content;
-		--background: #222;
+    width: max-content;
+    --background: #222;
 
-		.social-links-group {
-			display: flex;
-			background: #222;
-			height: 100%;
+    .social-links-group {
+      display: flex;
+      background: #222;
+      height: 100%;
 
-			justify-content: space-between;
-			width: max-content;
-			.social-link {
-				position: relative;
-				margin: 0 10px;
-				&:hover {
-					transform: scale(1.1);
-				}
-			}
-		}
-	}
+      justify-content: space-between;
+      width: max-content;
+      .social-link {
+        position: relative;
+        margin: 0 10px;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
 
-	.logo {
-		display: flex;
-		width: max-content;
+  .logo {
+    display: flex;
+    width: max-content;
 
-		--background: #222;
+    --background: #222;
 
-		.img {
-			background: #222;
-			height: 100%;
-			display: flex;
-			align-items: center;
-			padding-left: 10px;
-		}
-	}
+    .img {
+      background: #222;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+  }
 
-	nav {
-		display: flex;
-		justify-content: center;
-		--background: #222;
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		height: 90%;
+  nav {
+    display: flex;
+    justify-content: center;
+    --background: #222;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 90%;
 
-		a {
-			display: flex;
-			height: 100%;
-			align-items: center;
-			padding: 0 1em;
-			color: var(--heading-color);
-			font-weight: 700;
-			font-size: 0.8rem;
-			text-transform: uppercase;
-			letter-spacing: 0.1em;
-			text-decoration: none;
-			transition: color 0.2s linear;
-			color: #eee;
-		}
-	}
+    a {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      padding: 0 1em;
+      color: var(--heading-color);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: color 0.2s linear;
+      color: #eee;
+    }
+  }
 
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
+  ul {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    background: var(--background);
+    background-size: contain;
 
-		li {
-			position: relative;
-			height: 100%;
-			&.active::before {
-				--size: 6px;
-				content: '';
-				width: 0;
-				height: 0;
-				position: absolute;
-				top: 0;
-				left: calc(50% - var(--size));
-				border: var(--size) solid transparent;
-				border-top: var(--size) solid var(--accent-color);
-			}
-		}
-	}
+    li {
+      position: relative;
+      height: 100%;
+      &.active::before {
+        --size: 6px;
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: calc(50% - var(--size));
+        border: var(--size) solid transparent;
+        border-top: var(--size) solid var(--accent-color);
+      }
+    }
+  }
 
-	a:hover {
-		color: var(--accent-color);
-	}
+  a:hover {
+    color: var(--accent-color);
+  }
 
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
+  svg {
+    width: 2em;
+    height: 3em;
+    display: block;
 
-		path {
-			fill: var(--background);
-		}
-	}
+    path {
+      fill: var(--background);
+    }
+  }
 
-	@media (max-width: 800px) {
-		.logo {
-			display: none;
-		}
+  @media (max-width: 800px) {
+    .logo {
+      display: none;
+    }
 
-		nav {
-			left: 0;
-			transform: none;
+    nav {
+      left: 0;
+      transform: none;
 
-			.left-slant {
-				display: none;
-			}
-		}
-	}
+      .left-slant {
+        display: none;
+      }
+    }
+  }
 
-	@media (max-width: 550px) {
-		.socials {
-			display: none;
-		}
-	}
+  @media (max-width: 550px) {
+    .socials {
+      display: none;
+    }
+  }
 </style>
