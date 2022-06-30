@@ -1,6 +1,7 @@
-import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 import json from '@rollup/plugin-json'
+import adapter from '@sveltejs/adapter-netlify';
+
 
 
 /** @type {import('@sveltejs/kit').Config} */
