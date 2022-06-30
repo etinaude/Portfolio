@@ -51,6 +51,12 @@ h2,
 h3 {
   font-weight: 400;
   color: var(--heading-color);
+  cursor: default;
+}
+
+p,
+b {
+  cursor: default;
 }
 
 p {
@@ -72,9 +78,14 @@ h1 {
   text-align: center;
 }
 
+img {
+  user-select: none;
+}
+
 h2 {
   font-size: 3rem;
   margin-top: 1.5em;
+  user-select: none;
 }
 
 h3 {

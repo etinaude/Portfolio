@@ -46,6 +46,9 @@
         title={project.title}
         description={project.description}
         image_url={project.image_url}
+        hover_img={project.hover_img}
+        hover_video={project.hover_video}
+        follow_url={project.follow_url}
       />
     {/each}
   </div>
