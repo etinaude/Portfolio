@@ -277,7 +277,6 @@
 		flex-direction: column;
 		min-height: 100vh;
 		box-sizing: border-box;
-		padding: 0 5rem;
 		padding-bottom: 20vh;
 		margin: auto;
 		position: sticky;
@@ -289,6 +288,7 @@
 
 			.more-projects-btn {
 				margin-top: 4rem;
+				margin-bottom: 5em;
 				width: 300px;
 				text-align: center;
 				padding: 20px;
@@ -333,8 +333,7 @@
 				box-sizing: border-box;
 				width: 100%;
 				height: 100vh;
-				padding: 20%;
-				padding-top: 15%;
+				padding-top: 25vh;
 				text-align: center;
 				/* backdrop-filter: blur(2px); */
 				background-color: #2225;
@@ -346,13 +345,13 @@
 	}
 
 	h2 {
-		margin-top: 3em;
+		margin-top: 2em;
 	}
 	.wave {
 		position: absolute;
 		width: 100%;
 		top: 0;
-		transform: translate(0, calc(-100% + 5px));
+		transform: translate(0, calc(-100% + 6px));
 		svg {
 			filter: drop-shadow(0px -12px 4px #2222);
 
@@ -374,17 +373,84 @@
 	.long-card {
 		display: flex;
 		text-decoration: none;
-		height: 180px;
 		margin: 10px;
 
 		img {
-			height: 100%;
+			height: 180px;
 			margin-right: 50px;
 			box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
 		}
 		&.right img {
 			margin-left: 50px;
 			margin-right: 0;
+		}
+	}
+
+	// Mobile
+	@media (max-width: 700px) {
+		section {
+			position: relative;
+			padding: 3em;
+		}
+
+		.long-card {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			&.right {
+				flex-direction: column-reverse;
+
+				img {
+					margin: 0;
+				}
+			}
+			img {
+				height: auto;
+				width: min(200px, 100%);
+				margin: 0;
+				margin-bottom: 20px;
+			}
+		}
+
+		h2 {
+			margin-top: 2em;
+		}
+	}
+
+	@media (max-width: 500px) {
+		section {
+			position: relative;
+			padding: 1em;
+		}
+
+		h2 {
+			margin-top: 1em;
+		}
+	}
+
+	// Odd aspect ratios
+	@media (min-width: 700px) and (max-height: 1000px) {
+		.long-card img {
+			height: 160px;
+		}
+		h2 {
+			margin-top: 1.5em;
+		}
+
+		h3 {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+
+	// Large displays
+	@media (min-width: 1900px) {
+		h2 {
+			margin-top: 3em;
+		}
+		.long-card img {
+			height: 250px;
 		}
 	}
 </style>

@@ -59,6 +59,7 @@
 		margin-top: 10px;
 		color: #bbb;
 		font-size: 0.9em;
+		display: none;
 	}
 
 	img {
@@ -81,6 +82,21 @@
 
 		caption {
 			padding: 0px 10px;
+		}
+	}
+
+	@media (max-width: 1100px) {
+		.card {
+			width: calc(50% - 20px);
+		}
+	}
+
+	@media (max-width: 700px) {
+		.card {
+			width: 100%;
+			img {
+				aspect-ratio: 3/2;
+			}
 		}
 	}
 </style>

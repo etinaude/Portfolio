@@ -198,7 +198,7 @@
 		}
 	}
 
-	@media only screen and (max-width: 800px) {
+	@media (max-width: 800px) {
 		.logo {
 			display: none;
 		}
@@ -213,7 +213,7 @@
 		}
 	}
 
-	@media only screen and (max-width: 550px) {
+	@media (max-width: 550px) {
 		.socials {
 			display: none;
 		}
