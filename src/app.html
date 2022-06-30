@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Etienne Naude" />
+		<meta name="description" content="Etienne Naude Portfolio" />
+		<meta name="keywords" content="etinaude,Etienne,Naude,development,dev" />
+		<meta name="theme-color" content="#43d0ff" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="icon" type="image/svg" href="%sveltekit.assets%/icon.svg" />
+		<link rel="apple-touch-icon" type="image/svg" href="%sveltekit.assets%/icon.svg" />
+		<link rel="icon" href="%sveltekit.assets%/icon.svg" />
+
+		<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-P99DVTH');
+		</script>
+
+		<script type="application/ld+json">
+			[
+				{
+					"@context": "http://schema.org",
+					"@type": "LocalBusiness",
+					"name": "Etinaude Dev",
+					"email": "eti@naude.dev",
+					"url": "https://etinaude.dev/"
+				},
+				{
+					"@context": "https://schema.org/",
+					"@type": "Person",
+					"name": "Etienne Naude",
+					"url": "https://etinaude.dev",
+					"image": "https://res.cloudinary.com/etienne-naude/image/upload/portfolio/v1601787653/mobile-profileImg.png",
+					"sameAs": ["https://www.github.com/etinaude", "https://www.linkedin.com/in/etinaude/"],
+					"jobTitle": "Software Developer",
+					"worksFor": {
+						"@type": "Organization",
+						"name": "Etinaude Dev",
+						"url": "https://etinaude.dev"
+					},
+					"affiliation": {
+						"@type": "Organization",
+						"name": "University of Auckland",
+						"url": "https://auckland.ac.nz/"
+					},
+					"alumniOf": {
+						"@type": "EducationalOrganization",
+						"name": "Macleans College",
+						"url": "https://www.macleans.school.nz/"
+					},
+					"brand": {
+						"@type": "Brand",
+						"name": "Etinaude Dev",
+						"url": "https://etinaude.dev"
+					},
+					"givenName": "Etienne",
+					"familyName": "Naude",
+					"gender": "male",
+					"award": "Queen's Scout Award, Hannah-Bradshaw Award",
+					"email": "eti@naude.dev",
+					"description": "Software developer"
+				}
+			]
+		</script>
+
+		%sveltekit.head%
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-P99DVTH"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<div>%sveltekit.body%</div>
+	</body>
+</html>

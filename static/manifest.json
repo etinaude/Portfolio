@@ -1,0 +1,30 @@
+{
+	"short_name": "Etinaude",
+	"name": "Etienne Naude Portfolio",
+	"description": "A portfolio website showcasing the work of Etienne Naude",
+	"version": "2",
+	"scope": "/",
+	"start_url": "/",
+	"manifest_version": "1",
+	"display": "fullscreen",
+	"background_color": "#222222",
+	"theme_color": "#43d0ff",
+	"orientation": "landscape-primary",
+	"lang": "en-US",
+	"categories": [
+		"portfolio",
+		"portfolio website",
+		"etinaude",
+		"Etienne Naude",
+		"etinaude dev",
+		"development"
+	],
+	"icons": [
+		{
+			"src": "./static/icon.svg",
+			"sizes": "512x512",
+			"type": "image/svg",
+			"purpose": "any maskable"
+		}
+	]
+}
