@@ -1,22 +1,113 @@
 [
-	{
-		"title": "Automated Zen Garden",
-		"description": "An coffee table designed to house an automated zen garden. This was done using a RAMPS board to control a core XY CNC mechanism underneath the table, this then moved a magnet on top of the table which moved and carved patterns in some sand.",
-		"image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624939827/portfolio/sandtableImg.jpg"
-	},
-	{
-		"title": "Headstrong Messenger",
-		"description": "I am part of a research team which created an interactive Ionic chatbot app to help struggling teen with depression and anxiety. I am currently heading front end development for this project, using Ionic and Angular.",
-		"image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1647521355/portfolio/headstrongImg.png"
-	},
-	{
-		"title": "Decimal Clock",
-		"description": "A clock which shows both standard 24hr time along side a time system which is based on the original metric time system. This is to show that different time units exist and that that 24hrs in a day is not a brilliant idea.",
-		"image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624922964/portfolio/clocksqrImg.jpg"
-	},
-	{
-		"title": "Decimal Clock",
-		"description": "Wirelessly controlled automated zen garden",
-		"image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624922964/portfolio/clocksqrImg.jpg"
-	}
+  {
+    "title": "Automated Zen Garden",
+    "description": "An coffee table designed to house an automated zen garden. This was done using a RAMPS board to control a core XY CNC mechanism underneath the table, this then moved a magnet on top of the table which moved and carved patterns in some sand.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624939827/portfolio/sandtableImg.jpg",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1647518416/portfolio/tableVid.mp4",
+    "follow_url": "https://github.com/etinaude/sandtable"
+  },
+  {
+    "title": "Headstrong Messenger",
+    "description": "I am part of a research team which created an interactive Ionic chatbot app to help struggling teen with depression and anxiety. I am currently heading front end development for this project, using Ionic and Angular.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1647521355/portfolio/headstrongImg.png",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1647514719/portfolio/headstrongVid.mp4",
+    "follow_url": "https://appadvice.com/app/habits-messenger/1550723158"
+  },
+  {
+    "title": "Decimal Clock",
+    "description": "A clock which shows both standard 24hr time along side a time system which is based on the original metric time system. This is to show that different time units exist and that that 24hrs in a day is not a brilliant idea.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624922964/portfolio/clocksqrImg.jpg",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556455/portfolio/clock2.jpg",
+    "follow_url": "https://github.com/etinaude/Decimal-Clock"
+  },
+  {
+    "title": "Robot Arm",
+    "description": "A robotic arm build with Hayden Moore. This robotic arm performs a range of functions and is wirelessly controlled using an ESP-32.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624939565/portfolio/armImg.png"
+  },
+  {
+    "title": "Zona",
+    "description": "Zona is a computer vision system which detects and counts the number of people in an area. Zona was designed to help meet regulations for room capacity during the COVID pandemic and to help analyse which areas are being used most often in public spaces.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1647166523/portfolio/zonaImg.png",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1647521706/portfolio/zonaVid.mp4",
+    "follow_url": "https://github.com/etinaude/Zona"
+  },
+  {
+    "title": "Worlds Smallest Keyboard",
+    "description": "We designed the worlds smallest mechanical keyboard and produced some PCBs of them.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1596330688/portfolio/pcbImg.jpg",
+    "follow_url": "https://oshwlab.com/etinaude/keyboard"
+  },
+  {
+    "title": "Training App",
+    "description": "A application to improve the productivity of staff so they would not have to manually enter the details participants in trainings.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624935278/portfolio/unleashAppImg.png",
+    "follow_url": "https://github.com/Unleash-Space/Training-app"
+  },
+  {
+    "title": "Birth Rate Visualiser",
+    "description": "A visualiser to explain various factors which affect birth rates.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1647166612/portfolio/uniImg.png",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/image/upload/v1647210040/portfolio/fertGif.gif",
+    "follow_url": "https://github.com/etinaude/Des-240"
+  },
+  {
+    "title": "Email Tracker",
+    "description": "An email tracking service to be notified when someone has opened an email sent and a dashboard to company it.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1624936376/portfolio/trackerImg.png",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1647522439/portfolio/trackerVid.mp4",
+    "follow_url": "https://github.com/etinaude/tracker"
+  },
+  {
+    "title": "Te Kaha",
+    "description": "A dashboard to help staff members of Te Kaha organise and manage Rangatahi.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1614932128/portfolio/teKahaImg.png"
+  },
+  {
+    "title": "Bread Shirt",
+    "description": "Exactly what it sounds like, a shirt made out of bread.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556459/portfolio/breadShirt1.jpg",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556452/portfolio/breadShirt2.jpg"
+  },
+  {
+    "title": "Laser cut bread",
+    "description": "A range of puns around bread and toast, such as Elon Crust.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556454/portfolio/laserBread.jpg",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556452/portfolio/laserBread2.jpg"
+  },
+  {
+    "title": "Earth Sandwhich",
+    "description": "We made an earth sandwich - placed slices of bread at exact opposite points on the globe",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556452/portfolio/earthlaser.jpg",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556887/portfolio/sandwhich.jpg"
+  },
+  {
+    "title": "Chess Board",
+    "description": "I made a custom chess board from kwila wood and acrylic in lay.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556453/portfolio/Chess1.jpg",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556453/portfolio/Chess2.jpg"
+  },
+  {
+    "title": "Fabric Arts",
+    "description": "Tie Dye and a range of fabric arts",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556452/portfolio/tiedye.jpg"
+  },
+  {
+    "title": "Painting",
+    "description": "Painting DnD minis and collaborative art",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656556453/portfolio/DnDminis.jpg",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656557171/portfolio/pizzaPaint.jpg"
+  },
+
+  {
+    "title": "Physical Lissajouse Table",
+    "description": "Coming soon...",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/f_auto,e_grayscale/v1656555585/portfolio/lissajouse.png"
+  },
+
+  {
+    "title": "Non-planar Ironing",
+    "description": "Coming soon...",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/f_auto,e_grayscale/v1656555717/portfolio/non-planar.jpg"
+  }
 ]
