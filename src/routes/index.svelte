@@ -71,7 +71,7 @@
       <img
         class="tilt"
         alt="UoA Science"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/v1656592568/logos/science_qxklbd.webp"
+        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/science_qxklbd.webp"
       />
       <div>
         <h3>Computer Science at University of Auckland</h3>
@@ -103,7 +103,7 @@
       <img
         class="tilt"
         alt="UoA Creative Arts and Industries"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/v1656592569/logos/cai_a3qplk.webp"
+        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592569/logos/cai_a3qplk.webp"
       />
     </div>
 
@@ -111,7 +111,7 @@
       <img
         class="tilt"
         alt="UoA Engineering"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/v1656592568/logos/engineering_aykfct.webp"
+        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/engineering_aykfct.webp"
       />
       <div>
         <h3>Additive Manufacturing at University of Auckland</h3>
@@ -143,7 +143,7 @@
       <img
         class="tilt"
         alt="UoA Faculty of Medical Heath Sciences logo"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/v1656592568/logos/fmhs_h8upx2.webp"
+        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/fmhs_h8upx2.webp"
       />
       <div>
         <h3>Software Developer at University of Auckland</h3>
@@ -174,7 +174,7 @@
       <img
         class="tilt"
         alt="Kekeno logo"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/v1656592568/logos/kekeno_rbrnha.webp"
+        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/kekeno_rbrnha.webp"
       />
     </div>
 
@@ -182,7 +182,7 @@
       <img
         class="tilt"
         alt="UoA Engineering logo"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/v1656592568/logos/engineering_aykfct.webp"
+        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/engineering_aykfct.webp"
       />
       <div>
         <h3>Robotics Research at University of Auckland</h3>
@@ -220,7 +220,7 @@
       <img
         class="tilt"
         alt="Unleash logo"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/v1656592568/logos/unleash_zkdz7d.webp"
+        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/unleash_zkdz7d.webp"
       />
     </div>
   </div>
@@ -241,21 +241,21 @@
     <Card
       title="Hannah-Bradshaw Award"
       description="I was awarded this for 4 years of consistent volunteer work in different fields."
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1656592543/awards/bradshawImg_yy5b2p.webp"
+      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592543/awards/bradshawImg_yy5b2p.webp"
       follow_url="https://www.macleans.school.nz/news/cup-winners-at-senior-prizegiving-2018"
     />
 
     <Card
       title="Queen's Scout Award"
       description="I was one of the recipients of the Queen's Scout Award, this is the highest youth scouting honour, which was awarded to me for continuous work and commitment to scouting for 10 years"
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1656592543/awards/qsImg_rsqthc.webp"
+      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592543/awards/qsImg_rsqthc.webp"
       follow_url="https://scouts.nz/queens-scout-ceremony-2021/"
     />
 
     <Card
       title="Distinguished Graduate"
       description="I was awarded the 2020 Distinguished Graduate Award for engagement and leadership in a wide range extra curricular activities"
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/v1656592544/awards/distgradImg_g2ork3.webp"
+      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592544/awards/distgradImg_g2ork3.webp"
       follow_url="https://www.auckland.ac.nz/en/on-campus/life-on-campus/leadership-and-volunteering/co-curricular-recognition-programme/ccr-programme-awards/university-of-auckland-award.html"
     />
   </div>
@@ -328,7 +328,7 @@
       width: 100%;
       height: 100vh;
       padding: 0;
-      background-image: url(https://res.cloudinary.com/etienne-naude/image/upload/e_grayscale/v1656592580/me/thoughtfulImg_qd1fsv.webp);
+      background-image: url(https://res.cloudinary.com/etienne-naude/image/upload/q_100,e_grayscale/v1656592580/me/thoughtfulImg_qd1fsv.webp);
       background-position: center;
       background-size: cover;
 

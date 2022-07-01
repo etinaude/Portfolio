@@ -21,9 +21,9 @@
   ],
   "icons": [
     {
-      "src": "./static/icon.svg",
+      "src": "./icon.png",
       "sizes": "512x512",
-      "type": "image/svg",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]

@@ -16,12 +16,7 @@
       <img src={image_url} alt="project" />
 
       {#if hover_img}
-        <img
-          class="hover-img"
-          src={hover_img}
-          loading="lazy"
-          alt="project hover"
-        />
+        <img class="hover-img" src={hover_img} alt="project hover" />
       {:else if hover_video}
         <video playsinline autoplay muted loop class="hover-img">
           <source src={hover_video} loading="lazy" alt="project hover" />

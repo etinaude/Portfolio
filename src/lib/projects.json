@@ -2,115 +2,115 @@
   {
     "title": "Automated Zen Garden",
     "description": "An coffee table designed to house an automated zen garden. This was done using a RAMPS board to control a core XY CNC mechanism underneath the table, this then moved a magnet on top of the table which moved and carved patterns in some sand.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592595/projects/sandtableImg_yoikqb.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1656592597/projects/tableVid_qrxupe.webm",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592595/projects/sandtableImg_yoikqb.webp",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592597/projects/tableVid_qrxupe.webm",
     "follow_url": "https://github.com/etinaude/sandtable"
   },
   {
     "title": "Headstrong Messenger",
     "description": "I am part of a research team which created an interactive Ionic chatbot app to help struggling teen with depression and anxiety. I am currently heading front end development for this project, using Ionic and Angular.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592591/projects/headstrongImg_wv4vdq.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1656592594/projects/headstrongVid_ls4vhb.webm",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/headstrongImg_wv4vdq.webp",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592594/projects/headstrongVid_ls4vhb.webm",
     "follow_url": "https://appadvice.com/app/habits-messenger/1550723158"
   },
   {
     "title": "Decimal Clock",
     "description": "A clock which shows both standard 24hr time along side a time system which is based on the original metric time system. This is to show that different time units exist and that that 24hrs in a day is not a brilliant idea.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592588/projects/decimalClockImg_ow2sp5.webp",
-    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592595/projects/clock2_retlma.webp",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592588/projects/decimalClockImg_ow2sp5.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592595/projects/clock2_retlma.webp",
     "follow_url": "https://github.com/etinaude/Decimal-Clock"
   },
   {
     "title": "Robot Arm",
     "description": "A robotic arm build with Hayden Moore. This robotic arm performs a range of functions and is wirelessly controlled using an ESP-32.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592586/projects/armImg_hpusqb.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1656592595/projects/robotGif_phptbi.webm"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592586/projects/armImg_hpusqb.webp",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592595/projects/robotGif_phptbi.webm"
   },
   {
     "title": "Zona",
     "description": "Zona is a computer vision system which detects and counts the number of people in an area. Zona was designed to help meet regulations for room capacity during the COVID pandemic and to help analyse which areas are being used most often in public spaces.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592587/projects/zonaImg_updhe6.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1656592591/projects/zonaVid_jh5808.webm",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592587/projects/zonaImg_updhe6.webp",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/zonaVid_jh5808.webm",
     "follow_url": "https://github.com/etinaude/Zona"
   },
   {
     "title": "Worlds Smallest Keyboard",
     "description": "We designed the worlds smallest mechanical keyboard and produced some PCBs of them.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592591/projects/pcbImg_agdjzo.webp",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/pcbImg_agdjzo.webp",
     "follow_url": "https://oshwlab.com/etinaude/keyboard"
   },
   {
     "title": "Training App",
     "description": "A application to improve the productivity of staff so they would not have to manually enter the details participants in trainings.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592586/projects/unleashAppImg_ws1fv5.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1656592587/projects/trainingVid_oonyzs.webm",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592586/projects/unleashAppImg_ws1fv5.webp",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592587/projects/trainingVid_oonyzs.webm",
     "follow_url": "https://github.com/Unleash-Space/Training-app"
   },
   {
     "title": "Birth Rate Visualiser",
     "description": "A visualiser to explain various factors which affect birth rates.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592596/projects/uniImg_slficq.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1656592592/projects/fertGif_vfbzbp.webm",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592596/projects/uniImg_slficq.webp",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592592/projects/fertGif_vfbzbp.webm",
     "follow_url": "https://github.com/etinaude/Des-240"
   },
   {
     "title": "Email Tracker",
     "description": "An email tracking service to be notified when someone has opened an email sent and a dashboard to company it.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592593/projects/trackerImg_lhhfuq.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/v1656592589/projects/trackerVid_d36n4v.webm",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592593/projects/trackerImg_lhhfuq.webp",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592589/projects/trackerVid_d36n4v.webm",
     "follow_url": "https://github.com/etinaude/tracker"
   },
   {
     "title": "Te Kaha",
     "description": "A dashboard to help staff members of Te Kaha organise and manage Rangatahi.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592594/projects/teKahaImg_unnksy.webp"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592594/projects/teKahaImg_unnksy.webp"
   },
   {
     "title": "Bread Shirt",
     "description": "Exactly what it sounds like, a shirt made out of bread.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592597/projects/shirt3_kvjrms.webp",
-    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592594/projects/shirt2_cirmya.webp"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592597/projects/shirt3_kvjrms.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592594/projects/shirt2_cirmya.webp"
   },
   {
     "title": "Laser cut bread",
     "description": "A range of puns around bread and toast, such as Elon Crust.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592586/projects/elonCrust_eep0xz.webp",
-    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592591/projects/breadSherren_nt5qcg.webp"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592586/projects/elonCrust_eep0xz.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/breadSherren_nt5qcg.webp"
   },
   {
     "title": "Earth Sandwhich",
     "description": "We made an earth sandwich - placed slices of bread at exact opposite points on the globe",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592593/projects/sandbreadImg_eggcz1.webp",
-    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592589/projects/sandwhich_ealvna.webp"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592593/projects/sandbreadImg_eggcz1.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592589/projects/sandwhich_ealvna.webp"
   },
   {
     "title": "Chess Board",
     "description": "I made a custom chess board from kwila wood and acrylic in lay.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592592/projects/chess_tnp8sj.webp",
-    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592589/projects/chess2_dxhp7g.webp"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592592/projects/chess_tnp8sj.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592589/projects/chess2_dxhp7g.webp"
   },
   {
     "title": "Fabric Arts",
     "description": "Tie Dye and a range of fabric arts",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592592/projects/heartString_djxoqn.webp",
-    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592590/projects/tiedye_qfwj8n.webp"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592592/projects/heartString_djxoqn.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592590/projects/tiedye_qfwj8n.webp"
   },
   {
     "title": "Painting",
     "description": "Painting DnD minis and collaborative art",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/v1656592591/projects/MVIMG_20190315_105455_majrrw.webp",
-    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1656557171/portfolio/pizzaPaint.jpg"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/MVIMG_20190315_105455_majrrw.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592599/projects/pizza_lpz26b.webp"
   },
 
   {
     "title": "Physical Lissajouse Table",
     "description": "Coming soon...",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/e_grayscale/v1656592592/projects/lissajouse_qlikyt.webp"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,w_360,h_360,q_100,e_grayscale/v1656592592/projects/lissajouse_qlikyt.webp"
   },
 
   {
     "title": "Non-planar Ironing",
     "description": "Coming soon...",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/e_grayscale/v1656592587/projects/non-planar_ohqgvy.webp"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,w_360,h_360,q_100,e_grayscale/v1656592587/projects/non-planar_ohqgvy.webp"
   }
 ]
