@@ -3,15 +3,10 @@
 :root {
   font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-mono: "Fira Mono", monospace;
   --pure-white: #ffffff;
   --primary-color: #222;
-  --secondary-color: #333;
   --accent-color: #43d0ff;
-  --heading-color: #43d0ff;
   --text-color: #fff;
-  --column-width: 42rem;
-  --column-margin-top: 4rem;
 }
 
 body {
@@ -20,11 +15,9 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: var(--primary-color);
-  background: linear-gradient(
-    180deg,
-    var(--primary-color) 0%,
-    var(--secondary-color) 10.45%
-  );
+  background: linear-gradient(180deg,
+      var(--primary-color) 0%,
+      var(#333) 10.45%);
 }
 
 * {
@@ -44,33 +37,33 @@ section {
   position: sticky;
   top: 0;
   background-color: var(--background);
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  @media (max-width: 700px) {
+    position: relative;
+    padding: 3em;
+  }
+
+  @media (max-width: 500px) {
+    position: relative;
+    padding: 1em;
+  }
 }
 
 h1,
 h2,
 h3 {
   font-weight: 400;
-  color: var(--heading-color);
-  cursor: default;
-}
-
-p,
-b {
-  cursor: default;
-}
-
-p {
-  line-height: 1.5;
-}
-
-a {
   color: var(--accent-color);
-  text-decoration: none;
-}
-
-b {
-  color: var(--accent-color);
-  font-weight: normal;
+  cursor: default;
 }
 
 h1 {
@@ -78,34 +71,53 @@ h1 {
   text-align: center;
 }
 
-img {
-  user-select: none;
-}
-
 h2 {
   font-size: 3rem;
-  margin-top: 1.5em;
+  margin-top: 2em;
   user-select: none;
+
+
+  @media (min-width: 1900px) {
+    margin-top: 3em;
+  }
+
+  @media (max-width: 500px) {
+    margin-top: 1em;
+  }
 }
 
 h3 {
   font-size: 1.5rem;
+
+  @media (min-width: 700px) and (max-height: 1000px) {
+    margin: 0 10px;
+  }
 }
 
-input {
-  font-size: inherit;
-  font-family: inherit;
+p,
+b {
+  cursor: default;
+  line-height: 1.5;
+
+  b {
+    color: var(--accent-color);
+    font-weight: normal;
+  }
 }
 
-button:focus:not(:focus-visible) {
-  outline: none;
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+img {
+  user-select: none;
 }
 
 button,
 .button {
   background-color: #252525;
   border: 2px solid var(--accent-color);
-  padding: 10px;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
@@ -114,12 +126,17 @@ button,
   text-decoration: none;
 
   transition: 0.2s ease;
-}
+  text-align: center;
+  padding: 20px;
 
-button:hover,
-.button:hover {
-  background-color: var(--accent-color);
-  color: #222;
+  &:hover {
+    background-color: var(--accent-color);
+    color: #252525;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -135,5 +152,5 @@ button:hover,
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #43d0ff;
+  background: var(--accent-color);
 }

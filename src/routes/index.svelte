@@ -346,10 +346,6 @@
       }
     }
   }
-
-  h2 {
-    margin-top: 2em;
-  }
   .wave {
     position: absolute;
     width: 100%;
@@ -362,15 +358,6 @@
         fill: var(--background);
       }
     }
-  }
-
-  .flex-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
   }
 
   .long-card {
@@ -391,11 +378,6 @@
 
   // Mobile
   @media (max-width: 700px) {
-    section {
-      position: relative;
-      padding: 3em;
-    }
-
     .long-card {
       flex-direction: column;
       align-items: center;
@@ -415,21 +397,6 @@
         margin-bottom: 20px;
       }
     }
-
-    h2 {
-      margin-top: 2em;
-    }
-  }
-
-  @media (max-width: 500px) {
-    section {
-      position: relative;
-      padding: 1em;
-    }
-
-    h2 {
-      margin-top: 1em;
-    }
   }
 
   // Odd aspect ratios
@@ -437,21 +404,10 @@
     .long-card img {
       height: 160px;
     }
-    h2 {
-      margin-top: 1.5em;
-    }
-
-    h3 {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
   }
 
   // Large displays
   @media (min-width: 1900px) {
-    h2 {
-      margin-top: 3em;
-    }
     .long-card img {
       height: 250px;
     }
