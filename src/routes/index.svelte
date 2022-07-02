@@ -3,19 +3,12 @@
 </script>
 
 <script lang="ts">
-  import VanillaTilt from "vanilla-tilt";
   import Card from "$lib/card.svelte";
-  import { onMount } from "svelte";
+  import LongCard from "$lib/long-card.svelte";
   import ChanglingText from "$lib/changling-text.svelte";
   import projectsImport from "$lib/projects.json";
 
   const projects = projectsImport.slice(0, 3);
-
-  onMount(() => {
-    const elements = document.querySelectorAll(".tilt");
-
-    VanillaTilt.init(elements, { glare: true });
-  });
 </script>
 
 <svelte:head>
@@ -67,63 +60,38 @@
   <h2>Education</h2>
 
   <div class="flex-row">
-    <div class="long-card">
-      <img
-        class="tilt"
-        alt="UoA Science"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/science_qxklbd.webp"
-      />
-      <div>
-        <h3>Computer Science at University of Auckland</h3>
-        <p>
-          I am currently studying towards a Bachelor of Advanced Science
-          (Honours) majoring in Computer Science. While completing my Computer
-          Science degree I have been awarded <b
-            >8 Outstanding Achievement awards</b
-          >
-          and was <b>top in class</b> for the undergraduate capstone project. I
-          was also selected to join the <b>Science Scholars</b> cohort.
-        </p>
-      </div>
-    </div>
+    <LongCard
+      title="Computer Science at University of Auckland"
+      description="I am currently studying towards a Bachelor of Advanced Science
+    (Honours) majoring in Computer Science. While completing my Computer
+    Science degree I have been awarded <b
+      >8 Outstanding Achievement awards</b
+    > and was <b>top in class</b> for the undergraduate capstone project. I
+    was also selected to join the <b>Science Scholars</b> cohort."
+      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/science_qxklbd.webp"
+    />
 
-    <div class="long-card right">
-      <div>
-        <h3>Design at University of Auckland</h3>
-        <p>
-          I am also completing a conjoint degree in a Bachelor of Design
-          focussing on designing with
-          <b>disruptive technologies</b>. My aim is to use the knowledge from my
-          design degree to bridge the gap between the technical and aesthetic
-          aspects of my projects. I was awarded with a <b>Design Scholarship</b>
-          by the university in 2021.
-        </p>
-      </div>
+    <LongCard
+      title="Design at University of Auckland"
+      side="right"
+      description=" I am also completing a conjoint degree in a Bachelor of Design
+    focussing on designing with
+    <b>disruptive technologies</b>. My aim is to use the knowledge from my
+    design degree to bridge the gap between the technical and aesthetic
+    aspects of my projects. I was awarded with a <b>Design Scholarship</b>
+    by the university in 2021."
+      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592569/logos/cai_a3qplk.webp"
+    />
 
-      <img
-        class="tilt"
-        alt="UoA Creative Arts and Industries"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592569/logos/cai_a3qplk.webp"
-      />
-    </div>
-
-    <div class="long-card">
-      <img
-        class="tilt"
-        alt="UoA Engineering"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/engineering_aykfct.webp"
-      />
-      <div>
-        <h3>Additive Manufacturing at University of Auckland</h3>
-        <p>
-          My Honours Project is with the Department of Mechanical Engineering
-          researching <b>non-planar ironing</b> in FDM 3d printing. Building on previous
-          work we have been able to successfully combine two prior techniques to
-          create a novel process to smooth surface finishes on FDM prints and reduce
-          post processing.
-        </p>
-      </div>
-    </div>
+    <LongCard
+      title="Additive Manufacturing at University of Auckland"
+      description="My Honours Project is with the Department of Mechanical Engineering
+      researching <b>non-planar ironing</b> in FDM 3d printing. Building on previous
+      work we have been able to successfully combine two prior techniques to
+      create a novel process to smooth surface finishes on FDM prints and reduce
+      post processing."
+      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/engineering_aykfct.webp"
+    />
   </div>
 </section>
 
@@ -139,90 +107,58 @@
   <h2>Current Work</h2>
 
   <div class="flex-row">
-    <div class="long-card">
-      <img
-        class="tilt"
-        alt="UoA Faculty of Medical Heath Sciences logo"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/fmhs_h8upx2.webp"
-      />
-      <div>
-        <h3>Software Developer at University of Auckland</h3>
-        <p>
-          While working at this role I focussed on <b>mobile app development</b>
-          using <b>Ionic</b>
-          Framework. In this role I was the primary developer for
-          <b>Headstrong Messenger</b> which is a chatbot application designed to
-          help teens and young adults struggling with depression and anxiety build
-          healthy habits.
-        </p>
-      </div>
-    </div>
+    <LongCard
+      title="UoA Faculty of Medical Heath Sciences logo"
+      description="While working at this role I focussed on <b>mobile app development</b>
+  using <b>Ionic</b>
+  Framework. In this role I was the primary developer for
+  <b>Headstrong Messenger</b> <img which is a chatbot application designed to
+  help teens and young adults struggling with depression and anxiety build
+  healthy habits."
+      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/fmhs_h8upx2.webp"
+    />
 
-    <div class="long-card right">
-      <div>
-        <h3>Fullstack developer and designer at Kekeno Tech</h3>
-        <p>
-          At Kekeno Tech I am a fullstack developer and designer working mainly
-          to create web applications for clients around New Zealand. The primary
-          technologies used for this role is <b>Angular</b>, <b>Flask</b> and
-          <b>Firebase</b>. On top of this I also often
-          <b>design webpages</b> or modify existing designs to fit the needs of the
-          client.
-        </p>
-      </div>
+    <LongCard
+      title="Fullstack developer and designer at Kekeno Tech"
+      side="right"
+      description=" At Kekeno Tech I am a fullstack developer and designer working mainly
+    to create web applications for clients around New Zealand. The primary
+    technologies used for this role is <b>Angular</b>, <b>Flask</b> and
+    <b>Firebase</b>. On top of this I also often
+    <b>design webpages</b> or modify existing designs to fit the needs of the
+    client."
+      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/kekeno_rbrnha.webp"
+    />
 
-      <img
-        class="tilt"
-        alt="Kekeno logo"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/kekeno_rbrnha.webp"
-      />
-    </div>
+    <LongCard
+      title="Robotics Research at University of Auckland"
+      description="I am employed by the Department of Mechatronics to create a system
+  allowing children to interact with robots and provide the robots
+  instructions using a novel <b>tangible programming language</b>. This
+  enables them to programme the robots using cards before they are even
+  able to use a computer. The research is in using this system as an
+  education tool and exploring how children interact with robots. For
+  this project I am making the <b>computer vision</b>
+  system, the <b>data server</b>, and the <b>interface</b> to explore all
+  the data which has been collected."
+      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/engineering_aykfct.webp"
+    />
 
-    <div class="long-card">
-      <img
-        class="tilt"
-        alt="UoA Engineering logo"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/engineering_aykfct.webp"
-      />
-      <div>
-        <h3>Robotics Research at University of Auckland</h3>
-        <p>
-          I am employed by the Department of Mechatronics to create a system
-          allowing children to interact with robots and provide the robots
-          instructions using a novel <b>tangible programming language</b>. This
-          enables them to programme the robots using cards before they are even
-          able to use a computer. The research is in using this system as an
-          education tool and exploring how children interact with robots. For
-          this project I am making the <b>computer vision</b>
-          system, the <b>data server</b>, and the <b>interface</b> to explore all
-          the data which has been collected.
-        </p>
-      </div>
-    </div>
-
-    <div class="long-card right">
-      <div>
-        <h3>Lead Creative Technologist at Unleash Space</h3>
-        <p>
-          As A Creative Technologist I consult with students and staff members
-          to create and design a wide range projects using the latest creative
-          technologies. This is done by providing trainings on how each
-          technology is used, when to use it and what its limitations are I also
-          provide advice individually to people who need further information on
-          prototyping. Some of the technologies I provide advice for are <b
-            >3D printing</b
-          >,
-          <b>laser cutting</b>, <b>5G</b>, <b>VR/AR</b>, <b>soldering</b> and
-          <b>CNC routing</b>. The projects which I help prototype for
-        </p>
-      </div>
-
-      <img
-        class="tilt"
-        alt="Unleash logo"
-        src="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/unleash_zkdz7d.webp"
-      />
-    </div>
+    <LongCard
+      title="Lead Creative Technologist at Unleash Space"
+      side="right"
+      description="As A Creative Technologist I consult with students and staff members
+    to create and design a wide range projects using the latest creative
+    technologies. This is done by providing trainings on how each
+    technology is used, when to use it and what its limitations are I also
+    provide advice individually to people who need further information on
+    prototyping. Some of the technologies I provide advice for are <b
+      >3D printing</b
+    >,
+    <b>laser cutting</b>, <b>5G</b>, <b>VR/AR</b>, <b>soldering</b> and
+    <b>CNC routing</b>. The projects which I help prototype for"
+      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/unleash_zkdz7d.webp"
+    />
   </div>
 </section>
 
@@ -357,59 +293,6 @@
       path {
         fill: var(--background);
       }
-    }
-  }
-
-  .long-card {
-    display: flex;
-    text-decoration: none;
-    margin: 10px;
-
-    img {
-      height: 180px;
-      margin-right: 50px;
-      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-    }
-    &.right img {
-      margin-left: 50px;
-      margin-right: 0;
-    }
-  }
-
-  // Mobile
-  @media (max-width: 700px) {
-    .long-card {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      &.right {
-        flex-direction: column-reverse;
-
-        img {
-          margin: 0;
-        }
-      }
-      img {
-        height: auto;
-        width: min(200px, 100%);
-        margin: 0;
-        margin-bottom: 20px;
-      }
-    }
-  }
-
-  // Odd aspect ratios
-  @media (min-width: 700px) and (max-height: 1000px) {
-    .long-card img {
-      height: 160px;
-    }
-  }
-
-  // Large displays
-  @media (min-width: 1900px) {
-    .long-card img {
-      height: 250px;
     }
   }
 </style>

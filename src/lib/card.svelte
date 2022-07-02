@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+  import VanillaTilt from "vanilla-tilt";
+
   export let title: string;
   export let description: string;
   export let image_url: string;
@@ -8,9 +11,15 @@
   export let follow_url: string = "https://github.com/etinaude";
 
   export let small: string = "false";
+
+  let card: HTMLElement;
+
+  onMount(() => {
+    VanillaTilt.init(card, { glare: true });
+  });
 </script>
 
-<div class="card tilt {small == 'true' ? 'small' : ''}" id="card">
+<div class="card tilt {small == 'true' ? 'small' : ''}" bind:this={card}>
   <a href={follow_url} target="_blank" rel="noopener">
     <div class="img">
       <img src={image_url} alt="project" />

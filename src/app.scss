@@ -11,7 +11,6 @@
 
 body {
   overflow-x: hidden;
-
   min-height: 100vh;
   margin: 0;
   background-color: var(--primary-color);
@@ -30,7 +29,8 @@ section {
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 110vh;
+  ;
   box-sizing: border-box;
   padding-bottom: 20vh;
   margin: auto;
@@ -76,11 +76,6 @@ h2 {
   margin-top: 2em;
   user-select: none;
 
-
-  @media (min-width: 1900px) {
-    margin-top: 3em;
-  }
-
   @media (max-width: 500px) {
     margin-top: 1em;
   }
@@ -89,7 +84,7 @@ h2 {
 h3 {
   font-size: 1.5rem;
 
-  @media (min-width: 700px) and (max-height: 1000px) {
+  @media (max-height: 1000px) {
     margin: 0 10px;
   }
 }
