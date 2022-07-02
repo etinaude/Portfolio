@@ -1,15 +1,11 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import logo from "./icon.svg";
-  import linkedIn from "./linkedinImg.svg";
-  import github from "./githubImg.svg";
-  import mail from "./mailImg.svg";
 </script>
 
 <header>
   <div class="corner logo">
     <div class="img">
-      <img src={logo} alt="SvelteKit" />
+      <img src="icon.svg" alt="Website Logo" />
     </div>
     <svg viewBox="0 0 2 3" aria-hidden="true">
       <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
@@ -28,7 +24,7 @@
         <a sveltekit:prefetch href="/projects">Projects</a>
       </li>
       <li class:active={$page.url.pathname === "/contact"}>
-        <a sveltekit:prefetch href="/#cta">Contact</a>
+        <a href="/#cta">Contact</a>
       </li>
     </ul>
     <svg viewBox="0 0 2 3" aria-hidden="true">
@@ -48,19 +44,19 @@
             target="_blank"
             rel="noopener"
           >
-            <img alt="linked in logo" src={linkedIn} />
+            <img alt="linked in logo" src="linkedin_logo.svg" />
           </a>
         </li>
 
         <li class="social-link">
           <a href="mailto:eti@naude.dev" target="_blank" rel="noopener">
-            <img alt="email icon" src={mail} />
+            <img alt="email icon" src="mail_logo.svg" />
           </a>
         </li>
 
         <li class="social-link">
           <a href="https://github.com/etinaude" target="_blank" rel="noopener">
-            <img alt="github logo" src={github} />
+            <img alt="github logo" src="github_logo.svg" />
           </a>
         </li>
       </ul>
