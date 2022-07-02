@@ -30,7 +30,6 @@ section {
   align-items: center;
   flex-direction: column;
   min-height: 110vh;
-  ;
   box-sizing: border-box;
   padding-bottom: 20vh;
   margin: auto;
@@ -43,7 +42,17 @@ section {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  .long-card-row {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
     max-width: 1200px;
   }
 
@@ -76,17 +85,16 @@ h2 {
   margin-top: 2em;
   user-select: none;
 
-  @media (max-width: 500px) {
-    margin-top: 1em;
+  @media (max-width: 500px),
+  (max-height: 1000px) {
+    margin-top: 1.5em;
   }
 }
 
 h3 {
   font-size: 1.5rem;
 
-  @media (max-height: 1000px) {
-    margin: 0 10px;
-  }
+
 }
 
 p,

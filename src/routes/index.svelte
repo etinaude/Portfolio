@@ -59,7 +59,7 @@
   </div>
   <h2>Education</h2>
 
-  <div class="flex-row">
+  <div class="long-card-row">
     <LongCard
       title="Computer Science at University of Auckland"
       description="I am currently studying towards a Bachelor of Advanced Science
@@ -106,7 +106,7 @@
 
   <h2>Current Work</h2>
 
-  <div class="flex-row">
+  <div class="long-card-row">
     <LongCard
       title="UoA Faculty of Medical Heath Sciences logo"
       description="While working at this role I focussed on <b>mobile app development</b>
@@ -246,6 +246,16 @@
 
     &#work {
       --background: #4a4a4a;
+
+      @media (max-height: 1100px) {
+        top: -20vh;
+        padding-bottom: 10vh;
+      }
+
+      @media (max-width: 700px) {
+        top: 0vh;
+        margin-bottom: 0vh;
+      }
     }
     &#awards {
       --background: #3c3c3c;
@@ -282,6 +292,7 @@
       }
     }
   }
+
   .wave {
     position: absolute;
     width: 100%;

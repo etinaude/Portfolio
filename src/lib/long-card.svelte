@@ -19,7 +19,7 @@
 </script>
 
 <div class="long-card {side}">
-  <div>
+  <div class="text">
     <h3>{title}</h3>
     <p bind:this={paragraph} />
   </div>
@@ -31,66 +31,35 @@
   .long-card {
     display: flex;
     text-decoration: none;
-    margin: 10px;
     flex-direction: row-reverse;
+    justify-content: space-between;
+
+    .text {
+      max-width: calc(100% - 210px);
+      margin-top: auto;
+      margin-bottom: auto;
+    }
 
     img {
       height: 180px;
-      margin-right: 50px;
       box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-
-      @media (max-height: 1100px) {
-        height: 150px;
-      }
     }
 
     &.right {
       flex-direction: row;
-
-      img {
-        margin-left: 50px;
-        margin-right: 0;
-      }
     }
 
     @media (max-width: 700px) {
-      flex-direction: column;
+      flex-direction: column-reverse !important;
       align-items: center;
       justify-content: center;
 
-      &.right {
-        flex-direction: column-reverse;
-
-        img {
-          margin: 0;
-        }
-      }
-
-      img {
-        height: auto;
-        width: min(200px, 100%);
-        margin: 0;
-        margin-bottom: 20px;
-      }
-    }
-
-    @media (max-height: 1100px) {
-      height: 160px;
-
       h3 {
-        margin-top: 0;
+        text-align: center;
       }
 
-      &.left {
-        img {
-          margin-right: 25px;
-        }
-      }
-
-      &.right {
-        img {
-          margin-left: 25px;
-        }
+      .text {
+        max-width: 100%;
       }
     }
   }
