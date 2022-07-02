@@ -101,9 +101,29 @@
     "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/MVIMG_20190315_105455_majrrw.webp",
     "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592599/projects/pizza_lpz26b.webp"
   },
+  {
+    "title": "Br**nFuck",
+    "description": "Interpreter for the programming language BrainFuck made to show how low level languages operate",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592596/projects/BF_j69d6l.webp"
+  },
+  {
+    "title": "Glowbox",
+    "description": "Glowing box to display different patterns.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592596/projects/glowboxImg_gnzzbh.webp"
+  },
+  {
+    "title": "Rubik's Cube Solver",
+    "description": "Rubik's Cube Solving website... cause its too hard to solve a cube the normal way.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592595/projects/cubeImg_yknrxc.webp"
+  },
+  {
+    "title": "Long Exposure Photography",
+    "description": "Spinning Steel wool long exposure photography.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592590/projects/spin_vvwdhr.webp"
+  },
 
   {
-    "title": "Physical Lissajouse Table",
+    "title": "Physical Lissajous Table",
     "description": "Coming soon...",
     "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,w_360,h_360,q_100,e_grayscale/v1656592592/projects/lissajouse_qlikyt.webp"
   },
