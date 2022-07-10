@@ -35,8 +35,9 @@
   },
   {
     "title": "Worlds Smallest Keyboard",
-    "description": "We designed the worlds smallest mechanical keyboard and produced some PCBs of them.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/pcbImg_agdjzo.webp",
+    "description": "We designed the worlds smallest mechanical keyboard and produced some PCBs of the design, the design uses an ATmega32U4 as its controller.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1657442406/projects/keyboard_ofncxy.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/pcbImg_agdjzo.webp",
     "follow_url": "https://oshwlab.com/etinaude/keyboard"
   },
   {
