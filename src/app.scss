@@ -14,9 +14,11 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: var(--primary-color);
-  background: linear-gradient(180deg,
-      var(--primary-color) 0%,
-      var(#333) 10.45%);
+  background: linear-gradient(
+    180deg,
+    var(--primary-color) 0%,
+    var(#333) 10.45%
+  );
 }
 
 * {
@@ -29,13 +31,69 @@ section {
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 110vh;
+  min-height: 95vh;
   box-sizing: border-box;
   padding-bottom: 20vh;
   margin: auto;
   position: sticky;
   top: 0;
   background-color: var(--background);
+
+  &#projects {
+    --background: #333;
+
+    .more-projects-btn {
+      margin-top: 4rem;
+      margin-bottom: 5em;
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &#education {
+    --background: #3c3c3c;
+  }
+
+  &#work {
+    --background: #4a4a4a;
+  }
+  &#awards {
+    --background: #3c3c3c;
+  }
+
+  &#cta {
+    --background: #222;
+    justify-content: center;
+    height: 100vh;
+
+    .contacts {
+      font-size: 1.5em;
+    }
+  }
+
+  &#about {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    background-image: url(https://res.cloudinary.com/etienne-naude/image/upload/q_100,e_grayscale/v1656592580/me/thoughtfulImg_qd1fsv.webp);
+    background-position: center;
+    background-size: cover;
+
+    .header-text {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100vh;
+      padding-top: 25vh;
+      text-align: center;
+      /* backdrop-filter: blur(2px); */
+      background-color: #2225;
+      h1 {
+        margin: 0px;
+      }
+    }
+  }
 
   .flex-row {
     display: flex;
@@ -47,13 +105,17 @@ section {
   }
 
   .long-card-row {
-    min-height: 60vh;
+    min-height: calc(95vh - 300px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 90%;
-    max-width: 1200px;
+    width: min(90%, 1200px);
+
+    @media (max-width: 700px) {
+      top: 0vh;
+      margin-bottom: 0vh;
+    }
   }
 
   @media (max-width: 700px) {
@@ -85,16 +147,13 @@ h2 {
   margin-top: 2em;
   user-select: none;
 
-  @media (max-width: 500px),
-  (max-height: 1000px) {
+  @media (max-width: 500px), (max-height: 1000px) {
     margin-top: 1.5em;
   }
 }
 
 h3 {
   font-size: 1.5rem;
-
-
 }
 
 p,
@@ -156,4 +215,21 @@ button,
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
+}
+
+.wave {
+  svg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 100%;
+    transform: translate(0, 3px);
+    filter: drop-shadow(0px -12px 4px #2222);
+
+    path {
+      transform: scaleY(0.5);
+
+      fill: var(--background);
+    }
+  }
 }
