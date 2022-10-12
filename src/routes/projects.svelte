@@ -6,16 +6,56 @@
   import Card from "$lib/card.svelte";
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
-  import projectsImport from "$lib/projects.json";
+  import projectsImport from "$lib/data/projects.json";
+  import languageColors from "$lib/data/languages.json";
+  import githubBackup from "$lib/data/backupdata.json";
+
+  import Repo from "$lib/Repo.svelte";
 
   const largeProjects = projectsImport.slice(0, 6);
   const smallProjects = projectsImport.slice(6);
+  let gitHubRepos = githubBackup.repos;
+  let gitHubUser = githubBackup.profile;
 
   onMount(() => {
     const elements = document.querySelectorAll(".tilt");
 
     VanillaTilt.init(elements, { glare: true });
   });
+
+  async function loadGithub() {
+    fetch("https://api.github.com/users/etinaude")
+      .then((response) => (response.status === 200 ? response.json() : null))
+      .then((data) => {
+        if (data) {
+          gitHubUser = data;
+        }
+      });
+
+    fetch(
+      "https://api.github.com/users/etinaude/repos?sort=updated&per_page=80"
+    )
+      .then((response) => (response.status === 200 ? response.json() : null))
+      .then((data) => {
+        if (!data) return;
+
+        // sort by stars
+        data.sort((a: any, b: any) => b.stargazers_count - a.stargazers_count);
+
+        gitHubRepos = data.slice(0, 6);
+        gitHubRepos.forEach((repo: any) => {
+          repo.languageColor = languageColors[repo.language];
+        });
+
+        console.log(gitHubRepos);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  loadGithub();
+  // loadInsta();
 </script>
 
 <svelte:head>
@@ -24,7 +64,47 @@
 </svelte:head>
 
 <section id="projects">
-  <h2>Projects</h2>
+  {#if gitHubUser}
+    <h2>GitHub</h2>
+
+    <a
+      href={gitHubUser.html_url}
+      target="_blank"
+      rel="noopener"
+      class="github-profile"
+    >
+      <div class="img">
+        <img src={gitHubUser.avatar_url} alt="project" />
+      </div>
+
+      <div class="bio">
+        <div class="row">
+          <div class="github-text">github.com/</div>
+
+          <div>
+            {gitHubUser.following} Following
+          </div>
+        </div>
+        <div class="row">
+          <h3>{gitHubUser.login}</h3>
+
+          <div>
+            {gitHubUser.followers} Followers
+          </div>
+        </div>
+
+        <caption>{gitHubUser.bio}</caption>
+      </div>
+    </a>
+
+    <div class="repo-list">
+      {#each gitHubRepos as repo}
+        <Repo {repo} />
+      {/each}
+    </div>
+  {/if}
+
+  <h2>Featured Projects</h2>
 
   <div class="flex-row">
     {#each largeProjects as project}
