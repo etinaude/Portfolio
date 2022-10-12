@@ -81,9 +81,25 @@ section {
     width: 100%;
     height: 100vh;
     padding: 0;
-    background-image: url(https://res.cloudinary.com/etienne-naude/image/upload/q_100,e_grayscale/v1656592580/me/thoughtfulImg_qd1fsv.webp);
-    background-position: center;
-    background-size: cover;
+    position: relative;
+
+    .hero-pic {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.1s ease;
+
+      z-index: -1;
+
+      img {
+        width: 110%;
+        height: 110%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
 
     .header-text {
       box-sizing: border-box;

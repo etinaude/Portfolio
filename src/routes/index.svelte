@@ -7,15 +7,46 @@
   import LongCard from "$lib/long-card.svelte";
   import ChanglingText from "$lib/changling-text.svelte";
   import projectsImport from "$lib/data/projects.json";
+  import { onMount } from "svelte";
 
   const projects = projectsImport.slice(0, 3);
+  let image: HTMLElement;
+
+  onMount(() => {
+    image = document.getElementById("hero-pic")!;
+  });
+
+  function mouseMove(event: any) {
+    console.log("hovering", event);
+
+    const x = event.clientX;
+    const y = event.clientY;
+
+    const width = image.clientWidth;
+    const height = image.clientHeight;
+
+    const xPercent = x / width;
+    const yPercent = y / height;
+
+    // translate image
+    image.style.transform = `translate(-${xPercent * 100}px, -${
+      yPercent * 100
+    }px)`;
+  }
 </script>
 
 <svelte:head>
   <title>Etienne Naude</title>
 </svelte:head>
 
-<section id="about">
+<section id="about" on:mousemove={mouseMove}>
+  <div class="hero-pic" id="hero-pic">
+    <img
+      src="https://res.cloudinary.com/etienne-naude/image/upload/q_100,e_grayscale/v1656592580/me/thoughtfulImg_qd1fsv.webp"
+      alt="background hero"
+    />
+  </div>
+
   <div class="header-text">
     <h1>Etienne Naude</h1>
     <ChanglingText />
