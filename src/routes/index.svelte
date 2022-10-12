@@ -254,19 +254,33 @@
 
   <h1>Contact Me</h1>
 
-  <div class="contacts">
-    <p>
-      Email: <a href="mailto:eti@naude.dev">eti@naude.dev</a>
-    </p>
+  <div class="contact-row">
+    <form name="contact" netlify>
+      <div class="row">
+        <input type="text" name="name" placeholder="name" />
+        <input type="email" name="email" placeholder="email" />
+      </div>
 
-    <p>
-      Linked In: <a href="https://www.linkedin.com/in/etinaude/"
-        >linkedin.com/in/etinaude</a
-      >
-    </p>
+      <textarea name="message" placeholder="message" />
+      <button type="submit">Send</button>
+    </form>
 
-    <p>
-      Github: <a href="https://www.github.com/etinaude">github.com/etinaude</a>
-    </p>
+    <div class="contacts">
+      Or here:
+      <p>
+        Email: <a href="mailto:eti@naude.dev">eti@naude.dev</a>
+      </p>
+
+      <p>
+        Linked In: <a href="https://www.linkedin.com/in/etinaude/"
+          >linkedin.com/in/etinaude</a
+        >
+      </p>
+
+      <p>
+        Github: <a href="https://www.github.com/etinaude">github.com/etinaude</a
+        >
+      </p>
+    </div>
   </div>
 </section>
