@@ -6,7 +6,7 @@
   import Card from "$lib/card.svelte";
   import LongCard from "$lib/long-card.svelte";
   import ChanglingText from "$lib/changling-text.svelte";
-  import projectsImport from "$lib/projects.json";
+  import projectsImport from "$lib/data/projects.json";
 
   const projects = projectsImport.slice(0, 3);
 </script>
