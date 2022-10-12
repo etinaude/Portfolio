@@ -156,21 +156,4 @@
       margin-top: 2em;
     }
   }
-
-  @media (max-width: 500px) {
-    section {
-      padding: 1em;
-    }
-
-    h2 {
-      margin-top: 1em;
-    }
-  }
-
-  // Large displays
-  @media (min-width: 1900px) {
-    h2 {
-      margin-top: 3em;
-    }
-  }
 </style>

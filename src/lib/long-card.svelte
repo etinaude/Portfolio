@@ -37,39 +37,16 @@
     .text {
       max-width: calc(100% - 210px);
       margin-top: auto;
-      margin-bottom: auto;
-
-      @media (max-height: 1201px) {
-        max-width: calc(100% - 180px);
-      }
     }
 
     img {
       height: 180px;
       place-self: center;
       box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-
-      @media (max-height: 1201px) {
-        height: 150px;
-      }
     }
 
     &.right {
       flex-direction: row;
-    }
-
-    @media (max-width: 700px) {
-      flex-direction: column-reverse !important;
-      align-items: center;
-      justify-content: center;
-
-      h3 {
-        text-align: center;
-      }
-
-      .text {
-        max-width: 100%;
-      }
     }
   }
 </style>
