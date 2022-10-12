@@ -255,7 +255,7 @@
   <h1>Contact Me</h1>
 
   <div class="contact-row">
-    <form name="contact" netlify>
+    <form name="contact" action="POST" data-netlify="true">
       <div class="row">
         <input type="text" name="name" placeholder="name" />
         <input type="email" name="email" placeholder="email" />
