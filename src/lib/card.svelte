@@ -43,8 +43,9 @@
 
 <style lang="scss">
   .card {
-    width: 30%;
+    width: 380px;
     margin-bottom: 60px;
+    height: 580px;
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 2px #0000004d;
@@ -128,45 +129,6 @@
 
     caption {
       padding: 0px 10px;
-    }
-  }
-
-  @media (max-width: 1100px) {
-    .card {
-      width: calc(50% - 20px);
-    }
-
-    .card.small {
-      width: calc(33% - 20px);
-    }
-  }
-
-  @media (max-width: 700px) {
-    .card {
-      width: 100%;
-      img,
-      .img {
-        aspect-ratio: 3/2;
-      }
-    }
-
-    .card.small {
-      width: calc(50% - 20px);
-
-      img,
-      .img {
-        aspect-ratio: 1;
-      }
-    }
-
-    @media (max-width: 450px) {
-      .card.small {
-        width: 100%;
-        img,
-        .img {
-          aspect-ratio: 3/2;
-        }
-      }
     }
   }
 </style>

@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  export const prerender = true;
+  export const prerender = false;
 </script>
 
 <script lang="ts">
@@ -7,22 +7,64 @@
   import LongCard from "$lib/long-card.svelte";
   import ChanglingText from "$lib/changling-text.svelte";
   import projectsImport from "$lib/data/projects.json";
+  import { onMount } from "svelte";
+  import Carousel from "svelte-carousel";
+  import { browser } from "$app/env";
+  import Showcase from "$lib/Showcase.svelte";
+  let carousel;
 
   const projects = projectsImport.slice(0, 3);
+  let image: HTMLElement;
+
+  const handleNextClick = () => {
+    carousel.goToNext();
+  };
+
+  onMount(async () => {
+    image = document.getElementById("hero-pic")!;
+  });
+
+  function mouseMove(event: any) {
+    const x = event.clientX;
+    const y = event.clientY;
+
+    const width = image.clientWidth;
+    const height = image.clientHeight;
+
+    const xPercent = x / width;
+    const yPercent = y / height;
+
+    // translate image
+    image.style.transform = `translate(-${xPercent * 100}px, -${
+      yPercent * 100
+    }px)`;
+  }
 </script>
 
 <svelte:head>
   <title>Etienne Naude</title>
 </svelte:head>
 
-<section id="about">
+<section class="base" on:mousemove={mouseMove}>
+  <div class="hero-pic" id="hero-pic">
+    <img
+      src="https://res.cloudinary.com/etienne-naude/image/upload/q_100,e_grayscale/v1656592580/me/thoughtfulImg_qd1fsv.webp"
+      alt="background hero"
+    />
+  </div>
+  <div class="blur" />
+
   <div class="header-text">
     <h1>Etienne Naude</h1>
     <ChanglingText />
+
+    <a class="cta" href="#cta"> Contact Me </a>
   </div>
 </section>
 
-<section id="projects">
+<section id="about" />
+
+<section id="projects" class="sticky">
   <div class="wave">
     <svg viewBox="0 0 1440 90"
       ><path
@@ -31,20 +73,24 @@
     >
   </div>
 
-  <h2>Projects</h2>
+  <!-- <h2>Project Showcase</h2> -->
 
-  <div class="flex-row">
-    {#each projects as project}
-      <Card
-        title={project.title}
-        description={project.description}
-        image_url={project.image_url}
-        hover_img={project.hover_img}
-        hover_video={project.hover_video}
-        follow_url={project.follow_url}
-      />
-    {/each}
-  </div>
+  {#if browser}
+    <Carousel
+      bind:this={carousel}
+      pauseOnFocus
+      timingFunction="linear"
+      autoplay
+      autoplayDuration={5000}
+      dots={false}
+      arrows={false}
+      swiping={false}
+    >
+      {#each projects as project}
+        <Showcase cardData={project} />
+      {/each}
+    </Carousel>
+  {/if}
 
   <a class="button more-projects-btn" href="/projects"> More Projects →</a>
 </section>
@@ -96,13 +142,13 @@
 </section>
 
 <section id="work">
-  <div class="wave">
+  <!-- <div class="wave">
     <svg viewBox="0 0 1440 90"
       ><path
         d="M0,36L30,48C60,60,120,84,180,84C240,84,300,60,360,54C420,48,480,60,540,57C600,54,660,36,720,24C780,12,840,6,900,24C960,42,1020,84,1080,96C1140,108,1200,90,1260,93C1320,96,1380,120,1440,117C1500,114,1560,84,1620,87C1680,90,1740,126,1800,141C1860,156,1920,150,1980,126C2040,102,2100,60,2160,60C2220,60,2280,102,2340,111C2400,120,2460,96,2520,99C2580,102,2640,132,2700,144C2760,156,2820,150,2880,126C2940,102,3000,60,3060,36C3120,12,3180,6,3240,9C3300,12,3360,24,3420,36C3480,48,3540,60,3600,72C3660,84,3720,96,3780,111C3840,126,3900,144,3960,141C4020,138,4080,114,4140,108C4200,102,4260,114,4290,120L4320,126L4320,180L4290,180C4260,180,4200,180,4140,180C4080,180,4020,180,3960,180C3900,180,3840,180,3780,180C3720,180,3660,180,3600,180C3540,180,3480,180,3420,180C3360,180,3300,180,3240,180C3180,180,3120,180,3060,180C3000,180,2940,180,2880,180C2820,180,2760,180,2700,180C2640,180,2580,180,2520,180C2460,180,2400,180,2340,180C2280,180,2220,180,2160,180C2100,180,2040,180,1980,180C1920,180,1860,180,1800,180C1740,180,1680,180,1620,180C1560,180,1500,180,1440,180C1380,180,1320,180,1260,180C1200,180,1140,180,1080,180C1020,180,960,180,900,180C840,180,780,180,720,180C660,180,600,180,540,180C480,180,420,180,360,180C300,180,240,180,180,180C120,180,60,180,30,180L0,180Z"
       /></svg
     >
-  </div>
+  </div> -->
 
   <h2>Current Work</h2>
 
@@ -162,14 +208,14 @@
   </div>
 </section>
 
-<section id="awards">
-  <div class="wave">
+<section id="awards" class="sticky">
+  <!-- <div class="wave">
     <svg viewBox="0 0 1440 90"
       ><path
         d="M0,36L30,48C60,60,120,84,180,99C240,114,300,120,360,108C420,96,480,66,540,54C600,42,660,48,720,69C780,90,840,126,900,120C960,114,1020,66,1080,45C1140,24,1200,30,1260,42C1320,54,1380,72,1440,90C1500,108,1560,126,1620,117C1680,108,1740,72,1800,75C1860,78,1920,120,1980,120C2040,120,2100,78,2160,69C2220,60,2280,84,2340,84C2400,84,2460,60,2520,63C2580,66,2640,96,2700,108C2760,120,2820,114,2880,108C2940,102,3000,96,3060,93C3120,90,3180,90,3240,102C3300,114,3360,138,3420,141C3480,144,3540,126,3600,123C3660,120,3720,132,3780,132C3840,132,3900,120,3960,105C4020,90,4080,72,4140,72C4200,72,4260,90,4290,99L4320,108L4320,180L4290,180C4260,180,4200,180,4140,180C4080,180,4020,180,3960,180C3900,180,3840,180,3780,180C3720,180,3660,180,3600,180C3540,180,3480,180,3420,180C3360,180,3300,180,3240,180C3180,180,3120,180,3060,180C3000,180,2940,180,2880,180C2820,180,2760,180,2700,180C2640,180,2580,180,2520,180C2460,180,2400,180,2340,180C2280,180,2220,180,2160,180C2100,180,2040,180,1980,180C1920,180,1860,180,1800,180C1740,180,1680,180,1620,180C1560,180,1500,180,1440,180C1380,180,1320,180,1260,180C1200,180,1140,180,1080,180C1020,180,960,180,900,180C840,180,780,180,720,180C660,180,600,180,540,180C480,180,420,180,360,180C300,180,240,180,180,180C120,180,60,180,30,180L0,180Z"
       /></svg
     >
-  </div>
+  </div> -->
 
   <h2>Awards</h2>
 
@@ -208,19 +254,33 @@
 
   <h1>Contact Me</h1>
 
-  <div class="contacts">
-    <p>
-      Email: <a href="mailto:eti@naude.dev">eti@naude.dev</a>
-    </p>
+  <div class="contact-row">
+    <form name="contact" netlify>
+      <div class="row">
+        <input type="text" name="name" placeholder="name" />
+        <input type="email" name="email" placeholder="email" />
+      </div>
 
-    <p>
-      Linked In: <a href="https://www.linkedin.com/in/etinaude/"
-        >linkedin.com/in/etinaude</a
-      >
-    </p>
+      <textarea name="message" placeholder="message" />
+      <button type="submit">Send</button>
+    </form>
 
-    <p>
-      Github: <a href="https://www.github.com/etinaude">github.com/etinaude</a>
-    </p>
+    <div class="contacts">
+      Or here:
+      <p>
+        Email: <a href="mailto:eti@naude.dev">eti@naude.dev</a>
+      </p>
+
+      <p>
+        Linked In: <a href="https://www.linkedin.com/in/etinaude/"
+          >linkedin.com/in/etinaude</a
+        >
+      </p>
+
+      <p>
+        Github: <a href="https://www.github.com/etinaude">github.com/etinaude</a
+        >
+      </p>
+    </div>
   </div>
 </section>

@@ -31,15 +31,24 @@ body {
   transition: 0.2s ease;
 }
 
+.sticky {
+  position: sticky;
+
+  @media (max-width: 1200) {
+    position: relative;
+  }
+}
+
 section {
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 95vh;
+  height: 100vh;
   box-sizing: border-box;
   padding-bottom: 20vh;
   margin: auto;
-  position: sticky;
+  position: relative;
+
   top: 0;
   background-color: var(--background);
 
@@ -47,7 +56,6 @@ section {
     --background: #333;
 
     .more-projects-btn {
-      margin-top: 4rem;
       margin-bottom: 5em;
       width: 300px;
       text-align: center;
@@ -77,13 +85,44 @@ section {
     }
   }
 
-  &#about {
+  &.base {
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100vh;
-    padding: 0;
-    background-image: url(https://res.cloudinary.com/etienne-naude/image/upload/q_100,e_grayscale/v1656592580/me/thoughtfulImg_qd1fsv.webp);
-    background-position: center;
-    background-size: cover;
+
+    .hero-pic {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.1s ease;
+      /* backdrop-filter: blur(2px); */
+      background-color: #2225;
+
+      z-index: -1;
+
+      img {
+        width: 110%;
+        height: 110%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .blur {
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      background-color: #2227;
+    }
 
     .header-text {
       box-sizing: border-box;
@@ -91,21 +130,44 @@ section {
       height: 100vh;
       padding-top: 25vh;
       text-align: center;
-      /* backdrop-filter: blur(2px); */
-      background-color: #2225;
+      z-index: 1;
+
       h1 {
         margin: 0px;
       }
     }
+
+    .cta {
+      text-transform: uppercase;
+      background-color: var(--accent-color);
+      color: var(--pure-white);
+      padding: 20px 40px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+      margin-top: 2rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-weight: bold;
+
+      &:hover {
+        background-color: var(--accent-tint-color);
+      }
+    }
+  }
+
+  &#about {
+    pointer-events: none;
+    overflow: hidden;
   }
 
   .flex-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: space-around;
     width: 90%;
     max-width: 1200px;
+    height: 600px;
+    overflow: hidden;
   }
 
   .long-card-row {
@@ -113,23 +175,8 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-wrap: wrap;
     width: min(90%, 1200px);
-
-    @media (max-width: 700px) {
-      top: 0vh;
-      margin-bottom: 0vh;
-    }
-  }
-
-  @media (max-width: 700px) {
-    position: relative;
-    padding: 3em;
-  }
-
-  @media (max-width: 500px) {
-    position: relative;
-    padding: 1em;
+    overflow: hidden;
   }
 }
 
@@ -150,10 +197,6 @@ h2 {
   font-size: 3rem;
   margin-top: 2em;
   user-select: none;
-
-  @media (max-width: 500px), (max-height: 1000px) {
-    margin-top: 1.5em;
-  }
 }
 
 h3 {
@@ -311,4 +354,51 @@ button,
       color: var(--accent-tint-color);
     }
   }
+}
+
+form {
+  width: 500px;
+
+  > * {
+    margin: 1em 0;
+  }
+
+  input,
+  textarea {
+    background-color: #333;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    input {
+      width: calc(50% - 10px);
+    }
+  }
+
+  textarea {
+    resize: none;
+    height: 200px;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.contact-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 950px;
 }
