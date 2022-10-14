@@ -3,9 +3,11 @@
 </script>
 
 <script lang="ts">
-  import Card from "$lib/card.svelte";
-  import LongCard from "$lib/long-card.svelte";
-  import ChanglingText from "$lib/changling-text.svelte";
+  import Card from "$lib/components/card.svelte";
+  import LongCard from "$lib/components/long-card.svelte";
+  import ChanglingText from "$lib/components/changling-text.svelte";
+  import Showcase from "$lib/components/Showcase.svelte";
+
   import projectsImport from "$lib/data/projects.json";
   import { onMount } from "svelte";
   import Carousel from "svelte-carousel";
@@ -16,8 +18,16 @@
   const projects = projectsImport.slice(0, 3);
   let image: HTMLElement;
 
-  const handleNextClick = () => {
-    carousel.goToNext();
+  let bannerInfo = {
+    style: "error",
+    text: "",
+    display: false,
+  };
+
+  let form = {
+    name: "",
+    email: "",
+    message: "",
   };
 
   onMount(async () => {
@@ -38,6 +48,42 @@
     image.style.transform = `translate(-${xPercent * 100}px, -${
       yPercent * 100
     }px)`;
+  }
+
+  async function sendEmail() {
+    console.log(form);
+    const validate = MailGun.validateAll(form);
+
+    bannerInfo = {
+      style: "loading",
+      text: "sending",
+      display: true,
+    };
+
+    if (validate.valid) {
+      await MailGun.sendEmail(form);
+      bannerInfo = {
+        style: "success",
+        text: "Sent! I look forward to talking with you.",
+        display: true,
+      };
+
+      form = {
+        name: "",
+        email: "",
+        message: "",
+      };
+    } else {
+      bannerInfo = {
+        style: "error",
+        text: validate.message,
+        display: true,
+      };
+    }
+
+    setTimeout(() => {
+      bannerInfo.display = false;
+    }, 100000);
   }
 </script>
 
@@ -255,15 +301,29 @@
   <h1>Contact Me</h1>
 
   <div class="contact-row">
-    <form name="contact" action="POST" data-netlify="true">
+    <div name="contact" class="form" id="form">
       <div class="row">
-        <input type="text" name="name" placeholder="name" />
-        <input type="email" name="email" placeholder="email" />
+        <input
+          type="text"
+          name="name"
+          bind:value={form.name}
+          placeholder="name"
+        />
+        <input
+          type="email"
+          name="email"
+          bind:value={form.email}
+          placeholder="email"
+        />
       </div>
 
-      <textarea name="message" placeholder="message" />
-      <button type="submit">Send</button>
-    </form>
+      <textarea
+        name="message"
+        placeholder="message"
+        bind:value={form.message}
+      />
+      <button on:click={sendEmail}>Send</button>
+    </div>
 
     <div class="contacts">
       Or here:
@@ -284,3 +344,5 @@
     </div>
   </div>
 </section>
+
+<Banner {bannerInfo} />
