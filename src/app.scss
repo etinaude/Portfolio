@@ -272,6 +272,7 @@ button,
     bottom: 100%;
     transform: translate(0, 3px);
     filter: drop-shadow(0px -12px 4px #2222);
+    pointer-events: none;
 
     path {
       transform: scaleY(0.5);
@@ -356,7 +357,7 @@ button,
   }
 }
 
-form {
+.form {
   width: 500px;
 
   > * {
@@ -401,4 +402,23 @@ form {
   justify-content: space-between;
   width: 80%;
   max-width: 950px;
+}
+
+.more-container {
+  width: 100%;
+  height: 20%;
+  background-color: #222;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  .button {
+    height: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
 }
