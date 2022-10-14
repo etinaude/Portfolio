@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-  import Card from "$lib/card.svelte";
+  import Card from "$lib/components/card.svelte";
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
   import projectsImport from "$lib/data/projects.json";
@@ -46,8 +46,6 @@
         gitHubRepos.forEach((repo: any) => {
           repo.languageColor = languageColors[repo.language];
         });
-
-        console.log(gitHubRepos);
       })
       .catch((error) => {
         console.log(error);
