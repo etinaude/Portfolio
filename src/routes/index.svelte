@@ -17,7 +17,7 @@
   import { onMount } from "svelte";
   import Carousel from "svelte-carousel";
   import { browser } from "$app/env";
-  import Showcase from "$lib/Showcase.svelte";
+  import MailGun from "$lib/services/mailgunService";
   let carousel;
 
   const projects = projectsImport.slice(0, 3);
