@@ -62,7 +62,7 @@
     position: fixed;
     width: 100%;
     background-image: linear-gradient(#2226, #22222200);
-    z-index: 1000;
+    z-index: 50;
   }
 
   .corner {

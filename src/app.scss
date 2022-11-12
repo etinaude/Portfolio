@@ -1,7 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sono:wght@200;300;400;500;600;700;800&display=swap");
 
 :root {
   font-family: "Roboto", sans-serif;
+
+  font-size: 20px;
 
   --pure-white: #fff;
   --primary-color: #222;
@@ -44,7 +46,7 @@ section {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   padding-bottom: 20vh;
   margin: auto;

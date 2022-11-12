@@ -25,7 +25,7 @@
     left: 50%;
     transform: translate(-50%, 0);
     overflow: hidden;
-    z-index: 10000;
+    z-index: 500;
     transition: 0.5s ease;
 
     display: flex;

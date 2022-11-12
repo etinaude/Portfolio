@@ -71,7 +71,7 @@
     }
 
     .text {
-      z-index: 100;
+      z-index: 5;
       background-color: #222a;
       display: flex;
       flex-direction: column;

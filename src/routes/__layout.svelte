@@ -1,6 +1,7 @@
 <script lang="ts">
   import Header from "$lib/components/header.svelte";
   import Cursor from "$lib/components/cursor.svelte";
+  import Welcome from "$lib/components/welcome.svelte";
 
   import "../app.scss";
 
@@ -18,4 +19,5 @@
   <slot />
 
   <Cursor {pos} />
+  <Welcome />
 </main>
