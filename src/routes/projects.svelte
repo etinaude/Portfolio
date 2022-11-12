@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-  import Card from "$lib/components/Card.svelte";
+  import Card from "$lib/components/project/Card.svelte";
   import Tile from "$lib/components/Tile.svelte";
 
   import { onMount } from "svelte";
@@ -12,7 +12,7 @@
   import languageColors from "$lib/data/languages.json";
   import githubBackup from "$lib/data/backupdata.json";
 
-  import Repo from "$lib/components/Repo.svelte";
+  import Repo from "$lib/components/project/Repo.svelte";
   import type { ProjectT } from "$lib/types/types";
 
   const largeProjects: ProjectT[] = projectsImport.slice(0, 6);

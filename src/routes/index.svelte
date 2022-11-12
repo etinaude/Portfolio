@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-  import Card from "$lib/components/Card.svelte";
+  import Card from "$lib/components/project/Card.svelte";
   import LongCard from "$lib/components/Long-card.svelte";
   import ChanglingText from "$lib/components/Changling-text.svelte";
   import Showcase from "$lib/components/Showcase.svelte";
