@@ -16,6 +16,7 @@
 </script>
 
 <div class="tile">
+  <!-- svelte-ignore security-anchor-rel-noreferrer -->
   <a href={follow_url} target="_blank" rel="noopener">
     <div class="img">
       <img src={cardData.image_url} alt="project" />

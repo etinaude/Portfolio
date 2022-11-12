@@ -78,6 +78,7 @@
   {#if gitHubUser}
     <h2>GitHub</h2>
 
+    <!-- svelte-ignore security-anchor-rel-noreferrer -->
     <a
       href={gitHubUser.html_url}
       target="_blank"

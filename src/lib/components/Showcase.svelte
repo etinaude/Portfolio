@@ -15,6 +15,7 @@
 </script>
 
 <div class="showcase">
+  <!-- svelte-ignore security-anchor-rel-noreferrer -->
   <a href={cardData.follow_url} target="_blank" rel="noopener">
     <div class="img">
       <img src={cardData.image_url} alt="project" />
@@ -90,17 +91,30 @@
     }
 
     .text {
-      width: calc(100% - 100vmin);
+      max-width: calc(100% - 100vmin);
       position: absolute;
       top: 0;
       right: 0;
       height: 100%;
       box-sizing: border-box;
-
+      font-size: 2em;
       display: flex;
+      text-align: left;
+
+      caption {
+        text-align: left;
+      }
+
+      h3 {
+        font-size: 2em;
+        margin-top: 0;
+        margin-bottom: 20px;
+
+        text-align: left;
+      }
 
       .transparency-bar {
-        width: 200px;
+        width: 00px;
         height: 100%;
         background: linear-gradient(90deg, #0000 0px, #333 200px);
         pointer-events: none;
@@ -114,7 +128,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         height: 100%;
         background-color: #333;
         padding-left: 100px;
