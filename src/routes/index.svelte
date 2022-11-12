@@ -88,7 +88,7 @@
 
     setTimeout(() => {
       bannerInfo.display = false;
-    }, 100000);
+    }, 3000);
   }
 </script>
 

@@ -48,8 +48,7 @@ export default class MailGun {
   }
 
   static validateMessage(message: string) {
-    const re = /^[a-zA-Z]+$/;
-    return re.test(message);
+    return message.length > 0;
   }
 
   static validateAll(form: Form): {
