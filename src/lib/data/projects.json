@@ -10,7 +10,7 @@
     "title": "Headstrong Messenger",
     "description": "I am part of a research team that created an interactive Ionic chatbot app to help struggling teens with depression and anxiety. I am currently heading front-end development for this project using Ionic and Angular.",
     "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100/v1656592591/projects/headstrongImg_wv4vdq.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100/v1656592594/projects/headstrongVid_ls4vhb.webm",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/ac_none,c_fill,q_100/v1656592594/projects/headstrongVid_ls4vhb.webm",
     "follow_url": "https://appadvice.com/app/habits-messenger/1550723158"
   },
   {
@@ -24,27 +24,33 @@
     "title": "Robot Arm",
     "description": "A robotic arm that I built with Hayden Moore. This robotic arm performs various functions and is wirelessly controlled using an ESP-32.",
     "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592586/projects/armImg_hpusqb.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592595/projects/robotGif_phptbi.webm",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/ac_none,c_fill,q_100,w_360,h_360/v1656592595/projects/robotGif_phptbi.webm",
     "follow_url": "https://github.com/etinaude/robot-arm"
   },
 
   {
     "title": "Reindeer",
     "description": "I design a reindeer!!! Made in Blender, it was tough to learn (Blender and I still need to explore 99% of what it can do), but it's been great to be able to do organic modelling!!! I then did a resin and powder bed print of it. ",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1668234681/projects/reindeer_iskbrb.webp"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1668234681/projects/reindeer_iskbrb.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/v1668254209/projects/thing_bwyeit.webp"
+  },
+  {
+    "title": "Lantern",
+    "description": "Final prototype from the smart lanterns (voice-enabled wifi-connected RGB lanterns) workshop I ran with Google Developer Student Club and the Maker Club.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/a_270,c_fill,q_100,w_360,h_360/v1668234680/projects/lantern_fso7fs.webp",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/ac_none,c_fill,q_100/v1656592599/projects/glowCircle_newew9.webm",
+    "follow_url": "https://github.com/etinaude/smart-lanterns"
+  },
+  {
+    "title": "Heat Exchanger",
+    "description": "A heat exchanger designed to be optimal for powder bed fusion 3D printing without support and exchanging heat efficiently using a gyroid pattern",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1668253613/projects/heat_yafhfx.webp"
   },
 
   {
     "title": "Manifold",
     "description": "A metal 3d printed part I designed to move water to various pipes. It was printed at CDAM lab using aluminium powder bed fusion. ",
     "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1668234680/projects/manifold_akt8r2.webp"
-  },
-
-  {
-    "title": "Lantern",
-    "description": "Final prototype from the smart lanterns (voice-enabled wifi-connected RGB lanterns) workshop I ran with Google Developer Student Club and the Maker Club.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/a_270,c_fill,q_100,w_360,h_360/v1668234680/projects/lantern_fso7fs.webp",
-    "follow_url": "https://github.com/etinaude/smart-lanterns"
   },
   {
     "title": "Arrow Wall Décor",
@@ -132,7 +138,7 @@
     "title": "Birth Rate Visualiser",
     "description": "A visualiser to explain various factors which affect birth rates.",
     "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592596/projects/uniImg_slficq.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592592/projects/fertGif_vfbzbp.webm",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/ac_none,c_fill,q_100,w_360,h_360/v1656592592/projects/fertGif_vfbzbp.webm",
     "follow_url": "https://github.com/etinaude/Des-240"
   },
   {

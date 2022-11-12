@@ -129,7 +129,6 @@
   {#if browser}
     <Carousel
       bind:this={carousel}
-      pauseOnFocus
       timingFunction="linear"
       autoplay
       autoplayDuration={5000}

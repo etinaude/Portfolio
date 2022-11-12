@@ -12,8 +12,6 @@
     follow_url?: string;
   };
 
-  const defaultUrl = "https://github.com/etinaude";
-
   let card: HTMLElement;
 
   onMount(() => {
@@ -22,30 +20,28 @@
 </script>
 
 <div class="card tilt" bind:this={card}>
-  <!-- svelte-ignore security-anchor-rel-noreferrer -->
-  <a href={cardData.follow_url ?? defaultUrl} target="_blank" rel="noopener">
-    <div class="img">
-      <img src={cardData.image_url} alt="project" />
+  {#if cardData.follow_url}
+    <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
+    <a href={cardData.follow_url} target="_blank" rel="noopener" />
+  {/if}
 
-      {#if cardData.hover_img}
-        <img class="hover-img" src={cardData.hover_img} alt="project hover" />
-      {:else if cardData.hover_video}
-        <video playsinline autoplay muted loop class="hover-img">
-          <source
-            src={cardData.hover_video}
-            loading="lazy"
-            alt="project hover"
-          />
-        </video>
-      {/if}
-    </div>
+  <div class="img">
+    <img src={cardData.image_url} alt="project" />
 
-    <h3>{cardData.title}</h3>
+    {#if cardData.hover_img}
+      <img class="hover-img" src={cardData.hover_img} alt="project hover" />
+    {:else if cardData.hover_video}
+      <video playsinline autoplay muted loop class="hover-img">
+        <source src={cardData.hover_video} loading="lazy" alt="project hover" />
+      </video>
+    {/if}
+  </div>
 
-    <caption>{cardData.description}</caption>
+  <h3>{cardData.title}</h3>
 
-    <div class="read-more">read more →</div>
-  </a>
+  <caption>{cardData.description}</caption>
+
+  <div class="read-more">read more →</div>
 </div>
 
 <style lang="scss">
@@ -60,24 +56,19 @@
     display: flex;
     text-align: center;
     cursor: pointer;
-
-    * {
-      cursor: pointer;
-    }
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    position: relative;
 
     a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #fff;
-      overflow: hidden;
-      background-color: #444;
-      text-decoration: none;
-      height: 100%;
-      padding-bottom: 20px;
-      margin-bottom: auto;
-      box-sizing: border-box;
+      position: absolute;
       width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
     }
 
     .img {

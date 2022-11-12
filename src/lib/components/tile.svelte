@@ -8,25 +8,23 @@
     hover_video?: string;
     follow_url?: string;
   };
-
-  export let follow_url: string = "https://github.com/etinaude";
-
-  let card: HTMLElement;
 </script>
 
 <div class="tile">
-  <!-- svelte-ignore security-anchor-rel-noreferrer -->
-  <a href={follow_url} target="_blank" rel="noopener">
-    <div class="img">
-      <img src={cardData.image_url} alt="project" />
-    </div>
+  {#if cardData.follow_url}
+    <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
+    <a href={cardData.follow_url} target="_blank" rel="noopener" />
+  {/if}
 
-    <div class="text">
-      <h3>{cardData.title}</h3>
+  <div class="img">
+    <img src={cardData.image_url} alt="project" />
+  </div>
 
-      <caption>{cardData.description}</caption>
-    </div>
-  </a>
+  <div class="text">
+    <h3>{cardData.title}</h3>
+
+    <caption>{cardData.description}</caption>
+  </div>
 </div>
 
 <style lang="scss">
@@ -46,18 +44,13 @@
     position: relative;
 
     a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #fff;
-      overflow: hidden;
-      background-color: #444;
-      text-decoration: none;
-      height: 100%;
-      padding-bottom: 20px;
-      margin-bottom: auto;
-      box-sizing: border-box;
+      position: absolute;
       width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      z-index: 10;
     }
 
     .img,
