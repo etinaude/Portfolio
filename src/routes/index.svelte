@@ -3,11 +3,10 @@
 </script>
 
 <script lang="ts">
-  import Card from "$lib/components/card.svelte";
-  import LongCard from "$lib/components/long-card.svelte";
-  import ChanglingText from "$lib/components/changling-text.svelte";
+  import Card from "$lib/components/Card.svelte";
+  import LongCard from "$lib/components/Long-card.svelte";
+  import ChanglingText from "$lib/components/Changling-text.svelte";
   import Showcase from "$lib/components/Showcase.svelte";
-  import Banner from "$lib/components/Banner.svelte";
 
   import projectsImport from "$lib/data/projects.json";
   import educationImport from "$lib/data/education.json";
@@ -17,14 +16,13 @@
   import { onMount } from "svelte";
   import Carousel from "svelte-carousel";
   import { browser } from "$app/env";
-  import MailGun from "$lib/services/mailgunService";
-  import { BannerT, ContactFormT } from "$lib/types/types";
+  import { ContactFormT } from "$lib/types/types";
+  import Contact from "$lib/components/Contact.svelte";
+
   let carousel;
 
   const projects = projectsImport.slice(0, 3);
   let image: HTMLElement;
-  let bannerInfo: BannerT = new BannerT();
-  let form: ContactFormT = new ContactFormT();
 
   onMount(async () => {
     image = document.getElementById("hero-pic")!;

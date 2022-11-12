@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Header from "$lib/components/header.svelte";
-  import Cursor from "$lib/components/cursor.svelte";
-  import Welcome from "$lib/components/welcome.svelte";
+  import Header from "$lib/components/Header.svelte";
+  import Cursor from "$lib/components/Cursor.svelte";
+  import Splash from "$lib/components/Splash.svelte";
 
   import "../app.scss";
   import type { posT } from "$lib/types/types";
@@ -19,5 +19,5 @@
   <slot />
 
   <Cursor {pos} />
-  <Welcome />
+  <Splash />
 </main>

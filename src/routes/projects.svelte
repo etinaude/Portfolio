@@ -3,8 +3,8 @@
 </script>
 
 <script lang="ts">
-  import Card from "$lib/components/card.svelte";
-  import Tile from "$lib/components/tile.svelte";
+  import Card from "$lib/components/Card.svelte";
+  import Tile from "$lib/components/Tile.svelte";
 
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";

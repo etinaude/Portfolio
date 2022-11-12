@@ -9,7 +9,7 @@ export type ProjectT = {
 };
 
 export type LongCardT = ProjectT & {
-  side: "left" | "right";
+  side: string;
 };
 
 export class BannerT {
