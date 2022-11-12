@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { ProjectT } from "$lib/types/types";
+  import type { LongCardT } from "$lib/types/types";
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
 
-  export let cardData: ProjectT;
+  export let cardData: LongCardT;
 
   let imgElement: HTMLElement;
   let paragraph: HTMLElement;
@@ -35,6 +35,8 @@
     text-decoration: none;
     flex-direction: row-reverse;
     justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 25px;
 
     .text {
       max-width: calc(100% - 210px);

@@ -17,7 +17,7 @@
     "title": "Decimal Clock",
     "description": "A clock that shows both standard 24hr time alongside a time system that is based on the original metric time system. This is to show that different time units exist and that that 24hrs in a day is not a brilliant idea.",
     "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100/v1656592588/projects/decimalClockImg_ow2sp5.webp",
-    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100/v1656592595/projects/clock2_retlma.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100/v1668256020/projects/clock2_fdkzze.webp",
     "follow_url": "https://github.com/etinaude/Decimal-Clock"
   },
   {
@@ -192,12 +192,12 @@
   {
     "title": "Miniatures Painting",
     "description": "Painting DnD minis",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592599/projects/pizza_lpz26b.webp"
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/MVIMG_20190315_105455_majrrw.webp"
   },
   {
     "title": "Collaborative Art",
-    "description": "",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/MVIMG_20190315_105455_majrrw.webp"
+    "description": "A pizza painted by a group of 10 people.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592599/projects/pizza_lpz26b.webp"
   },
   {
     "title": "Br**nFuck",

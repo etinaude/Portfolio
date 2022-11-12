@@ -5,11 +5,10 @@
 <script lang="ts">
   import Banner from "$lib/components/Banner.svelte";
   import MailGun from "$lib/services/mailgunService";
-  import type { BannerT, ContactFormT } from "$lib/types/types";
+  import { BannerT, ContactFormT } from "$lib/types/types";
 
-  let bannerInfo: BannerT;
-
-  let form: ContactFormT;
+  let bannerInfo: BannerT = new BannerT();
+  let form: ContactFormT = new ContactFormT();
 
   async function sendEmail() {
     console.log(form);

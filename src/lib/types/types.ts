@@ -8,10 +8,37 @@ export type ProjectT = {
   follow_url?: string;
 };
 
-export type BannerT = {
+export type LongCardT = ProjectT & {
+  side: "left" | "right";
+};
+
+export class BannerT {
   style: string;
   text: string;
   display: boolean;
+
+  constructor() {
+    this.style = "";
+    this.text = "";
+    this.display = false;
+  }
+}
+
+export class ContactFormT {
+  name: string;
+  email: string;
+  message: string;
+
+  constructor() {
+    this.name = "";
+    this.email = "";
+    this.message = "";
+  }
+}
+
+export type posT = {
+  x: number;
+  y: number;
 };
 
 export type RepoT = {

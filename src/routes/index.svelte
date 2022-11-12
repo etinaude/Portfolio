@@ -18,13 +18,13 @@
   import Carousel from "svelte-carousel";
   import { browser } from "$app/env";
   import MailGun from "$lib/services/mailgunService";
-  import type { BannerT, ContactFormT } from "$lib/types/types";
+  import { BannerT, ContactFormT } from "$lib/types/types";
   let carousel;
 
   const projects = projectsImport.slice(0, 3);
   let image: HTMLElement;
-  let bannerInfo: BannerT;
-  let form: ContactFormT;
+  let bannerInfo: BannerT = new BannerT();
+  let form: ContactFormT = new ContactFormT();
 
   onMount(async () => {
     image = document.getElementById("hero-pic")!;
