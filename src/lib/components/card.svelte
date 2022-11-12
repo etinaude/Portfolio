@@ -1,16 +1,9 @@
 <script lang="ts">
+  import type { ProjectT } from "$lib/types/types";
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
 
-  export let cardData: {
-    title: string;
-    description: string;
-    image_url: string;
-
-    hover_img?: string;
-    hover_video?: string;
-    follow_url?: string;
-  };
+  export let cardData: ProjectT;
 
   let card: HTMLElement;
 

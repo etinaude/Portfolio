@@ -1,9 +1,7 @@
-<script>
-  export let bannerInfo = {
-    style: "",
-    text: "",
-    display: false,
-  };
+<script lang="ts">
+  import type { BannerT } from "$lib/types/types";
+
+  export let bannerInfo: BannerT;
 </script>
 
 <div

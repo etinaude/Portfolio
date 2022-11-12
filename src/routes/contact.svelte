@@ -4,20 +4,12 @@
 
 <script lang="ts">
   import Banner from "$lib/components/Banner.svelte";
-  import { onMount } from "svelte";
   import MailGun from "$lib/services/mailgunService";
+  import type { BannerT, ContactFormT } from "$lib/types/types";
 
-  let bannerInfo = {
-    style: "error",
-    text: "",
-    display: false,
-  };
+  let bannerInfo: BannerT;
 
-  let form = {
-    name: "",
-    email: "",
-    message: "",
-  };
+  let form: ContactFormT;
 
   async function sendEmail() {
     console.log(form);

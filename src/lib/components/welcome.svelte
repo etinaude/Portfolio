@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <div class="background">
   <div class="container">Welcome!</div>
   <div class="loading" />

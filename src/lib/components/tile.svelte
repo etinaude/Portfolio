@@ -1,13 +1,7 @@
 <script lang="ts">
-  export let cardData: {
-    title: string;
-    description: string;
-    image_url: string;
+  import type { ProjectT } from "$lib/types/types";
 
-    hover_img?: string;
-    hover_video?: string;
-    follow_url?: string;
-  };
+  export let cardData: ProjectT;
 </script>
 
 <div class="tile">
@@ -81,16 +75,6 @@
       width: 100%;
       aspect-ratio: 1;
     }
-
-    .hover-img {
-      display: none;
-    }
-
-    &:hover {
-      .hover-img {
-        display: block;
-      }
-    }
   }
 
   h3 {
@@ -102,15 +86,7 @@
     padding: 0px 30px;
   }
 
-  .read-more {
-    margin-top: 10px;
-    color: #bbb;
-    font-size: 0.9em;
-    display: none;
-  }
-
-  img,
-  video {
+  img {
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;

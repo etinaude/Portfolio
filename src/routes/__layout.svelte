@@ -4,8 +4,9 @@
   import Welcome from "$lib/components/welcome.svelte";
 
   import "../app.scss";
+  import type { posT } from "$lib/types/types";
 
-  let pos = { x: 0, y: 0 };
+  let pos: posT = { x: 0, y: 0 };
 
   function mouseMove(event: any) {
     pos.x = event.x;

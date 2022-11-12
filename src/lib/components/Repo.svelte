@@ -1,7 +1,10 @@
 <script lang="ts">
-  export let repo: any;
+  import type { RepoT } from "$lib/types/types";
+
+  export let repo: RepoT;
 </script>
 
+<!-- svelte-ignore security-anchor-rel-noreferrer -->
 <a class="repo" href={repo.html_url} target="_blank">
   <h3>{repo.name}</h3>
   <p>

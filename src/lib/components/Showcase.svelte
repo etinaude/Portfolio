@@ -1,16 +1,7 @@
 <script lang="ts">
-  type Card = {
-    title?: string;
-    description?: string;
-    image_url?: string;
+  import type { ProjectT } from "$lib/types/types";
 
-    link?: string;
-    hover_img?: string;
-    hover_video?: string;
-    follow_url?: string;
-  };
-
-  export let cardData: Card;
+  export let cardData: ProjectT;
 </script>
 
 <div class="showcase">

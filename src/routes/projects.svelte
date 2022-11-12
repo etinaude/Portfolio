@@ -13,20 +13,11 @@
   import githubBackup from "$lib/data/backupdata.json";
 
   import Repo from "$lib/components/Repo.svelte";
+  import type { ProjectT } from "$lib/types/types";
 
-  type cardData = {
-    title: string;
-    description: string;
-    image_url: string;
+  const largeProjects: ProjectT[] = projectsImport.slice(0, 6);
+  const smallProjects: ProjectT[] = projectsImport.slice(6);
 
-    hover_img?: string;
-    hover_video?: string;
-    follow_url?: string;
-    small?: string;
-  };
-
-  const largeProjects: cardData[] = projectsImport.slice(0, 6);
-  const smallProjects: cardData[] = projectsImport.slice(6);
   let gitHubRepos = githubBackup.repos;
   let gitHubUser = githubBackup.profile;
 

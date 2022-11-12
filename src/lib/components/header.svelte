@@ -30,6 +30,7 @@
     <div class="nav-links">
       <ul class="social-links-group">
         <li class="social-link">
+          <!-- svelte-ignore security-anchor-rel-noreferrer -->
           <a
             href="https://linkedin.com/in/etinaude"
             target="_blank"
@@ -45,6 +46,7 @@
           </a>
         </li>
 
+        <!-- svelte-ignore security-anchor-rel-noreferrer -->
         <li class="social-link">
           <a href="https://github.com/etinaude" target="_blank" rel="noopener">
             <img alt="github logo" src="github_logo.svg" />
@@ -188,10 +190,6 @@
     nav {
       left: 0;
       transform: none;
-
-      .left-slant {
-        display: none;
-      }
     }
   }
 
