@@ -88,7 +88,6 @@
 
   caption {
     padding: 0px 30px;
-    font-size: 16px;
   }
 
   .read-more {
@@ -105,5 +104,12 @@
     object-fit: cover;
     position: absolute;
     left: 0;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+      height: 100%;
+    }
   }
 </style>

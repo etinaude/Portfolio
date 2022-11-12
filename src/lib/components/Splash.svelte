@@ -37,7 +37,7 @@
     justify-content: center;
     text-align: center;
     color: #43d0ff;
-    font-size: 5rem;
+    font-size: max(3rem, 6vw);
     font-weight: bold;
     margin-bottom: 2rem;
   }

@@ -64,7 +64,7 @@
   <meta name="description" content="Etienne Naude projects" />
 </svelte:head>
 
-<section id="projects">
+<section>
   {#if gitHubUser}
     <h2>GitHub</h2>
 
@@ -110,7 +110,7 @@
 <section>
   <h2>Featured Projects</h2>
 
-  <div class="flex-row">
+  <div class="card-row">
     {#each largeProjects as project}
       <Card cardData={project} />
     {/each}
@@ -125,20 +125,21 @@
 </section>
 
 <style lang="scss">
+  section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 20vh;
+    margin: auto;
+    position: relative;
+    top: 0;
+  }
+
   #projects {
     padding-bottom: 5vh;
     min-height: auto;
-  }
-
-  .flex-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    overflow: visible;
-    height: auto;
   }
 
   .tiles {
@@ -146,6 +147,10 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     width: 100%;
     margin-bottom: 2em;
+  }
+
+  h2 {
+    margin-top: 2em;
   }
 
   .repo-list {
@@ -159,21 +164,19 @@
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 2em;
-    cursor: pointer;
 
     * {
       cursor: pointer;
     }
 
     .img {
-      width: 150px;
-      height: 150px;
+      width: max(100px, 10vw);
       border-radius: 50%;
       margin-right: 1em;
 
       img {
         width: 100%;
-        height: 100%;
+        aspect-ratio: 1;
         object-fit: cover;
         border-radius: 50%;
       }
@@ -190,8 +193,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
-      height: 150px;
-      max-width: 500px;
+      max-width: 750px;
       text-align: left;
       margin-bottom: 20px;
 
@@ -225,13 +227,25 @@
   }
 
   // Mobile
-  @media (max-width: 700px) {
-    section {
-      padding: 3em;
+  @media (max-width: 768px) {
+    .repo-list {
+      grid-template-columns: 1fr;
+      margin: 20px;
     }
 
-    h2 {
-      margin-top: 2em;
+    .github-profile {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+
+      .img {
+        margin-bottom: 1em;
+      }
+    }
+
+    section {
+      padding-bottom: 0;
     }
   }
 </style>

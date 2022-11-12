@@ -37,4 +37,17 @@
     background-color: #43d0ff;
     border-radius: 50%;
   }
+
+  @media (prefers-color-scheme: dark) {
+    .outer {
+      border: 1px solid #222;
+    }
+  }
+
+  @media (hover: none) {
+    .outer,
+    .inner {
+      display: none;
+    }
+  }
 </style>

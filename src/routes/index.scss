@@ -140,16 +140,6 @@ $text-color: #fff;
   }
 }
 
-.card-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 90%;
-  max-width: 1200px;
-  height: 600px;
-  overflow: hidden;
-}
-
 .long-card-row {
   display: flex;
   flex-direction: column;
@@ -160,8 +150,14 @@ $text-color: #fff;
 
 .sticky {
   position: sticky;
+}
 
-  @media (max-width: 1200) {
+@media (max-width: 768px) {
+  .sticky {
     position: relative;
+  }
+
+  .wave {
+    display: none;
   }
 }

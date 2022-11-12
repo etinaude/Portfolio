@@ -36,7 +36,6 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     margin-bottom: 30px;
-    font-size: 25px;
 
     .text {
       max-width: calc(100% - 210px);
@@ -44,13 +43,30 @@
     }
 
     img {
-      height: 180px;
+      height: min(180px, 50vw);
       place-self: center;
       box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
     }
 
     &.right {
       flex-direction: row;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .long-card {
+      flex-direction: column-reverse;
+
+      align-items: center;
+
+      .text {
+        max-width: 100%;
+        margin-top: 0;
+      }
+
+      &.right {
+        flex-direction: column-reverse;
+      }
     }
   }
 </style>

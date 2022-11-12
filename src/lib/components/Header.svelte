@@ -189,15 +189,16 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     nav {
       left: 0;
       transform: none;
     }
-  }
-
-  @media (max-width: 550px) {
     .socials {
+      display: none;
+    }
+
+    .left-border {
       display: none;
     }
   }

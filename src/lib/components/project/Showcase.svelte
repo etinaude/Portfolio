@@ -5,6 +5,16 @@
 </script>
 
 <div class="showcase">
+  <div class="text">
+    <div class="text-content">
+      <h3 class="title">{cardData.title}</h3>
+
+      <caption>{cardData.description}</caption>
+
+      <div class="read-more">read more →</div>
+    </div>
+  </div>
+
   <!-- svelte-ignore security-anchor-rel-noreferrer -->
   <a href={cardData.follow_url} target="_blank" rel="noopener">
     <div class="img">
@@ -22,16 +32,6 @@
         </video>
       {/if}
     </div>
-
-    <div class="text">
-      <div class="text-content">
-        <h3>{cardData.title}</h3>
-
-        <caption>{cardData.description}</caption>
-
-        <div class="read-more">read more →</div>
-      </div>
-    </div>
   </a>
 </div>
 
@@ -39,6 +39,9 @@
   .showcase {
     width: 100%;
     height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: row;
+    background-color: #333;
 
     overflow: hidden;
     text-align: center;
@@ -52,9 +55,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      background-color: #fff;
       overflow: hidden;
-      background-color: #222;
       text-decoration: none;
       height: 100%;
       padding-bottom: 20px;
@@ -82,12 +83,8 @@
 
     .text {
       max-width: calc(100% - 100vmin);
-      position: absolute;
-      top: 0;
-      right: 0;
       height: 100%;
       box-sizing: border-box;
-      font-size: 2em;
       display: flex;
       text-align: left;
 
@@ -96,7 +93,6 @@
       }
 
       h3 {
-        font-size: 2em;
         margin-top: 0;
         margin-bottom: 20px;
 
@@ -108,7 +104,6 @@
         flex-direction: column;
         align-items: center;
         height: 100%;
-        background-color: #333;
         padding-left: 100px;
         padding-right: 100px;
         justify-content: center;
@@ -141,5 +136,39 @@
     object-fit: cover;
     position: absolute;
     left: 0;
+  }
+
+  @media (max-width: 768px) {
+    .showcase {
+      flex-direction: column-reverse;
+      height: auto;
+
+      a {
+        padding: 0;
+      }
+
+      .img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .text {
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+
+        h3 {
+          margin-top: 20px;
+        }
+
+        .text-content {
+          padding: 0 20px;
+        }
+
+        .read-more {
+          margin-bottom: 50px;
+        }
+      }
+    }
   }
 </style>

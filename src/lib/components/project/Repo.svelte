@@ -39,7 +39,7 @@
 
 <style lang="scss">
   .repo {
-    width: 400px;
+    max-width: 600px;
     border-radius: 5px;
     border: 1px solid grey;
     background: #252525;

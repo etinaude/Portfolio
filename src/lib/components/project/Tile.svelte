@@ -27,8 +27,6 @@
   }
 
   .tile {
-    height: 300px;
-
     overflow: hidden;
     border-radius: 0px;
     background-color: #444;
@@ -92,5 +90,12 @@
     object-fit: cover;
     position: absolute;
     left: 0;
+  }
+
+  @media (max-width: 768px) {
+    .tile {
+      width: 100%;
+      height: 100%;
+    }
   }
 </style>
