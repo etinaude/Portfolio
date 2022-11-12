@@ -1,23 +1,23 @@
 [
   {
     "title": "Automated Zen Garden",
-    "description": "An coffee table designed to house an automated zen garden. This was done using a RAMPS board to control a core XY CNC mechanism underneath the table, this then moved a magnet on top of the table which moved and carved patterns in some sand.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592595/projects/sandtableImg_yoikqb.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592597/projects/tableVid_qrxupe.webm",
+    "description": "A coffee table designed to house an automated zen garden. This was done using a RAMPS board to control a core XY CNC mechanism underneath the table, this then moved a magnet on top of the table which moved and carved patterns in some sand.",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100/v1656592595/projects/sandtableImg_yoikqb.webp",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/ac_none,c_fill,q_100/v1656592597/projects/tableVid_qrxupe.webm",
     "follow_url": "https://github.com/etinaude/sandtable"
   },
   {
     "title": "Headstrong Messenger",
     "description": "I am part of a research team which created an interactive Ionic chatbot app to help struggling teen with depression and anxiety. I am currently heading front end development for this project, using Ionic and Angular.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592591/projects/headstrongImg_wv4vdq.webp",
-    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100,w_360,h_360/v1656592594/projects/headstrongVid_ls4vhb.webm",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100/v1656592591/projects/headstrongImg_wv4vdq.webp",
+    "hover_video": "https://res.cloudinary.com/etienne-naude/video/upload/c_fill,q_100/v1656592594/projects/headstrongVid_ls4vhb.webm",
     "follow_url": "https://appadvice.com/app/habits-messenger/1550723158"
   },
   {
     "title": "Decimal Clock",
     "description": "A clock which shows both standard 24hr time along side a time system which is based on the original metric time system. This is to show that different time units exist and that that 24hrs in a day is not a brilliant idea.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592588/projects/decimalClockImg_ow2sp5.webp",
-    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592595/projects/clock2_retlma.webp",
+    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100/v1656592588/projects/decimalClockImg_ow2sp5.webp",
+    "hover_img": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100/v1656592595/projects/clock2_retlma.webp",
     "follow_url": "https://github.com/etinaude/Decimal-Clock"
   },
   {
