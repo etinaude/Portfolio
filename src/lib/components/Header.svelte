@@ -58,6 +58,12 @@
 </header>
 
 <style lang="scss">
+  $primary-color: #222;
+  $accent-color: #43d0ff;
+  $accent-tint-color: #7adeff;
+  $text-color: #fff;
+  $background: #222;
+
   header {
     display: flex;
     justify-content: space-between;
@@ -98,8 +104,6 @@
     right: 0;
 
     width: max-content;
-    --background: #222;
-
     .social-links-group {
       display: flex;
       background: #222;
@@ -120,7 +124,6 @@
   nav {
     display: flex;
     justify-content: center;
-    --background: #222;
     position: absolute;
     top: 0;
     left: 50%;
@@ -132,7 +135,7 @@
       height: 100%;
       align-items: center;
       padding: 0 1em;
-      color: var(--heading-color);
+      color: $accent-color;
       font-weight: 700;
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -152,28 +155,28 @@
     justify-content: center;
     align-items: center;
     list-style: none;
-    background: var(--background);
+    background: $background;
     background-size: contain;
 
     li {
       position: relative;
       height: 100%;
       &.active::before {
-        --size: 6px;
+        $size: 6px;
         content: "";
         width: 0;
         height: 0;
         position: absolute;
         top: 0;
-        left: calc(50% - var(--size));
-        border: var(--size) solid transparent;
-        border-top: var(--size) solid var(--accent-color);
+        left: calc(50% - $size);
+        border: $size solid transparent;
+        border-top: $size solid $accent-color;
       }
     }
   }
 
   a:hover {
-    color: var(--accent-color);
+    color: $accent-color;
   }
 
   svg {
@@ -182,7 +185,7 @@
     display: block;
 
     path {
-      fill: var(--background);
+      fill: $background;
     }
   }
 

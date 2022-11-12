@@ -1,0 +1,167 @@
+$primary-color: #222;
+
+$accent-color: #43d0ff;
+$accent-tint-color: #7adeff;
+$text-color: #fff;
+
+#projects {
+  --background: #333;
+
+  .more-projects-btn {
+    margin-bottom: 5em;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+#education {
+  --background: #3c3c3c;
+}
+
+#work {
+  --background: #4a4a4a;
+}
+
+#awards {
+  --background: #3c3c3c;
+}
+
+#base {
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+
+  .hero-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.1s ease;
+    /* backdrop-filter: blur(2px); */
+    background-color: #2225;
+
+    z-index: -1;
+
+    img {
+      width: 110%;
+      height: 110%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .blur {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #2227;
+  }
+
+  .header-text {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    padding-top: 25vh;
+    text-align: center;
+    z-index: 1;
+
+    h1 {
+      margin: 0px;
+    }
+  }
+
+  .cta {
+    text-transform: uppercase;
+    background-color: $accent-color;
+    color: $text-color;
+    padding: 20px 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $accent-tint-color;
+    }
+  }
+}
+
+#about {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.more-container {
+  width: 100%;
+  height: 20%;
+  background-color: #222;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  .button {
+    height: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+.wave {
+  svg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 100%;
+    transform: translate(0, 3px);
+    filter: drop-shadow(0px -12px 4px #2222);
+    pointer-events: none;
+
+    path {
+      transform: scaleY(0.5);
+
+      fill: var(--background);
+    }
+  }
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+  max-width: 1200px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.long-card-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: min(90%, 1200px);
+  overflow: hidden;
+}
+
+.sticky {
+  position: sticky;
+
+  @media (max-width: 1200) {
+    position: relative;
+  }
+}

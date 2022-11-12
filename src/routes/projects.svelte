@@ -4,7 +4,7 @@
 
 <script lang="ts">
   import Card from "$lib/components/project/Card.svelte";
-  import Tile from "$lib/components/Tile.svelte";
+  import Tile from "$lib/components/project/Tile.svelte";
 
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";

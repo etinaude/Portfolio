@@ -4,9 +4,9 @@
 
 <script lang="ts">
   import Card from "$lib/components/project/Card.svelte";
-  import LongCard from "$lib/components/Long-card.svelte";
+  import LongCard from "$lib/components/project/Long-card.svelte";
   import ChanglingText from "$lib/components/Changling-text.svelte";
-  import Showcase from "$lib/components/Showcase.svelte";
+  import Showcase from "$lib/components/project/Showcase.svelte";
 
   import projectsImport from "$lib/data/projects.json";
   import educationImport from "$lib/data/education.json";
@@ -16,7 +16,6 @@
   import { onMount } from "svelte";
   import Carousel from "svelte-carousel";
   import { browser } from "$app/env";
-  import { ContactFormT } from "$lib/types/types";
   import Contact from "$lib/components/Contact.svelte";
 
   let carousel;
@@ -49,7 +48,7 @@
   <title>Etienne Naude</title>
 </svelte:head>
 
-<section class="base" on:mousemove={mouseMove}>
+<section id="base" on:mousemove={mouseMove}>
   <div class="hero-pic" id="hero-pic">
     <img
       src="https://res.cloudinary.com/etienne-naude/image/upload/q_100,e_grayscale/v1656592580/me/thoughtfulImg_qd1fsv.webp"
@@ -128,7 +127,7 @@
 <section id="awards" class="sticky">
   <h2>Awards</h2>
 
-  <div class="flex-row">
+  <div class="card-row">
     {#each awardImport as award}
       <Card cardData={award} />
     {/each}
@@ -136,3 +135,7 @@
 </section>
 
 <Contact />
+
+<style lang="scss">
+  @import "./index.scss";
+</style>

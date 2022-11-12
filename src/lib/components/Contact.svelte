@@ -79,7 +79,7 @@
       <button on:click={sendEmail}>Send</button>
     </div>
 
-    <div class="contacts">
+    <div class="alt-contacts">
       Or here:
       <p>
         Email: <a href="mailto:eti@naude.dev">eti@naude.dev</a>
@@ -112,7 +112,7 @@
     height: 100vh;
     width: 100vw;
 
-    .contacts {
+    .alt-contacts {
       font-size: 1.5em;
     }
   }
@@ -142,9 +142,11 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      margin-bottom: 0px;
 
       input {
         width: calc(50% - 10px);
+        margin-bottom: 20px;
       }
     }
 
@@ -152,6 +154,7 @@
       resize: none;
       height: 200px;
       width: 100%;
+      margin-top: 0px;
     }
 
     button {
@@ -170,6 +173,36 @@
 
     p {
       font-size: 1.2em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    section {
+      height: auto;
+    }
+
+    .contact-row {
+      flex-direction: column;
+      align-items: center;
+
+      .form {
+        width: 100%;
+
+        .row {
+          flex-direction: column;
+          align-items: center;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+
+      .alt-contacts {
+        margin-top: 2em;
+        font-size: 16px;
+        margin-bottom: 50px;
+      }
     }
   }
 </style>

@@ -1,45 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sono:wght@200;300;400;500;600;700;800&display=swap");
 
+$primary-color: #222;
+
+$accent-color: #43d0ff;
+$accent-tint-color: #7adeff;
+$text-color: #fff;
+
 :root {
   font-family: "Roboto", sans-serif;
-
   font-size: 20px;
+  color: $text-color;
 
-  --pure-white: #fff;
-  --primary-color: #222;
-  --primary-tint-color: #333;
-
-  --accent-color: #43d0ff;
-  --accent-tint-color: #7adeff;
-
-  --text-color: #fff;
+  scroll-behavior: smooth;
+  transition: 0.2s ease;
+  cursor: none !important;
 }
 
 body {
   overflow-x: hidden;
   min-height: 100vh;
   margin: 0;
-  background-color: var(--primary-color);
-  background: linear-gradient(
-    180deg,
-    var(--primary-color) 0%,
-    var(#333) 10.45%
-  );
-}
-
-* {
-  color: var(--text-color);
-  scroll-behavior: smooth;
-  transition: 0.2s ease;
-  cursor: none !important;
-}
-
-.sticky {
-  position: sticky;
-
-  @media (max-width: 1200) {
-    position: relative;
-  }
+  background-color: $primary-color;
+  background: linear-gradient(180deg, $primary-color 0%, #333 10.45%);
 }
 
 section {
@@ -54,144 +36,28 @@ section {
 
   top: 0;
   background-color: var(--background);
-
-  &#projects {
-    --background: #333;
-
-    .more-projects-btn {
-      margin-bottom: 5em;
-      width: 300px;
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-    }
-  }
-
-  &#education {
-    --background: #3c3c3c;
-  }
-
-  &#work {
-    --background: #4a4a4a;
-  }
-  &#awards {
-    --background: #3c3c3c;
-  }
-
-  &.base {
-    position: fixed;
-    overflow: hidden;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-
-    .hero-pic {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: 0.1s ease;
-      /* backdrop-filter: blur(2px); */
-      background-color: #2225;
-
-      z-index: -1;
-
-      img {
-        width: 110%;
-        height: 110%;
-        object-fit: cover;
-        object-position: center;
-      }
-    }
-
-    .blur {
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      background-color: #2227;
-    }
-
-    .header-text {
-      box-sizing: border-box;
-      width: 100%;
-      height: 100vh;
-      padding-top: 25vh;
-      text-align: center;
-      z-index: 1;
-
-      h1 {
-        margin: 0px;
-      }
-    }
-
-    .cta {
-      text-transform: uppercase;
-      background-color: var(--accent-color);
-      color: var(--pure-white);
-      padding: 20px 40px;
-      border-radius: 5px;
-      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-      margin-top: 2rem;
-      cursor: pointer;
-      transition: 0.2s ease;
-      font-weight: bold;
-
-      &:hover {
-        background-color: var(--accent-tint-color);
-      }
-    }
-  }
-
-  &#about {
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  .flex-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 90%;
-    max-width: 1200px;
-    height: 600px;
-    overflow: hidden;
-  }
-
-  .long-card-row {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: min(90%, 1200px);
-    overflow: hidden;
-  }
 }
 
 h1,
 h2,
 h3 {
   font-weight: 400;
-  color: var(--accent-color);
+  color: $accent-color;
   cursor: default;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: max(5vw, 3rem);
   text-align: center;
 }
 
 h2 {
-  font-size: 3rem;
-  margin-top: 2em;
+  font-size: max(3vw, 2rem);
   user-select: none;
 }
 
 h3 {
+  font-size: max(2vw, 1.5rem);
   font-size: 1.5rem;
 }
 
@@ -201,13 +67,13 @@ b {
   line-height: 1.5;
 
   b {
-    color: var(--accent-color);
+    color: $accent-color;
     font-weight: normal;
   }
 }
 
 a {
-  color: var(--accent-color);
+  color: $accent-color;
   text-decoration: none;
 }
 
@@ -218,7 +84,8 @@ img {
 button,
 .button {
   background-color: #252525;
-  border: 2px solid var(--accent-color);
+  border: 2px solid $accent-color;
+  color: $text-color;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
@@ -231,7 +98,7 @@ button,
   padding: 20px;
 
   &:hover {
-    background-color: var(--accent-color);
+    background-color: $accent-color;
     color: #252525;
   }
 
@@ -253,42 +120,5 @@ button,
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color);
-}
-
-.wave {
-  svg {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 100%;
-    transform: translate(0, 3px);
-    filter: drop-shadow(0px -12px 4px #2222);
-    pointer-events: none;
-
-    path {
-      transform: scaleY(0.5);
-
-      fill: var(--background);
-    }
-  }
-}
-
-.more-container {
-  width: 100%;
-  height: 20%;
-  background-color: #222;
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-
-  .button {
-    height: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
+  background: $accent-color;
 }
