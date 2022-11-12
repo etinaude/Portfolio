@@ -4,6 +4,8 @@
 
 <script lang="ts">
   import Card from "$lib/components/card.svelte";
+  import Tile from "$lib/components/tile.svelte";
+
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
   import projectsImport from "$lib/data/projects.json";
@@ -124,15 +126,18 @@
   </div>
 
   <h2>More Projects</h2>
-
-  <div class="flex-row">
+  <div class="tiles">
     {#each smallProjects as project}
-      <Card cardData={{ ...project, small: "true" }} />
+      <Tile cardData={project} />
     {/each}
   </div>
 </section>
 
 <style lang="scss">
+  #projects {
+    height: auto;
+  }
+
   .flex-row {
     display: flex;
     flex-direction: row;
@@ -142,6 +147,13 @@
     max-width: 1200px;
     overflow: visible;
     height: auto;
+  }
+
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 100%;
+    margin-bottom: 2em;
   }
 
   // Mobile
