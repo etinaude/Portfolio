@@ -2,29 +2,35 @@
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
 
-  export let title: string;
-  export let description: string;
-  export let image_url: string;
-
-  export let side: string = "left";
+  export let cardData: {
+    title: string;
+    side: string;
+    description: string;
+    image_url: string;
+  };
 
   let imgElement: HTMLElement;
   let paragraph: HTMLElement;
 
   onMount(() => {
-    paragraph.innerHTML = description;
+    paragraph.innerHTML = cardData.description;
 
     VanillaTilt.init(imgElement, { glare: true });
   });
 </script>
 
-<div class="long-card {side}">
+<div class="long-card {cardData.side}">
   <div class="text">
-    <h3>{title}</h3>
+    <h3>{cardData.title}</h3>
     <p bind:this={paragraph} />
   </div>
 
-  <img class="tilt" alt="Unleash logo" src={image_url} bind:this={imgElement} />
+  <img
+    class="tilt"
+    alt="Unleash logo"
+    src={cardData.image_url}
+    bind:this={imgElement}
+  />
 </div>
 
 <style lang="scss">

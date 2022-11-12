@@ -2,15 +2,18 @@
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
 
-  export let title: string;
-  export let description: string;
-  export let image_url: string;
+  export let cardData: {
+    title: string;
+    description: string;
+    image_url: string;
 
-  export let hover_img: string = "";
-  export let hover_video: string = "";
-  export let follow_url: string = "https://github.com/etinaude";
+    hover_img?: string;
+    hover_video?: string;
+    follow_url?: string;
+    small?: string;
+  };
 
-  export let small: string = "false";
+  const defaultUrl = "https://github.com/etinaude";
 
   let card: HTMLElement;
 
@@ -19,23 +22,30 @@
   });
 </script>
 
-<div class="card tilt {small == 'true' ? 'small' : ''}" bind:this={card}>
-  <a href={follow_url} target="_blank" rel="noopener">
+<div
+  class="card tilt {cardData.small === 'true' ? 'small' : ''}"
+  bind:this={card}
+>
+  <a href={cardData.follow_url ?? defaultUrl} target="_blank" rel="noopener">
     <div class="img">
-      <img src={image_url} alt="project" />
+      <img src={cardData.image_url} alt="project" />
 
-      {#if hover_img}
-        <img class="hover-img" src={hover_img} alt="project hover" />
-      {:else if hover_video}
+      {#if cardData.hover_img}
+        <img class="hover-img" src={cardData.hover_img} alt="project hover" />
+      {:else if cardData.hover_video}
         <video playsinline autoplay muted loop class="hover-img">
-          <source src={hover_video} loading="lazy" alt="project hover" />
+          <source
+            src={cardData.hover_video}
+            loading="lazy"
+            alt="project hover"
+          />
         </video>
       {/if}
     </div>
 
-    <h3>{title}</h3>
+    <h3>{cardData.title}</h3>
 
-    <caption>{description}</caption>
+    <caption>{cardData.description}</caption>
 
     <div class="read-more">read more →</div>
   </a>
@@ -116,7 +126,8 @@
   }
 
   .card.small {
-    width: 23%;
+    width: 225px;
+    height: 425px;
     .read-more {
       display: none;
     }

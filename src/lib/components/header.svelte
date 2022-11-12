@@ -107,21 +107,6 @@
     }
   }
 
-  .logo {
-    display: flex;
-    width: max-content;
-
-    --background: #222;
-
-    .img {
-      background: #222;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      padding-left: 10px;
-    }
-  }
-
   nav {
     display: flex;
     justify-content: center;
@@ -192,10 +177,6 @@
   }
 
   @media (max-width: 800px) {
-    .logo {
-      display: none;
-    }
-
     nav {
       left: 0;
       transform: none;

@@ -3,17 +3,28 @@
 </script>
 
 <script lang="ts">
-  import Card from "$lib/card.svelte";
+  import Card from "$lib/components/card.svelte";
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
   import projectsImport from "$lib/data/projects.json";
   import languageColors from "$lib/data/languages.json";
   import githubBackup from "$lib/data/backupdata.json";
 
-  import Repo from "$lib/Repo.svelte";
+  import Repo from "$lib/components/Repo.svelte";
 
-  const largeProjects = projectsImport.slice(0, 6);
-  const smallProjects = projectsImport.slice(6);
+  type cardData = {
+    title: string;
+    description: string;
+    image_url: string;
+
+    hover_img?: string;
+    hover_video?: string;
+    follow_url?: string;
+    small?: string;
+  };
+
+  const largeProjects: cardData[] = projectsImport.slice(0, 6);
+  const smallProjects: cardData[] = projectsImport.slice(6);
   let gitHubRepos = githubBackup.repos;
   let gitHubUser = githubBackup.profile;
 
@@ -46,8 +57,6 @@
         gitHubRepos.forEach((repo: any) => {
           repo.languageColor = languageColors[repo.language];
         });
-
-        console.log(gitHubRepos);
       })
       .catch((error) => {
         console.log(error);
@@ -103,19 +112,14 @@
       {/each}
     </div>
   {/if}
+</section>
 
+<section>
   <h2>Featured Projects</h2>
 
   <div class="flex-row">
     {#each largeProjects as project}
-      <Card
-        title={project.title}
-        description={project.description}
-        image_url={project.image_url}
-        hover_img={project.hover_img}
-        hover_video={project.hover_video}
-        follow_url={project.follow_url}
-      />
+      <Card cardData={project} />
     {/each}
   </div>
 
@@ -123,15 +127,7 @@
 
   <div class="flex-row">
     {#each smallProjects as project}
-      <Card
-        title={project.title}
-        description={project.description}
-        image_url={project.image_url}
-        hover_img={project.hover_img}
-        hover_video={project.hover_video}
-        follow_url={project.follow_url}
-        small="true"
-      />
+      <Card cardData={{ ...project, small: "true" }} />
     {/each}
   </div>
 </section>
@@ -144,6 +140,8 @@
     flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
+    overflow: visible;
+    height: auto;
   }
 
   // Mobile

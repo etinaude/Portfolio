@@ -3,21 +3,36 @@
 </script>
 
 <script lang="ts">
-  import Card from "$lib/card.svelte";
-  import LongCard from "$lib/long-card.svelte";
-  import ChanglingText from "$lib/changling-text.svelte";
+  import Card from "$lib/components/card.svelte";
+  import LongCard from "$lib/components/long-card.svelte";
+  import ChanglingText from "$lib/components/changling-text.svelte";
+  import Showcase from "$lib/components/Showcase.svelte";
+  import Banner from "$lib/components/Banner.svelte";
+
   import projectsImport from "$lib/data/projects.json";
+  import educationImport from "$lib/data/education.json";
+  import workImport from "$lib/data/work.json";
+  import awardImport from "$lib/data/awards.json";
+
   import { onMount } from "svelte";
   import Carousel from "svelte-carousel";
   import { browser } from "$app/env";
-  import Showcase from "$lib/Showcase.svelte";
+  import MailGun from "$lib/services/mailgunService";
   let carousel;
 
   const projects = projectsImport.slice(0, 3);
   let image: HTMLElement;
 
-  const handleNextClick = () => {
-    carousel.goToNext();
+  let bannerInfo = {
+    style: "error",
+    text: "",
+    display: false,
+  };
+
+  let form = {
+    name: "",
+    email: "",
+    message: "",
   };
 
   onMount(async () => {
@@ -38,6 +53,42 @@
     image.style.transform = `translate(-${xPercent * 100}px, -${
       yPercent * 100
     }px)`;
+  }
+
+  async function sendEmail() {
+    console.log(form);
+    const validate = MailGun.validateAll(form);
+
+    bannerInfo = {
+      style: "loading",
+      text: "sending",
+      display: true,
+    };
+
+    if (validate.valid) {
+      await MailGun.sendEmail(form);
+      bannerInfo = {
+        style: "success",
+        text: "Sent! I look forward to talking with you.",
+        display: true,
+      };
+
+      form = {
+        name: "",
+        email: "",
+        message: "",
+      };
+    } else {
+      bannerInfo = {
+        style: "error",
+        text: validate.message,
+        display: true,
+      };
+    }
+
+    setTimeout(() => {
+      bannerInfo.display = false;
+    }, 100000);
   }
 </script>
 
@@ -92,7 +143,9 @@
     </Carousel>
   {/if}
 
-  <a class="button more-projects-btn" href="/projects"> More Projects →</a>
+  <div class="more-container">
+    <a class="button more-projects-btn" href="/projects"> More Projects →</a>
+  </div>
 </section>
 
 <section id="education">
@@ -106,38 +159,9 @@
   <h2>Education</h2>
 
   <div class="long-card-row">
-    <LongCard
-      title="Computer Science at University of Auckland"
-      description="I am currently studying towards a Bachelor of Advanced Science
-    (Honours) majoring in Computer Science. While completing my Computer
-    Science degree I have been awarded <b
-      >8 Outstanding Achievement awards</b
-    > and was <b>top in class</b> for the undergraduate capstone project. I
-    was also selected to join the <b>Science Scholars</b> cohort."
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/science_qxklbd.webp"
-    />
-
-    <LongCard
-      title="Design at University of Auckland"
-      side="right"
-      description=" I am also completing a conjoint degree in a Bachelor of Design
-    focussing on designing with
-    <b>disruptive technologies</b>. My aim is to use the knowledge from my
-    design degree to bridge the gap between the technical and aesthetic
-    aspects of my projects. I was awarded with a <b>Design Scholarship</b>
-    by the university in 2021."
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592569/logos/cai_a3qplk.webp"
-    />
-
-    <LongCard
-      title="Additive Manufacturing at University of Auckland"
-      description="My Honours Project is with the Department of Mechanical Engineering
-      researching <b>non-planar ironing</b> in FDM 3d printing. Building on previous
-      work we have been able to successfully combine two prior techniques to
-      create a novel process to smooth surface finishes on FDM prints and reduce
-      post processing."
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/engineering_aykfct.webp"
-    />
+    {#each educationImport as education}
+      <LongCard cardData={education} />
+    {/each}
   </div>
 </section>
 
@@ -153,58 +177,9 @@
   <h2>Current Work</h2>
 
   <div class="long-card-row">
-    <LongCard
-      title="UoA Faculty of Medical Heath Sciences logo"
-      description="While working at this role I focussed on <b>mobile app development</b>
-  using <b>Ionic</b>
-  Framework. In this role I was the primary developer for
-  <b>Headstrong Messenger</b> <img which is a chatbot application designed to
-  help teens and young adults struggling with depression and anxiety build
-  healthy habits."
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/fmhs_h8upx2.webp"
-    />
-
-    <LongCard
-      title="Fullstack developer and designer at Kekeno Tech"
-      side="right"
-      description=" At Kekeno Tech I am a fullstack developer and designer working mainly
-    to create web applications for clients around New Zealand. The primary
-    technologies used for this role is <b>Angular</b>, <b>Flask</b> and
-    <b>Firebase</b>. On top of this I also often
-    <b>design webpages</b> or modify existing designs to fit the needs of the
-    client."
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/kekeno_rbrnha.webp"
-    />
-
-    <LongCard
-      title="Robotics Research at University of Auckland"
-      description="I am employed by the Department of Mechatronics to create a system
-  allowing children to interact with robots and provide the robots
-  instructions using a novel <b>tangible programming language</b>. This
-  enables them to programme the robots using cards before they are even
-  able to use a computer. The research is in using this system as an
-  education tool and exploring how children interact with robots. For
-  this project I am making the <b>computer vision</b>
-  system, the <b>data server</b>, and the <b>interface</b> to explore all
-  the data which has been collected."
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/engineering_aykfct.webp"
-    />
-
-    <LongCard
-      title="Lead Creative Technologist at Unleash Space"
-      side="right"
-      description="As A Creative Technologist I consult with students and staff members
-    to create and design a wide range projects using the latest creative
-    technologies. This is done by providing trainings on how each
-    technology is used, when to use it and what its limitations are I also
-    provide advice individually to people who need further information on
-    prototyping. Some of the technologies I provide advice for are <b
-      >3D printing</b
-    >,
-    <b>laser cutting</b>, <b>5G</b>, <b>VR/AR</b>, <b>soldering</b> and
-    <b>CNC routing</b>. The projects which I help prototype for"
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/unleash_zkdz7d.webp"
-    />
+    {#each workImport as work}
+      <LongCard cardData={work} />
+    {/each}
   </div>
 </section>
 
@@ -220,26 +195,9 @@
   <h2>Awards</h2>
 
   <div class="flex-row">
-    <Card
-      title="Hannah-Bradshaw Award"
-      description="I was awarded this for 4 years of consistent volunteer work in different fields."
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592543/awards/bradshawImg_yy5b2p.webp"
-      follow_url="https://www.macleans.school.nz/news/cup-winners-at-senior-prizegiving-2018"
-    />
-
-    <Card
-      title="Queen's Scout Award"
-      description="I was one of the recipients of the Queen's Scout Award, this is the highest youth scouting honour, which was awarded to me for continuous work and commitment to scouting for 10 years"
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592543/awards/qsImg_rsqthc.webp"
-      follow_url="https://scouts.nz/queens-scout-ceremony-2021/"
-    />
-
-    <Card
-      title="Distinguished Graduate"
-      description="I was awarded the 2020 Distinguished Graduate Award for engagement and leadership in a wide range extra curricular activities"
-      image_url="https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592544/awards/distgradImg_g2ork3.webp"
-      follow_url="https://www.auckland.ac.nz/en/on-campus/life-on-campus/leadership-and-volunteering/co-curricular-recognition-programme/ccr-programme-awards/university-of-auckland-award.html"
-    />
+    {#each awardImport as award}
+      <Card cardData={award} />
+    {/each}
   </div>
 </section>
 
@@ -255,15 +213,29 @@
   <h1>Contact Me</h1>
 
   <div class="contact-row">
-    <form name="contact" netlify>
+    <div name="contact" class="form" id="form">
       <div class="row">
-        <input type="text" name="name" placeholder="name" />
-        <input type="email" name="email" placeholder="email" />
+        <input
+          type="text"
+          name="name"
+          bind:value={form.name}
+          placeholder="name"
+        />
+        <input
+          type="email"
+          name="email"
+          bind:value={form.email}
+          placeholder="email"
+        />
       </div>
 
-      <textarea name="message" placeholder="message" />
-      <button type="submit">Send</button>
-    </form>
+      <textarea
+        name="message"
+        placeholder="message"
+        bind:value={form.message}
+      />
+      <button on:click={sendEmail}>Send</button>
+    </div>
 
     <div class="contacts">
       Or here:
@@ -284,3 +256,5 @@
     </div>
   </div>
 </section>
+
+<Banner {bannerInfo} />
