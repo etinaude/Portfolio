@@ -33,7 +33,6 @@
     </div>
 
     <div class="text">
-      <div class="transparency-bar" />
       <div class="text-content">
         <h3>{cardData.title}</h3>
 
@@ -48,7 +47,8 @@
 <style lang="scss">
   .showcase {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 100px);
+
     overflow: hidden;
     text-align: center;
     cursor: pointer;
@@ -112,17 +112,6 @@
         text-align: left;
       }
 
-      .transparency-bar {
-        width: 00px;
-        height: 100%;
-        background: linear-gradient(90deg, #0000 0px, #333 200px);
-        pointer-events: none;
-        position: absolute;
-        left: 0;
-        top: 0;
-        translate: -100%;
-      }
-
       .text-content {
         display: flex;
         flex-direction: column;
@@ -131,6 +120,7 @@
         background-color: #333;
         padding-left: 100px;
         padding-right: 100px;
+        justify-content: center;
 
         &:hover h3 {
           color: var(--accent-tint-color);

@@ -4,7 +4,7 @@
 
 <header>
   <nav>
-    <svg viewBox="0 0 2 3" aria-hidden="true" class="left-slant">
+    <svg class="left-border" viewBox="0 0 2 3" aria-hidden="true">
       <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
     </svg>
     <ul>
@@ -18,13 +18,13 @@
         <a href="/contact">Contact</a>
       </li>
     </ul>
-    <svg viewBox="0 0 2 3" aria-hidden="true">
+    <svg class="right-border" viewBox="0 0 2 3" aria-hidden="true">
       <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
     </svg>
   </nav>
 
   <div class="corner socials">
-    <svg viewBox="0 0 2 3" aria-hidden="true">
+    <svg class="left-border" viewBox="0 0 2 3" aria-hidden="true">
       <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
     </svg>
     <div class="nav-links">
@@ -63,6 +63,14 @@
     width: 100%;
     background-image: linear-gradient(#2226, #22222200);
     z-index: 50;
+  }
+
+  .right-border {
+    translate: -1px;
+  }
+
+  .left-border {
+    translate: 1px;
   }
 
   .corner {

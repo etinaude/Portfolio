@@ -13,9 +13,8 @@
   }
 </script>
 
-<Header />
-
 <main on:mousemove={mouseMove}>
+  <Header />
   <slot />
 
   <Cursor {pos} />
