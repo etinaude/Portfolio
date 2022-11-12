@@ -10,7 +10,6 @@
     hover_img?: string;
     hover_video?: string;
     follow_url?: string;
-    small?: string;
   };
 
   const defaultUrl = "https://github.com/etinaude";
@@ -22,10 +21,8 @@
   });
 </script>
 
-<div
-  class="card tilt {cardData.small === 'true' ? 'small' : ''}"
-  bind:this={card}
->
+<div class="card tilt" bind:this={card}>
+  <!-- svelte-ignore security-anchor-rel-noreferrer -->
   <a href={cardData.follow_url ?? defaultUrl} target="_blank" rel="noopener">
     <div class="img">
       <img src={cardData.image_url} alt="project" />
@@ -107,6 +104,7 @@
 
   caption {
     padding: 0px 30px;
+    font-size: 16px;
   }
 
   .read-more {
@@ -123,23 +121,5 @@
     object-fit: cover;
     position: absolute;
     left: 0;
-  }
-
-  .card.small {
-    width: 225px;
-    height: 425px;
-    .read-more {
-      display: none;
-    }
-
-    h3 {
-      color: #43d0ff;
-      margin-bottom: 8px;
-      font-size: 1.2em;
-    }
-
-    caption {
-      padding: 0px 10px;
-    }
   }
 </style>

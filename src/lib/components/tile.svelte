@@ -7,7 +7,6 @@
     hover_img?: string;
     hover_video?: string;
     follow_url?: string;
-    small?: string;
   };
 
   export let follow_url: string = "https://github.com/etinaude";
