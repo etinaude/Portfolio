@@ -3,6 +3,8 @@
 $primary-color: #222;
 
 $accent-color: #43d0ff;
+$translucent-accent: #43d0ff55;
+
 $accent-tint-color: #7adeff;
 $text-color: #fff;
 
@@ -98,6 +100,7 @@ button,
   margin: 20px;
   text-decoration: none;
   line-height: 1;
+  user-select: none;
 
   transition: 0.2s ease;
   text-align: center;
@@ -111,6 +114,17 @@ button,
   &:focus:not(:focus-visible) {
     outline: none;
   }
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1200px;
+  overflow: visible;
+  height: auto;
 }
 
 ::-webkit-scrollbar {
@@ -129,13 +143,10 @@ button,
   background: $accent-color;
 }
 
-.card-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 90%;
-  max-width: 1200px;
-  overflow: visible;
-  height: auto;
+::-moz-selection {
+  background: $translucent-accent;
+}
+
+::selection {
+  background: $translucent-accent;
 }
