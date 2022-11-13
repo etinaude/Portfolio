@@ -96,11 +96,12 @@ button,
   color: $text-color;
   border-radius: 5px;
   font-weight: bold;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 0px 0px #1116;
   margin: 20px;
   text-decoration: none;
   line-height: 1;
   user-select: none;
+  text-transform: uppercase;
 
   transition: 0.2s ease;
   text-align: center;

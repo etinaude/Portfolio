@@ -198,7 +198,7 @@
   @media (max-width: 768px) {
     nav {
       left: 0;
-      transform: none;
+      translate: none;
     }
     .socials {
       display: none;

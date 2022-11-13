@@ -20,7 +20,7 @@
     pointer-events: none;
 
     animation: fade 0.5s ease-in-out forwards;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
   }
 
   @keyframes fade {
@@ -43,8 +43,8 @@
   }
 
   .loading {
-    border: 15px solid #444; /* Light grey */
-    border-top: 15px solid #43d0ff; /* Blue */
+    border: 15px solid #444;
+    border-top: 15px solid #43d0ff;
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -53,10 +53,10 @@
 
   @keyframes spin {
     0% {
-      transform: rotate(0deg);
+      rotate: 0deg;
     }
     100% {
-      transform: rotate(360deg);
+      rotate: 360deg;
     }
   }
 </style>

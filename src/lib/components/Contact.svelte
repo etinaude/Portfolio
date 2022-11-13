@@ -224,9 +224,10 @@
     .contact-row {
       flex-direction: column;
       align-items: center;
+      margin-right: 0;
 
       .form {
-        width: 100%;
+        width: 90%;
 
         .row {
           flex-direction: column;
@@ -240,8 +241,9 @@
 
       .alt-contacts {
         margin-top: 2em;
-        font-size: 16px;
+        font-size: 22px;
         margin-bottom: 50px;
+        margin-left: 0;
       }
     }
   }

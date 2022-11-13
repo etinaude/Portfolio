@@ -21,7 +21,7 @@
     position: fixed;
     top: 10px;
     left: 50%;
-    transform: translate(-50%, 0);
+    translate: -50%;
     overflow: hidden;
     z-index: 500;
     transition: 0.5s ease;
