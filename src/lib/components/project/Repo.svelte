@@ -5,7 +5,7 @@
 </script>
 
 <!-- svelte-ignore security-anchor-rel-noreferrer -->
-<a class="repo" href={repo.html_url} target="_blank">
+<a class="repo clickable" href={repo.html_url} target="_blank">
   <h3>{repo.name}</h3>
   <p>
     {repo.description ?? repo.name}

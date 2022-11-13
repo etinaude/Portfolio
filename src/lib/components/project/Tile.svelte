@@ -7,7 +7,12 @@
 <div class="tile">
   {#if cardData.follow_url}
     <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-    <a href={cardData.follow_url} target="_blank" rel="noopener" />
+    <a
+      href={cardData.follow_url}
+      target="_blank"
+      rel="noopener"
+      class="clickable"
+    />
   {/if}
 
   <div class="img">

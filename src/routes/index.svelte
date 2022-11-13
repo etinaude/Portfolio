@@ -70,7 +70,7 @@
     <h1>Etienne Naude</h1>
     <ChanglingText />
 
-    <a class="cta" href="#cta"> Contact Me </a>
+    <a class="cta clickable" href="#cta"> Contact Me </a>
   </div>
 </section>
 
@@ -102,7 +102,9 @@
   {/if}
 
   <div class="more-container">
-    <a class="button more-projects-btn" href="/projects"> More Projects →</a>
+    <a class="button more-projects-btn clickable" href="/projects">
+      More Projects →</a
+    >
   </div>
 </section>
 

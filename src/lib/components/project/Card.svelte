@@ -15,10 +15,15 @@
 <div class="card tilt" bind:this={card}>
   {#if cardData.follow_url}
     <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-    <a href={cardData.follow_url} target="_blank" rel="noopener" />
+    <a
+      href={cardData.follow_url}
+      target="_blank"
+      rel="noopener"
+      class="clickable"
+    />
   {/if}
 
-  <div class="img">
+  <div class="img clickable">
     <img src={cardData.image_url} alt="project" />
 
     {#if cardData.hover_img}

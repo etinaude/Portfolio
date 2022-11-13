@@ -9,13 +9,13 @@
     </svg>
     <ul>
       <li class:active={$page.url.pathname === "/"}>
-        <a sveltekit:prefetch href="/">Home</a>
+        <a class="clickable" sveltekit:prefetch href="/">Home</a>
       </li>
       <li class:active={$page.url.pathname === "/projects"}>
-        <a sveltekit:prefetch href="/projects">Projects</a>
+        <a class="clickable" sveltekit:prefetch href="/projects">Projects</a>
       </li>
       <li class:active={$page.url.pathname === "/contact"}>
-        <a href="/contact">Contact</a>
+        <a class="clickable" sveltekit:prefetch href="/contact">Contact</a>
       </li>
     </ul>
     <svg class="right-border" viewBox="0 0 2 3" aria-hidden="true">
@@ -32,6 +32,7 @@
         <li class="social-link">
           <!-- svelte-ignore security-anchor-rel-noreferrer -->
           <a
+            class="clickable"
             href="https://linkedin.com/in/etinaude"
             target="_blank"
             rel="noopener"
@@ -41,14 +42,24 @@
         </li>
 
         <li class="social-link">
-          <a href="mailto:eti@naude.dev" target="_blank" rel="noopener">
+          <a
+            class="clickable"
+            href="mailto:eti@naude.dev"
+            target="_blank"
+            rel="noopener"
+          >
             <img alt="email icon" src="mail_logo.svg" />
           </a>
         </li>
 
         <!-- svelte-ignore security-anchor-rel-noreferrer -->
         <li class="social-link">
-          <a href="https://github.com/etinaude" target="_blank" rel="noopener">
+          <a
+            class="clickable"
+            href="https://github.com/etinaude"
+            target="_blank"
+            rel="noopener"
+          >
             <img alt="github logo" src="github_logo.svg" />
           </a>
         </li>
@@ -135,7 +146,7 @@
       height: 100%;
       align-items: center;
       padding: 0 1em;
-      color: $accent-color;
+      color: $accent-tint-color;
       font-weight: 700;
       font-size: 0.8rem;
       text-transform: uppercase;

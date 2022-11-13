@@ -73,7 +73,7 @@
       href={gitHubUser.html_url}
       target="_blank"
       rel="noopener"
-      class="github-profile"
+      class="github-profile clickable"
     >
       <div class="img">
         <img src={gitHubUser.avatar_url} alt="project" />
@@ -125,6 +125,11 @@
 </section>
 
 <style lang="scss">
+  $primary-color: #222;
+
+  $accent-color: #43d0ff;
+  $accent-tint-color: #7adeff;
+  $text-color: #fff;
   section {
     display: flex;
     align-items: center;
@@ -135,11 +140,6 @@
     margin: auto;
     position: relative;
     top: 0;
-  }
-
-  #projects {
-    padding-bottom: 5vh;
-    min-height: auto;
   }
 
   .tiles {
@@ -175,12 +175,12 @@
         aspect-ratio: 1;
         object-fit: cover;
         border-radius: 50%;
-      }
 
-      transition: all 1s cubic-bezier(0.36, -0.62, 0.28, 1.89);
+        &:hover {
+          rotate: 360deg;
+        }
 
-      &:hover {
-        rotate: 360deg;
+        transition: all 1s cubic-bezier(0.36, -0.62, 0.28, 1.89);
       }
     }
 
@@ -192,6 +192,7 @@
       max-width: 750px;
       text-align: left;
       margin-bottom: 20px;
+      color: white;
 
       .github-text {
         color: grey;
@@ -217,7 +218,7 @@
     &:hover {
       h3,
       .github-text {
-        color: var(--accent-tint-color);
+        color: $accent-tint-color;
       }
     }
   }

@@ -4,7 +4,7 @@
   export let cardData: ProjectT;
 </script>
 
-<div class="showcase">
+<div class="showcase clickable">
   <div class="text">
     <div class="text-content">
       <h3 class="title">{cardData.title}</h3>

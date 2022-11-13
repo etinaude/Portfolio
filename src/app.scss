@@ -77,6 +77,10 @@ b {
 a {
   color: $accent-color;
   text-decoration: none;
+
+  &:hover {
+    color: $accent-tint-color;
+  }
 }
 
 img {
@@ -100,7 +104,7 @@ button,
   padding: 20px;
 
   &:hover {
-    background-color: $accent-color;
+    background-color: $accent-tint-color;
     color: #252525;
   }
 

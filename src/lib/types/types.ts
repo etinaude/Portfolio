@@ -39,6 +39,7 @@ export class ContactFormT {
 export type posT = {
   x: number;
   y: number;
+  clickable: boolean;
 };
 
 export type RepoT = {

@@ -62,12 +62,14 @@
           name="name"
           bind:value={form.name}
           placeholder="name"
+          class="clickable"
         />
         <input
           type="email"
           name="email"
           bind:value={form.email}
           placeholder="email"
+          class="clickable"
         />
       </div>
 
@@ -75,29 +77,36 @@
         name="message"
         placeholder="message"
         bind:value={form.message}
+        class="clickable"
       />
-      <button on:click={sendEmail}>Send</button>
+      <button on:click={sendEmail} class="clickable">Send</button>
     </div>
 
     <div class="alt-contacts">
       Or here:
       <p>
-        Email: <a href="mailto:eti@naude.dev">eti@naude.dev</a>
-      </p>
-
-      <p>
-        Linked In: <a href="https://www.linkedin.com/in/etinaude/"
-          >linkedin.com/in/etinaude</a
+        Email: <a href="mailto:eti@naude.dev" class="clickable">eti@naude.dev</a
         >
       </p>
 
       <p>
-        Github: <a href="https://www.github.com/etinaude">github.com/etinaude</a
+        Linked In: <a
+          href="https://www.linkedin.com/in/etinaude/"
+          class="clickable">linkedin.com/in/etinaude</a
         >
       </p>
 
       <p>
-        Instagram: <a href="https://www.instagram.com/etinaude/">@etinaude</a>
+        Github: <a href="https://www.github.com/etinaude" class="clickable"
+          >github.com/etinaude</a
+        >
+      </p>
+
+      <p>
+        Instagram: <a
+          href="https://www.instagram.com/etinaude/"
+          class="clickable">@etinaude</a
+        >
       </p>
     </div>
   </div>
