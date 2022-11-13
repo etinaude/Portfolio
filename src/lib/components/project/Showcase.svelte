@@ -45,11 +45,6 @@
 
     overflow: hidden;
     text-align: center;
-    cursor: pointer;
-
-    * {
-      cursor: pointer;
-    }
 
     a {
       display: flex;

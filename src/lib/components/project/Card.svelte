@@ -48,7 +48,6 @@
     background-color: #444;
     display: flex;
     text-align: center;
-    cursor: pointer;
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;

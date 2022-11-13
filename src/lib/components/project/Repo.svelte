@@ -45,7 +45,6 @@
     background: #252525;
     padding: 20px;
     color: var(--text-color);
-    cursor: pointer;
 
     h3 {
       color: var(--accent-color);

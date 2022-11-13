@@ -19,15 +19,24 @@
   import Contact from "$lib/components/Contact.svelte";
 
   let carousel;
+  let isPhone = false;
 
   const projects = projectsImport.slice(0, 3);
   let image: HTMLElement;
 
   onMount(async () => {
     image = document.getElementById("hero-pic")!;
+
+    if (
+      navigator.userAgent.match(/Android/i) ||
+      navigator.userAgent.match(/iPhone/i)
+    ) {
+      isPhone = true;
+    }
   });
 
   function mouseMove(event: any) {
+    if (isPhone) return;
     const x = event.clientX;
     const y = event.clientY;
 

@@ -22,17 +22,12 @@
 </div>
 
 <style lang="scss">
-  * {
-    cursor: pointer;
-  }
-
   .tile {
     overflow: hidden;
     border-radius: 0px;
     background-color: #444;
     display: flex;
     text-align: center;
-    cursor: pointer;
     position: relative;
 
     a {

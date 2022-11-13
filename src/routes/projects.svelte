@@ -165,10 +165,6 @@
     justify-content: space-between;
     margin-bottom: 2em;
 
-    * {
-      cursor: pointer;
-    }
-
     .img {
       width: max(100px, 10vw);
       border-radius: 50%;
