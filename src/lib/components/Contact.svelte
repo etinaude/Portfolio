@@ -83,7 +83,6 @@
     </div>
 
     <div class="alt-contacts">
-      Or here:
       <p>
         Email: <a href="mailto:eti@naude.dev" class="clickable">eti@naude.dev</a
         >
@@ -120,10 +119,6 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-
-    .alt-contacts {
-      font-size: 1.5em;
-    }
   }
 
   .form {
@@ -144,7 +139,8 @@
       padding: 20px;
       border-radius: 10px;
       box-sizing: border-box;
-      font-size: 1.2em;
+      font-size: max(0.7vw, 20px);
+      color: #fff;
     }
 
     .row {
@@ -169,7 +165,8 @@
     button {
       width: 100%;
       margin: 0;
-      font-size: 1.5em;
+      font-size: 1rem;
+      text-transform: uppercase;
     }
   }
 
@@ -177,11 +174,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
-    max-width: 1150px;
+    width: min(80%, 1x200px);
+
+    .alt-contacts {
+      margin-left: 2em;
+      font-size: max(1em, 1.5vw);
+    }
 
     p {
-      font-size: 1.2em;
+      margin: auto;
     }
   }
 

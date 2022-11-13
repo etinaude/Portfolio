@@ -162,7 +162,6 @@
   .github-profile {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 2em;
 
     .img {
@@ -187,7 +186,6 @@
     .bio {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: flex-start;
       max-width: 750px;
       text-align: left;
