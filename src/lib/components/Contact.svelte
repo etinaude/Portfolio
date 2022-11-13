@@ -84,27 +84,32 @@
 
     <div class="alt-contacts">
       <p>
-        Email: <a href="mailto:eti@naude.dev" class="clickable">eti@naude.dev</a
+        <img alt="email icon" src="mail_logo.svg" />
+
+        <a href="mailto:eti@naude.dev" class="clickable">eti@naude.dev</a>
+      </p>
+
+      <p>
+        <img alt="linkedin icon" src="linkedin_logo.svg" />
+
+        <a href="https://www.linkedin.com/in/etinaude/" class="clickable"
+          >linkedin.com/in/etinaude</a
         >
       </p>
 
       <p>
-        Linked In: <a
-          href="https://www.linkedin.com/in/etinaude/"
-          class="clickable">linkedin.com/in/etinaude</a
-        >
-      </p>
+        <img alt="github icon" src="github_logo.svg" />
 
-      <p>
-        Github: <a href="https://www.github.com/etinaude" class="clickable"
+        <a href="https://www.github.com/etinaude" class="clickable"
           >github.com/etinaude</a
         >
       </p>
 
       <p>
-        Instagram: <a
-          href="https://www.instagram.com/etinaude/"
-          class="clickable">@etinaude</a
+        <img alt="instagram icon" src="insta_logo.svg" />
+
+        <a href="https://www.instagram.com/etinaude/" class="clickable"
+          >@etinaude</a
         >
       </p>
     </div>
@@ -114,6 +119,14 @@
 <Banner {bannerInfo} />
 
 <style lang="scss">
+  $primary-color: #222;
+
+  $accent-color: #43d0ff;
+  $translucent-accent: #43d0ff55;
+
+  $accent-tint-color: #7adeff;
+  $text-color: #fff;
+
   section {
     --background: #222;
     justify-content: center;
@@ -141,6 +154,11 @@
       box-sizing: border-box;
       font-size: max(0.7vw, 20px);
       color: #fff;
+      box-shadow: 2px 2px 0px 0px #1116;
+
+      &:focus {
+        outline: 1px solid $accent-color;
+      }
     }
 
     .row {
@@ -178,11 +196,23 @@
 
     .alt-contacts {
       margin-left: 2em;
-      font-size: max(1em, 1.5vw);
+      font-size: max(1.5em, 1.5vw);
+
+      img {
+        height: 1em;
+        margin-right: 10px;
+      }
     }
 
     p {
       margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+
+      a:hover {
+        scale: 1.05;
+      }
     }
   }
 

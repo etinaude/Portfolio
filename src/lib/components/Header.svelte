@@ -63,16 +63,26 @@
             <img alt="github logo" src="github_logo.svg" />
           </a>
         </li>
+
+        <!-- svelte-ignore security-anchor-rel-noreferrer -->
+        <li class="social-link">
+          <a
+            class="clickable"
+            href="https://www.instagram.com/etinaude/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img alt="insta logo" src="insta_logo.svg" />
+          </a>
+        </li>
       </ul>
     </div>
   </div>
 </header>
 
 <style lang="scss">
-  $primary-color: #222;
   $accent-color: #43d0ff;
   $accent-tint-color: #7adeff;
-  $text-color: #fff;
   $background: #222;
 
   header {
@@ -84,6 +94,14 @@
     z-index: 50;
   }
 
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s linear;
+    height: 100%;
+  }
+
   .right-border {
     translate: -1px;
   }
@@ -93,19 +111,8 @@
   }
 
   .corner {
-    width: 3em;
-    height: 3em;
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-    }
     img {
-      width: 2em;
-      height: 2em;
-      object-fit: contain;
+      height: 1.5em;
     }
   }
 
@@ -126,7 +133,7 @@
         position: relative;
         margin: 0 10px;
         &:hover {
-          transform: scale(1.1);
+          scale: 1.1;
         }
       }
     }
@@ -134,26 +141,20 @@
 
   nav {
     display: flex;
-    justify-content: center;
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
-    height: 90%;
+    translate: -50%;
 
     a {
-      display: flex;
       height: 100%;
-      align-items: center;
       padding: 0 1em;
       color: $accent-tint-color;
       font-weight: 700;
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      text-decoration: none;
-      transition: color 0.2s linear;
-      color: #eee;
+      color: #fff;
     }
   }
 
@@ -161,24 +162,18 @@
     position: relative;
     padding: 0;
     margin: 0;
-    height: 3em;
     display: flex;
-    justify-content: center;
-    align-items: center;
     list-style: none;
     background: $background;
-    background-size: contain;
 
     li {
       position: relative;
       height: 100%;
+
       &.active::before {
         $size: 6px;
         content: "";
-        width: 0;
-        height: 0;
         position: absolute;
-        top: 0;
         left: calc(50% - $size);
         border: $size solid transparent;
         border-top: $size solid $accent-color;
