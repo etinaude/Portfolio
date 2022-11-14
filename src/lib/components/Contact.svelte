@@ -192,7 +192,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: min(80%, 1x200px);
+    width: min(80%, 1200px);
 
     .alt-contacts {
       margin-left: 2em;

@@ -129,7 +129,7 @@
   </div>
 </section>
 
-<section id="awards" class="sticky">
+<section id="awards">
   <h2>Awards</h2>
 
   <div class="card-grid">

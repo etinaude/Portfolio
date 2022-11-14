@@ -95,6 +95,8 @@
   h3 {
     color: #43d0ff;
     margin-bottom: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   caption {
