@@ -1,7 +1,17 @@
 <script lang="ts">
   import type { ProjectT } from "$lib/types/types";
+  import { urls } from "$lib/services/urls";
+  import { onMount } from "svelte";
 
   export let cardData: ProjectT;
+
+  let baseUrl = urls.preLoadBase;
+  let baseVideoUrl = urls.preLoadVideoBase;
+
+  onMount(async () => {
+    baseUrl = urls.getHighResUrl();
+    baseVideoUrl = urls.getHighResVideoUrl();
+  });
 </script>
 
 <div class="showcase clickable">
@@ -18,14 +28,18 @@
   <!-- svelte-ignore security-anchor-rel-noreferrer -->
   <a href={cardData.follow_url} target="_blank" rel="noopener">
     <div class="img">
-      <img src={cardData.image_url} alt="project" />
+      <img src={baseUrl + cardData.image_url} alt="project" />
 
       {#if cardData.hover_img}
-        <img class="hover-img" src={cardData.hover_img} alt="project hover" />
+        <img
+          class="hover-img"
+          src={baseUrl + cardData.hover_img}
+          alt="project hover"
+        />
       {:else if cardData.hover_video}
         <video playsinline autoplay muted loop class="hover-img">
           <source
-            src={cardData.hover_video}
+            src={baseVideoUrl + cardData.hover_video}
             loading="lazy"
             alt="project hover"
           />

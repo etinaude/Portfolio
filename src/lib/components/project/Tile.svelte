@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { urls } from "$lib/services/urls";
   import type { ProjectT } from "$lib/types/types";
 
   export let cardData: ProjectT;
@@ -16,7 +17,7 @@
   {/if}
 
   <div class="img">
-    <img src={cardData.image_url} alt="project" />
+    <img src={urls.base + cardData.image_url} alt="project" />
   </div>
 
   <div class="text">
@@ -62,6 +63,7 @@
       overflow: hidden;
       height: 0px;
       backdrop-filter: blur(1px);
+      transition: 0.5s ease;
     }
 
     &:hover .text {

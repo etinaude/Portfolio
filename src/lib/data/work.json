@@ -3,24 +3,24 @@
     "title": "UoA Faculty of Medical Heath Sciences",
     "side": "left",
     "description": "While working at this role I focussed on <b>mobile app development</b> using <b>Ionic</b> Framework. In this role I was the primary developer for <b>Headstrong Messenger</b> <img which is a chatbot application designed to help teens and young adults struggling with depression and anxiety build healthy habits.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/fmhs_h8upx2.webp"
+    "image_url": "/v1656592568/logos/fmhs_h8upx2.webp"
   },
   {
     "title": "Fullstack developer and designer at Kekeno Tech",
     "side": "right",
     "description": "At Kekeno Tech I am a fullstack developer and designer working mainly   to create web applications for clients around New Zealand. The primary   technologies used for this role is <b>Angular</b>, <b>Flask</b> and   <b>Firebase</b>. On top of this I also often   <b>design webpages</b> or modify existing designs to fit the needs of the   client.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/kekeno_rbrnha.webp"
+    "image_url": "/v1656592568/logos/kekeno_rbrnha.webp"
   },
   {
     "title": "Robotics Research at University of Auckland",
     "side": "left",
     "description": "I am employed by the Department of Mechatronics to create a system allowing children to interact with robots and provide the robots instructions using a novel <b>tangible programming language</b>. This enables them to programme the robots using cards before they are even able to use a computer. The research is in using this system as an education tool and exploring how children interact with robots. For this project I am making the <b>computer vision</b> system, the <b>data server</b>, and the <b>interface</b> to explore all the data which has been collected.",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/engineering_aykfct.webp"
+    "image_url": "/v1656592568/logos/engineering_aykfct.webp"
   },
   {
     "title": "Lead Creative Technologist at Unleash Space",
     "side": "right",
     "description": "As A Creative Technologist I consult with students and staff members to create and design a wide range projects using the latest creative technologies. This is done by providing trainings on how each technology is used, when to use it and what its limitations are I also provide advice individually to people who need further information on prototyping. Some of the technologies I provide advice for are <b >3D printing</b >, <b>laser cutting</b>, <b>5G</b>, <b>VR/AR</b>, <b>soldering</b> and <b>CNC routing</b>. The projects which I help prototype for",
-    "image_url": "https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_360,h_360/v1656592568/logos/unleash_zkdz7d.webp"
+    "image_url": "/v1656592568/logos/unleash_zkdz7d.webp"
   }
 ]

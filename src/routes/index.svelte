@@ -1,7 +1,3 @@
-<script context="module" lang="ts">
-  export const prerender = false;
-</script>
-
 <script lang="ts">
   import Card from "$lib/components/project/Card.svelte";
   import LongCard from "$lib/components/project/Long-card.svelte";
@@ -13,19 +9,23 @@
   import workImport from "$lib/data/work.json";
   import awardImport from "$lib/data/awards.json";
 
-  import { onMount } from "svelte";
   import Carousel from "svelte-carousel";
   import { browser } from "$app/env";
   import Contact from "$lib/components/Contact.svelte";
+  import { onMount } from "svelte";
 
   let carousel;
   let isPhone = false;
 
   const projects = projectsImport.slice(0, 3);
   let image: HTMLElement;
+  let pageWidth = 200;
+  let pageHeight = 200;
 
   onMount(async () => {
     image = document.getElementById("hero-pic")!;
+    pageWidth = window.innerWidth;
+    pageHeight = window.innerHeight;
 
     if (
       navigator.userAgent.match(/Android/i) ||
@@ -37,14 +37,8 @@
 
   function mouseMove(event: any) {
     if (isPhone) return;
-    const x = event.clientX;
-    const y = event.clientY;
-
-    const width = image.clientWidth;
-    const height = image.clientHeight;
-
-    const xPercent = x / width;
-    const yPercent = y / height;
+    const xPercent = event.clientX / image.clientWidth;
+    const yPercent = event.clientY / image.clientHeight;
 
     // translate image
     image.style.transform = `translate(-${xPercent * 100}px, -${
@@ -60,7 +54,7 @@
 <section id="base" on:mousemove={mouseMove}>
   <div class="hero-pic" id="hero-pic">
     <img
-      src="https://res.cloudinary.com/etienne-naude/image/upload/q_100,e_grayscale/v1656592580/me/thoughtfulImg_qd1fsv.webp"
+      src="https://res.cloudinary.com/etienne-naude/image/upload/q_70,e_grayscale,w_{pageWidth},h_{pageHeight}/v1656592580/me/thoughtfulImg_qd1fsv.webp"
       alt="background hero"
     />
   </div>
