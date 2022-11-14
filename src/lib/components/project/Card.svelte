@@ -44,9 +44,7 @@
 
 <style lang="scss">
   .card {
-    width: 380px;
-    margin-bottom: 60px;
-    height: 620px;
+    width: 100%;
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 2px #0000004d;

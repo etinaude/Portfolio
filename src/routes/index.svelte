@@ -118,7 +118,7 @@
   </div>
   <h2>Education</h2>
 
-  <div class="long-card-row">
+  <div class="long-card-grid">
     {#each educationImport as education}
       <LongCard cardData={education} />
     {/each}
@@ -128,7 +128,7 @@
 <section id="work">
   <h2>Current Work</h2>
 
-  <div class="long-card-row">
+  <div class="long-card-grid">
     {#each workImport as work}
       <LongCard cardData={work} />
     {/each}
@@ -138,7 +138,7 @@
 <section id="awards" class="sticky">
   <h2>Awards</h2>
 
-  <div class="card-row">
+  <div class="card-grid">
     {#each awardImport as award}
       <Card cardData={award} />
     {/each}

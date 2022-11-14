@@ -110,7 +110,7 @@
 <section>
   <h2>Featured Projects</h2>
 
-  <div class="card-row">
+  <div class="card-grid">
     {#each largeProjects as project}
       <Card cardData={project} />
     {/each}
