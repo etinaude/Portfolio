@@ -54,7 +54,7 @@
 <section id="base" on:mousemove={mouseMove}>
   <div class="hero-pic" id="hero-pic">
     <img
-      src="https://res.cloudinary.com/etienne-naude/image/upload/q_70,e_grayscale,w_{pageWidth},h_{pageHeight}/v1656592580/me/thoughtfulImg_qd1fsv.webp"
+      src="https://res.cloudinary.com/etienne-naude/image/upload/q_70,e_grayscale,c_crop,w_{pageWidth},h_{pageHeight}/v1656592580/me/thoughtfulImg_qd1fsv.webp"
       alt="background hero"
     />
   </div>
