@@ -30,7 +30,7 @@
 
   {
     "title": "Reindeer",
-    "description": "I design a reindeer!!! Made in Blender, it was tough to learn (Blender and I still need to explore 99% of what it can do), but it's been great to be able to do organic modelling!!! I then did a resin and powder bed print of it. ",
+    "description": "I design a reindeer!!! Made in Blender, but it's been great to be able to do organic modelling!!! I then did a resin and powder bed print of it. ",
     "image_url": "/v1668234681/projects/reindeer_iskbrb.webp",
     "hover_img": "/v1668254209/projects/thing_bwyeit.webp"
   },
@@ -46,7 +46,11 @@
     "description": "A heat exchanger designed to be optimal for powder bed fusion 3D printing without support and exchanging heat efficiently using a gyroid pattern",
     "image_url": "/v1668253613/projects/heat_yafhfx.webp"
   },
-
+  {
+    "title": "Name Plate",
+    "description": "A small name plate for my desk designed to represent various aspects of the organisation I work at. Made with CNC routed native puriri wood, laser cut acyrilc, and 320LED/m lights.",
+    "image_url": "/v1668890750/projects/name-plate.webp"
+  },
   {
     "title": "Manifold",
     "description": "A metal 3d printed part I designed to move water to various pipes. It was printed at CDAM lab using aluminium powder bed fusion. ",
