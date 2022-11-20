@@ -7,3 +7,9 @@ node_modules/
 .idea
 .netlify/
 build/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/test-results/
+/playwright-report/
+/playwright/.cache/

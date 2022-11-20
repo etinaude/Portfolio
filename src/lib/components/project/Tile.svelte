@@ -12,12 +12,17 @@
       href={cardData.follow_url}
       target="_blank"
       rel="noopener"
-      class="clickable"
+      class="clickable tile_url"
     />
   {/if}
 
   <div class="img">
-    <img defer src={urls.base + cardData.image_url} alt="project" />
+    <img
+      defer
+      src={urls.base + cardData.image_url}
+      alt="project"
+      class="tile_image"
+    />
   </div>
 
   <div class="text">
