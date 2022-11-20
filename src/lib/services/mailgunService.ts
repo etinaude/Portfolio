@@ -1,4 +1,4 @@
-import { Keys } from "./keys";
+import KEYS from "../../keys.json";
 type Form = {
   name: string;
   email: string;
@@ -11,7 +11,7 @@ export default class MailGun {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: `Basic ${Keys.mailGun}`,
+        Authorization: `Basic ${KEYS.mailGun}`,
       },
       body: new URLSearchParams({
         from: `${form.name} <${form.email}>`,
