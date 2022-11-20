@@ -110,7 +110,7 @@
 <section>
   <h2>Featured Projects</h2>
 
-  <div class="card-grid">
+  <div class="card-side-scroll">
     {#each largeProjects as project}
       <Card cardData={project} />
     {/each}
@@ -218,6 +218,12 @@
       .github-text {
         color: $accent-tint-color;
       }
+    }
+  }
+
+  @media (max-width: 2400px) {
+    .card-side-scroll {
+      justify-content: flex-start;
     }
   }
 

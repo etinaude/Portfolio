@@ -119,15 +119,12 @@
         padding-right: 100px;
         justify-content: center;
 
-        &:hover h3 {
-          color: var(--accent-tint-color);
-        }
-
         caption,
         h3,
         .read-more {
           &:hover {
             scale: 1.1;
+            color: var(--accent-color);
           }
         }
 

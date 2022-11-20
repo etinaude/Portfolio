@@ -216,7 +216,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     section {
       height: auto;
     }
@@ -241,9 +241,16 @@
 
       .alt-contacts {
         margin-top: 2em;
-        font-size: 22px;
         margin-bottom: 50px;
         margin-left: 0;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contact-row {
+      .alt-contacts {
+        font-size: 22px;
       }
     }
   }

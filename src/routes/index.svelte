@@ -144,7 +144,7 @@
 <section id="awards">
   <h2>Awards</h2>
 
-  <div class="card-grid">
+  <div class="card-side-scroll">
     {#each awardImport as award}
       <Card cardData={award} />
     {/each}

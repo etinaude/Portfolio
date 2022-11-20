@@ -13,47 +13,49 @@
   });
 </script>
 
-<div class="card tilt" bind:this={card}>
-  {#if cardData.follow_url}
-    <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-    <a
-      href={cardData.follow_url}
-      target="_blank"
-      rel="noopener"
-      class="clickable"
-    />
-  {/if}
-
-  <div class="img clickable">
-    <img src={urls.base + cardData.image_url} alt="project" />
-
-    {#if cardData.hover_img}
-      <img
-        class="hover-img"
-        src={urls.base + cardData.hover_img}
-        alt="project hover"
+<div class="outer">
+  <div class="card tilt" bind:this={card}>
+    {#if cardData.follow_url}
+      <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
+      <a
+        href={cardData.follow_url}
+        target="_blank"
+        rel="noopener"
+        class="clickable"
       />
-    {:else if cardData.hover_video}
-      <video playsinline autoplay muted loop class="hover-img">
-        <source
-          src={urls.baseVideo + cardData.hover_video}
-          loading="lazy"
+    {/if}
+
+    <div class="img clickable">
+      <img src={urls.base + cardData.image_url} alt="project" />
+
+      {#if cardData.hover_img}
+        <img
+          class="hover-img"
+          src={urls.base + cardData.hover_img}
           alt="project hover"
         />
-      </video>
-    {/if}
+      {:else if cardData.hover_video}
+        <video playsinline autoplay muted loop class="hover-img">
+          <source
+            src={urls.baseVideo + cardData.hover_video}
+            loading="lazy"
+            alt="project hover"
+          />
+        </video>
+      {/if}
+    </div>
+
+    <h3>{cardData.title}</h3>
+
+    <caption>{cardData.description}</caption>
+
+    <div class="read-more">read more →</div>
   </div>
-
-  <h3>{cardData.title}</h3>
-
-  <caption>{cardData.description}</caption>
-
-  <div class="read-more">read more →</div>
 </div>
 
 <style lang="scss">
   .card {
-    width: 100%;
+    width: 360px;
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 2px #0000004d;
@@ -65,6 +67,7 @@
     padding-bottom: 20px;
     box-sizing: border-box;
     position: relative;
+    margin-right: 30px;
 
     a {
       position: absolute;
@@ -117,12 +120,5 @@
     object-fit: cover;
     position: absolute;
     left: 0;
-  }
-
-  @media (max-width: 768px) {
-    .card {
-      width: 100%;
-      height: 100%;
-    }
   }
 </style>
