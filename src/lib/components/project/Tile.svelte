@@ -17,7 +17,7 @@
   {/if}
 
   <div class="img">
-    <img src={urls.base + cardData.image_url} alt="project" />
+    <img defer src={urls.base + cardData.image_url} alt="project" />
   </div>
 
   <div class="text">

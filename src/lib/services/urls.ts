@@ -1,4 +1,5 @@
 export class urls {
+  public static noProps = `https://res.cloudinary.com/etienne-naude/image/upload/`;
   public static base = `https://res.cloudinary.com/etienne-naude/image/upload/c_fill,q_100,w_400,h_400`;
   public static baseVideo = `https://res.cloudinary.com/etienne-naude/video/upload/c_fill,ac_none,q_100,w_400,h_400`;
 

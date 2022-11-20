@@ -13,27 +13,42 @@
   import { browser } from "$app/env";
   import Contact from "$lib/components/Contact.svelte";
   import { onMount } from "svelte";
+  import { urls } from "$lib/services/urls";
 
   let carousel;
   let isPhone = false;
 
   const projects = projectsImport.slice(0, 3);
   let image: HTMLElement;
-  let pageWidth = 200;
-  let pageHeight = 200;
+  let heroImage =
+    "https://res.cloudinary.com/etienne-naude/image/upload/q_70,e_grayscale,w_500,h_200/v1656592580/me/thoughtfulImg_qd1fsv.webp";
 
   onMount(async () => {
     image = document.getElementById("hero-pic")!;
-    pageWidth = window.innerWidth;
-    pageHeight = window.innerHeight;
-
     if (
       navigator.userAgent.match(/Android/i) ||
       navigator.userAgent.match(/iPhone/i)
     ) {
       isPhone = true;
     }
+
+    heroImage = getHeroImage();
   });
+
+  function getHeroImage() {
+    const base = urls.noProps;
+    const width = `w_${window.innerWidth}`;
+    const height = `h_${window.innerHeight}`;
+    const properties = `q_70,e_grayscale,c_crop,${width},${height}`;
+
+    console.log(`${base}${properties}/me/thoughtfulImg_qd1fsv.webp`);
+
+    if (isPhone) {
+      return `${base}/${properties}/v1656592579/me/portraitImg_bejhx7.webp`;
+    } else {
+      return `${base}/${properties}/v1656592580/me/thoughtfulImg_qd1fsv.webp`;
+    }
+  }
 
   function mouseMove(event: any) {
     if (isPhone) return;
@@ -53,10 +68,7 @@
 
 <section id="base" on:mousemove={mouseMove}>
   <div class="hero-pic" id="hero-pic">
-    <img
-      src="https://res.cloudinary.com/etienne-naude/image/upload/q_70,e_grayscale,c_crop,w_{pageWidth},h_{pageHeight}/v1656592580/me/thoughtfulImg_qd1fsv.webp"
-      alt="background hero"
-    />
+    <img src={heroImage} alt="background hero" />
   </div>
   <div class="blur" />
 
