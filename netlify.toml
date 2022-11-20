@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "echo $KEYS | base64 -di > src/keys.json;npm run build"
   publish = "build"
 
 
