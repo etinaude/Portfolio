@@ -11,6 +11,7 @@ export default class MailGun {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
+        // mailgun Private API key as base64
         Authorization: `Basic ${KEYS.mailGun}`,
       },
       body: new URLSearchParams({
