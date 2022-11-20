@@ -86,30 +86,40 @@
       <p>
         <img alt="email icon" src="mail_logo.svg" />
 
-        <a href="mailto:eti@naude.dev" class="clickable">eti@naude.dev</a>
+        <a
+          href="mailto:eti@naude.dev"
+          id="email-link"
+          class="clickable social-link">eti@naude.dev</a
+        >
       </p>
 
       <p>
         <img alt="linkedin icon" src="linkedin_logo.svg" />
 
-        <a href="https://www.linkedin.com/in/etinaude/" class="clickable"
-          >linkedin.com/in/etinaude</a
+        <a
+          href="https://www.linkedin.com/in/etinaude/"
+          id="linkedin-link"
+          class="clickable social-link">linkedin.com/in/etinaude</a
         >
       </p>
 
       <p>
         <img alt="github icon" src="github_logo.svg" />
 
-        <a href="https://www.github.com/etinaude" class="clickable"
-          >github.com/etinaude</a
+        <a
+          href="https://www.github.com/etinaude/"
+          class="clickable social-link"
+          id="github-link">github.com/etinaude</a
         >
       </p>
 
       <p>
         <img alt="instagram icon" src="insta_logo.svg" />
 
-        <a href="https://www.instagram.com/etinaude/" class="clickable"
-          >@etinaude</a
+        <a
+          href="https://www.instagram.com/etinaude/"
+          class="clickable social-link"
+          id="insta-link">@etinaude</a
         >
       </p>
     </div>
