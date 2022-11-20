@@ -76,7 +76,7 @@
     <h1>Etienne Naude</h1>
     <ChanglingText />
 
-    <a class="cta clickable" href="#cta"> Contact Me </a>
+    <a id="cta" class="cta clickable" href="#contact"> Get in touch </a>
   </div>
 </section>
 

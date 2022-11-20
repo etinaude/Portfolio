@@ -43,7 +43,7 @@
   }
 </script>
 
-<section>
+<section id="contact">
   <div class="wave">
     <svg viewBox="0 0 1440 90"
       ><path
