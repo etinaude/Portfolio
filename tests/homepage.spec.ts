@@ -16,6 +16,6 @@ test("Call to action button", async ({ page }) => {
   const ctaButton = await page.locator("#cta");
 
   expect(await ctaButton.count()).toBe(1);
-  expect(await ctaButton.textContent()).toBe("Get in touch");
+  expect(await ctaButton.textContent()).toContain("Get in touch");
   expect(await ctaButton.getAttribute("href")).toBe("#contact");
 });
