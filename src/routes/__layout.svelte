@@ -5,6 +5,7 @@
 
   import "../app.scss";
   import type { posT } from "$lib/types/types";
+  import Footer from "$lib/components/Footer.svelte";
 
   let pos: posT = { x: 0, y: 0, clickable: false };
 
