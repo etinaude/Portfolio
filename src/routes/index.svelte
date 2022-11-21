@@ -8,6 +8,7 @@
   import educationImport from "$lib/data/education.json";
   import workImport from "$lib/data/work.json";
   import awardImport from "$lib/data/awards.json";
+  import clubsImport from "$lib/data/clubs.json";
 
   import Carousel from "svelte-carousel";
   import { browser } from "$app/env";
@@ -127,6 +128,16 @@
   <div class="long-card-grid">
     {#each educationImport as education}
       <LongCard cardData={education} />
+    {/each}
+  </div>
+</section>
+
+<section id="clubs">
+  <h2>Associations</h2>
+
+  <div class="card-side-scroll">
+    {#each clubsImport as award}
+      <Card cardData={award} />
     {/each}
   </div>
 </section>
