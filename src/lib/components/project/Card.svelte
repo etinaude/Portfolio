@@ -49,7 +49,9 @@
 
     <caption>{cardData.description}</caption>
 
-    <div class="read-more">read more →</div>
+    {#if cardData.follow_url}
+      <div class="read-more">read more →</div>
+    {/if}
   </div>
 </div>
 
@@ -110,7 +112,6 @@
     margin-top: 10px;
     color: #bbb;
     font-size: 0.9em;
-    display: none;
   }
 
   img,

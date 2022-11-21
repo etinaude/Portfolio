@@ -32,12 +32,13 @@
     "title": "Reindeer",
     "description": "I design a reindeer!!! Made in Blender, but it's been great to be able to do organic modelling!!! I then did a resin and powder bed print of it. ",
     "image_url": "/v1668234681/projects/reindeer_iskbrb.webp",
-    "hover_img": "/v1668254209/projects/thing_bwyeit.webp"
+    "hover_img": "/v1668254209/projects/thing_bwyeit.webp",
+    "follow_url": "https://photos.app.goo.gl/8wwTCgmnL8KB3tcr6"
   },
   {
     "title": "Lantern",
     "description": "Final prototype from the smart lanterns (voice-enabled wifi-connected RGB lanterns) workshop I ran with Google Developer Student Club and the Maker Club.",
-    "image_url": "/v1668234680/projects/lantern_fso7fs.webp",
+    "image_url": ",a_270/v1668234680/projects/lantern_fso7fs.webp",
     "hover_video": "/v1656592599/projects/glowCircle_newew9.webm",
     "follow_url": "https://github.com/etinaude/smart-lanterns"
   },
