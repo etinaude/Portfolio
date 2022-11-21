@@ -29,4 +29,6 @@
 
   <Cursor {pos} />
   <Splash />
+
+  <Footer />
 </main>

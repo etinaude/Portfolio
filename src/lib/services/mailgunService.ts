@@ -31,9 +31,7 @@ export default class MailGun {
       options
     )
       .then((response) => response.json())
-      .then((response) => console.log(response))
       .catch((err) => console.error(err));
-    console.log("SENDING EMAIL 3");
   }
 
   static validateEmail(email: string) {

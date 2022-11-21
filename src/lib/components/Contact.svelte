@@ -7,7 +7,6 @@
   let form: ContactFormT = new ContactFormT();
 
   async function sendEmail() {
-    console.log(form);
     const validate = MailGun.validateAll(form);
 
     bannerInfo = {

@@ -42,8 +42,6 @@
     const height = `h_${window.innerHeight}`;
     const properties = `q_70,e_grayscale,c_crop,${width},${height}`;
 
-    console.log(`${base}${properties}/me/thoughtfulImg_qd1fsv.webp`);
-
     if (isPhone) {
       return `${base}/${properties}/v1656592579/me/portraitImg_bejhx7.webp`;
     } else {
