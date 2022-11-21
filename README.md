@@ -6,7 +6,6 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square&color=blue)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 ![GitHub Repo stars](https://img.shields.io/github/stars/etinaude/Portfolio?color=orange&style=flat-square)
 
-
 ## 🛠️ Tools
 
 ![Svelte](https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white)
@@ -15,11 +14,9 @@
 
 [Svelte](https://svelte.dev/) | [Cloudinary](https://cloudinary.com/) | [Netlify](https://www.netlify.com/) | [MailGun](https://www.mailgun.com/) | [Google Analytics](https://analytics.google.com/) | [Playwright](https://playwright.dev/)
 
-
 ## ✨ Portfolio Website
 
 This website highlights my work with software, hardware and maker projects. It is constantly in a state of redesign, please follow the link in the title to view the page.
-
 
 ## 🧩 Prerequists
 
@@ -30,7 +27,6 @@ Install the dependencies
 ```zsh
 npm i
 ```
-
 
 ## 🏃 Run
 
@@ -46,8 +42,10 @@ and open [localhost:3000](https://localhost:3000)
 
 If you like this project, or use it please leave a star to show your appreciation.
 
-
-## 📪 Contact 
+## 📪 Contact
 
 If you have any questions, please reach out to me at: [eti@naude.dev](mailto:eti@naude.dev)
 
+## 😀 Demo
+
+![Demo](./static/demo.gif)
