@@ -22,11 +22,12 @@
         target="_blank"
         rel="noopener"
         class="clickable"
+        aria-label="project link {cardData.title}"
       />
     {/if}
 
     <div class="img clickable">
-      <img src={urls.base + cardData.image_url} alt="project" />
+      <img src={urls.base + cardData.image_url} alt={cardData.title} />
 
       {#if cardData.hover_img}
         <img

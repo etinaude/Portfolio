@@ -13,6 +13,7 @@
       target="_blank"
       rel="noopener"
       class="clickable tile_url"
+      aria-label="project link {cardData.title}"
     />
   {/if}
 
@@ -20,7 +21,7 @@
     <img
       defer
       src={urls.base + cardData.image_url}
-      alt="project"
+      alt={cardData.title}
       class="tile_image"
     />
   </div>

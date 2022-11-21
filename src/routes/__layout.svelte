@@ -13,7 +13,7 @@
     pos.x = event.x;
     pos.y = event.y;
 
-    for (const el of event.path) {
+    for (const el of event.composedPath()) {
       if (el.classList?.contains("clickable")) {
         pos.clickable = true;
         return;
@@ -29,6 +29,4 @@
 
   <Cursor {pos} />
   <Splash />
-
-  <Footer />
 </main>
