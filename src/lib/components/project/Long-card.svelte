@@ -24,7 +24,7 @@
 
   <img
     class="tilt"
-    defer
+    loading="lazy"
     alt="Unleash logo"
     src={urls.base + cardData.image_url}
     bind:this={imgElement}

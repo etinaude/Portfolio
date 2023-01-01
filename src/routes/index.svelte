@@ -38,9 +38,7 @@
 
   function getHeroImage() {
     const base = urls.noProps;
-    const width = `w_${window.innerWidth}`;
-    const height = `h_${window.innerHeight}`;
-    const properties = `q_70,e_grayscale,c_crop,${width},${height}`;
+    const properties = `q_70,e_grayscale,c_crop`;
 
     if (isPhone) {
       return `${base}/${properties}/v1656592579/me/portraitImg_bejhx7.webp`;

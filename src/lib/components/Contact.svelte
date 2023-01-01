@@ -83,7 +83,7 @@
 
     <div class="alt-contacts">
       <p>
-        <img alt="email icon" src="mail_logo.svg" />
+        <img alt="email icon" src="mail_logo.svg" loading="lazy" />
 
         <a
           href="mailto:eti@naude.dev"
@@ -93,7 +93,7 @@
       </p>
 
       <p>
-        <img alt="linkedin icon" src="linkedin_logo.svg" />
+        <img alt="linkedin icon" src="linkedin_logo.svg" loading="lazy" />
 
         <a
           href="https://www.linkedin.com/in/etinaude/"
@@ -103,7 +103,7 @@
       </p>
 
       <p>
-        <img alt="github icon" src="github_logo.svg" />
+        <img alt="github icon" src="github_logo.svg" loading="lazy" />
 
         <a
           href="https://www.github.com/etinaude/"
@@ -113,7 +113,7 @@
       </p>
 
       <p>
-        <img alt="instagram icon" src="insta_logo.svg" />
+        <img alt="instagram icon" src="insta_logo.svg" loading="lazy" />
 
         <a
           href="https://www.instagram.com/etinaude/"

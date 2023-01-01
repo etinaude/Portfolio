@@ -19,7 +19,7 @@
 
   <div class="img">
     <img
-      defer
+      loading="lazy"
       src={urls.base + cardData.image_url}
       alt={cardData.title}
       class="tile_image"

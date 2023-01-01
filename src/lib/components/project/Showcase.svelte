@@ -28,21 +28,19 @@
   <!-- svelte-ignore security-anchor-rel-noreferrer -->
   <a href={cardData.follow_url} target="_blank" rel="noopener">
     <div class="img">
-      <img src={baseUrl + cardData.image_url} defer alt="project" />
+      <img src={baseUrl + cardData.image_url} loading="lazy" alt="project" />
 
       {#if cardData.hover_img}
         <img
-          defer
+          loading="lazy"
           class="hover-img"
           src={baseUrl + cardData.hover_img}
           alt="project hover"
         />
       {:else if cardData.hover_video}
-        <video playsinline autoplay muted loop class="hover-img">
+        <video playsinline autoplay muted loop class="hover-img" loading="lazy">
           <source
-            defer
             src={baseVideoUrl + cardData.hover_video}
-            loading="lazy"
             alt="project hover"
           />
         </video>
