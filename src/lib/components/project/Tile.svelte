@@ -1,37 +1,40 @@
 <script lang="ts">
   import { urls } from "$lib/services/urls";
   import type { ProjectT } from "$lib/types/types";
+  import Saos from "saos";
 
   export let cardData: ProjectT;
 </script>
 
-<div class="tile">
-  {#if cardData.follow_url}
-    <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-    <a
-      href={cardData.follow_url}
-      target="_blank"
-      rel="noopener"
-      class="clickable tile_url"
-      aria-label="project link {cardData.title}"
-    />
-  {/if}
+<Saos animation={"from-bottom 1s ease"}>
+  <div class="tile">
+    {#if cardData.follow_url}
+      <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
+      <a
+        href={cardData.follow_url}
+        target="_blank"
+        rel="noopener"
+        class="clickable tile_url"
+        aria-label="project link {cardData.title}"
+      />
+    {/if}
 
-  <div class="img">
-    <img
-      loading="lazy"
-      src={urls.base + cardData.image_url}
-      alt={cardData.title}
-      class="tile_image"
-    />
+    <div class="img">
+      <img
+        loading="lazy"
+        src={urls.base + cardData.image_url}
+        alt={cardData.title}
+        class="tile_image"
+      />
+    </div>
+
+    <div class="text">
+      <h3>{cardData.title}</h3>
+
+      <caption>{cardData.description}</caption>
+    </div>
   </div>
-
-  <div class="text">
-    <h3>{cardData.title}</h3>
-
-    <caption>{cardData.description}</caption>
-  </div>
-</div>
+</Saos>
 
 <style lang="scss">
   .tile {

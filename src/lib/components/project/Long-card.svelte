@@ -3,33 +3,33 @@
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
   import { urls } from "$lib/services/urls";
+  import Saos from "saos";
 
   export let cardData: LongCardT;
 
   let imgElement: HTMLElement;
-  let paragraph: HTMLElement;
 
   onMount(() => {
-    paragraph.innerHTML = cardData.description;
-
     VanillaTilt.init(imgElement, { glare: true });
   });
 </script>
 
-<div class="long-card {cardData.side}">
-  <div class="text">
-    <h3>{cardData.title}</h3>
-    <p bind:this={paragraph} />
-  </div>
+<Saos animation={"from-" + cardData.side + " 1s ease"}>
+  <div class="long-card {cardData.side}">
+    <div class="text">
+      <h3>{cardData.title}</h3>
+      <p>{cardData.description}</p>
+    </div>
 
-  <img
-    class="tilt"
-    loading="lazy"
-    alt="Unleash logo"
-    src={urls.base + cardData.image_url}
-    bind:this={imgElement}
-  />
-</div>
+    <img
+      class="tilt"
+      loading="lazy"
+      alt="Unleash logo"
+      src={urls.base + cardData.image_url}
+      bind:this={imgElement}
+    />
+  </div>
+</Saos>
 
 <style lang="scss">
   .long-card {

@@ -15,6 +15,7 @@
   import Contact from "$lib/components/Contact.svelte";
   import { onMount } from "svelte";
   import { urls } from "$lib/services/urls";
+  import Saos from "saos";
 
   let carousel;
   let isPhone = false;
@@ -73,7 +74,9 @@
     <h1>Etienne Naude</h1>
     <ChanglingText />
 
-    <a id="cta" class="cta clickable" href="#contact"> Get in touch </a>
+    <Saos animation={"from-bottom 1s ease"}>
+      <a id="cta" class="cta clickable" href="#contact"> Get in touch </a>
+    </Saos>
   </div>
 </section>
 
@@ -119,7 +122,10 @@
       /></svg
     >
   </div>
-  <h2>Education</h2>
+
+  <Saos animation={"from-bottom 1s ease"}>
+    <h2>Education</h2>
+  </Saos>
 
   <div class="long-card-grid">
     {#each educationImport as education}
@@ -129,7 +135,9 @@
 </section>
 
 <section id="clubs">
-  <h2>Associations</h2>
+  <Saos animation={"from-bottom 1s ease"}>
+    <h2>Associations</h2>
+  </Saos>
 
   <div class="card-side-scroll">
     {#each clubsImport as award}
@@ -139,7 +147,9 @@
 </section>
 
 <section id="work">
-  <h2>Current Work</h2>
+  <Saos animation={"from-bottom 1s ease"}>
+    <h2>Current Work</h2>
+  </Saos>
 
   <div class="long-card-grid">
     {#each workImport as work}
@@ -149,7 +159,9 @@
 </section>
 
 <section id="awards">
-  <h2>Awards</h2>
+  <Saos animation={"from-bottom 1s ease"}>
+    <h2>Awards</h2>
+  </Saos>
 
   <div class="card-side-scroll">
     {#each awardImport as award}

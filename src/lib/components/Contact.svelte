@@ -2,6 +2,7 @@
   import Banner from "$lib/components/Banner.svelte";
   import MailGun from "$lib/services/mailgunService";
   import { BannerT, ContactFormT } from "$lib/types/types";
+  import Saos from "saos";
 
   let bannerInfo: BannerT = new BannerT();
   let form: ContactFormT = new ContactFormT();
@@ -54,74 +55,78 @@
   <h1>Contact Me</h1>
 
   <div class="contact-row">
-    <div name="contact" class="form" id="form">
-      <div class="row">
-        <input
-          type="text"
-          name="name"
-          bind:value={form.name}
-          placeholder="name"
+    <Saos animation={"from-left 1s ease"}>
+      <div name="contact" class="form" id="form">
+        <div class="row">
+          <input
+            type="text"
+            name="name"
+            bind:value={form.name}
+            placeholder="name"
+            class="clickable"
+          />
+          <input
+            type="email"
+            name="email"
+            bind:value={form.email}
+            placeholder="email"
+            class="clickable"
+          />
+        </div>
+
+        <textarea
+          name="message"
+          placeholder="message"
+          bind:value={form.message}
           class="clickable"
         />
-        <input
-          type="email"
-          name="email"
-          bind:value={form.email}
-          placeholder="email"
-          class="clickable"
-        />
+        <button on:click={sendEmail} class="clickable">Send</button>
       </div>
+    </Saos>
 
-      <textarea
-        name="message"
-        placeholder="message"
-        bind:value={form.message}
-        class="clickable"
-      />
-      <button on:click={sendEmail} class="clickable">Send</button>
-    </div>
+    <Saos animation={"from-right 1s ease"}>
+      <div class="alt-contacts">
+        <p>
+          <img alt="email icon" src="mail_logo.svg" loading="lazy" />
 
-    <div class="alt-contacts">
-      <p>
-        <img alt="email icon" src="mail_logo.svg" loading="lazy" />
+          <a
+            href="mailto:eti@naude.dev"
+            id="email-link"
+            class="clickable social-link">eti@naude.dev</a
+          >
+        </p>
 
-        <a
-          href="mailto:eti@naude.dev"
-          id="email-link"
-          class="clickable social-link">eti@naude.dev</a
-        >
-      </p>
+        <p>
+          <img alt="linkedin icon" src="linkedin_logo.svg" loading="lazy" />
 
-      <p>
-        <img alt="linkedin icon" src="linkedin_logo.svg" loading="lazy" />
+          <a
+            href="https://www.linkedin.com/in/etinaude/"
+            id="linkedin-link"
+            class="clickable social-link">linkedin.com/in/etinaude</a
+          >
+        </p>
 
-        <a
-          href="https://www.linkedin.com/in/etinaude/"
-          id="linkedin-link"
-          class="clickable social-link">linkedin.com/in/etinaude</a
-        >
-      </p>
+        <p>
+          <img alt="github icon" src="github_logo.svg" loading="lazy" />
 
-      <p>
-        <img alt="github icon" src="github_logo.svg" loading="lazy" />
+          <a
+            href="https://www.github.com/etinaude/"
+            class="clickable social-link"
+            id="github-link">github.com/etinaude</a
+          >
+        </p>
 
-        <a
-          href="https://www.github.com/etinaude/"
-          class="clickable social-link"
-          id="github-link">github.com/etinaude</a
-        >
-      </p>
+        <p>
+          <img alt="instagram icon" src="insta_logo.svg" loading="lazy" />
 
-      <p>
-        <img alt="instagram icon" src="insta_logo.svg" loading="lazy" />
-
-        <a
-          href="https://www.instagram.com/etinaude/"
-          class="clickable social-link"
-          id="insta-link">@etinaude</a
-        >
-      </p>
-    </div>
+          <a
+            href="https://www.instagram.com/etinaude/"
+            class="clickable social-link"
+            id="insta-link">@etinaude</a
+          >
+        </p>
+      </div>
+    </Saos>
   </div>
 </section>
 
