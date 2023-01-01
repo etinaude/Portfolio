@@ -8,7 +8,7 @@ test("Home has expected h1", async ({ page }) => {
 test("Home has sections", async ({ page }) => {
   await page.goto("localhost:3000/");
   const sections = await page.locator("section");
-  expect(await sections.count()).toBe(7);
+  expect(await sections.count()).toBe(8);
 });
 
 test("Call to action button", async ({ page }) => {
