@@ -14,6 +14,7 @@
 
   import Repo from "$lib/components/project/Repo.svelte";
   import type { ProjectT } from "$lib/types/types";
+  import Saos from "saos";
 
   const largeProjects: ProjectT[] = projectsImport.slice(0, 6);
   const smallProjects: ProjectT[] = projectsImport.slice(6);
@@ -66,49 +67,57 @@
 
 <section>
   {#if gitHubUser}
-    <h2>GitHub</h2>
+    <Saos animation={"from-bottom 0.5s ease"}>
+      <h2>GitHub</h2>
+    </Saos>
 
-    <!-- svelte-ignore security-anchor-rel-noreferrer -->
-    <a
-      href={gitHubUser.html_url}
-      target="_blank"
-      rel="noopener"
-      class="github-profile clickable"
-    >
-      <div class="img">
-        <img src={gitHubUser.avatar_url} alt="project" />
-      </div>
-
-      <div class="bio">
-        <div class="row">
-          <div class="github-text">github.com/</div>
-
-          <div>
-            {gitHubUser.following} Following
-          </div>
-        </div>
-        <div class="row">
-          <h3>{gitHubUser.login}</h3>
-
-          <div>
-            {gitHubUser.followers} Followers
-          </div>
+    <Saos animation={"from-bottom 0.5s ease"}>
+      <!-- svelte-ignore security-anchor-rel-noreferrer -->
+      <a
+        href={gitHubUser.html_url}
+        target="_blank"
+        rel="noopener"
+        class="github-profile clickable"
+      >
+        <div class="img">
+          <img src={gitHubUser.avatar_url} alt="project" />
         </div>
 
-        <caption>{gitHubUser.bio}</caption>
-      </div>
-    </a>
+        <div class="bio">
+          <div class="row">
+            <div class="github-text">github.com/</div>
 
-    <div class="repo-list">
-      {#each gitHubRepos as repo}
-        <Repo {repo} />
-      {/each}
-    </div>
+            <div>
+              {gitHubUser.following} Following
+            </div>
+          </div>
+          <div class="row">
+            <h3>{gitHubUser.login}</h3>
+
+            <div>
+              {gitHubUser.followers} Followers
+            </div>
+          </div>
+
+          <caption>{gitHubUser.bio}</caption>
+        </div>
+      </a>
+    </Saos>
+
+    <Saos animation={"from-bottom 0.7s ease"}>
+      <div class="repo-list">
+        {#each gitHubRepos as repo}
+          <Repo {repo} />
+        {/each}
+      </div>
+    </Saos>
   {/if}
 </section>
 
 <section>
-  <h2>Featured Projects</h2>
+  <Saos animation={"from-bottom 1s ease"}>
+    <h2>Featured Projects</h2>
+  </Saos>
 
   <div class="card-side-scroll">
     {#each largeProjects as project}
@@ -116,7 +125,10 @@
     {/each}
   </div>
 
-  <h2>More Projects</h2>
+  <Saos animation={"from-bottom 1s ease"}>
+    <h2>More Projects</h2>
+  </Saos>
+
   <div class="tiles">
     {#each smallProjects as project}
       <Tile cardData={project} />
