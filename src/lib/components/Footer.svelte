@@ -1,8 +1,10 @@
 <footer>
   Made Etienne Naude
 
-  <a href="https://github.com/etinaude/Portfolio" target="_blank" rel="noopener"
-    >Source 🠖</a
+  <a
+    href="https://github.com/etinaude/Portfolio"
+    target="_blank"
+    rel="noreferrer">Source 🠖</a
   >
 </footer>
 
