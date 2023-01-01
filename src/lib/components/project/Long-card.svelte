@@ -16,20 +16,20 @@
   });
 </script>
 
-<div class="long-card {cardData.side}">
-  <div class="text">
-    <h3>{cardData.title}</h3>
-    <p bind:this={paragraph} />
-  </div>
+  <div class="long-card {cardData.side}">
+    <div class="text">
+      <h3>{cardData.title}</h3>
+      <p>{cardData.description}</p>
+    </div>
 
-  <img
-    class="tilt"
-    loading="lazy"
-    alt="Unleash logo"
-    src={urls.base + cardData.image_url}
-    bind:this={imgElement}
-  />
-</div>
+    <img
+      class="tilt"
+      loading="lazy"
+      alt="Unleash logo"
+      src={urls.base + cardData.image_url}
+      bind:this={imgElement}
+    />
+  </div>
 
 <style lang="scss">
   .long-card {

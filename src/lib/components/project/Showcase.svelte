@@ -38,11 +38,8 @@
           alt="project hover"
         />
       {:else if cardData.hover_video}
-        <video playsinline autoplay muted loop class="hover-img" loading="lazy">
-          <source
-            src={baseVideoUrl + cardData.hover_video}
-            alt="project hover"
-          />
+        <video playsinline autoplay muted loop class="hover-img">
+          <source src={baseVideoUrl + cardData.hover_video} />
         </video>
       {/if}
     </div>

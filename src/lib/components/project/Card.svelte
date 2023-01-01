@@ -45,11 +45,7 @@
           playsinline
           autoplay
           muted
-          loop
-          class="hover-img"
-          loading="lazy"
-          alt="project hover"
-        >
+      </div>
           <source src={urls.baseVideo + cardData.hover_video} />
         </video>
       {/if}
