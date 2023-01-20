@@ -25,7 +25,7 @@
       class="tilt"
       loading="lazy"
       alt="Unleash logo"
-      src={urls.base + cardData.image_url}
+      src={"x_small" + cardData.image_url}
       bind:this={imgElement}
     />
   </div>

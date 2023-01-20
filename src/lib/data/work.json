@@ -3,18 +3,18 @@
     "title": "Software at Halter",
     "side": "left",
     "description": "At Halter I am working on the mobile app making it easy and intuitive for users to interact with their cows and bring farming into the future. This invloves working with various teams to optimise the moooovement of cows",
-    "image_url": "/v1668890313/logos/halter_ujbpil.webp"
+    "image_url": "/logos/halter.webp"
   },
   {
     "title": "Fullstack developer and designer at Kekeno Tech",
     "side": "right",
     "description": "At Kekeno Tech I am a fullstack developer and designer working mainly to create web applications for clients around New Zealand. The primary technologies used for this role is Angular , Flask and Firebase . On top of this I also often design webpages or modify existing designs to fit the needs of the client.",
-    "image_url": "/v1656592568/logos/kekeno_rbrnha.webp"
+    "image_url": "/logos/kekeno.webp"
   },
   {
     "title": "Lead Creative Technologist at Unleash Space",
     "side": "left",
     "description": "As A Creative Technologist I consult with students and staff members to create and design a wide range projects using the latest technologies. I also providing trainings on how each technology is used, when to use it and what its limitations are. On top of this I give individual advice to people who need further help on prototyping. Some of the technologies I work with in this role are 3D printing, laser cutting, 5G, VR/AR, soldering and CNC routing .",
-    "image_url": "/v1656592568/logos/unleash_zkdz7d.webp"
+    "image_url": "/logos/unleash.webp"
   }
 ]
