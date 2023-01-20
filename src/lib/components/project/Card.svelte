@@ -31,7 +31,7 @@
       <div class="img clickable">
         <img
           loading="lazy"
-          src={urls.base + cardData.image_url}
+          src={urls.projectBase + cardData.image_url}
           alt={cardData.title}
         />
 
@@ -39,12 +39,12 @@
           <img
             loading="lazy"
             class="hover-img"
-            src={urls.base + cardData.hover_img}
+            src={urls.projectBase + cardData.hover_img}
             alt="project hover"
           />
         {:else if cardData.hover_video}
           <video playsinline autoplay muted loop class="hover-img">
-            <source src={urls.baseVideo + cardData.hover_video} />
+            <source src={urls.projectBase + cardData.hover_video} />
           </video>
         {/if}
       </div>

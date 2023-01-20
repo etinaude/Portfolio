@@ -22,7 +22,7 @@
     <div class="img">
       <img
         loading="lazy"
-        src={urls.base + cardData.image_url}
+        src={urls.projectBase + cardData.image_url}
         alt={cardData.title}
         class="tile_image"
       />
