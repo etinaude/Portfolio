@@ -10,13 +10,10 @@
   import awardImport from "$lib/data/awards.json";
   import clubsImport from "$lib/data/clubs.json";
 
-  import Carousel from "svelte-carousel";
-  import { browser } from "$app/env";
   import Contact from "$lib/components/Contact.svelte";
   import { onMount } from "svelte";
   import Saos from "saos";
 
-  let carousel;
   let isPhone = false;
 
   const projects = projectsImport.slice(0, 3);
@@ -84,21 +81,7 @@
     >
   </div>
 
-  {#if browser}
-    <Carousel
-      bind:this={carousel}
-      timingFunction="linear"
-      autoplay
-      autoplayDuration={5000}
-      dots={false}
-      arrows={false}
-      swiping={false}
-    >
-      {#each projects as project}
-        <Showcase cardData={project} />
-      {/each}
-    </Carousel>
-  {/if}
+  <Showcase cardData={projects} />
 
   <div class="more-container">
     <a class="button more-projects-btn clickable" href="/projects">
