@@ -56,7 +56,7 @@
 
   <div class="contact-row">
     <Saos animation={"from-left 1s ease"}>
-      <div name="contact" class="form" id="form">
+      <div class="form" id="form">
         <div class="row">
           <input
             type="text"

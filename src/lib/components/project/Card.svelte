@@ -2,7 +2,6 @@
   import type { ProjectT } from "$lib/types/types";
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
-  import { urls } from "$lib/services/urls";
   import Saos from "saos";
 
   export let cardData: ProjectT;
@@ -29,22 +28,17 @@
       {/if}
 
       <div class="img clickable">
-        <img
-          loading="lazy"
-          src={"small/" + cardData.image_url}
-          alt={cardData.title}
-        />
+        <img src={"images/" + cardData.image_url} alt={cardData.title} />
 
         {#if cardData.hover_img}
           <img
-            loading="lazy"
             class="hover-img"
-            src={"small/" + cardData.hover_img}
+            src={"images/" + cardData.hover_img}
             alt="project hover"
           />
         {:else if cardData.hover_video}
           <video playsinline autoplay muted loop class="hover-img">
-            <source src={"small/" + cardData.hover_video} />
+            <source src={"images/" + cardData.hover_video} />
           </video>
         {/if}
       </div>

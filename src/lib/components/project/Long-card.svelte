@@ -2,7 +2,6 @@
   import type { LongCardT } from "$lib/types/types";
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
-  import { urls } from "$lib/services/urls";
   import Saos from "saos";
 
   export let cardData: LongCardT;
@@ -23,9 +22,8 @@
 
     <img
       class="tilt"
-      loading="lazy"
       alt="Unleash logo"
-      src={"x_small" + cardData.image_url}
+      src={"images" + cardData.image_url}
       bind:this={imgElement}
     />
   </div>

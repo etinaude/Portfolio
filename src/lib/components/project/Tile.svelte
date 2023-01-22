@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { urls } from "$lib/services/urls";
   import type { ProjectT } from "$lib/types/types";
   import Saos from "saos";
   let w;
@@ -22,8 +21,7 @@
 
     <div class="img">
       <img
-        loading="lazy"
-        src={urls.getTilePath(w) + cardData.image_url}
+        src={"images/" + cardData.image_url}
         alt={cardData.title}
         class="tile_image"
       />
@@ -96,7 +94,7 @@
     padding: 0px 30px;
   }
 
-  img {
+  .img > * {
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
