@@ -23,7 +23,7 @@
   let gitHubUser = githubBackup.profile;
 
   onMount(() => {
-    const elements = document.querySelectorAll(".tilt");
+    const elements = <HTMLElement>(<unknown>document.querySelectorAll(".tilt"));
 
     VanillaTilt.init(elements, { glare: true });
   });
