@@ -1,17 +1,6 @@
 <script lang="ts">
   import type { ProjectT } from "$lib/types/types";
-  import { urls } from "$lib/services/urls";
-  import { onMount } from "svelte";
-
   export let cardData: ProjectT;
-
-  let baseUrl = urls.preLoadBase;
-  let baseVideoUrl = urls.preLoadVideoBase;
-
-  onMount(async () => {
-    baseUrl = urls.getHighResUrl();
-    baseVideoUrl = urls.getHighResVideoUrl();
-  });
 </script>
 
 <div class="showcase clickable">

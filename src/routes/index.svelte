@@ -14,7 +14,6 @@
   import { browser } from "$app/env";
   import Contact from "$lib/components/Contact.svelte";
   import { onMount } from "svelte";
-  import Image from "svelte-image";
   import Saos from "saos";
 
   let carousel;
@@ -60,7 +59,7 @@
 
 <section id="base" on:mousemove={mouseMove}>
   <div class="hero-pic" id="hero-pic">
-    <Image src={heroImage} alt="background hero" />
+    <img src={heroImage} alt="background hero" />
   </div>
   <div class="blur" />
 

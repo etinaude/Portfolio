@@ -23,6 +23,7 @@
       <img
         src={"images/" + cardData.image_url}
         alt={cardData.title}
+        loading="lazy"
         class="tile_image"
       />
     </div>
