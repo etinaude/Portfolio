@@ -1,14 +1,16 @@
 import preprocess from 'svelte-preprocess';
 import json from '@rollup/plugin-json'
 import adapter from '@sveltejs/adapter-netlify';
-
-
+import importAssets from 'svelte-preprocess-import-assets'
+import image from "svelte-image";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: preprocess(),
+	preprocess: preprocess(
+		[importAssets(), image()]
+	),
 
 	kit: {
 		adapter: adapter(),
