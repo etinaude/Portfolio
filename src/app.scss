@@ -90,12 +90,12 @@ img {
 
 button,
 .button {
-  background-color: #252525;
-  border: 2px solid $accent-color;
-  color: $text-color;
-  border-radius: 5px;
+  background-color: #444;
+  border: none;
+  color: $accent-color;
+  border-radius: 10px;
   font-weight: bold;
-  box-shadow: 2px 2px 0px 0px #1116;
+  box-shadow: 3px 3px 0px 0px #1116;
   margin: 20px;
   text-decoration: none;
   line-height: 1;
@@ -108,6 +108,12 @@ button,
   &:hover {
     background-color: $accent-tint-color;
     color: #252525;
+    scale: 1.05;
+  }
+
+  &:focus {
+    outline: 2px solid $accent-color;
+    scale: 1.05;
   }
 
   &:focus:not(:focus-visible) {
@@ -124,8 +130,18 @@ button,
   margin: auto;
   justify-content: center;
 
-  @media (max-width: 1600px) {
-    justify-content: flex-start;
+  .card-side-scroll {
+    @media (max-width: 1200px) {
+      justify-content: flex-start;
+    }
+  }
+}
+
+#awards {
+  .card-side-scroll {
+    @media (max-width: 1600px) {
+      justify-content: flex-start;
+    }
   }
 }
 

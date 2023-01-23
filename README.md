@@ -48,4 +48,4 @@ If you have any questions, please reach out to me at: [eti@naude.dev](mailto:eti
 
 ## 😀 Demo
 
-![Demo](./static/demo.gif)
+![Demo](./static/demo.webp)

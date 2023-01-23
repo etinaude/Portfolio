@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { urls } from "$lib/services/urls";
   import type { ProjectT } from "$lib/types/types";
   import Saos from "saos";
+  let w;
 
   export let cardData: ProjectT;
 </script>
 
 <Saos animation={"from-bottom 1s ease"}>
-  <div class="tile">
+  <div class="tile" bind:clientWidth={w}>
     {#if cardData.follow_url}
       <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
       <a
@@ -21,9 +21,9 @@
 
     <div class="img">
       <img
-        loading="lazy"
-        src={urls.base + cardData.image_url}
+        src={"images/" + cardData.image_url}
         alt={cardData.title}
+        loading="lazy"
         class="tile_image"
       />
     </div>
@@ -95,7 +95,7 @@
     padding: 0px 30px;
   }
 
-  img {
+  .img > * {
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;

@@ -2,21 +2,21 @@
   {
     "title": "Auckland Maker Club",
     "description": "I founded the maker club in 2020, which has grown to over 500 members, We've held on over 50 events over the past year! We also won the New Club of the Year Award!",
-    "image_url": "/v1669014889/clubs/maker_gmopbl.webp",
-    "hover_img": "/v1669015124/clubs/DSC05855_ix1hns.webp",
+    "image_url": "/logos/maker.webp",
+    "hover_img": "/clubs/maker.webp",
     "follow_url": "https://makeuoa.nz/"
   },
   {
     "title": "Google Student Developer Club",
     "description": "I am the vice-president of the Google Student Developer Club at the University of Auckland. We host events and workshops to help students learn about tech.",
-    "image_url": "/v1669015385/clubs/Vertical_Logomark_With_Name_Colour_t0n7uj.webp",
-    "hover_img": "/v1669015127/clubs/DSC07756_g6xjgf.webp",
+    "image_url": "/logos/gdsc.webp",
+    "hover_img": "/projects/lantern.webp",
     "follow_url": "https://gdsc.community.dev/the-university-of-auckland/"
   },
   {
     "title": "Security Association",
     "description": "I founded the security association in 2020. We host events and workshops teaching students about lock picking, hacking, and security.",
-    "image_url": "/v1669014889/clubs/security_zxfuo4.webp",
+    "image_url": "/logos/security.webp",
     "follow_url": "https://security.uniclub.nz/"
   }
 ]

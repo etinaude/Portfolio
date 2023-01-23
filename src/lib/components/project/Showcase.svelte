@@ -1,135 +1,165 @@
 <script lang="ts">
   import type { ProjectT } from "$lib/types/types";
-  import { urls } from "$lib/services/urls";
   import { onMount } from "svelte";
-
-  export let cardData: ProjectT;
-
-  let baseUrl = urls.preLoadBase;
-  let baseVideoUrl = urls.preLoadVideoBase;
+  import Card from "./Card.svelte";
+  export let cardData: ProjectT[];
+  let pageWidth = 0;
 
   onMount(async () => {
-    baseUrl = urls.getHighResUrl();
-    baseVideoUrl = urls.getHighResVideoUrl();
+    pageWidth = window.innerWidth;
   });
 </script>
 
-<div class="showcase clickable">
-  <div class="text">
-    <div class="text-content">
-      <h3 class="title">{cardData.title}</h3>
+{#if pageWidth < 1200}
+  <div class="card-side-scroll">
+    {#each cardData as card}
+      <Card cardData={card} />
+    {/each}
+  </div>
+{:else}
+  <div class="container">
+    <div class="cards">
+      {#each cardData as card}
+        <div class="card">
+          {#if card.follow_url}
+            <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
+            <a
+              href={card.follow_url}
+              target="_blank"
+              rel="noopener"
+              class="clickable"
+              aria-label="project link {card.title}"
+            />
+          {/if}
 
-      <caption>{cardData.description}</caption>
+          <div class="img clickable">
+            <img src={"images/" + card.image_url} alt={card.title} />
 
-      <div class="read-more">read more →</div>
+            {#if card.hover_img}
+              <img
+                class="hover-img"
+                src={"images/" + card.hover_img}
+                alt="project hover"
+              />
+            {:else if card.hover_video}
+              <video playsinline autoplay muted loop class="hover-img">
+                <source src={"images/" + card.hover_video} />
+              </video>
+            {/if}
+          </div>
+
+          <h3>{card.title}</h3>
+
+          <caption>{card.description}</caption>
+
+          {#if card.follow_url}
+            <div class="read-more">read more →</div>
+          {/if}
+        </div>
+      {/each}
     </div>
   </div>
-
-  <!-- svelte-ignore security-anchor-rel-noreferrer -->
-  <a href={cardData.follow_url} target="_blank" rel="noopener">
-    <div class="img">
-      <img src={baseUrl + cardData.image_url} loading="lazy" alt="project" />
-
-      {#if cardData.hover_img}
-        <img
-          loading="lazy"
-          class="hover-img"
-          src={baseUrl + cardData.hover_img}
-          alt="project hover"
-        />
-      {:else if cardData.hover_video}
-        <video playsinline autoplay muted loop class="hover-img">
-          <source src={baseVideoUrl + cardData.hover_video} />
-        </video>
-      {/if}
-    </div>
-  </a>
-</div>
+{/if}
 
 <style lang="scss">
-  .showcase {
-    width: 100%;
-    height: calc(100vh - 100px);
-    display: flex;
-    flex-direction: row;
-    background-color: #333;
+  .container {
+    position: relative;
+    height: calc(100vh - 200px);
+    width: 1200px;
+    margin-bottom: 100px;
 
+    &:hover {
+      .card:nth-child(1) {
+        translate: -400px;
+        rotate: -10deg;
+      }
+
+      .card:nth-child(2) {
+        translate: 0 -35px;
+      }
+
+      .card:nth-child(3) {
+        translate: 400px;
+        rotate: 10deg;
+      }
+    }
+
+    .card:nth-child(1) {
+      translate: -40px;
+      rotate: -5deg;
+    }
+
+    .card:nth-child(3) {
+      translate: 40px;
+      rotate: 5deg;
+    }
+  }
+
+  .cards {
+    position: absolute;
+    bottom: 0;
+    left: 400px;
+  }
+  .card {
+    transform-origin: 50% 70%;
+    width: min(420px, 50vw);
     overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px #0000004d;
+    background-color: #444;
+    display: flex;
     text-align: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
 
     a {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      overflow: hidden;
-      text-decoration: none;
-      height: 100%;
-      padding-bottom: 20px;
-      margin-bottom: auto;
-      box-sizing: border-box;
+      position: absolute;
       width: 100%;
-      position: relative;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
     }
 
     .img {
       position: relative;
-      width: 100vmin;
+      width: 100%;
       aspect-ratio: 1;
+    }
 
-      &:hover {
-        .hover-img {
-          display: block;
-        }
-      }
+    .hover-img {
+      display: none;
+    }
 
+    &:hover {
       .hover-img {
-        display: none;
+        display: block;
       }
     }
+  }
 
-    .text {
-      max-width: calc(100% - 100vmin);
-      height: 100%;
-      box-sizing: border-box;
-      display: flex;
-      text-align: left;
+  h3 {
+    color: #43d0ff;
+    margin-bottom: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
-      caption {
-        text-align: left;
-      }
+  caption {
+    padding: 0px 30px;
+    font-size: 25px;
+    height: 10em;
+  }
 
-      h3 {
-        margin-top: 0;
-        margin-bottom: 20px;
-
-        text-align: left;
-      }
-
-      .text-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-        padding-left: 100px;
-        padding-right: 100px;
-        justify-content: center;
-
-        caption,
-        h3,
-        .read-more {
-          &:hover {
-            scale: 1.1;
-            color: var(--accent-color);
-          }
-        }
-
-        .read-more {
-          margin-top: 50px;
-          font-weight: bold;
-          text-transform: uppercase;
-        }
-      }
-    }
+  .read-more {
+    margin-top: 10px;
+    color: #bbb;
+    font-size: 0.9em;
   }
 
   img,
@@ -139,39 +169,5 @@
     object-fit: cover;
     position: absolute;
     left: 0;
-  }
-
-  @media (max-width: 768px) {
-    .showcase {
-      flex-direction: column-reverse;
-      height: auto;
-
-      a {
-        padding: 0;
-      }
-
-      .img {
-        width: 100%;
-        height: 100%;
-      }
-
-      .text {
-        max-width: 100%;
-        height: auto;
-        padding: 0;
-
-        h3 {
-          margin-top: 20px;
-        }
-
-        .text-content {
-          padding: 0 20px;
-        }
-
-        .read-more {
-          margin-bottom: 50px;
-        }
-      }
-    }
   }
 </style>

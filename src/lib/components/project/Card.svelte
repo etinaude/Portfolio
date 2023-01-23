@@ -2,8 +2,6 @@
   import type { ProjectT } from "$lib/types/types";
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
-  import { urls } from "$lib/services/urls";
-  import Saos from "saos";
 
   export let cardData: ProjectT;
 
@@ -14,51 +12,44 @@
   });
 </script>
 
-<Saos animation={"from-bottom 1s ease"}>
-  <div class="outer">
-    <div class="card tilt" bind:this={card}>
-      {#if cardData.follow_url}
-        <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-        <a
-          href={cardData.follow_url}
-          target="_blank"
-          rel="noopener"
-          class="clickable"
-          aria-label="project link {cardData.title}"
-        />
-      {/if}
+<div class="outer tilt">
+  <div class="card tilt" bind:this={card}>
+    {#if cardData.follow_url}
+      <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
+      <a
+        href={cardData.follow_url}
+        target="_blank"
+        rel="noopener"
+        class="clickable"
+        aria-label="project link {cardData.title}"
+      />
+    {/if}
 
-      <div class="img clickable">
+    <div class="img clickable">
+      <img src={"images/" + cardData.image_url} alt={cardData.title} />
+
+      {#if cardData.hover_img}
         <img
-          loading="lazy"
-          src={urls.base + cardData.image_url}
-          alt={cardData.title}
+          class="hover-img"
+          src={"images/" + cardData.hover_img}
+          alt="project hover"
         />
-
-        {#if cardData.hover_img}
-          <img
-            loading="lazy"
-            class="hover-img"
-            src={urls.base + cardData.hover_img}
-            alt="project hover"
-          />
-        {:else if cardData.hover_video}
-          <video playsinline autoplay muted loop class="hover-img">
-            <source src={urls.baseVideo + cardData.hover_video} />
-          </video>
-        {/if}
-      </div>
-
-      <h3>{cardData.title}</h3>
-
-      <caption>{cardData.description}</caption>
-
-      {#if cardData.follow_url}
-        <div class="read-more">read more →</div>
+      {:else if cardData.hover_video}
+        <video playsinline autoplay muted loop class="hover-img">
+          <source src={"images/" + cardData.hover_video} />
+        </video>
       {/if}
     </div>
+
+    <h3>{cardData.title}</h3>
+
+    <caption>{cardData.description}</caption>
+
+    {#if cardData.follow_url}
+      <div class="read-more">read more →</div>
+    {/if}
   </div>
-</Saos>
+</div>
 
 <style lang="scss">
   .card {

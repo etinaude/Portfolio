@@ -8,7 +8,7 @@
 
 <div
   class="outer {pos.clickable ? 'clickable' : ''}"
-  style="top: {pos.y - outerOffest}px; left: {pos.x - outerOffest}px;"
+  style="translate:  {pos.x - outerOffest}px {pos.y - outerOffest}px"
 >
   <div class="inner" />
 </div>
