@@ -123,28 +123,6 @@ $text-color: #fff;
   }
 }
 
-#about {
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.wave {
-  svg {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 100%;
-    filter: drop-shadow(0px -12px 4px #2222);
-    pointer-events: none;
-
-    path {
-      transform: scaleY(0.5);
-
-      fill: var(--background);
-    }
-  }
-}
-
 .long-card-grid {
   display: flex;
   flex-direction: column;
