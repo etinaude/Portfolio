@@ -24,17 +24,24 @@ $text-color: #fff;
       height: 20px;
       display: flex;
       justify-content: center;
+      color: #222;
 
       .arrow {
         padding-left: 20px;
         height: 20px;
         width: 20px;
+        fill: #222;
+        transition: none;
       }
 
       &:hover {
         background-color: $accent-tint-color;
         color: white;
         scale: 1.05;
+
+        .arrow {
+          fill: white;
+        }
       }
     }
   }
