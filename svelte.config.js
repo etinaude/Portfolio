@@ -18,12 +18,6 @@ const config = {
 		methodOverride: {
 			allowed: ['PATCH', 'DELETE']
 		},
-		vite: {
-			optimizeDeps: {
-				include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep']
-			}
-			// plugins: []
-		}
 	},
 	plugins: [
 		json({
