@@ -130,8 +130,18 @@ button,
   margin: auto;
   justify-content: center;
 
-  @media (max-width: 1600px) {
-    justify-content: flex-start;
+  .card-side-scroll {
+    @media (max-width: 1200px) {
+      justify-content: flex-start;
+    }
+  }
+}
+
+#awards {
+  .card-side-scroll {
+    @media (max-width: 1600px) {
+      justify-content: flex-start;
+    }
   }
 }
 

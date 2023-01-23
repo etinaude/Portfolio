@@ -1,84 +1,97 @@
 <script lang="ts">
   import type { ProjectT } from "$lib/types/types";
+  import { onMount } from "svelte";
+  import Card from "./Card.svelte";
   export let cardData: ProjectT[];
+  let pageWidth = 0;
+
+  onMount(async () => {
+    pageWidth = window.innerWidth;
+  });
 </script>
 
-<div class="container">
-  <div class="cards">
-    {#each cardData as cardData}
-      <div class="card">
-        {#if cardData.follow_url}
-          <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-          <a
-            href={cardData.follow_url}
-            target="_blank"
-            rel="noopener"
-            class="clickable"
-            aria-label="project link {cardData.title}"
-          />
-        {/if}
-
-        <div class="img clickable">
-          <img src={"images/" + cardData.image_url} alt={cardData.title} />
-
-          {#if cardData.hover_img}
-            <img
-              class="hover-img"
-              src={"images/" + cardData.hover_img}
-              alt="project hover"
-            />
-          {:else if cardData.hover_video}
-            <video playsinline autoplay muted loop class="hover-img">
-              <source src={"images/" + cardData.hover_video} />
-            </video>
-          {/if}
-        </div>
-
-        <h3>{cardData.title}</h3>
-
-        <caption>{cardData.description}</caption>
-
-        {#if cardData.follow_url}
-          <div class="read-more">read more →</div>
-        {/if}
-      </div>
+{#if pageWidth < 1200}
+  <div class="card-side-scroll">
+    {#each cardData as card}
+      <Card cardData={card} />
     {/each}
   </div>
-</div>
+{:else}
+  <div class="container">
+    <div class="cards">
+      {#each cardData as card}
+        <div class="card">
+          {#if card.follow_url}
+            <!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
+            <a
+              href={card.follow_url}
+              target="_blank"
+              rel="noopener"
+              class="clickable"
+              aria-label="project link {card.title}"
+            />
+          {/if}
+
+          <div class="img clickable">
+            <img src={"images/" + card.image_url} alt={card.title} />
+
+            {#if card.hover_img}
+              <img
+                class="hover-img"
+                src={"images/" + card.hover_img}
+                alt="project hover"
+              />
+            {:else if card.hover_video}
+              <video playsinline autoplay muted loop class="hover-img">
+                <source src={"images/" + card.hover_video} />
+              </video>
+            {/if}
+          </div>
+
+          <h3>{card.title}</h3>
+
+          <caption>{card.description}</caption>
+
+          {#if card.follow_url}
+            <div class="read-more">read more →</div>
+          {/if}
+        </div>
+      {/each}
+    </div>
+  </div>
+{/if}
 
 <style lang="scss">
   .container {
     position: relative;
-    height: 1050px;
+    height: calc(100vh - 200px);
     width: 1200px;
     margin-bottom: 100px;
 
     &:hover {
       .card:nth-child(1) {
-        translate: -450px;
-        rotate: -20deg;
+        translate: -400px;
+        rotate: -10deg;
       }
 
       .card:nth-child(2) {
-        translate: 0 -40px;
+        translate: 0 -35px;
       }
 
       .card:nth-child(3) {
-        translate: 450px;
-        rotate: 20deg;
+        translate: 400px;
+        rotate: 10deg;
       }
     }
 
-    &:not(:hover) {
-      .card:nth-child(1) {
-        translate: -40px;
-        rotate: -5deg;
-      }
+    .card:nth-child(1) {
+      translate: -40px;
+      rotate: -5deg;
+    }
 
-      .card:nth-child(3) {
-        translate: 40px;
-        rotate: 5deg;
-      }
+    .card:nth-child(3) {
+      translate: 40px;
+      rotate: 5deg;
     }
   }
 
@@ -89,8 +102,7 @@
   }
   .card {
     transform-origin: 50% 70%;
-    width: 420px;
-    height: 900px;
+    width: min(420px, 50vw);
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 2px #0000004d;
@@ -141,6 +153,7 @@
   caption {
     padding: 0px 30px;
     font-size: 25px;
+    height: 10em;
   }
 
   .read-more {
