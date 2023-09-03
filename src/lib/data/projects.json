@@ -8,10 +8,38 @@
   },
   {
     "title": "Headstrong Messenger",
-    "description": "I am part of a research team that created an interactive Ionic chatbot app to help struggling teens with depression and anxiety. I am currently heading front-end development for this project using Ionic and Angular.",
+    "description": "I was part of a research team that created an interactive Ionic chatbot app to help struggling teens with depression and anxiety. I headed the front-end development for this project using Ionic and Angular.",
     "image_url": "projects/headstrong.webp",
     "hover_video": "projects/headstrong_vid.webm",
     "follow_url": "https://appadvice.com/app/habits-messenger/1550723158"
+  },
+  {
+    "title": "Robot Arm",
+    "description": "A robotic arm that I built with Hayden Moore. This robotic arm performs various functions and is wirelessly controlled using an ESP-32.",
+    "image_url": "projects/arm.webp",
+    "hover_video": "projects/robot_vid.webm",
+    "follow_url": "https://github.com/etinaude/robot-arm"
+  },
+  {
+    "title": "Vending Machine",
+    "description": "A Vending Machine that Zac Miller-Waugh and I fixed. It was donated entirely broke, so we replaced the electronics with our own system and added WIFI connectivity. Now, students can sell their creations for free!",
+    "image_url": "projects/vend.webp",
+    "hover_img": "projects/vend2.webp",
+    "follow_url": "https://github.com/etinaude"
+  },
+  {
+    "title": "Human",
+    "description": "We used a vacuum-formed face. Ultra-realistic eyes 3D printed eyes, A duct tape body stuffed with clothes and a wig to create a human. We then added a servo mechanism and some computer vision to make the eyes follow you around the room.",
+    "image_url": "projects/human.webp",
+    "hover_video": "projects/face.webm",
+    "follow_url": "https://photos.app.goo.gl/8wwTCgmnL8KB3tcr6"
+  },
+  {
+    "title": "Reindeer",
+    "description": "I design a reindeer!!! Made in Blender, but it's been great to be able to do organic modelling!!! I then did a resin and powder bed print of it. ",
+    "image_url": "projects/reindeer.webp",
+    "hover_img": "projects/reindeer2.webp",
+    "follow_url": "https://photos.app.goo.gl/8wwTCgmnL8KB3tcr6"
   },
   {
     "title": "Decimal Clock",
@@ -21,26 +49,16 @@
     "follow_url": "https://github.com/etinaude/Decimal-Clock"
   },
   {
-    "title": "Robot Arm",
-    "description": "A robotic arm that I built with Hayden Moore. This robotic arm performs various functions and is wirelessly controlled using an ESP-32.",
-    "image_url": "projects/arm.webp",
-    "hover_video": "projects/robot_vid.webm",
-    "follow_url": "https://github.com/etinaude/robot-arm"
-  },
-
-  {
-    "title": "Reindeer",
-    "description": "I design a reindeer!!! Made in Blender, but it's been great to be able to do organic modelling!!! I then did a resin and powder bed print of it. ",
-    "image_url": "projects/reindeer.webp",
-    "hover_img": "projects/reindeer2.webp",
-    "follow_url": "https://photos.app.goo.gl/8wwTCgmnL8KB3tcr6"
-  },
-  {
     "title": "Lantern",
     "description": "Final prototype from the smart lanterns (voice-enabled wifi-connected RGB lanterns) workshop I ran with Google Developer Student Club and the Maker Club.",
     "image_url": "projects/lantern.webp",
     "hover_video": "projects/glow_circle_vid.webm",
     "follow_url": "https://github.com/etinaude/smart-lanterns"
+  },
+  {
+    "title": "Collaborative Puzzle",
+    "description": "In moving from New Zealand I designed a puzzle of the country. Each piece was painted by someone close to me then I assembled it. It is a reminder of the people I care about and the places I have been.",
+    "image_url": "projects/north_island.webp"
   },
   {
     "title": "Heat Exchanger",
@@ -63,10 +81,16 @@
     "image_url": "projects/arrows.webp"
   },
   {
+    "title": "Book",
+    "description": "A note book which I bound in leather.",
+    "image_url": "projects/book.webp"
+  },
+  {
     "title": "Clay",
     "description": "River Clay which I refined for future projects.",
     "image_url": "projects/clay.webp"
   },
+
   {
     "title": "Futuristic Hexagons",
     "description": "Futuristic laser-cut hexagons finished with oil backlight with white LEDs made to fill in a small nook in my room have created a more interesting video call background.",
