@@ -30,9 +30,7 @@
   }
 
   .profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
 
     img {
       width: 120px;
@@ -43,17 +41,16 @@
   }
 
   .qr-cont {
+    @include flex-center;
+    flex-direction: column;
+
     position: absolute;
     bottom: 0;
     right: 0;
     width: 100%;
     height: 100%;
     background-color: $primary;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 1;
-    flex-direction: column;
 
     p {
       color: $accent;

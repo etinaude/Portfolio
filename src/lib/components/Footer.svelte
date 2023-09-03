@@ -12,12 +12,11 @@
   @import "../styles/root.scss";
 
   footer {
-    display: flex;
-    justify-content: center;
+    @include flex-center;
+
     width: 100%;
     height: 80px;
     background: $primary-xd;
-    align-items: center;
     font-size: smaller;
   }
 

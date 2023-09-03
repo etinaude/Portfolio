@@ -139,8 +139,8 @@
 <style lang="scss">
   @import "../lib/styles/root.scss";
   section {
-    display: flex;
-    align-items: center;
+    @include flex-center;
+
     flex-direction: column;
     min-height: 100vh;
     box-sizing: border-box;

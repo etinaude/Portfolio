@@ -198,8 +198,7 @@
         width: 90%;
 
         .row {
-          flex-direction: column;
-          align-items: center;
+          @include flex-center;
 
           input {
             width: 100%;

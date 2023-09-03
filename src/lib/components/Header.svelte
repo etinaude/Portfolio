@@ -93,9 +93,7 @@
   }
 
   a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     transition: color 0.2s linear;
     height: 100%;
   }

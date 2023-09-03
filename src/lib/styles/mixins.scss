@@ -1,6 +1,6 @@
 @import "./variables.scss";
 
-@mixin border-dark {
+@mixin border-d {
   border: 2px solid $primary-xxd;
   box-shadow: 0 4px 0 1px $primary-xxd;
   border-radius: 10px;
@@ -14,9 +14,8 @@
 
 @mixin flex-center {
   display: flex;
-  text-align: center;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 @mixin transition {

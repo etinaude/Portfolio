@@ -102,15 +102,16 @@
     bottom: 0;
     left: 400px;
   }
+
   .card {
+    @include flex-center;
+
     transform-origin: 50% 70%;
     width: min(420px, 50vw);
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 2px #0000004d;
     background-color: $primary-xxl;
-    display: flex;
-    text-align: center;
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;

@@ -17,6 +17,8 @@
   @import "../styles/root.scss";
 
   .outer {
+    @include flex-center;
+
     border-radius: 50%;
     position: fixed;
     top: 0;
@@ -28,9 +30,6 @@
     height: 20px;
     background-color: transparent;
     border: 1px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     &.clickable {
       cursor: pointer;

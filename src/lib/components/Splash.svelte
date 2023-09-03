@@ -7,6 +7,8 @@
   @import "../styles/root.scss";
 
   .background {
+    @include flex-center;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -15,9 +17,6 @@
     background-color: $primary;
     z-index: 100;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     pointer-events: none;
 

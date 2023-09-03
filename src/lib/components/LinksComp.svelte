@@ -31,7 +31,7 @@
   }
 
   a {
-    @include border-dark;
+    @include border-d;
     @include flex-center;
     @include transition;
 

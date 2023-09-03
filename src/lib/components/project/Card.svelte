@@ -57,6 +57,8 @@
     @include border;
     @include flex-center;
 
+    text-align: center;
+    flex-direction: column;
     width: 360px;
     overflow: hidden;
     padding-bottom: 20px;
