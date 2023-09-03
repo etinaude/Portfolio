@@ -1,9 +1,9 @@
 [
   {
-    "title": "Software at Halter",
+    "title": "Maker Space Coordinator at Unleash Space",
     "side": "left",
-    "description": "At Halter I am working on the mobile app making it easy and intuitive for users to interact with their cows and bring farming into the future. This involves working with various teams to optimise the moooovement of cows",
-    "image_url": "/logos/halter.webp"
+    "description": "As the Maker Space Coordinator I run and maintain the space as well as manage a team of 15 Creative Technologists. I also consult with students and staff members to create and design a wide range projects using the latest technologies. Some of the technologies I work with in this role are 3D printing, laser cutting, 5G, VR/AR, soldering and CNC routing.",
+    "image_url": "/logos/unleash.webp"
   },
   {
     "title": "Fullstack developer and designer at Kekeno Tech",
@@ -12,9 +12,9 @@
     "image_url": "/logos/kekeno.webp"
   },
   {
-    "title": "Lead Creative Technologist at Unleash Space",
+    "title": "Software at Halter",
     "side": "left",
-    "description": "As a Creative Technologist I consult with students and staff members to create and design a wide range projects using the latest technologies. I also providing trainings on how each technology is used, when to use it and what its limitations are. On top of this I give individual advice to people who need further help on prototyping. Some of the technologies I work with in this role are 3D printing, laser cutting, 5G, VR/AR, soldering and CNC routing .",
-    "image_url": "/logos/unleash.webp"
+    "description": "At Halter I am working on the mobile app making it easy and intuitive for users to interact with their cows and bring farming into the future. This involves working with various teams to optimise the moooovement of cows",
+    "image_url": "/logos/halter.webp"
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
     "title": "Auckland Maker Club",
-    "description": "I founded the maker club in 2020, which has grown to over 500 members, We've held on over 50 events over the past year! We also won the New Club of the Year Award!",
+    "description": "I founded the maker club in 2020, which has grown to over 700 members, We've held on over 50 events over the past year! We also won the New Club of the Year Award!",
     "image_url": "/logos/maker.webp",
     "hover_img": "/clubs/maker.webp",
     "follow_url": "https://makeuoa.nz/"
@@ -15,7 +15,7 @@
   },
   {
     "title": "Security Association",
-    "description": "I founded the security association in 2020. We host events and workshops teaching students about lock picking, hacking, and security.",
+    "description": "I founded the security association in 2022. We host events and workshops teaching students about lock picking, hacking, and security. Additionally, we sent two teams to the New Zealand Cyber Security Competition.",
     "image_url": "/logos/security.webp",
     "follow_url": "https://security.uniclub.nz/"
   }
