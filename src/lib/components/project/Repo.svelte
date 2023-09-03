@@ -38,11 +38,14 @@
 </a>
 
 <style lang="scss">
+  @import "../../styles/root.scss";
+
   .repo {
     max-width: 600px;
-    border-radius: 5px;
-    border: 1px solid grey;
-    background: #252525;
+    border: 2px solid $primary;
+    box-shadow: 0 4px 0 1px $primary;
+    background-color: $primary-xxl;
+    border-radius: 10px;
     padding: 20px;
     color: var(--text-color);
 
@@ -73,7 +76,7 @@
     }
 
     &:hover {
-      background: #333;
+      background: $primary-xl;
       scale: 1.05;
     }
   }

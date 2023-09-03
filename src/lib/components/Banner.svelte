@@ -13,6 +13,8 @@
 </div>
 
 <style lang="scss">
+  @import "../styles/root.scss";
+
   .banner {
     border-radius: 10px;
     text-align: center;
@@ -49,18 +51,18 @@
   }
 
   .success {
-    background-color: #43ff82;
+    background-color: $success;
 
     .text {
-      color: #222;
+      color: $primary;
     }
   }
 
   .error {
-    background-color: #ff435c;
+    background-color: $danger;
   }
 
   .loading {
-    background-color: #43d0ff;
+    background-color: $accent;
   }
 </style>

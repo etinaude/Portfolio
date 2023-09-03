@@ -23,13 +23,7 @@
 {/if}
 
 <style lang="scss">
-  $primary-color: #222;
-  $accent-color: #43d0ff;
-  $text-color: #fff;
-
-  section {
-    background-color: $primary-color;
-  }
+  @import "../styles/root.scss";
 
   h2 {
     text-align: center;
@@ -54,7 +48,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: #222;
+    background-color: $primary;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +56,7 @@
     flex-direction: column;
 
     p {
-      color: $accent-color;
+      color: $accent;
       font-size: 1.5rem;
       margin-top: 2rem;
       font-weight: bold;

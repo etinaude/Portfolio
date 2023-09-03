@@ -93,13 +93,7 @@
 <Banner {bannerInfo} />
 
 <style lang="scss">
-  $primary-color: #222;
-
-  $accent-color: #43d0ff;
-  $translucent-accent: #43d0ff55;
-
-  $accent-tint-color: #7adeff;
-  $text-color: #fff;
+  @import "../styles/root.scss";
 
   section {
     --background: #222;
@@ -121,17 +115,17 @@
 
     input,
     textarea {
-      background-color: #444;
+      background-color: $primary-xxl;
       border: none;
       padding: 20px;
       border-radius: 10px;
       box-sizing: border-box;
       font-size: max(0.7vw, 20px);
-      color: #fff;
+      color: $light;
       box-shadow: 3px 3px 0px 0px #1116;
 
       &:focus {
-        outline: 2px solid $accent-color;
+        outline: 2px solid $accent;
         scale: 1.05;
       }
 
@@ -169,13 +163,13 @@
       .icon {
         width: 0.9em;
         height: 0.9em;
-        fill: $accent-color;
+        fill: $accent;
         transition: 0.2s ease;
       }
 
       &:hover {
         .icon {
-          fill: $primary-color;
+          fill: $primary;
         }
       }
     }
@@ -188,17 +182,6 @@
     width: min(80%, 1200px);
     align-items: flex-end;
     margin-top: 100px;
-
-    p {
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: left;
-
-      a:hover {
-        scale: 1.05;
-      }
-    }
   }
 
   @media (max-width: 1100px) {

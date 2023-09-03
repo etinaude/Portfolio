@@ -4,13 +4,15 @@
 </div>
 
 <style lang="scss">
+  @import "../styles/root.scss";
+
   .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #222;
+    background-color: $primary;
     z-index: 100;
 
     display: flex;
@@ -36,15 +38,15 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #43d0ff;
+    color: $accent;
     font-size: max(3rem, 6vw);
     font-weight: bold;
     margin-bottom: 2rem;
   }
 
   .loading {
-    border: 15px solid #444;
-    border-top: 15px solid #43d0ff;
+    border: 15px solid $primary-xxl;
+    border-top: 15px solid $accent;
     border-radius: 50%;
     width: 30px;
     height: 30px;

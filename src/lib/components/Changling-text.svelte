@@ -59,9 +59,11 @@
 
 <h2 class="change-text">Programmer</h2>
 
-<style>
+<style lang="scss">
+  @import "../styles/root.scss";
+
   .change-text {
-    color: #fff;
+    color: $light;
     text-align: center;
     margin-bottom: 100px;
   }

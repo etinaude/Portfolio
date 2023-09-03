@@ -14,6 +14,8 @@
 </div>
 
 <style lang="scss">
+  @import "../styles/root.scss";
+
   .outer {
     border-radius: 50%;
     position: fixed;
@@ -50,20 +52,20 @@
     }
     100% {
       scale: 1.5;
-      border-color: #fff0;
+      border-color: $light;
     }
   }
 
   .inner {
     width: 4px;
     height: 4px;
-    background-color: #43d0ff;
+    background-color: $primary;
     border-radius: 50%;
   }
 
   @media (prefers-color-scheme: dark) {
     .outer {
-      border: 1px solid #222;
+      border: 1px solid $primary;
     }
   }
 

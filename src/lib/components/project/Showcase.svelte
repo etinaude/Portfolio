@@ -62,6 +62,8 @@
 {/if}
 
 <style lang="scss">
+  @import "../../styles/root.scss";
+
   .container {
     position: relative;
     height: calc(100vh - 200px);
@@ -106,7 +108,7 @@
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 2px #0000004d;
-    background-color: #444;
+    background-color: $primary-xxl;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -144,7 +146,7 @@
   }
 
   h3 {
-    color: #43d0ff;
+    color: $accent;
     margin-bottom: 8px;
     margin-left: 10px;
     margin-right: 10px;

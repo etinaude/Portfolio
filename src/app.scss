@@ -1,17 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sono:wght@200;300;400;500;600;700;800&display=swap");
-
-$primary-color: #222;
-
-$accent-color: #43d0ff;
-$translucent-accent: #43d0ff55;
-
-$accent-tint-color: #7adeff;
-$text-color: #fff;
+@import "./lib/styles/root.scss";
 
 :root {
   font-family: "Roboto", sans-serif;
   font-size: max(1vw, 20px);
-  color: $text-color;
+  color: $light;
 }
 
 * {
@@ -24,8 +16,8 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   margin: 0;
-  background-color: $primary-color;
-  background: linear-gradient(180deg, $primary-color 0%, #333 10.45%);
+  background-color: $primary;
+  background: linear-gradient(180deg, $primary 0%, $primary-xl 10.45%);
 }
 
 section {
@@ -47,7 +39,7 @@ h1,
 h2,
 h3 {
   font-weight: 400;
-  color: $accent-color;
+  color: $accent;
 }
 
 h1 {
@@ -70,17 +62,17 @@ b {
   line-height: 1.5;
 
   b {
-    color: $accent-color;
+    color: $accent;
     font-weight: normal;
   }
 }
 
 a {
-  color: $accent-color;
+  color: $accent;
   text-decoration: none;
 
   &:hover {
-    color: $accent-tint-color;
+    color: $accent-l;
   }
 }
 
@@ -90,9 +82,9 @@ img {
 
 button,
 .button {
-  background-color: #444;
+  background-color: $primary-xxl;
   border: none;
-  color: $accent-color;
+  color: $accent;
   border-radius: 10px;
   font-weight: bold;
   box-shadow: 3px 3px 0px 0px #1116;
@@ -106,13 +98,13 @@ button,
   padding: 20px;
 
   &:hover {
-    background-color: $accent-tint-color;
-    color: #252525;
+    background-color: $accent-l;
+    color: $primary-l;
     scale: 1.05;
   }
 
   &:focus {
-    outline: 2px solid $accent-color;
+    outline: 2px solid $accent;
     scale: 1.05;
   }
 
@@ -150,21 +142,21 @@ button,
 }
 
 ::-webkit-scrollbar-track {
-  background: #222;
+  background: $primary;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #444;
+  background: $primary-xxl;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $accent-color;
+  background: $accent;
 }
 
 ::-moz-selection {
-  background: $translucent-accent;
+  background: $accent-tt;
 }
 
 ::selection {
-  background: $translucent-accent;
+  background: $accent-tt;
 }

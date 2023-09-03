@@ -37,10 +37,12 @@
 </Saos>
 
 <style lang="scss">
+  @import "../../styles/root.scss";
+
   .tile {
     overflow: hidden;
     border-radius: 0px;
-    background-color: #444;
+    background-color: $primary-xxl;
     display: flex;
     text-align: center;
     position: relative;
@@ -66,7 +68,7 @@
 
     .text {
       z-index: 5;
-      background-color: #222a;
+      background-color: $primary;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -87,7 +89,7 @@
   }
 
   h3 {
-    color: #43d0ff;
+    color: $accent;
     margin-bottom: 8px;
   }
 

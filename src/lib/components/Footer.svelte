@@ -9,16 +9,14 @@
 </footer>
 
 <style lang="scss">
-  $accent-color: #43d0ff;
-  $accent-tint-color: #7adeff;
-  $background: #111;
+  @import "../styles/root.scss";
 
   footer {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 80px;
-    background: #111;
+    background: $primary-xd;
     align-items: center;
     font-size: smaller;
   }
@@ -29,6 +27,6 @@
   }
 
   a:hover {
-    color: $accent-color;
+    color: $accent;
   }
 </style>

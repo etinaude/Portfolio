@@ -81,16 +81,14 @@
 </header>
 
 <style lang="scss">
-  $accent-color: #43d0ff;
-  $accent-tint-color: #7adeff;
-  $background: #222;
+  @import "../styles/root.scss";
 
   header {
     display: flex;
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    background-image: linear-gradient(#2226, #22222200);
+    background-image: linear-gradient($primary, $primary);
     z-index: 50;
   }
 
@@ -124,7 +122,7 @@
     width: max-content;
     .social-links-group {
       display: flex;
-      background: #222;
+      background: $primary;
       height: 100%;
 
       justify-content: space-between;
@@ -149,12 +147,12 @@
     a {
       height: 100%;
       padding: 0 1em;
-      color: $accent-tint-color;
+      color: $accent-l;
       font-weight: 700;
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: #fff;
+      color: $light;
     }
   }
 
@@ -164,7 +162,7 @@
     margin: 0;
     display: flex;
     list-style: none;
-    background: $background;
+    background: $primary;
 
     li {
       position: relative;
@@ -176,13 +174,13 @@
         position: absolute;
         left: calc(50% - $size);
         border: $size solid transparent;
-        border-top: $size solid $accent-color;
+        border-top: $size solid $accent;
       }
     }
   }
 
   a:hover {
-    color: $accent-color;
+    color: $accent;
   }
 
   svg {
@@ -190,7 +188,7 @@
     display: block;
 
     path {
-      fill: $background;
+      fill: $primary;
     }
   }
 

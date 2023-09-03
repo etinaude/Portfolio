@@ -137,11 +137,7 @@
 </section>
 
 <style lang="scss">
-  $primary-color: #222;
-
-  $accent-color: #43d0ff;
-  $accent-tint-color: #7adeff;
-  $text-color: #fff;
+  @import "../lib/styles/root.scss";
   section {
     display: flex;
     align-items: center;
@@ -228,7 +224,7 @@
     &:hover {
       h3,
       .github-text {
-        color: $accent-tint-color;
+        color: $accent-l;
       }
     }
   }

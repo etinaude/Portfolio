@@ -52,16 +52,13 @@
 </div>
 
 <style lang="scss">
+  @import "../../styles/root.scss";
   .card {
+    @include border;
+    @include flex-center;
+
     width: 360px;
     overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 2px #0000004d;
-    background-color: #444;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
     padding-bottom: 20px;
     box-sizing: border-box;
     position: relative;
@@ -94,7 +91,7 @@
   }
 
   h3 {
-    color: #43d0ff;
+    color: $accent;
     margin-bottom: 8px;
     margin-left: 10px;
     margin-right: 10px;
