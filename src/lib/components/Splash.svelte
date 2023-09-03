@@ -9,6 +9,7 @@
   .background {
     @include flex-center;
 
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
