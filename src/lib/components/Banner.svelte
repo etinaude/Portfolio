@@ -16,6 +16,9 @@
   @import "../styles/root.scss";
 
   .banner {
+    @include transition-long;
+    @include flex-center;
+
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
@@ -26,11 +29,6 @@
     translate: -50%;
     overflow: hidden;
     z-index: 500;
-    transition: 0.5s ease;
-
-    display: flex;
-    align-content: center;
-    justify-content: center;
 
     &.hidden {
       width: 0px;

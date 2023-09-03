@@ -94,6 +94,8 @@
 
   a {
     @include flex-center;
+    @include transition;
+
     transition: color 0.2s linear;
     height: 100%;
   }
@@ -179,6 +181,7 @@
 
   a:hover {
     color: $accent;
+    scale: 1.1;
   }
 
   svg {

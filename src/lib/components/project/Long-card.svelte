@@ -22,7 +22,7 @@
 
     <img
       class="tilt"
-      alt="Unleash logo"
+      alt={cardData.title + "logo"}
       src={"images" + cardData.image_url}
       bind:this={imgElement}
     />
@@ -30,6 +30,7 @@
 </Saos>
 
 <style lang="scss">
+  @import "src/lib/styles/root.scss";
   .long-card {
     display: flex;
     text-decoration: none;
@@ -43,9 +44,10 @@
     }
 
     img {
+      @include border;
+
       height: min(180px, 50vw);
       place-self: center;
-      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
     }
 
     &.right {

@@ -182,6 +182,7 @@
         aspect-ratio: 1;
         object-fit: cover;
         border-radius: 50%;
+        border: 2px solid $primary-xd;
 
         &:hover {
           rotate: 360deg;

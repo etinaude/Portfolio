@@ -63,10 +63,6 @@
   <div class="header-text">
     <h1>Etienne Naude</h1>
     <ChanglingText />
-
-    <Saos animation={"from-bottom 1s ease"}>
-      <a id="cta" class="cta clickable" href="#contact"> Get in touch </a>
-    </Saos>
   </div>
 </section>
 

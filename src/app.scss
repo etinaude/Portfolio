@@ -8,7 +8,7 @@
 
 * {
   cursor: none !important;
-  transition: 0.2s ease;
+  @include transition;
   scroll-behavior: smooth;
 }
 

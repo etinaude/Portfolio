@@ -115,14 +115,12 @@
 
     input,
     textarea {
+      @include border-d;
       background-color: $primary-xxl;
-      border: none;
       padding: 20px;
-      border-radius: 10px;
       box-sizing: border-box;
       font-size: max(0.7vw, 20px);
       color: $light;
-      box-shadow: 3px 3px 0px 0px #1116;
 
       &:focus {
         outline: 2px solid $accent;
@@ -154,17 +152,19 @@
     }
 
     button {
+      @include transition;
+      @include border-d;
+
       width: 100%;
       margin: 0;
       font-size: 1rem;
       text-transform: uppercase;
-      transition: 0.2s ease;
 
       .icon {
         width: 0.9em;
         height: 0.9em;
         fill: $accent;
-        transition: 0.2s ease;
+        @include transition;
       }
 
       &:hover {

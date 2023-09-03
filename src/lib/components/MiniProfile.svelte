@@ -8,7 +8,7 @@
 
 <div>
   <div class="profile" on:click={toggleQr}>
-    <img alt="linked in logo" src="black_profile.webp" />
+    <img alt="mini me" src="black_profile.webp" />
   </div>
 
   <h2>Etienne Naude</h2>
@@ -37,6 +37,7 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
+      border: 2px solid $primary-xd;
     }
   }
 

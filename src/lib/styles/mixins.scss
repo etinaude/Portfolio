@@ -21,3 +21,7 @@
 @mixin transition {
   transition: all 0.2s ease;
 }
+
+@mixin transition-long {
+  transition: all 0.6s ease;
+}

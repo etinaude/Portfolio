@@ -67,14 +67,15 @@
     }
 
     .text {
+      @include transition-long;
+
       z-index: 5;
-      background-color: $primary;
+      background-color: $primary-t;
       display: flex;
       flex-direction: column;
       overflow: hidden;
       height: 0px;
       backdrop-filter: blur(1px);
-      transition: 0.5s ease;
     }
 
     &:hover .text {
