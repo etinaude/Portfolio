@@ -1,7 +1,7 @@
 [
   {
     "title": "Automated Zen Garden",
-    "description": "A coffee table designed to house an automated zen garden. This was done using a RAMPS board to control a core XY CNC mechanism underneath the table which moved a magnet on top of the table, carving patterns in some sand.",
+    "description": "A coffee table designed with an automated zen garden. This was done using an Arduino to control a coreXY mechanism underneath the table which moves a ball on top of the table with a magnet, carving patterns in the sand.",
     "image_url": "projects/sand_table.webp",
     "hover_video": "projects/sand_table_vid.webm",
     "follow_url": "https://github.com/etinaude/sandtable"
@@ -15,7 +15,7 @@
   },
   {
     "title": "Robot Arm",
-    "description": "A robotic arm that I built with Hayden Moore. This robotic arm performs various functions and is wirelessly controlled using an ESP-32.",
+    "description": "A robotic arm that I built and programmed with Hayden Moore. This robotic arm performs various functions such as cropping vegetables and is wirelessly controlled using an ESP-32.",
     "image_url": "projects/arm.webp",
     "hover_video": "projects/robot_vid.webm",
     "follow_url": "https://github.com/etinaude/robot-arm"
@@ -29,14 +29,14 @@
   },
   {
     "title": "Human",
-    "description": "We used a vacuum-formed face. Ultra-realistic eyes 3D printed eyes, A duct tape body stuffed with clothes and a wig to create a human. We then added a servo mechanism and some computer vision to make the eyes follow you around the room.",
+    "description": "We used a vacuum-formed face, realistic 3D printed eyes, a duct tape body and a wig to create a human. We then added a servo mechanism and some computer vision to make the eyes follow you around the room.",
     "image_url": "projects/human.webp",
     "hover_video": "projects/face.webm",
     "follow_url": "https://photos.app.goo.gl/8wwTCgmnL8KB3tcr6"
   },
   {
     "title": "Reindeer",
-    "description": "I design a reindeer!!! Made in Blender, but it's been great to be able to do organic modelling!!! I then did a resin and powder bed print of it. ",
+    "description": "I design a reindeer!!! Made in Blender through digital sculpting. I learned Blender for this projects and it's been great to be able to do organic modelling!!! I then did a resin (SLA) and powder bed (SLS) print of the model.",
     "image_url": "projects/reindeer.webp",
     "hover_img": "projects/reindeer2.webp",
     "follow_url": "https://photos.app.goo.gl/8wwTCgmnL8KB3tcr6"
