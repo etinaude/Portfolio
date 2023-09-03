@@ -8,7 +8,6 @@
 
   let bannerInfo: BannerT = new BannerT();
   let form: ContactFormT = new ContactFormT();
-  let showQR = false;
 
   async function sendEmail() {
     const validate = MailGun.validateAll(form);
@@ -43,10 +42,6 @@
     setTimeout(() => {
       bannerInfo.display = false;
     }, 3000);
-  }
-
-  function toggleQr() {
-    showQR = !showQR;
   }
 </script>
 
@@ -94,15 +89,6 @@
     </Saos>
   </div>
 </section>
-
-{#if showQR}
-  <div class="qr-cont" on:click={toggleQr}>
-    <img class="qrcode" src="qr.svg" alt="qr code" />
-  </div>
-{/if}
-
-<!-- transparent button in top right -->
-<div class="QR_button" on:click={toggleQr} />
 
 <Banner {bannerInfo} />
 
@@ -247,33 +233,5 @@
     .form {
       display: none;
     }
-  }
-
-  .qr-cont {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-
-    .qrcode {
-      width: 300px;
-      height: 300px;
-    }
-  }
-
-  .QR_button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    z-index: 200;
   }
 </style>
