@@ -10,7 +10,7 @@
   });
 </script>
 
-{#if pageWidth < 1200}
+{#if pageWidth < 1900}
   <div class="card-side-scroll">
     {#each cardData as card}
       <Card cardData={card} />
