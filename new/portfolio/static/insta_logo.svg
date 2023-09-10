@@ -1,0 +1,21 @@
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   viewBox="0 0 56 56">
+  <rect
+     style="fill:none;stroke:#fff;stroke-width:6;"
+     width="50"
+     height="50"
+     x="3"
+     y="3"
+     ry="12"/>
+  <circle
+     style="fill:none;stroke:#fff;stroke-width:6;"
+     cx="28"
+     cy="28"
+     r="10"/>
+  <circle
+     style="fill:#ffffff;stroke:none;"
+     cx="43"
+     cy="14"
+     r="4"/>
+</svg>

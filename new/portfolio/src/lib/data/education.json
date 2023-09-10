@@ -1,20 +1,20 @@
 [
-  {
-    "title": "Innovation Design Engineering at Imperial College London",
-    "side": "left",
-    "description": "I have started to study towards a MSC and MA double Masters in Innovation Design engineering at Imperial College London and the Royal College of Art. I am due to complete this in mid 2025",
-    "image_url": "/logos/imperial.webp"
-  },
-  {
-    "title": "Computer Science at University of Auckland",
-    "side": "right",
-    "description": "I was awarded a first class honours in a Bachelor of Advanced Science(Honours) majoring in Computer Science. While completing my Computer Science degree I have been awarded 12 Outstanding Achievement awards and was top in class for the undergraduate capstone project. I was also selected to join the Science Scholars cohort.",
-    "image_url": "/logos/science.webp"
-  },
-  {
-    "title": "Additive Manufacturing at University of Auckland",
-    "side": "left",
-    "description": "My Honours Project is with the Department of Mechanical Engineering researching non-planar ironing in FDM 3d printing. Building on previous work we have been able to successfully combine two prior techniques to create a novel process to smooth surface finishes on FDM prints and reduce post processing. Additionally, I was awarded with top in class for a postgraduate course in Design for Additive Manufacturing.",
-    "image_url": "/logos/engineering.webp"
-  }
+	{
+		"title": "Innovation Design Engineering at Imperial College London",
+		"side": "left",
+		"description": "I have started to study towards a MSC and MA double Masters in Innovation Design engineering at Imperial College London and the Royal College of Art. I am due to complete this in mid 2025",
+		"image_url": "/logos/imperial.webp"
+	},
+	{
+		"title": "Computer Science at University of Auckland",
+		"side": "right",
+		"description": "I was awarded a first class honours in a Bachelor of Advanced Science(Honours) majoring in Computer Science. While completing my Computer Science degree I have been awarded 12 Outstanding Achievement awards and was top in class for the undergraduate capstone project. I was also selected to join the Science Scholars cohort.",
+		"image_url": "/logos/science.webp"
+	},
+	{
+		"title": "Additive Manufacturing at University of Auckland",
+		"side": "left",
+		"description": "My Honours Project is with the Department of Mechanical Engineering researching non-planar ironing in FDM 3d printing. Building on previous work we have been able to successfully combine two prior techniques to create a novel process to smooth surface finishes on FDM prints and reduce post processing. Additionally, I was awarded with top in class for a postgraduate course in Design for Additive Manufacturing.",
+		"image_url": "/logos/engineering.webp"
+	}
 ]
