@@ -2,13 +2,16 @@
   import type { ProjectT } from "$lib/types/types";
   import { onMount } from "svelte";
   import VanillaTilt from "vanilla-tilt";
+  import Device from "svelte-device-info";
 
   export let cardData: ProjectT;
 
   let card: HTMLElement;
 
   onMount(() => {
-    VanillaTilt.init(card, { glare: true });
+    if (!Device.isMobile) {
+      VanillaTilt.init(card, { glare: true });
+    }
   });
 </script>
 
