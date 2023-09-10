@@ -131,6 +131,7 @@
 
 <style lang="scss">
 	@import './../../lib/styles/root.scss';
+
 	section {
 		@include flex-center;
 
