@@ -1,0 +1,260 @@
+[
+  {
+    "title": "Automated Zen Garden",
+    "description": "A coffee table designed with an automated zen garden. This was done using an Arduino to control a coreXY mechanism underneath the table which moves a ball on top of the table with a magnet, carving patterns in the sand.",
+    "image_url": "projects/sand_table.webp",
+    "hover_video": "projects/sand_table_vid.webm",
+    "follow_url": "https://github.com/etinaude/sandtable"
+  },
+  {
+    "title": "Headstrong Messenger",
+    "description": "I was part of a research team that created an interactive Ionic chatbot app to help struggling teens with depression and anxiety. I headed the front-end development for this project using Ionic and Angular.",
+    "image_url": "projects/headstrong.webp",
+    "hover_video": "projects/headstrong_vid.webm",
+    "follow_url": "https://appadvice.com/app/habits-messenger/1550723158"
+  },
+  {
+    "title": "Robot Arm",
+    "description": "A robotic arm that I built and programmed with Hayden Moore. This robotic arm performs various functions such as cropping vegetables and is wirelessly controlled using an ESP-32.",
+    "image_url": "projects/arm.webp",
+    "hover_video": "projects/robot_vid.webm",
+    "follow_url": "https://github.com/etinaude/robot-arm"
+  },
+  {
+    "title": "Vending Machine",
+    "description": "A Vending Machine that Zac Miller-Waugh and I fixed. It was donated entirely broke, so we replaced the electronics with our own system and added WIFI connectivity. Now, students can sell their creations for free!",
+    "image_url": "projects/vend.webp",
+    "hover_img": "projects/vend2.webp",
+    "follow_url": "https://github.com/etinaude"
+  },
+  {
+    "title": "Human",
+    "description": "We used a vacuum-formed face, realistic 3D printed eyes, a duct tape body and a wig to create a human. We then added a servo mechanism and some computer vision to make the eyes follow you around the room.",
+    "image_url": "projects/human.webp",
+    "hover_video": "projects/face.webm",
+    "follow_url": "https://photos.app.goo.gl/8wwTCgmnL8KB3tcr6"
+  },
+  {
+    "title": "Reindeer",
+    "description": "I design a reindeer!!! Made in Blender through digital sculpting. I learned Blender for this projects and it's been great to be able to do organic modelling!!! I then did a resin (SLA) and powder bed (SLS) print of the model.",
+    "image_url": "projects/reindeer.webp",
+    "hover_img": "projects/reindeer2.webp",
+    "follow_url": "https://photos.app.goo.gl/8wwTCgmnL8KB3tcr6"
+  },
+  {
+    "title": "Decimal Clock",
+    "description": "A clock that shows both standard 24hr time alongside a time system that is based on the original metric time system. This is to show that different time units exist and that that 24hrs in a day is not a brilliant idea.",
+    "image_url": "projects/clock.webp",
+    "hover_img": "projects/decimal_clock.webp",
+    "follow_url": "https://github.com/etinaude/Decimal-Clock"
+  },
+  {
+    "title": "Lantern",
+    "description": "Final prototype from the smart lanterns (voice-enabled wifi-connected RGB lanterns) workshop I ran with Google Developer Student Club and the Maker Club.",
+    "image_url": "projects/lantern.webp",
+    "hover_video": "projects/glow_circle_vid.webm",
+    "follow_url": "https://github.com/etinaude/smart-lanterns"
+  },
+  {
+    "title": "Collaborative Puzzle",
+    "description": "In moving from New Zealand I designed a puzzle of the country. Each piece was painted by someone close to me then I assembled it. It is a reminder of the people I care about and the places I have been.",
+    "image_url": "projects/north_island.webp"
+  },
+  {
+    "title": "Heat Exchanger",
+    "description": "A heat exchanger designed to be optimal for powder bed fusion 3D printing without support and exchanging heat efficiently using a gyroid pattern",
+    "image_url": "projects/heat_exchanger.webp"
+  },
+  {
+    "title": "Name Plate",
+    "description": "A small name plate for my desk designed to represent various aspects of the organisation I work at. Made with CNC routed native puriri wood, laser cut acyrilc, and 320LED/m lights.",
+    "image_url": "projects/name_plate.webp"
+  },
+  {
+    "title": "Manifold",
+    "description": "A metal 3d printed part I designed to move water to various pipes. It was printed at CDAM lab using aluminium powder bed fusion. ",
+    "image_url": "projects/manifold.webp"
+  },
+  {
+    "title": "Arrow Wall Décor",
+    "description": "Two arrows that I shot through each other during an archery session I thought they looked cool so I added them to my wall décor.",
+    "image_url": "projects/arrows.webp"
+  },
+  {
+    "title": "Book",
+    "description": "A note book which I bound in leather.",
+    "image_url": "projects/book.webp"
+  },
+  {
+    "title": "Clay",
+    "description": "River Clay which I refined for future projects.",
+    "image_url": "projects/clay.webp"
+  },
+
+  {
+    "title": "Futuristic Hexagons",
+    "description": "Futuristic laser-cut hexagons finished with oil backlight with white LEDs made to fill in a small nook in my room have created a more interesting video call background.",
+    "image_url": "projects/wall.webp"
+  },
+  {
+    "title": "DUCKS",
+    "description": "A small duck army I am building... for reasons.",
+    "image_url": "projects/ducks.webp"
+  },
+  {
+    "title": "Chess Photography",
+    "description": "Long-exposure photography of a chess game.",
+    "image_url": "projects/chess.webp"
+  },
+  {
+    "title": "Bus App",
+    "description": "An app designed to make bus rides less boring with a set of collaborative tools.",
+    "image_url": "projects/bus.webp",
+    "follow_url": "https://github.com/etinaude/sesa-hackathon-2022"
+  },
+  {
+    "title": "Count Me In",
+    "description": "A scheduling App to make arranging meeting times much simpler than it currently is.",
+    "image_url": "projects/count_me_in.webp",
+    "follow_url": "https://github.com/etinaude/Count-Me-In"
+  },
+  {
+    "title": "Life Evaluation",
+    "description": "A tool I created to help evaluate my life using various metrics so I can improve it.",
+    "image_url": "projects/evaluation.webp",
+    "follow_url": "https://github.com/etinaude/life-evaluation"
+  },
+  {
+    "title": "HCI research",
+    "description": "Human-Computer Interaction research site for understanding how people understand emotion in written text.",
+    "image_url": "projects/hci_research.webp",
+    "follow_url": "https://github.com/etinaude/gpt3-hci-research"
+  },
+  {
+    "title": "IB Key chain",
+    "description": "An IB key chain laser cut that moves freely.",
+    "image_url": "projects/ib_keychain.webp"
+  },
+  {
+    "title": "Long Exposure 'light painting'",
+    "description": "A long exposure light painting. ",
+    "image_url": "projects/long_exposure.webp"
+  },
+  {
+    "title": "Peristaltic Pump",
+    "description": "A Peristaltic Pump designed to be laser cut.",
+    "image_url": "projects/pump.webp"
+  },
+  {
+    "title": "Robot",
+    "description": "A VEX robot for the VEX Robotics Competition.",
+    "image_url": "projects/robot.webp"
+  },
+  {
+    "title": "Zona",
+    "description": "Zona is a computer vision system that detects and counts the number of people in an area. Designed to help meet regulations during COVID, analyse which areas are being used most often.",
+    "image_url": "projects/zona.webp",
+    "follow_url": "https://github.com/etinaude/Zona"
+  },
+  {
+    "title": "Worlds Smallest Keyboard",
+    "description": "We designed the world's smallest mechanical keyboard and produced some PCBs of the design the design uses an ATmega32U4 as its controller.",
+    "image_url": "projects/keyboard.webp",
+    "hover_img": "projects//v1656592591/projects/pcbImg_agdjzo.webp",
+    "follow_url": "https://oshwlab.com/etinaude/keyboard"
+  },
+  {
+    "title": "Birth Rate Visualiser",
+    "description": "A visualiser to explain various factors which affect birth rates.",
+    "image_url": "projects/fert2.webp",
+    "follow_url": "https://github.com/etinaude/Des-240"
+  },
+  {
+    "title": "Training App",
+    "description": "An application to improve the productivity of staff so they would not have to manually enter the details of participants in training. ",
+    "image_url": "projects/unleash_app.webp",
+    "follow_url": "https://github.com/Unleash-Space/Training-app"
+  },
+  {
+    "title": "Email Tracker",
+    "description": "An email tracking service to be notified when someone has opened an email sent and a dashboard to company it. ",
+    "image_url": "projects/tracker.webp",
+    "follow_url": "https://github.com/etinaude/tracker"
+  },
+  {
+    "title": "Te Kaha",
+    "description": "A dashboard to help staff members of Te Kaha organise and manage Rangatahi data.",
+    "image_url": "projects/te_kaha.webp"
+  },
+  {
+    "title": "Wearable Art",
+    "description": "A shirt made out of bread, among other projects.",
+    "image_url": "projects/shirt.webp",
+    "hover_img": "projects/shirt2.webp"
+  },
+  {
+    "title": "Laser cut bread",
+    "description": "A range of puns around bread and toast such as Elon Crust and Toast Malon.",
+    "image_url": "projects/elon_crust.webp"
+  },
+  {
+    "title": "Earth Sandwhich",
+    "description": "We made an earth sandwich - placed slices of bread at exact opposite points on the globe.",
+    "image_url": "projects/sandwhich.webp"
+  },
+  {
+    "title": "Chess Board",
+    "description": "I made a custom chess board from kwila wood and acrylic inlay.",
+    "image_url": "projects/chess2.webp"
+  },
+  {
+    "title": "Fabric Arts",
+    "description": "Tie Dye and a range of fabric arts.",
+    "image_url": "projects/tiedye.webp"
+  },
+  {
+    "title": "String Heart",
+    "description": "A heart made out of string.",
+    "image_url": "projects/heart_string.webp"
+  },
+  {
+    "title": "Miniatures Painting",
+    "description": "Painting DnD minis",
+    "image_url": "projects/mini_painting.webp"
+  },
+  {
+    "title": "Collaborative Art",
+    "description": "A pizza painted by a group of 10 people.",
+    "image_url": "projects/pizza.webp"
+  },
+  {
+    "title": "Br**nFuck",
+    "description": "Interpreter for the programming language BrainFuck made to show how low-level languages operate.",
+    "image_url": "projects/brainfuck.webp"
+  },
+  {
+    "title": "Glowbox",
+    "description": "I created a  glowing box to display different patterns as decor.",
+    "image_url": "projects/glowbox.webp"
+  },
+  {
+    "title": "Rubik's Cube Solver",
+    "description": "Rubik's Cube Solving website... cause it's too hard to solve a cube the normal way.",
+    "image_url": "projects/cube.webp"
+  },
+  {
+    "title": "Long Exposure Photography",
+    "description": "Spinning Steel wool long exposure photography.",
+    "image_url": "projects/spinning.webp"
+  },
+  {
+    "title": "Physical Lissajous Table",
+    "description": "Coming soon...",
+    "image_url": "projects/lissajouse.webp"
+  },
+  {
+    "title": "Non-planar Ironing",
+    "description": "Coming soon...",
+    "image_url": "projects/non_planar.webp"
+  }
+]

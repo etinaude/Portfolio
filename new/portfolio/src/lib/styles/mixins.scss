@@ -1,0 +1,27 @@
+@import "./variables.scss";
+
+@mixin border-d {
+  border: 2px solid $primary-xxd;
+  box-shadow: 0 4px 0 1px $primary-xxd;
+  border-radius: 10px;
+}
+
+@mixin border {
+  border: 2px solid $primary;
+  box-shadow: 0 4px 0 1px $primary;
+  border-radius: 10px;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin transition {
+  transition: all 0.2s ease;
+}
+
+@mixin transition-long {
+  transition: all 0.6s ease;
+}
