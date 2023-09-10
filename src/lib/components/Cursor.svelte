@@ -74,4 +74,10 @@
       display: none;
     }
   }
+  @media (pointer: coarse) {
+    .outer,
+    .inner {
+      display: none;
+    }
+  }
 </style>
