@@ -10,7 +10,7 @@
 		"title": "Headstrong Messenger",
 		"description": "I was part of a research team that created an interactive Ionic chatbot app to help struggling teens with depression and anxiety. I headed the front-end development for this project using Ionic and Angular.",
 		"image_url": "projects/headstrong.webp",
-		"hover_video": "projects/headstrong_vid.webm",
+		"hover_video": "projects/headstrong_vid.mp4",
 		"follow_url": "https://appadvice.com/app/habits-messenger/1550723158"
 	},
 	{
@@ -31,7 +31,7 @@
 		"title": "Human",
 		"description": "We used a vacuum-formed face, realistic 3D printed eyes, a duct tape body and a wig to create a human. We then added a servo mechanism and some computer vision to make the eyes follow you around the room.",
 		"image_url": "projects/human.webp",
-		"hover_video": "projects/face.webm",
+		"hover_video": "projects/face.mp4",
 		"follow_url": "https://photos.app.goo.gl/8wwTCgmnL8KB3tcr6"
 	},
 	{
