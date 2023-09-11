@@ -42,52 +42,6 @@
 			</li>
 		</ul>
 	</nav>
-
-	<div class="corner socials">
-		<svg class="left-border" viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<div class="nav-links">
-			<ul class="social-links-group">
-				<li class="social-link">
-					<!-- svelte-ignore security-anchor-rel-noreferrer -->
-					<a
-						class="clickable"
-						href="https://linkedin.com/in/etinaude"
-						target="_blank"
-						rel="noopener"
-					>
-						<img alt="linked in logo" src="linkedin_logo.svg" />
-					</a>
-				</li>
-
-				<li class="social-link">
-					<a class="clickable" href="mailto:eti@naude.dev" target="_blank" rel="noopener">
-						<img alt="email icon" src="mail_logo.svg" />
-					</a>
-				</li>
-
-				<!-- svelte-ignore security-anchor-rel-noreferrer -->
-				<li class="social-link">
-					<a class="clickable" href="https://github.com/etinaude" target="_blank" rel="noopener">
-						<img alt="github logo" src="github_logo.svg" />
-					</a>
-				</li>
-
-				<!-- svelte-ignore security-anchor-rel-noreferrer -->
-				<li class="social-link">
-					<a
-						class="clickable"
-						href="https://www.instagram.com/etinaude/"
-						target="_blank"
-						rel="noopener"
-					>
-						<img alt="insta logo" src="insta_logo.svg" />
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
 </header>
 
 <style lang="scss">
@@ -116,35 +70,6 @@
 
 	.left-border {
 		translate: 1px;
-	}
-
-	.corner {
-		img {
-			height: 1.5em;
-		}
-	}
-
-	.socials {
-		display: flex;
-		position: fixed;
-		right: 0;
-
-		width: max-content;
-		.social-links-group {
-			display: flex;
-			background: $primary;
-			height: 100%;
-
-			justify-content: space-between;
-			width: max-content;
-			.social-link {
-				position: relative;
-				margin: 0 10px;
-				&:hover {
-					scale: 1.1;
-				}
-			}
-		}
 	}
 
 	.desktop-menu {
@@ -204,7 +129,6 @@
 	}
 
 	@media (max-width: 768px) {
-		.socials,
 		.desktop-menu {
 			display: none;
 		}
