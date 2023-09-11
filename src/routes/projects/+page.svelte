@@ -69,7 +69,7 @@
 			<!-- svelte-ignore security-anchor-rel-noreferrer -->
 			<a href={gitHubUser.html_url} target="_blank" rel="noopener" class="github-profile clickable">
 				<div class="img">
-					<img src={gitHubUser.avatar_url} alt="project" />
+					<img src="images/me/grey_profile.webp" alt="project" />
 				</div>
 
 				<div class="bio">
