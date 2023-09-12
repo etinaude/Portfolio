@@ -14,7 +14,7 @@
 </div>
 
 <style lang="scss">
-	@import '../styles/root.scss';
+	@import './../../styles/root.scss';
 
 	.outer {
 		@include flex-center;

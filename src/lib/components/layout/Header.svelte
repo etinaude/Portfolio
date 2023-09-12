@@ -45,7 +45,7 @@
 </header>
 
 <style lang="scss">
-	@import '../styles/root.scss';
+	@import './../../styles/root.scss';
 
 	header {
 		display: flex;

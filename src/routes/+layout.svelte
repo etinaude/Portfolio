@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Header from '$lib/components/Header.svelte';
-	import Cursor from '$lib/components/Cursor.svelte';
-	import Splash from '$lib/components/Splash.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
+	import Cursor from '$lib/components/layout/Cursor.svelte';
+	import Splash from '$lib/components/layout/Splash.svelte';
 
 	import './app.scss';
 	import type { posT } from '$lib/types/types';

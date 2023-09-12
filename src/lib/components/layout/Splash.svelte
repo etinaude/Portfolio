@@ -4,7 +4,7 @@
 </div>
 
 <style lang="scss">
-	@import '../styles/root.scss';
+	@import './../../styles/root.scss';
 
 	.background {
 		@include flex-center;
