@@ -212,10 +212,8 @@
 		}
 	}
 
-	@media (max-width: 2400px) {
-		.card-side-scroll {
-			justify-content: flex-start;
-		}
+	.card-side-scroll {
+		@include card-side-scroll;
 	}
 
 	// Mobile

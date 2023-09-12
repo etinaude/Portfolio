@@ -121,6 +121,10 @@
 	position: sticky;
 }
 
+.card-side-scroll {
+	@include card-side-scroll;
+}
+
 @media (max-width: 768px) {
 	.sticky {
 		position: relative;

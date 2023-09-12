@@ -169,4 +169,8 @@
 		position: absolute;
 		left: 0;
 	}
+
+	.card-side-scroll {
+		@include card-side-scroll;
+	}
 </style>
