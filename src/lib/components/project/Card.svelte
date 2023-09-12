@@ -102,8 +102,9 @@
 
 	.read-more {
 		margin-top: 10px;
-		color: #bbb;
+		color: white;
 		font-size: 0.9em;
+		font-weight: bold;
 	}
 
 	img,

@@ -3,6 +3,7 @@
 	import LongCard from '$lib/components/project/Long-card.svelte';
 	import ChanglingText from '$lib/components/Changling-text.svelte';
 	import Showcase from '$lib/components/project/Showcase.svelte';
+	import Device from 'svelte-device-info';
 
 	import projectsImport from '$lib/data/projects.json';
 	import educationImport from '$lib/data/education.json';
@@ -14,21 +15,16 @@
 	import { onMount } from 'svelte';
 	import Saos from 'saos';
 
-	let isPhone = false;
-
 	const projects = projectsImport.slice(0, 3);
 	let image: HTMLElement;
 	let heroImage = getHeroImage();
 
 	onMount(async () => {
 		image = document.getElementById('hero-pic')!;
-		if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i)) {
-			isPhone = true;
-		}
 	});
 
 	function getHeroImage(): string {
-		if (isPhone) {
+		if (Device.isMobile) {
 			return 'images/me/portrait.webp';
 		} else {
 			return 'images/me/thoughtful.webp';
@@ -36,7 +32,8 @@
 	}
 
 	function mouseMove(event: any) {
-		if (isPhone) return;
+		console.log('asdasda');
+		if (Device.isMobile) return;
 		const xPercent = event.clientX / image.clientWidth;
 		const yPercent = event.clientY / image.clientHeight;
 
@@ -49,6 +46,7 @@
 	<title>Etienne Naude</title>
 </svelte:head>
 
+<!-- svelte-ignore a11y-no-static-element-interactions-->
 <section id="base" on:mousemove={mouseMove}>
 	<div class="hero-pic" id="hero-pic">
 		<img src={heroImage} alt="background hero" />
@@ -61,22 +59,18 @@
 	</div>
 </section>
 
-<section id="about" />
-
-<section id="projects" class="sticky">
+<section id="projects">
 	<Showcase cardData={projects} />
 
-	<div class="more-container">
-		<a class="button more-projects-btn clickable" href="/projects">
-			More Projects
+	<a class="button more-projects-btn clickable" href="/projects">
+		More Projects
 
-			<svg class="arrow" viewBox="0 0 16 16"
-				><path
-					d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
-				/></svg
-			>
-		</a>
-	</div>
+		<svg class="arrow" viewBox="0 0 16 16"
+			><path
+				d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+			/></svg
+		>
+	</a>
 </section>
 
 <section id="education">

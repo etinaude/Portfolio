@@ -1,24 +1,11 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import Saos from 'saos';
-	let w;
-
 	export let cardData: ProjectT;
 </script>
 
 <Saos animation={'from-bottom 1s ease'}>
-	<div class="tile" bind:clientWidth={w}>
-		{#if cardData.follow_url}
-			<!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-			<a
-				href={cardData.follow_url}
-				target="_blank"
-				rel="noopener"
-				class="clickable tile_url"
-				aria-label="project link {cardData.title}"
-			/>
-		{/if}
-
+	<div class="tile">
 		<div class="img">
 			<img
 				src={'images/' + cardData.image_url}
@@ -32,6 +19,17 @@
 			<h3>{cardData.title}</h3>
 
 			<caption>{cardData.description}</caption>
+
+			{#if cardData.follow_url}
+				<!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
+				<a
+					class="read-more clickable tile_url"
+					href={cardData.follow_url}
+					target="_blank"
+					rel="noopener"
+					aria-label="project link {cardData.title}">Read More →</a
+				>
+			{/if}
 		</div>
 	</div>
 </Saos>
@@ -46,16 +44,6 @@
 		display: flex;
 		text-align: center;
 		position: relative;
-
-		a {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			opacity: 0;
-			z-index: 10;
-		}
 
 		.img,
 		.text {
@@ -104,6 +92,25 @@
 		object-fit: cover;
 		position: absolute;
 		left: 0;
+	}
+
+	.read-more {
+		@include border;
+
+		width: 200px;
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		translate: -50%;
+		background: $accent;
+		padding: 10px;
+		font-weight: bold;
+		color: white;
+
+		&:hover {
+			background: $accent-l;
+			scale: 1.1;
+		}
 	}
 
 	@media (max-width: 768px) {
