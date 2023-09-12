@@ -2,8 +2,6 @@
 	import Card from '$lib/components/project/Card.svelte';
 	import Tile from '$lib/components/project/Tile.svelte';
 
-	import { onMount } from 'svelte';
-	import VanillaTilt from 'vanilla-tilt';
 	import projectsImport from '$lib/data/projects.json';
 	import languageColors from '$lib/data/languages.json';
 	import githubBackup from '$lib/data/backupdata.json';
@@ -17,12 +15,6 @@
 
 	let gitHubRepos = githubBackup.repos;
 	let gitHubUser = githubBackup.profile;
-
-	onMount(() => {
-		const elements = <HTMLElement>(<unknown>document.querySelectorAll('.tilt'));
-
-		VanillaTilt.init(elements, { glare: true });
-	});
 
 	async function loadGithub() {
 		fetch('https://api.github.com/users/etinaude')

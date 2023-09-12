@@ -9,9 +9,7 @@
 	let card: HTMLElement;
 
 	onMount(() => {
-		if (!Device.isMobile) {
-			VanillaTilt.init(card, { glare: true });
-		}
+		if (!Device.isMobile) VanillaTilt.init(card, { glare: true });
 	});
 </script>
 

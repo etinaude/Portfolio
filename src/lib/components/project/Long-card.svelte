@@ -3,13 +3,14 @@
 	import { onMount } from 'svelte';
 	import VanillaTilt from 'vanilla-tilt';
 	import Saos from 'saos';
+	import Device from 'svelte-device-info';
 
 	export let cardData: LongCardT;
 
 	let imgElement: HTMLElement;
 
 	onMount(() => {
-		VanillaTilt.init(imgElement, { glare: true });
+		if (!Device.isMobile) VanillaTilt.init(imgElement, { glare: true });
 	});
 </script>
 
