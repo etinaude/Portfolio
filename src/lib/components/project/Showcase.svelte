@@ -12,21 +12,30 @@
 	});
 </script>
 
-<div class="card-side-scroll">
-	{#each data as card}
-		<Card cardData={card} />
-	{/each}
+<div class="side-scroll-container">
+	<div class="card-side-scroll">
+		{#each data as card}
+			<Card cardData={card} />
+		{/each}
+	</div>
 </div>
 
 <style lang="scss">
 	@import '../../styles/root.scss';
 
-	.card-side-scroll {
-		width: calc(100vw - 30px);
+	.side-scroll-container {
+		max-width: 100vw;
+		justify-content: center;
 		display: flex;
-		overflow-x: auto;
-		overflow-y: hidden;
-		padding: 30px 0px;
-		justify-content: flex-start;
+
+		.card-side-scroll {
+			width: 100%;
+			display: grid;
+			grid-auto-flow: column;
+			place-items: center;
+			grid-column-gap: 20px;
+			overflow-x: auto;
+			padding: 30px;
+		}
 	}
 </style>

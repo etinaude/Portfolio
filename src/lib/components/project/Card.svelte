@@ -61,7 +61,6 @@
 		padding-bottom: 20px;
 		box-sizing: border-box;
 		position: relative;
-		margin-right: 30px;
 
 		a {
 			position: absolute;
