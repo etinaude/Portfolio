@@ -12,13 +12,13 @@
 		getAwardData,
 		getClubsData,
 		getEducationData,
-		getProjectsData,
+		getFeaturedProjectsData,
 		getWorkData
 	} from '$lib/services/firebase';
 	import type { LongCardT } from '$lib/types/types';
 
 	let image: HTMLElement;
-	let heroImage = getHeroImage();
+	let heroImage = '';
 
 	let workData: LongCardT[] = [];
 	let educationData: LongCardT[] = [];
@@ -27,17 +27,17 @@
 	let projectsData: LongCardT[] = [];
 
 	onMount(async () => {
+		heroImage = getHeroImage();
 		image = document.getElementById('hero-pic')!;
 		workData = await getWorkData();
 		educationData = await getEducationData();
 		awardsData = await getAwardData();
 		clubsData = await getClubsData();
-		projectsData = await getProjectsData();
-		projectsData = projectsData.slice(0, 3);
+		projectsData = await getFeaturedProjectsData();
 	});
 
 	function getHeroImage(): string {
-		if (false) {
+		if (Device.isMobile) {
 			return 'images/me/portrait.webp';
 		} else {
 			return 'images/me/thoughtful.webp';

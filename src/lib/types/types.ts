@@ -6,7 +6,7 @@ export type ProjectT = {
 	hoverImg?: string;
 	hoverVideo?: string;
 	followUrl?: string;
-	highPriority?: boolean;
+	featured?: boolean;
 };
 
 export type LongCardT = ProjectT & {

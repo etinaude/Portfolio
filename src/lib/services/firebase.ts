@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import KEYS from '../../keys.json';
-import { getFirestore, collection, query, getDocs, setDoc, doc } from 'firebase/firestore';
+import { getFirestore, collection, query, getDocs, setDoc, doc, where } from 'firebase/firestore';
 
 const BASE_PATH = 'portfolio/all-data/';
 // Initialize Firebase
@@ -28,29 +28,23 @@ export function getProjectsData() {
 	return getData(BASE_PATH + 'projects');
 }
 
+export function getFeaturedProjectsData() {
+	return getData(BASE_PATH + 'projects', where('featured', '==', true));
+}
+
 export function getWorkData() {
 	return getData(BASE_PATH + 'work');
 }
 
-export async function getData(collectionPath: string) {
+export async function getData(collectionPath: string, fbQuery?: any) {
 	try {
 		const db = getFirestore(app);
-		const q = query(collection(db, collectionPath));
-		const querySnapshot = await getDocs(q);
-		const data: any = [];
-		querySnapshot.forEach((doc) => {
-			data.push(doc.data());
-		});
-		return data;
-	} catch (e) {
-		console.error(e);
-	}
-}
-
-export async function getImage(collectionPath: string) {
-	try {
-		const db = getFirestore(app);
-		const q = query(collection(db, collectionPath));
+		let q;
+		if (fbQuery) {
+			q = query(collection(db, collectionPath), fbQuery);
+		} else {
+			q = query(collection(db, collectionPath));
+		}
 		const querySnapshot = await getDocs(q);
 		const data: any = [];
 		querySnapshot.forEach((doc) => {

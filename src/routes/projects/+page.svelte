@@ -8,19 +8,20 @@
 	import Repo from '$lib/components/project/Repo.svelte';
 	import type { ProjectT } from '$lib/types/types';
 	import Saos from 'saos';
-	import { getProjectsData } from '$lib/services/firebase';
+	import { getFeaturedProjectsData, getProjectsData } from '$lib/services/firebase';
 	import { onMount } from 'svelte';
+	import Device from 'svelte-device-info';
 
 	let gitHubRepos = githubBackup.repos;
 	let gitHubUser = githubBackup.profile;
-	let projectsData: ProjectT[] = [];
 	let largeProjects: ProjectT[] = [];
 	let smallProjects: ProjectT[] = [];
+	let isMobile = false;
 
 	onMount(async () => {
-		projectsData = await getProjectsData();
-		largeProjects = projectsData.slice(0, 6);
-		smallProjects = projectsData.slice(6);
+		largeProjects = await getFeaturedProjectsData();
+		smallProjects = await getProjectsData();
+		isMobile = Device.isMobile;
 	});
 
 	async function loadGithub() {
@@ -50,7 +51,7 @@
 			});
 	}
 
-	// loadGithub();
+	loadGithub();
 </script>
 
 <svelte:head>
@@ -58,49 +59,56 @@
 	<meta name="description" content="Etienne Naude projects" />
 </svelte:head>
 
-<section>
-	{#if gitHubUser}
-		<Saos animation={'from-bottom 0.5s ease'}>
-			<h2>GitHub</h2>
-		</Saos>
+{#if !isMobile}
+	<section>
+		{#if gitHubUser}
+			<Saos animation={'from-bottom 0.5s ease'}>
+				<h2>GitHub</h2>
+			</Saos>
 
-		<Saos animation={'from-bottom 0.5s ease'}>
-			<!-- svelte-ignore security-anchor-rel-noreferrer -->
-			<a href={gitHubUser.html_url} target="_blank" rel="noopener" class="github-profile clickable">
-				<div class="img">
-					<img src="images/me/grey_profile.webp" alt="project" />
-				</div>
-
-				<div class="bio">
-					<div class="row">
-						<div class="github-text">github.com/</div>
-
-						<div>
-							{gitHubUser.following} Following
-						</div>
-					</div>
-					<div class="row">
-						<h3>{gitHubUser.login}</h3>
-
-						<div>
-							{gitHubUser.followers} Followers
-						</div>
+			<Saos animation={'from-bottom 0.5s ease'}>
+				<!-- svelte-ignore security-anchor-rel-noreferrer -->
+				<a
+					href={gitHubUser.html_url}
+					target="_blank"
+					rel="noopener"
+					class="github-profile clickable"
+				>
+					<div class="img">
+						<img src="images/me/grey_profile.webp" alt="project" />
 					</div>
 
-					<caption>{gitHubUser.bio}</caption>
-				</div>
-			</a>
-		</Saos>
+					<div class="bio">
+						<div class="row">
+							<div class="github-text">github.com/</div>
 
-		<Saos animation={'from-bottom 0.7s ease'}>
-			<div class="repo-list">
-				{#each gitHubRepos as repo}
-					<Repo {repo} />
-				{/each}
-			</div>
-		</Saos>
-	{/if}
-</section>
+							<div>
+								{gitHubUser.following} Following
+							</div>
+						</div>
+						<div class="row">
+							<h3>{gitHubUser.login}</h3>
+
+							<div>
+								{gitHubUser.followers} Followers
+							</div>
+						</div>
+
+						<caption>{gitHubUser.bio}</caption>
+					</div>
+				</a>
+			</Saos>
+
+			<Saos animation={'from-bottom 0.7s ease'}>
+				<div class="repo-list">
+					{#each gitHubRepos as repo}
+						<Repo {repo} />
+					{/each}
+				</div>
+			</Saos>
+		{/if}
+	</section>
+{/if}
 
 <section>
 	<Saos animation={'from-bottom 1s ease'}>
