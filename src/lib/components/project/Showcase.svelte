@@ -2,60 +2,20 @@
 	import type { ProjectT } from '$lib/types/types';
 	import { onMount } from 'svelte';
 	import Card from './Card.svelte';
-	export let cardData: ProjectT[];
-	let pageWidth = 0;
+	import { getFeaturedProjectsData } from '$lib/services/firebase';
+
+	let projectsData: ProjectT[] = [];
 
 	onMount(async () => {
-		pageWidth = window.innerWidth;
+		projectsData = await getFeaturedProjectsData();
 	});
 </script>
 
-{#if pageWidth < 1900}
-	<div class="card-side-scroll">
-		{#each cardData as card}
-			<Card cardData={card} />
-		{/each}
-	</div>
-{:else}
-	<div class="container">
-		<div class="cards">
-			{#each cardData as card}
-				<div class="card">
-					{#if card.followUrl}
-						<!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-						<a
-							href={card.followUrl}
-							target="_blank"
-							rel="noopener"
-							class="clickable"
-							aria-label="project link {card.title}"
-						/>
-					{/if}
-
-					<div class="img clickable">
-						<img src={'images/' + card.imageUrl} alt={card.title} />
-
-						{#if card.hoverImg}
-							<img class="hover-img" src={'images/' + card.hoverImg} alt="project hover" />
-						{:else if card.hoverVideo}
-							<video playsinline autoplay muted loop class="hover-img">
-								<source src={'images/' + card.hoverVideo} />
-							</video>
-						{/if}
-					</div>
-
-					<h3>{card.title}</h3>
-
-					<caption>{card.description}</caption>
-
-					{#if card.followUrl}
-						<div class="read-more">read more →</div>
-					{/if}
-				</div>
-			{/each}
-		</div>
-	</div>
-{/if}
+<div class="card-side-scroll">
+	{#each projectsData as card}
+		<Card cardData={card} />
+	{/each}
+</div>
 
 <style lang="scss">
 	@import '../../styles/root.scss';

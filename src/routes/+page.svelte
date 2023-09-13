@@ -12,7 +12,6 @@
 		getAwardData,
 		getClubsData,
 		getEducationData,
-		getFeaturedProjectsData,
 		getWorkData
 	} from '$lib/services/firebase';
 	import type { LongCardT } from '$lib/types/types';
@@ -24,7 +23,6 @@
 	let educationData: LongCardT[] = [];
 	let awardsData: LongCardT[] = [];
 	let clubsData: LongCardT[] = [];
-	let projectsData: LongCardT[] = [];
 
 	onMount(async () => {
 		heroImage = getHeroImage();
@@ -33,7 +31,6 @@
 		educationData = await getEducationData();
 		awardsData = await getAwardData();
 		clubsData = await getClubsData();
-		projectsData = await getFeaturedProjectsData();
 	});
 
 	function getHeroImage(): string {
@@ -72,7 +69,7 @@
 </section>
 
 <section id="projects">
-	<Showcase cardData={projectsData} />
+	<Showcase />
 
 	<a class="button more-projects-btn clickable" href="/projects">
 		More Projects

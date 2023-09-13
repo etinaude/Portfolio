@@ -11,6 +11,7 @@
 	import { getFeaturedProjectsData, getProjectsData } from '$lib/services/firebase';
 	import { onMount } from 'svelte';
 	import Device from 'svelte-device-info';
+	import Showcase from '$lib/components/project/Showcase.svelte';
 
 	let gitHubRepos = githubBackup.repos;
 	let gitHubUser = githubBackup.profile;
@@ -115,11 +116,7 @@
 		<h2>Featured Projects</h2>
 	</Saos>
 
-	<div class="card-side-scroll">
-		{#each largeProjects as project}
-			<Card cardData={project} />
-		{/each}
-	</div>
+	<Showcase />
 
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>More Projects</h2>

@@ -104,6 +104,8 @@
 
 	.form {
 		width: 500px;
+		display: flex;
+		flex-direction: column;
 
 		> * {
 			margin: 1em 0;
@@ -141,6 +143,10 @@
 			input {
 				width: calc(50% - 10px);
 				margin-bottom: 20px;
+
+				&:first-child {
+					margin-right: 20px;
+				}
 			}
 		}
 
@@ -196,6 +202,7 @@
 
 			.form {
 				width: 90%;
+				margin-bottom: 50px;
 
 				.row {
 					@include flex-center;
