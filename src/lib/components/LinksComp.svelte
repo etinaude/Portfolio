@@ -1,7 +1,14 @@
 <script context="module" lang="ts">
 	export const prerender = true;
 	import { getSocialData } from '$lib/services/firebase';
-	const socialList = await getSocialData();
+	import type { ContactT } from '$lib/types/types';
+	import { onMount } from 'svelte';
+
+	let socialList: ContactT[] = [];
+
+	onMount(async () => {
+		socialList = await getSocialData();
+	});
 </script>
 
 <div class="list">

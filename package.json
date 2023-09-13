@@ -2,6 +2,7 @@
 	"name": "portfolio",
 	"version": "0.0.1",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "NODE_ENV=production vite build",
@@ -32,7 +33,6 @@
 		"vite-plugin-optimize-css-modules": "^1.0.4",
 		"vite-plugin-pwa": "^0.16.5"
 	},
-	"type": "module",
 	"dependencies": {
 		"@fontsource/fira-mono": "^5.0.8",
 		"cookie": "^0.5.0",

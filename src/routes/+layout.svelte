@@ -5,8 +5,14 @@
 
 	import './app.scss';
 	import type { posT } from '$lib/types/types';
+	import { onMount } from 'svelte';
+	import { initAnalytics } from '$lib/services/firebase';
 
 	let pos: posT = { x: 0, y: 0, clickable: false };
+
+	onMount(async () => {
+		initAnalytics();
+	});
 
 	function mouseMove(event: any) {
 		pos.x = event.x;

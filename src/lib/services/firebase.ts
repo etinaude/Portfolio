@@ -1,12 +1,19 @@
+import { getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
 import KEYS from '../../keys.json';
 import { getFirestore, collection, query, getDocs, setDoc, doc, where } from 'firebase/firestore';
 import type { ContactT } from '$lib/types/types';
+import { getPerformance } from 'firebase/performance';
 
 const BASE_PATH = 'portfolio/all-data/';
 // Initialize Firebase
 const app = initializeApp(KEYS.firebase);
 const db = getFirestore(app);
+
+export function initAnalytics() {
+	getPerformance(app);
+	getAnalytics(app);
+}
 
 export function getAwardData() {
 	return getData(BASE_PATH + 'awards');
