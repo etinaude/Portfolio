@@ -32,7 +32,6 @@
 	}
 
 	function mouseMove(event: any) {
-		console.log('asdasda');
 		if (Device.isMobile) return;
 		const xPercent = event.clientX / image.clientWidth;
 		const yPercent = event.clientY / image.clientHeight;

@@ -54,6 +54,7 @@
 		width: 100%;
 		background-image: linear-gradient($primary, $primary);
 		z-index: 50;
+		top: 0;
 	}
 
 	a {
