@@ -69,7 +69,7 @@ export async function getData(collectionPath: string, fbQuery?: any) {
 }
 
 export async function setData() {
-	const linksImport: any = []; // rplace with data to upload
+	const linksImport: any = []; // replace with data to upload
 	const uploadCollection = 'projects';
 	linksImport.forEach(async (link: any) => {
 		const docInfo: any = {
