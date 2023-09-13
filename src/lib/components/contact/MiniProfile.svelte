@@ -23,7 +23,7 @@
 {/if}
 
 <style lang="scss">
-	@import '../styles/root.scss';
+	@import './../../styles/root.scss';
 
 	h2 {
 		text-align: center;
@@ -45,13 +45,13 @@
 		@include flex-center;
 		flex-direction: column;
 
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
 		background-color: $primary;
-		z-index: 1;
+		z-index: 1000;
 
 		p {
 			color: $accent;

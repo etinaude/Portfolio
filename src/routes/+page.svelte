@@ -4,7 +4,7 @@
 	import Showcase from '$lib/components/project/Showcase.svelte';
 	import Device from 'svelte-device-info';
 
-	import Contact from '$lib/components/Contact.svelte';
+	import Contact from '$lib/components/contact/Contact.svelte';
 	import { onMount } from 'svelte';
 	import Saos from 'saos';
 	import {
@@ -115,7 +115,9 @@
 	<Showcase dataFunction={getAwardData} />
 </section>
 
-<Contact />
+<section id="contact">
+	<Contact />
+</section>
 
 <style lang="scss">
 	@import './index.scss';

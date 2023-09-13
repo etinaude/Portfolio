@@ -3,6 +3,7 @@
 	import { getSocialData } from '$lib/services/firebase';
 	import type { ContactT } from '$lib/types/types';
 	import { onMount } from 'svelte';
+	import Saos from 'saos';
 
 	let socialList: ContactT[] = [];
 
@@ -13,23 +14,25 @@
 
 <div class="list">
 	{#each socialList as link}
-		<a href={link.url} target="_blank" rel="noopener noreferrer">
-			{#if link.icon}
-				<div class="icon">
-					<img src={link.icon} alt={link.name} />
+		<Saos animation={'from-right 0.5s ease'}>
+			<a href={link.url} target="_blank" rel="noopener noreferrer">
+				{#if link.icon}
+					<div class="icon">
+						<img src={link.icon} alt={link.name} />
+					</div>
+				{/if}
+				{link.name}
+				<div class="hover">
+					<div class="user">{link.user}</div>
+					<div class="url">{link.displayUrl}</div>
 				</div>
-			{/if}
-			{link.name}
-			<div class="hover">
-				<div class="user">{link.user}</div>
-				<div class="url">{link.displayUrl}</div>
-			</div>
-		</a>
+			</a>
+		</Saos>
 	{/each}
 </div>
 
 <style lang="scss">
-	@import '../styles/root.scss';
+	@import './../../styles/root.scss';
 	.list {
 		display: flex;
 		flex-wrap: wrap;

@@ -3,8 +3,8 @@
 	import MailGun from '$lib/services/mailgunService';
 	import { BannerT, ContactFormT } from '$lib/types/types';
 	import Saos from 'saos';
-	import Links from '$lib/components/LinksComp.svelte';
-	import MiniProfile from '$lib/components/MiniProfile.svelte';
+	import Links from '$lib/components/contact/LinksComp.svelte';
+	import MiniProfile from '$lib/components/contact/MiniProfile.svelte';
 
 	let bannerInfo: BannerT = new BannerT();
 	let form: ContactFormT = new ContactFormT();
@@ -45,71 +45,62 @@
 	}
 </script>
 
-<section id="contact">
-	<div class="contact-row">
+<div class="contacts">
+	<div class="form" id="form">
 		<Saos animation={'from-left 1s ease'}>
 			<MiniProfile />
-			<div class="form" id="form">
-				<div class="row">
-					<input
-						type="text"
-						name="name"
-						bind:value={form.name}
-						placeholder="name"
-						class="clickable"
-					/>
-					<input
-						type="email"
-						name="email"
-						bind:value={form.email}
-						placeholder="email"
-						class="clickable"
-					/>
-				</div>
-
-				<textarea
-					name="message"
-					placeholder="message"
-					bind:value={form.message}
+			<div class="row">
+				<input
+					type="text"
+					name="name"
+					placeholder="name"
+					bind:value={form.name}
 					class="clickable"
 				/>
-				<button on:click={sendEmail} class="clickable"
-					>Send
-					<span class="material-symbol"> send </span>
-				</button>
+				<input
+					type="email"
+					name="email"
+					placeholder="email"
+					bind:value={form.email}
+					class="clickable"
+				/>
 			</div>
-		</Saos>
 
-		<Saos animation={'from-right 1s ease'}>
-			<Links />
+			<textarea name="message" placeholder="message" bind:value={form.message} class="clickable" />
+			<button on:click={sendEmail} class="clickable"
+				>Send
+				<span class="material-symbol"> send </span>
+			</button>
 		</Saos>
 	</div>
-</section>
+
+	<div>
+		<div class="mobile-profile">
+			<MiniProfile />
+		</div>
+
+		<Links />
+	</div>
+</div>
 
 <Banner {bannerInfo} />
 
 <style lang="scss">
-	@import '../styles/root.scss';
+	@import './../../styles/root.scss';
 
-	section {
+	.contacts {
 		--background: #222;
-		justify-content: center;
-		height: 100vh;
-		width: 100vw;
+		width: min(100%, 1200px);
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: flex-end;
+		padding: 0 10vw;
 	}
 
 	.form {
 		width: 500px;
-		display: flex;
-		flex-direction: column;
-
-		> * {
-			margin: 1em 0;
-
-			&:first-child {
-				margin-top: 0;
-			}
-		}
 
 		input,
 		textarea {
@@ -135,15 +126,6 @@
 			flex-direction: row;
 			justify-content: space-between;
 			margin-bottom: 0px;
-
-			input {
-				width: calc(50% - 10px);
-				margin-bottom: 20px;
-
-				&:first-child {
-					margin-right: 20px;
-				}
-			}
 		}
 
 		textarea {
@@ -162,49 +144,39 @@
 			margin: 0;
 			font-size: 1rem;
 			text-transform: uppercase;
+			margin-top: 10px;
 		}
 	}
 
-	.contact-row {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		width: min(80%, 1200px);
-		align-items: flex-end;
-		margin-top: 100px;
-	}
+	input {
+		width: calc(50% - 10px);
+		margin-bottom: 20px;
 
-	@media (max-width: 1100px) {
-		section {
-			height: auto;
-		}
-
-		.contact-row {
-			flex-direction: column;
-			align-items: center;
-			margin-right: 0;
-
-			.form {
-				width: 90%;
-				margin-bottom: 50px;
-
-				.row {
-					@include flex-center;
-
-					input {
-						width: 100%;
-					}
-				}
-			}
+		&:first-child {
+			margin-right: 20px;
 		}
 	}
 
-	@media (max-width: 768px) {
+	.mobile-profile {
+		margin-top: 60px;
+		display: none;
+	}
+
+	@media (max-width: 1024px) {
 		.contact-row {
 			margin-top: 80px;
 		}
+
 		.form {
 			display: none;
+		}
+
+		.mobile-profile {
+			display: block;
+		}
+
+		.contacts {
+			margin-bottom: 60px;
 		}
 	}
 </style>

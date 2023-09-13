@@ -32,6 +32,13 @@
 
 #awards {
 	--background: #3c3c3c;
+	position: sticky;
+}
+
+#contact {
+	@include flex-center;
+	padding-bottom: 0;
+	--background: #222;
 }
 
 #base {
