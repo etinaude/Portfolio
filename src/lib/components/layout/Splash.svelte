@@ -35,12 +35,14 @@
 	}
 
 	.container {
+		@include text-drop;
+
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 		color: $accent;
 		font-size: max(3rem, 6vw);
-		font-weight: bold;
+		font-weight: 600;
 		margin-bottom: 2rem;
 	}
 

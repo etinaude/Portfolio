@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+
+:root {
+	font-family: 'Rubik', sans-serif;
+	font-size: max(1vw, 20px);
+	color: $light;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: 400;
+	color: $accent;
+}
+
+h1 {
+	font-size: max(5vw, 3rem);
+	text-align: center;
+}
+
+h2 {
+	font-size: max(3vw, 2rem);
+	user-select: none;
+}
+
+h3 {
+	font-size: max(2vw, 1.5rem);
+	font-size: 1.5rem;
+}
+
+.material-symbol {
+	font-family: 'Material Symbols Outlined', sans-serif;
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}

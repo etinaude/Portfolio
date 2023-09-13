@@ -1,17 +1,5 @@
 @import './../lib/styles/root.scss';
 
-:root {
-	font-family: 'Rubik', sans-serif;
-	font-size: max(1vw, 20px);
-	color: $light;
-}
-
-* {
-	cursor: none !important;
-	@include transition;
-	scroll-behavior: smooth;
-}
-
 body {
 	overflow-x: hidden;
 	min-height: 100vh;
@@ -33,28 +21,6 @@ section {
 	top: 0;
 	background-color: var(--background);
 	overflow: hidden;
-}
-
-h1,
-h2,
-h3 {
-	font-weight: 400;
-	color: $accent;
-}
-
-h1 {
-	font-size: max(5vw, 3rem);
-	text-align: center;
-}
-
-h2 {
-	font-size: max(3vw, 2rem);
-	user-select: none;
-}
-
-h3 {
-	font-size: max(2vw, 1.5rem);
-	font-size: 1.5rem;
 }
 
 p,

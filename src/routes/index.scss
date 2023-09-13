@@ -6,39 +6,15 @@
 
 	.more-projects-btn {
 		@include border;
+		@include button;
+		@include flex-center;
 
 		position: absolute;
 		bottom: 0;
 		left: 50%;
 		translate: -50%;
-		display: flex;
 		margin: 4em 0;
-		width: 300px;
-		text-align: center;
-		padding: 20px;
-		background-color: $accent;
-		height: 20px;
-		display: flex;
-		justify-content: center;
 		color: $primary;
-
-		.arrow {
-			padding-left: 20px;
-			height: 20px;
-			width: 20px;
-			fill: $primary;
-			transition: none;
-		}
-
-		&:hover {
-			background-color: $accent-l;
-			color: white;
-			scale: 1.05;
-
-			.arrow {
-				fill: white;
-			}
-		}
 	}
 }
 
@@ -60,20 +36,19 @@
 
 #base {
 	position: fixed;
-	overflow: hidden;
-	left: 0;
-	top: 0;
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background-color: $primary-t;
 
 	.hero-pic {
-		position: absolute;
-		top: 0;
-		left: 0;
+		position: fixed;
 		width: 100%;
 		height: 100%;
 		background-color: $primary;
-
 		z-index: -1;
 
 		img {
@@ -84,27 +59,12 @@
 		}
 	}
 
-	.blur {
-		z-index: 0;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-
-		background-color: $primary-t;
-	}
-
 	.header-text {
-		box-sizing: border-box;
-		width: 100%;
-		height: 100vh;
 		padding-top: 25vh;
-		text-align: center;
-		z-index: 1;
 
-		h1 {
+		.name {
 			margin: 0px;
+			filter: drop-shadow(3px 5px 0 #151515);
 		}
 	}
 }
@@ -114,10 +74,6 @@
 	flex-direction: column;
 	justify-content: space-between;
 	width: min(90%, 1200px);
-}
-
-.card-side-scroll {
-	@include card-side-scroll;
 }
 
 @keyframes -global-from-bottom {

@@ -6,10 +6,27 @@
 	border-radius: 10px;
 }
 
+@mixin text-drop {
+	filter: drop-shadow(3px 5px 0 #151515);
+}
+
 @mixin border {
 	border: 2px solid $primary;
 	box-shadow: 0 4px 0 1px $primary;
 	border-radius: 10px;
+}
+
+@mixin button {
+	width: 300px;
+	padding: 20px;
+	background-color: $accent;
+	height: 20px;
+
+	&:hover {
+		background-color: $accent-l;
+		color: white;
+		scale: 1.05;
+	}
 }
 
 @mixin flex-center {
@@ -24,18 +41,4 @@
 
 @mixin transition-long {
 	transition: all 0.6s ease;
-}
-
-@mixin card-side-scroll {
-	width: 100%;
-	display: flex;
-	overflow-x: auto;
-	overflow-y: hidden;
-	padding: 30px;
-	margin: auto;
-	justify-content: center;
-
-	@media (max-width: 1600px) {
-		justify-content: flex-start;
-	}
 }

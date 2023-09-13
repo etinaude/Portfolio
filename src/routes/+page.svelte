@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Card from '$lib/components/project/Card.svelte';
 	import LongCard from '$lib/components/project/Long-card.svelte';
 	import ChanglingText from '$lib/components/Changling-text.svelte';
 	import Showcase from '$lib/components/project/Showcase.svelte';
@@ -12,6 +11,7 @@
 		getAwardData,
 		getClubsData,
 		getEducationData,
+		getFeaturedProjectsData,
 		getWorkData
 	} from '$lib/services/firebase';
 	import type { LongCardT } from '$lib/types/types';
@@ -21,16 +21,12 @@
 
 	let workData: LongCardT[] = [];
 	let educationData: LongCardT[] = [];
-	let awardsData: LongCardT[] = [];
-	let clubsData: LongCardT[] = [];
 
 	onMount(async () => {
 		heroImage = getHeroImage();
 		image = document.getElementById('hero-pic')!;
 		workData = await getWorkData();
 		educationData = await getEducationData();
-		awardsData = await getAwardData();
-		clubsData = await getClubsData();
 	});
 
 	function getHeroImage(): string {
@@ -60,25 +56,20 @@
 	<div class="hero-pic" id="hero-pic">
 		<img src={heroImage} alt="background hero" />
 	</div>
-	<div class="blur" />
 
 	<div class="header-text">
-		<h1>Etienne Naude</h1>
+		<h1 class="name">Etienne Naude</h1>
 		<ChanglingText />
 	</div>
 </section>
 
 <section id="projects">
-	<Showcase />
+	<Showcase dataFunction={getFeaturedProjectsData} />
 
 	<a class="button more-projects-btn clickable" href="/projects">
 		More Projects
 
-		<svg class="arrow" viewBox="0 0 16 16"
-			><path
-				d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
-			/></svg
-		>
+		<span class="material-symbol"> arrow_forward </span>
 	</a>
 </section>
 
@@ -99,11 +90,7 @@
 		<h2>Associations</h2>
 	</Saos>
 
-	<div class="card-side-scroll">
-		{#each clubsData as award}
-			<Card cardData={award} />
-		{/each}
-	</div>
+	<Showcase dataFunction={getClubsData} />
 </section>
 
 <section id="work">
@@ -123,11 +110,7 @@
 		<h2>Awards</h2>
 	</Saos>
 
-	<div class="card-side-scroll">
-		{#each awardsData as award}
-			<Card cardData={award} />
-		{/each}
-	</div>
+	<Showcase dataFunction={getAwardData} />
 </section>
 
 <Contact />
