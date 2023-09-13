@@ -11,8 +11,10 @@
 ![Svelte](https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white)
 ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![firebase](https://img.shields.io/badge/firebase-%23f1413d.svg?style=for-the-badge&logo=firebase&logoColor=white)
 
-[Svelte](https://svelte.dev/) | [Cloudinary](https://cloudinary.com/) | [Netlify](https://www.netlify.com/) | [MailGun](https://www.mailgun.com/) | [Google Analytics](https://analytics.google.com/) | [Playwright](https://playwright.dev/)
+
+[Svelte](https://svelte.dev/) | [Cloudinary](https://cloudinary.com/) | [Netlify](https://www.netlify.com/) | [MailGun](https://www.mailgun.com/) | [Google Analytics](https://analytics.google.com/) | [Playwright](https://playwright.dev/) [firebase](https://firebase.com)
 
 ## ✨ Portfolio Website
 
