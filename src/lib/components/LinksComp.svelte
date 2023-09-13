@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script lang="ts">
 	export const prerender = true;
 	import { getSocialData } from '$lib/services/firebase';
 	import type { ContactT } from '$lib/types/types';
