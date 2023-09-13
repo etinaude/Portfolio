@@ -9,6 +9,15 @@ export type ProjectT = {
 	featured?: boolean;
 };
 
+export type ContactT = {
+	displayUrl: string;
+	icon: string;
+	name: string;
+	url: string;
+	user: string;
+	index: number;
+};
+
 export type LongCardT = ProjectT & {
 	side: 'left' | 'right';
 };

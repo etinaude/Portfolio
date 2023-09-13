@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import KEYS from '../../keys.json';
 import { getFirestore, collection, query, getDocs, setDoc, doc, where } from 'firebase/firestore';
+import type { ContactT } from '$lib/types/types';
 
 const BASE_PATH = 'portfolio/all-data/';
 // Initialize Firebase
@@ -11,9 +12,13 @@ export function getAwardData() {
 	return getData(BASE_PATH + 'awards');
 }
 
-export function getSocialData() {
-	// setData();
-	return getData(BASE_PATH + 'socials');
+export async function getSocialData() {
+	const links: ContactT[] = await getData(BASE_PATH + 'socials');
+
+	return links.sort((a, b) => {
+		if (a.index < b.index) return -1;
+		return 1;
+	});
 }
 
 export function getClubsData() {
