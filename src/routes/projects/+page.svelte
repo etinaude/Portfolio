@@ -10,7 +10,7 @@
 	let smallProjects: ProjectT[] = [];
 
 	onMount(async () => {
-		smallProjects = await getProjectsData();
+		smallProjects = (await getProjectsData()) as ProjectT[];
 	});
 </script>
 

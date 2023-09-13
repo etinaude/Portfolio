@@ -3,12 +3,12 @@
 
 	export let pos: posT;
 
-	const outerOffest = 12;
+	const outerOffset = 12;
 </script>
 
 <div
 	class="outer {pos.clickable ? 'clickable' : ''}"
-	style="translate:  {pos.x - outerOffest}px {pos.y - outerOffest}px"
+	style="translate:  {pos.x - outerOffset}px {pos.y - outerOffset}px"
 >
 	<div class="inner" />
 </div>

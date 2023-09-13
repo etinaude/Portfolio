@@ -1,8 +1,8 @@
 import { getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
 import KEYS from '../../keys.json';
-import { getFirestore, collection, query, getDocs, setDoc, doc, where } from 'firebase/firestore';
-import type { ContactT } from '$lib/types/types';
+import { getFirestore, collection, query, getDocs, where } from 'firebase/firestore';
+import type { ContactT, ProjectT } from '$lib/types/types';
 import { getPerformance } from 'firebase/performance';
 
 const BASE_PATH = 'portfolio/all-data/';
@@ -20,7 +20,7 @@ export function getAwardData() {
 }
 
 export async function getSocialData() {
-	const links: ContactT[] = await getData(BASE_PATH + 'socials');
+	const links: ContactT[] = (await getData(BASE_PATH + 'socials')) as ContactT[];
 
 	return links.sort((a, b) => {
 		if (a.index < b.index) return -1;
@@ -49,8 +49,8 @@ export function getWorkData() {
 }
 
 export async function getData(collectionPath: string, fbQuery?: any) {
+	const data: (ProjectT | ContactT)[] = [];
 	try {
-		const db = getFirestore(app);
 		let q;
 		if (fbQuery) {
 			q = query(collection(db, collectionPath), fbQuery);
@@ -58,40 +58,11 @@ export async function getData(collectionPath: string, fbQuery?: any) {
 			q = query(collection(db, collectionPath));
 		}
 		const querySnapshot = await getDocs(q);
-		const data: any = [];
 		querySnapshot.forEach((doc) => {
-			data.push(doc.data());
+			data.push(doc.data() as ProjectT);
 		});
-		return data;
 	} catch (e) {
 		console.error(e);
 	}
-}
-
-export async function setData() {
-	const linksImport: any = []; // replace with data to upload
-	const uploadCollection = 'projects';
-	linksImport.forEach(async (link: any) => {
-		const docInfo: any = {
-			title: link.title,
-			description: link.description,
-			imageUrl: `https://firebasestorage.googleapis.com/v0/b/portfolio-aa70a.appspot.com/o/projects%2F${link.image_url}?alt=media`
-		};
-		if (link.hover_img) {
-			docInfo[
-				'hoverImg'
-			] = `https://firebasestorage.googleapis.com/v0/b/portfolio-aa70a.appspot.com/o/projects%2F${link.hover_img}?alt=media`;
-		}
-		if (link.hover_video) {
-			docInfo[
-				'hoverVideo'
-			] = `https://firebasestorage.googleapis.com/v0/b/portfolio-aa70a.appspot.com/o/projects%2F${link.hover_video}?alt=media`;
-		}
-		if (link.follow_url) {
-			docInfo['followUrl'] = link.follow_url;
-		}
-		const name = link.title.trim().replace(' ', '');
-		console.log(docInfo);
-		await setDoc(doc(db, BASE_PATH + uploadCollection + '/' + name), docInfo);
-	});
+	return data;
 }

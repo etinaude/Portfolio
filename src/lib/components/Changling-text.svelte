@@ -32,7 +32,7 @@
 			return;
 		}
 
-		// Remove a charachter
+		// Remove a character
 		textEl.innerText = currentText.substring(0, currentText.length - 1);
 
 		setTimeout(deleteWord, 120);
@@ -48,7 +48,7 @@
 			return;
 		}
 
-		// Add a charachter
+		// Add a character
 		textEl.innerText = currentText + words[wordIndex].substring(currentLength, currentLength + 1);
 
 		setTimeout(addNextWord, 180);

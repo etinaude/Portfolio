@@ -25,8 +25,8 @@
 	onMount(async () => {
 		heroImage = getHeroImage();
 		image = document.getElementById('hero-pic')!;
-		workData = await getWorkData();
-		educationData = await getEducationData();
+		workData = (await getWorkData()) as LongCardT[];
+		educationData = (await getEducationData()) as LongCardT[];
 	});
 
 	function getHeroImage(): string {

@@ -21,8 +21,6 @@
 </div>
 
 <style lang="scss">
-	@import '../../styles/root.scss';
-
 	.side-scroll-container {
 		max-width: 100vw;
 		justify-content: center;

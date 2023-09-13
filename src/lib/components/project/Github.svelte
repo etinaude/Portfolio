@@ -20,7 +20,7 @@
 				}
 			});
 
-		fetch('https://api.github.com/users/etinaude/repos?sort=updated&per_page=80')
+		fetch('https://api.github.com/users/etinaude/repos?sort=updated&per_page=6')
 			.then((response) => (response.status === 200 ? response.json() : null))
 			.then((data) => {
 				if (!data) return;
@@ -30,7 +30,7 @@
 
 				gitHubRepos = data.slice(0, 6);
 				gitHubRepos.forEach((repo: any) => {
-					repo.languageColor = languageColors[repo.language];
+					repo.languageColor = (languageColors as any)[repo.language];
 				});
 			})
 			.catch((error) => {

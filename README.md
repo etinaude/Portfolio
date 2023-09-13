@@ -13,14 +13,13 @@
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![firebase](https://img.shields.io/badge/firebase-%23f1413d.svg?style=for-the-badge&logo=firebase&logoColor=white)
 
-
 [Svelte](https://svelte.dev/) | [Cloudinary](https://cloudinary.com/) | [Netlify](https://www.netlify.com/) | [MailGun](https://www.mailgun.com/) | [Google Analytics](https://analytics.google.com/) | [Playwright](https://playwright.dev/) [firebase](https://firebase.com)
 
 ## ✨ Portfolio Website
 
 This website highlights my work with software, hardware and maker projects. It is constantly in a state of redesign, please follow the link in the title to view the page.
 
-## 🧩 Prerequists
+## 🧩 Prerequisites
 
 Install [Node.js](https://nodejs.org/en/)
 

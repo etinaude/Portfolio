@@ -4,8 +4,6 @@ import { ViteMinifyPlugin } from 'vite-plugin-minify'
 import { optimizeCssModules } from 'vite-plugin-optimize-css-modules';
 import { VitePWA } from 'vite-plugin-pwa'
 
-
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: vitePreprocess(),
