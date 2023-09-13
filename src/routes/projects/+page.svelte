@@ -2,19 +2,26 @@
 	import Card from '$lib/components/project/Card.svelte';
 	import Tile from '$lib/components/project/Tile.svelte';
 
-	import projectsImport from '$lib/data/projects.json';
 	import languageColors from '$lib/data/languages.json';
 	import githubBackup from '$lib/data/backupdata.json';
 
 	import Repo from '$lib/components/project/Repo.svelte';
 	import type { ProjectT } from '$lib/types/types';
 	import Saos from 'saos';
-
-	const largeProjects: ProjectT[] = projectsImport.slice(0, 6);
-	const smallProjects: ProjectT[] = projectsImport.slice(6);
+	import { getProjectsData } from '$lib/services/firebase';
+	import { onMount } from 'svelte';
 
 	let gitHubRepos = githubBackup.repos;
 	let gitHubUser = githubBackup.profile;
+	let projectsData: ProjectT[] = [];
+	let largeProjects: ProjectT[] = [];
+	let smallProjects: ProjectT[] = [];
+
+	onMount(async () => {
+		projectsData = await getProjectsData();
+		largeProjects = projectsData.slice(0, 6);
+		smallProjects = projectsData.slice(6);
+	});
 
 	async function loadGithub() {
 		fetch('https://api.github.com/users/etinaude')

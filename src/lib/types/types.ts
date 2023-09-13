@@ -1,11 +1,12 @@
 export type ProjectT = {
 	title: string;
 	description: string;
-	image_url: string;
+	imageUrl: string;
 
-	hover_img?: string;
-	hover_video?: string;
-	follow_url?: string;
+	hoverImg?: string;
+	hoverVideo?: string;
+	followUrl?: string;
+	highPriority?: boolean;
 };
 
 export type LongCardT = ProjectT & {

@@ -15,10 +15,10 @@
 
 <div class="outer tilt">
 	<div class="card tilt" bind:this={card}>
-		{#if cardData.follow_url}
+		{#if cardData.followUrl}
 			<!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
 			<a
-				href={cardData.follow_url}
+				href={cardData.followUrl}
 				target="_blank"
 				rel="noopener"
 				class="clickable"
@@ -27,13 +27,13 @@
 		{/if}
 
 		<div class="img clickable">
-			<img src={'images/' + cardData.image_url} alt={cardData.title} />
+			<img src={cardData.imageUrl} alt={cardData.title} />
 
-			{#if cardData.hover_img}
-				<img class="hover-img" src={'images/' + cardData.hover_img} alt="project hover" />
-			{:else if cardData.hover_video}
+			{#if cardData.hoverImg}
+				<img class="hover-img" src={cardData.hoverImg} alt="project hover" />
+			{:else if cardData.hoverVideo}
 				<video playsinline autoplay muted loop class="hover-img">
-					<source src={'images/' + cardData.hover_video} />
+					<source src={cardData.hoverVideo} />
 				</video>
 			{/if}
 		</div>
@@ -42,7 +42,7 @@
 
 		<caption>{cardData.description}</caption>
 
-		{#if cardData.follow_url}
+		{#if cardData.followUrl}
 			<div class="read-more">read more →</div>
 		{/if}
 	</div>

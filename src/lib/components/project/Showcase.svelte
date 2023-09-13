@@ -21,10 +21,10 @@
 		<div class="cards">
 			{#each cardData as card}
 				<div class="card">
-					{#if card.follow_url}
+					{#if card.followUrl}
 						<!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
 						<a
-							href={card.follow_url}
+							href={card.followUrl}
 							target="_blank"
 							rel="noopener"
 							class="clickable"
@@ -33,13 +33,13 @@
 					{/if}
 
 					<div class="img clickable">
-						<img src={'images/' + card.image_url} alt={card.title} />
+						<img src={'images/' + card.imageUrl} alt={card.title} />
 
-						{#if card.hover_img}
-							<img class="hover-img" src={'images/' + card.hover_img} alt="project hover" />
-						{:else if card.hover_video}
+						{#if card.hoverImg}
+							<img class="hover-img" src={'images/' + card.hoverImg} alt="project hover" />
+						{:else if card.hoverVideo}
 							<video playsinline autoplay muted loop class="hover-img">
-								<source src={'images/' + card.hover_video} />
+								<source src={'images/' + card.hoverVideo} />
 							</video>
 						{/if}
 					</div>
@@ -48,7 +48,7 @@
 
 					<caption>{card.description}</caption>
 
-					{#if card.follow_url}
+					{#if card.followUrl}
 						<div class="read-more">read more →</div>
 					{/if}
 				</div>

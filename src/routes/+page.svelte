@@ -5,26 +5,39 @@
 	import Showcase from '$lib/components/project/Showcase.svelte';
 	import Device from 'svelte-device-info';
 
-	import projectsImport from '$lib/data/projects.json';
-	import educationImport from '$lib/data/education.json';
-	import workImport from '$lib/data/work.json';
-	import awardImport from '$lib/data/awards.json';
-	import clubsImport from '$lib/data/clubs.json';
-
 	import Contact from '$lib/components/Contact.svelte';
 	import { onMount } from 'svelte';
 	import Saos from 'saos';
+	import {
+		getAwardData,
+		getClubsData,
+		getEducationData,
+		getProjectsData,
+		getWorkData
+	} from '$lib/services/firebase';
+	import type { LongCardT } from '$lib/types/types';
 
-	const projects = projectsImport.slice(0, 3);
 	let image: HTMLElement;
 	let heroImage = getHeroImage();
 
+	let workData: LongCardT[] = [];
+	let educationData: LongCardT[] = [];
+	let awardsData: LongCardT[] = [];
+	let clubsData: LongCardT[] = [];
+	let projectsData: LongCardT[] = [];
+
 	onMount(async () => {
 		image = document.getElementById('hero-pic')!;
+		workData = await getWorkData();
+		educationData = await getEducationData();
+		awardsData = await getAwardData();
+		clubsData = await getClubsData();
+		projectsData = await getProjectsData();
+		projectsData = projectsData.slice(0, 3);
 	});
 
 	function getHeroImage(): string {
-		if (Device.isMobile) {
+		if (false) {
 			return 'images/me/portrait.webp';
 		} else {
 			return 'images/me/thoughtful.webp';
@@ -59,7 +72,7 @@
 </section>
 
 <section id="projects">
-	<Showcase cardData={projects} />
+	<Showcase cardData={projectsData} />
 
 	<a class="button more-projects-btn clickable" href="/projects">
 		More Projects
@@ -78,7 +91,7 @@
 	</Saos>
 
 	<div class="long-card-grid">
-		{#each educationImport as education}
+		{#each educationData as education}
 			<LongCard cardData={education} />
 		{/each}
 	</div>
@@ -90,7 +103,7 @@
 	</Saos>
 
 	<div class="card-side-scroll">
-		{#each clubsImport as award}
+		{#each clubsData as award}
 			<Card cardData={award} />
 		{/each}
 	</div>
@@ -102,7 +115,7 @@
 	</Saos>
 
 	<div class="long-card-grid">
-		{#each workImport as work}
+		{#each workData as work}
 			<LongCard cardData={work} />
 		{/each}
 	</div>
@@ -114,7 +127,7 @@
 	</Saos>
 
 	<div class="card-side-scroll">
-		{#each awardImport as award}
+		{#each awardsData as award}
 			<Card cardData={award} />
 		{/each}
 	</div>

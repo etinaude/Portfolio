@@ -24,7 +24,7 @@
 		<img
 			class="tilt"
 			alt={cardData.title + 'logo'}
-			src={'images' + cardData.image_url}
+			src={cardData.imageUrl}
 			bind:this={imgElement}
 		/>
 	</div>

@@ -7,12 +7,7 @@
 <Saos animation={'from-bottom 1s ease'}>
 	<div class="tile">
 		<div class="img">
-			<img
-				src={'images/' + cardData.image_url}
-				alt={cardData.title}
-				loading="lazy"
-				class="tile_image"
-			/>
+			<img src={cardData.imageUrl} alt={cardData.title} loading="lazy" class="tile_image" />
 		</div>
 
 		<div class="text">
@@ -20,11 +15,11 @@
 
 			<caption>{cardData.description}</caption>
 
-			{#if cardData.follow_url}
+			{#if cardData.followUrl}
 				<!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
 				<a
 					class="read-more clickable tile_url"
-					href={cardData.follow_url}
+					href={cardData.followUrl}
 					target="_blank"
 					rel="noopener"
 					aria-label="project link {cardData.title}">Read More →</a
