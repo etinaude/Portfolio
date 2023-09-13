@@ -8,27 +8,23 @@
 	export let cardData: LongCardT;
 
 	let imgElement: HTMLElement;
+	const animationSide = cardData.side === 'left' ? 'from-right' : 'from-left';
 
 	onMount(() => {
 		if (!Device.isMobile) VanillaTilt.init(imgElement, { glare: true });
 	});
 </script>
 
-<Saos animation={'from-' + cardData.side + ' 1s ease'}>
-	<div class="long-card {cardData.side}">
-		<div class="text">
+<div class="long-card {cardData.side}">
+	<div class="text">
+		<Saos animation={animationSide + ' 1s ease'}>
 			<h3>{cardData.title}</h3>
 			<p>{cardData.description}</p>
-		</div>
-
-		<img
-			class="tilt"
-			alt={cardData.title + 'logo'}
-			src={cardData.imageUrl}
-			bind:this={imgElement}
-		/>
+		</Saos>
 	</div>
-</Saos>
+
+	<img class="tilt" alt={cardData.title + 'logo'} src={cardData.imageUrl} bind:this={imgElement} />
+</div>
 
 <style lang="scss">
 	@import 'src/lib/styles/root.scss';
