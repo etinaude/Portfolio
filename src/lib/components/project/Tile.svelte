@@ -22,7 +22,8 @@
 					href={cardData.followUrl}
 					target="_blank"
 					rel="noopener"
-					aria-label="project link {cardData.title}">Read More →</a
+					aria-label="project link {cardData.title}"
+					>Read More <span class="material-symbol"> double_arrow </span></a
 				>
 			{/if}
 		</div>
@@ -91,6 +92,7 @@
 
 	.read-more {
 		@include border;
+		@include flex-center;
 
 		width: 200px;
 		position: absolute;

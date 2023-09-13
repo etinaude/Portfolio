@@ -43,7 +43,7 @@
 		<caption>{cardData.description}</caption>
 
 		{#if cardData.followUrl}
-			<div class="read-more">read more →</div>
+			<div class="read-more">read more <span class="material-symbol"> double_arrow </span></div>
 		{/if}
 	</div>
 </div>
@@ -100,6 +100,8 @@
 	}
 
 	.read-more {
+		@include flex-center;
+
 		margin-top: 10px;
 		color: white;
 		font-size: 0.9em;
