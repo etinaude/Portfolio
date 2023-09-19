@@ -1,8 +1,6 @@
 <script lang="ts">
 	import LongCard from '$lib/components/project/LongCard.svelte';
-	import ChanglingText from '$lib/components/ChanglingText.svelte';
 	import Showcase from '$lib/components/project/Showcase.svelte';
-	import Device from 'svelte-device-info';
 
 	import Contact from '$lib/components/contact/Contact.svelte';
 	import { onMount } from 'svelte';
@@ -17,35 +15,13 @@
 	import type { LongCardT } from '$lib/types/types';
 	import HeroImage from '$lib/components/HeroImage.svelte';
 
-	let image: HTMLElement;
-	let heroImage = '';
-
 	let workData: LongCardT[] = [];
 	let educationData: LongCardT[] = [];
 
 	onMount(async () => {
-		heroImage = getHeroImage();
-		image = document.getElementById('hero-pic')!;
 		workData = (await getWorkData()) as LongCardT[];
 		educationData = (await getEducationData()) as LongCardT[];
 	});
-
-	function getHeroImage(): string {
-		if (Device.isMobile) {
-			return 'images/me/portrait.webp';
-		} else {
-			return 'images/me/thoughtful.webp';
-		}
-	}
-
-	function mouseMove(event: any) {
-		if (Device.isMobile) return;
-		const xPercent = event.clientX / image.clientWidth;
-		const yPercent = event.clientY / image.clientHeight;
-
-		// translate image
-		image.style.transform = `translate(-${xPercent * 100}px, -${yPercent * 100}px)`;
-	}
 </script>
 
 <svelte:head>
