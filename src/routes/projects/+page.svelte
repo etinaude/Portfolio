@@ -5,7 +5,6 @@
 	import { getFeaturedProjectsData, getProjectsData } from '$lib/services/firebase';
 	import { onMount } from 'svelte';
 	import Showcase from '$lib/components/project/Showcase.svelte';
-	import Github from '$lib/components/project/Github.svelte';
 
 	let smallProjects: ProjectT[] = [];
 
@@ -18,8 +17,6 @@
 	<title>Etienne Naude</title>
 	<meta name="description" content="Etienne Naude projects" />
 </svelte:head>
-
-<Github />
 
 <section>
 	<Saos animation={'from-bottom 1s ease'}>
