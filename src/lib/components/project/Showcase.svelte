@@ -2,6 +2,7 @@
 	import type { ProjectT } from '$lib/types/types';
 	import { onMount } from 'svelte';
 	import Card from './Card.svelte';
+	import Saos from 'saos';
 
 	let data: ProjectT[] = [];
 
@@ -12,13 +13,15 @@
 	});
 </script>
 
-<div class="side-scroll-container">
-	<div class="card-side-scroll">
-		{#each data as card}
-			<Card cardData={card} />
-		{/each}
+<Saos animation={'from-bottom 1s ease'}>
+	<div class="side-scroll-container">
+		<div class="card-side-scroll">
+			{#each data as card}
+				<Card cardData={card} />
+			{/each}
+		</div>
 	</div>
-</div>
+</Saos>
 
 <style lang="scss">
 	.side-scroll-container {

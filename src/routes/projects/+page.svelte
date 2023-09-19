@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Etienne Naude</title>
+	<title>Etienne Naude - Projects</title>
 	<meta name="description" content="Etienne Naude projects" />
 </svelte:head>
 
@@ -48,5 +48,10 @@
 
 	h2 {
 		margin-top: 2em;
+	}
+
+	section {
+		--background: #333;
+		padding-top: 100px;
 	}
 </style>

@@ -7,6 +7,7 @@
 	import type { posT } from '$lib/types/types';
 	import { onMount } from 'svelte';
 	import { initAnalytics } from '$lib/services/firebase';
+	import { onNavigate } from '$app/navigation';
 
 	let pos: posT = { x: 0, y: 0, clickable: false };
 
@@ -26,6 +27,17 @@
 		}
 		pos.clickable = false;
 	}
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <main on:mousemove={mouseMove}>

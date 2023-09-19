@@ -22,7 +22,7 @@
 		pointer-events: none;
 
 		animation: fade 0.5s ease-in-out forwards;
-		animation-delay: 1s;
+		animation-delay: 0.5s;
 	}
 
 	@keyframes fade {

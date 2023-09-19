@@ -23,7 +23,14 @@
 		</Saos>
 	</div>
 
-	<img class="tilt" alt={cardData.title + 'logo'} src={cardData.imageUrl} bind:this={imgElement} />
+	<Saos animation={animationSide + ' 1s ease'}>
+		<img
+			class="tilt"
+			alt={cardData.title + 'logo'}
+			src={cardData.imageUrl}
+			bind:this={imgElement}
+		/>
+	</Saos>
 </div>
 
 <style lang="scss">

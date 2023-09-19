@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ChanglingText from '$lib/components/ChanglingText.svelte';
 	import Device from 'svelte-device-info';
+	import Saos from 'saos';
 
 	import { onMount } from 'svelte';
 
@@ -37,8 +38,11 @@
 	</div>
 
 	<div class="header-text">
-		<h1 class="name">Etienne Naude</h1>
-		<ChanglingText />
+		<Saos animation={'from-bottom 1s ease'}>
+			<h1 class="name">Etienne Naude</h1>
+
+			<ChanglingText />
+		</Saos>
 	</div>
 </section>
 

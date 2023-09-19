@@ -26,20 +26,25 @@
 
 <svelte:head>
 	<title>Etienne Naude</title>
+	<meta name="description" content="Etienne Naude Portfolio" />
 </svelte:head>
 
 <HeroImage />
 
 <section id="projects">
-	<h2>Projects</h2>
+	<Saos animation={'from-bottom 1s ease'}>
+		<h2>Projects</h2>
+	</Saos>
 
 	<Showcase dataFunction={getFeaturedProjectsData} />
 
-	<a class="button more-projects-btn clickable" href="/projects">
-		More Projects
+	<Saos animation={'from-bottom 1s ease'}>
+		<a class="button more-projects-btn clickable" href="/projects">
+			More Projects
 
-		<span class="material-symbol"> arrow_forward </span>
-	</a>
+			<span class="material-symbol"> arrow_forward </span>
+		</a>
+	</Saos>
 </section>
 
 <section id="education">

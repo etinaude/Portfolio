@@ -3,7 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>Etienne Naude</title>
+	<title>Etienne Naude - Contact</title>
+	<meta name="description" content="Etienne Naude Contact Details" />
 </svelte:head>
 
 <section>
