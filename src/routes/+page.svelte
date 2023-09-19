@@ -1,6 +1,6 @@
 <script lang="ts">
-	import LongCard from '$lib/components/project/Long-card.svelte';
-	import ChanglingText from '$lib/components/Changling-text.svelte';
+	import LongCard from '$lib/components/project/LongCard.svelte';
+	import ChanglingText from '$lib/components/ChanglingText.svelte';
 	import Showcase from '$lib/components/project/Showcase.svelte';
 	import Device from 'svelte-device-info';
 
@@ -15,6 +15,7 @@
 		getWorkData
 	} from '$lib/services/firebase';
 	import type { LongCardT } from '$lib/types/types';
+	import HeroImage from '$lib/components/HeroImage.svelte';
 
 	let image: HTMLElement;
 	let heroImage = '';
@@ -51,17 +52,7 @@
 	<title>Etienne Naude</title>
 </svelte:head>
 
-<!-- svelte-ignore a11y-no-static-element-interactions-->
-<section id="base" on:mousemove={mouseMove}>
-	<div class="hero-pic" id="hero-pic">
-		<img src={heroImage} alt="background hero" />
-	</div>
-
-	<div class="header-text">
-		<h1 class="name">Etienne Naude</h1>
-		<ChanglingText />
-	</div>
-</section>
+<HeroImage />
 
 <section id="projects">
 	<h2>Projects</h2>

@@ -35,3 +35,32 @@
 	<Cursor {pos} />
 	<Splash />
 </main>
+
+<style>
+	@keyframes -global-from-bottom {
+		0% {
+			transform: rotateY(-20deg) translateY(80vw) skewY(20deg);
+		}
+		100% {
+			transform: none;
+		}
+	}
+
+	@keyframes -global-from-left {
+		0% {
+			transform: rotateX(30deg) translateX(-150vw) skewX(-30deg);
+		}
+		100% {
+			transform: none;
+		}
+	}
+
+	@keyframes -global-from-right {
+		0% {
+			transform: rotateX(-30deg) translateX(150vw) skewX(30deg);
+		}
+		100% {
+			transform: none;
+		}
+	}
+</style>
