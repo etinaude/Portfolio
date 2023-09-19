@@ -56,6 +56,7 @@
 		background-image: linear-gradient($primary, $primary);
 		z-index: 50;
 		top: 0;
+		filter: drop-shadow(0px 3px 0px #111);
 	}
 
 	a {
