@@ -43,7 +43,9 @@
 		<caption>{cardData.description}</caption>
 
 		{#if cardData.followUrl}
-			<div class="read-more">read more <span class="material-symbol"> double_arrow </span></div>
+			<div class="read-more clickable">
+				read more <span class="material-symbol"> double_arrow </span>
+			</div>
 		{/if}
 	</div>
 </div>
@@ -100,12 +102,11 @@
 	}
 
 	.read-more {
-		@include flex-center;
+		@include button;
 
-		margin-top: 10px;
-		color: white;
+		margin-top: 20px;
 		font-size: 0.9em;
-		font-weight: bold;
+		height: 10px;
 	}
 
 	img,

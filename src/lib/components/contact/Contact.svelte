@@ -136,14 +136,11 @@
 		}
 
 		button {
-			@include transition;
-			@include border-d;
-			@include flex-center;
+			@include button;
 
 			width: 100%;
 			margin: 0;
 			font-size: 1rem;
-			text-transform: uppercase;
 			margin-top: 10px;
 		}
 	}

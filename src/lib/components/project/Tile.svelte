@@ -91,23 +91,14 @@
 	}
 
 	.read-more {
-		@include border;
-		@include flex-center;
+		@include button;
 
-		width: 200px;
+		height: 0;
 		position: absolute;
 		bottom: 20px;
 		left: 50%;
 		translate: -50%;
-		background: $accent;
-		padding: 10px;
-		font-weight: bold;
-		color: white;
-
-		&:hover {
-			background: $accent-l;
-			scale: 1.1;
-		}
+		font-size: 0.7em;
 	}
 
 	@media (max-width: 768px) {

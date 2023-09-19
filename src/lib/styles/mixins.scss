@@ -17,15 +17,20 @@
 }
 
 @mixin button {
-	width: 300px;
-	padding: 20px;
+	@include border-d;
+	@include flex-center;
+	@include transition;
+
+	position: relative;
+	min-width: 250px;
 	background-color: $accent;
-	height: 20px;
+	color: black;
+	padding: 20px 20px;
+	font-weight: bold;
 
 	&:hover {
-		background-color: $accent-l;
-		color: white;
-		scale: 1.05;
+		scale: 1.1;
+		background: $accent-l;
 	}
 }
 

@@ -5,16 +5,7 @@
 	margin-top: 100vh;
 
 	.more-projects-btn {
-		@include border;
 		@include button;
-		@include flex-center;
-
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		translate: -50%;
-		margin: 4em 0;
-		color: $primary;
 	}
 }
 

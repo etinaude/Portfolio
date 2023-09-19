@@ -15,7 +15,7 @@
 <div class="list">
 	{#each socialList as link}
 		<Saos animation={'from-right 0.5s ease'}>
-			<a href={link.url} target="_blank" rel="noopener noreferrer">
+			<a href={link.url} class="clickable" target="_blank" rel="noopener noreferrer">
 				{#if link.icon}
 					<div class="icon">
 						<img src={link.icon} alt={link.name} />
@@ -42,18 +42,7 @@
 	}
 
 	a {
-		@include border-d;
-		@include flex-center;
-		@include transition;
-
-		position: relative;
-		min-width: 250px;
-		min-height: 20px;
-
-		background-color: $accent;
-		color: black;
-		padding: 20px 20px;
-		font-weight: bold;
+		@include button;
 
 		.icon {
 			width: 30px;
@@ -100,8 +89,6 @@
 		}
 
 		&:hover {
-			scale: 1.1;
-
 			.hover {
 				height: 100px;
 				border: 2px solid $primary-d;
