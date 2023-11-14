@@ -14,6 +14,15 @@ const config = {
 			split: false
 		}),
 
+
+
+	},
+
+	onwarn: (warning, handler) => {
+		if (warning.code === 'css-unused-selector') {
+			return;
+		}
+		handler(warning);
 	},
 
 	plugins: [
