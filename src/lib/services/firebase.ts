@@ -44,6 +44,10 @@ export function getProjectsData() {
 	return getData(BASE_PATH + 'projects');
 }
 
+export function getProjectSingleData(title: string) {
+	return getData(BASE_PATH + 'projects', where('title', '==', title));
+}
+
 export function getFeaturedProjectsData() {
 	return getData(BASE_PATH + 'projects', where('featured', '==', true));
 }
