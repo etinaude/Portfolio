@@ -1,0 +1,55 @@
+	@import './../../lib/styles/root.scss';
+
+	h1 {
+	    margin-top: 100px;
+	}
+
+	.field {
+	    display: flex;
+	    flex-direction: row;
+	    margin-bottom: 20px;
+	    min-height: 70px;
+	    align-content: center;
+	    align-items: center;
+
+	    label {
+	        width: 100px;
+	        text-align: right;
+	        margin-right: 20px;
+	    }
+
+	    input,
+	    textarea {
+	        @include border-d;
+	        background-color: $primary-xxl;
+	        padding: 20px;
+	        box-sizing: border-box;
+	        font-size: max(0.7vw, 20px);
+	        color: $light;
+
+	        &:focus {
+	            outline: 2px solid $accent;
+	            scale: 1.05;
+	        }
+
+	        &:hover {
+	            scale: 1.05;
+	        }
+	    }
+
+	    .submit {
+	        @include button;
+	        width: 100%;
+	    }
+	}
+
+	video,
+	img {
+	    width: 300px;
+	    border-radius: 20px;
+	}
+
+	h3 {
+	    margin-top: 50px;
+	    text-align: center;
+	}
