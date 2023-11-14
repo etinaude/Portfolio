@@ -1,55 +1,111 @@
-	@import './../../lib/styles/root.scss';
+@import './../../lib/styles/root.scss';
 
-	h1 {
-	    margin-top: 100px;
+h1 {
+	margin-top: 100px;
+}
+
+.field {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 20px;
+	min-height: 70px;
+	align-content: center;
+	align-items: center;
+
+	label {
+		width: 100px;
+		text-align: right;
+		margin-right: 20px;
 	}
 
-	.field {
-	    display: flex;
-	    flex-direction: row;
-	    margin-bottom: 20px;
-	    min-height: 70px;
-	    align-content: center;
-	    align-items: center;
+	input,
+	textarea,
+	select {
+		@include border-d;
+		background-color: $primary-xxl;
+		padding: 20px;
+		box-sizing: border-box;
+		font-size: max(0.7vw, 20px);
+		color: $light;
 
-	    label {
-	        width: 100px;
-	        text-align: right;
-	        margin-right: 20px;
-	    }
+		&:focus {
+			outline: 2px solid $accent;
+			scale: 1.05;
+		}
 
-	    input,
-	    textarea {
-	        @include border-d;
-	        background-color: $primary-xxl;
-	        padding: 20px;
-	        box-sizing: border-box;
-	        font-size: max(0.7vw, 20px);
-	        color: $light;
+		&:hover {
+			scale: 1.05;
+		}
 
-	        &:focus {
-	            outline: 2px solid $accent;
-	            scale: 1.05;
-	        }
-
-	        &:hover {
-	            scale: 1.05;
-	        }
-	    }
-
-	    .submit {
-	        @include button;
-	        width: 100%;
-	    }
+		&#featured {
+			width: 30px;
+			height: 30px;
+		}
 	}
 
-	video,
-	img {
-	    width: 300px;
-	    border-radius: 20px;
+	.submit {
+		@include button;
+		width: 100%;
 	}
+}
 
-	h3 {
-	    margin-top: 50px;
-	    text-align: center;
+video,
+img {
+	width: 300px;
+	border-radius: 20px;
+}
+
+h3,
+h2 {
+	margin-top: 50px;
+	text-align: center;
+}
+
+
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	.column {
+		max-width: 45%;
+
+		&:first-child {
+			margin-right: 100px;
+		}
+
+		.center {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 	}
+}
+
+.tiles {
+	width: 300px;
+}
+
+.tag-list {
+	display: flex;
+
+	.tag {
+		@include border-d;
+		background-color: $accent;
+		border-radius: 20vw;
+		padding: 6px 15px;
+		margin: 0px 10px;
+		display: flex;
+
+		.remove {
+			margin-left: 10px;
+			cursor: pointer;
+		}
+	}
+}
+
+.active {
+	box-shadow: 0 4px 0 1px $accent-tt;
+}
