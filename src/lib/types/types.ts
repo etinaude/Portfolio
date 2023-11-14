@@ -7,7 +7,10 @@ export type ProjectT = {
 	hoverVideo?: string;
 	followUrl?: string;
 	featured?: boolean;
+	tags?: string[]
 };
+
+export type Tags = "Hardware" | "Software" | "Web" | "Mobile" | "Wood Work" | "Art" | "Design" | "Other";
 
 export type ContactT = {
 	displayUrl: string;
