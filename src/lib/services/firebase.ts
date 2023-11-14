@@ -4,6 +4,7 @@ import KEYS from '../../keys.json';
 import { getFirestore, collection, query, getDocs, where } from 'firebase/firestore';
 import type { ContactT, ProjectT } from '$lib/types/types';
 import { getPerformance } from 'firebase/performance';
+import { getAuth, signInWithPopup, GoogleAuthProvider, type UserCredential } from "firebase/auth";
 
 const BASE_PATH = 'portfolio/all-data/';
 // Initialize Firebase
@@ -65,4 +66,40 @@ export async function getData(collectionPath: string, fbQuery?: any) {
 		console.error(e);
 	}
 	return data;
+}
+
+
+export async function auth(): Promise<boolean> {
+	const auth = getAuth();
+	const currentTime = new Date().getTime();
+	const lastSignedIn = parseInt(sessionStorage.getItem("lastSignedIn") ?? "0");
+	const lastUUID = sessionStorage.getItem("lastUUID");
+
+	try {
+		// only need to sign in once ~ an hour
+		if (currentTime - lastSignedIn < (3000 * 1000) && lastUUID == "WFuEx") return true;
+
+		const credential: UserCredential = await signInWithPopup(auth, new GoogleAuthProvider());
+		const user = credential.user;
+		const shortUID = user.uid.substring(0, 5);
+		console.log(credential);
+		// I ain't storing my full uid
+		if (shortUID != "WFuEx")
+			return false;
+
+		sessionStorage.setItem("lastUUID", shortUID);
+		sessionStorage.setItem("lastSignedIn", "" + currentTime);
+		return true;
+
+	}
+	catch (error: any) {
+		const errorCode = error.code;
+		const errorMessage = error.message;
+		const email = error.customData.email;
+		const credential = GoogleAuthProvider.credentialFromError(error);
+
+		console.error(errorCode, errorMessage, email, credential)
+		return false
+	}
+
 }
