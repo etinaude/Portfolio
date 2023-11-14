@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { addNewProject } from '$lib/services/firebase';
+	import Card from '$lib/components/project/Card.svelte';
+	import Tile from '$lib/components/project/Tile.svelte';
+	import { addNewProject, getProjectSingleData, getProjectsData } from '$lib/services/firebase';
 	import type { ProjectT } from '$lib/types/types';
 
 	let project: ProjectT = {
@@ -13,8 +15,36 @@
 		tags: []
 	};
 	let tag: string = '';
+	let tagOptions: string[] = [
+		'Hardware',
+		'Software',
+		'Web',
+		'Mobile',
+		'Wood Work',
+		'Art',
+		'Design',
+		'Other'
+	];
 
 	async function submit() {
+		if (project.title === '') return;
+		if (project.description === '') return;
+		if (project.imageUrl === '') return;
+
+		addNewProject(project);
+	}
+
+	async function addTag() {
+		if (!project.tags) project.tags = [];
+		if (tag === '') return;
+
+		project.tags.push(tag);
+		tag = '';
+
+		// deep copy and remove duplicates
+		project.tags = [...new Set(project.tags)];
+	}
+
 	async function search() {
 		console.log(project);
 		const foundProjects = (await getProjectSingleData(project.title)) as ProjectT[];
@@ -22,7 +52,12 @@
 
 		if (foundProjects.length > 0) {
 			project = foundProjects[0];
+		}
 	}
+
+	async function removeTag(tag: string) {
+		if (!project.tags) return;
+		project.tags = project.tags.filter((t) => t !== tag);
 	}
 </script>
 
@@ -47,55 +82,89 @@
 			<p />
 
 			<div class="center">
-		<textarea id="description" name="description" bind:value={project.description} />
-	</div>
-
-	<div class="field">
-		<label for="imageUrl">Image Url</label>
-		<input type="text" id="imageUrl" name="imageUrl" bind:value={project.imageUrl} />
-	</div>
-
-	{#if project.imageUrl}
-		<div class="image">
-			<img src={project.imageUrl} alt={project.imageUrl} />
+				<div class="tiles">
+					<Tile cardData={project} />
+				</div>
+			</div>
 		</div>
-	{/if}
 
-	<h3>Optional</h3>
+		<div class="column">
+			<h2>Submit Project</h2>
 
-	<div class="field">
-		<label for="hoverImg">Hover Img</label>
-		<input type="text" id="hoverImg" name="hoverImg" bind:value={project.hoverImg} />
-	</div>
+			<div class="field">
+				<label for="title">Title</label>
+				<input type="text" id="title" name="title" bind:value={project.title} />
+			</div>
+			<div class="field">
+				<label for="description">Description</label>
+				<textarea id="description" name="description" rows="5" bind:value={project.description} />
+			</div>
 
-	{#if project.hoverImg}
-		<div class="image">
-			<img src={project.hoverImg} alt={project.hoverImg} />
-		</div>
-	{/if}
+			<div class="field">
+				<label for="imageUrl">Image Url</label>
+				<input type="text" id="imageUrl" name="imageUrl" bind:value={project.imageUrl} />
+			</div>
 
-	<div class="field">
-		<label for="hoverVideo">Hover Video</label>
-		<input type="text" id="hoverVideo" name="hoverVideo" bind:value={project.hoverVideo} />
-	</div>
+			{#if project.imageUrl}
+				<div class="image">
+					<img src={project.imageUrl} alt={project.imageUrl} />
+				</div>
+			{/if}
 
-	<div class="field">
-		<label for="followUrl">Follow Url</label>
-		<input type="text" id="followUrl" name="followUrl" bind:value={project.followUrl} />
-	</div>
+			<h3>Optional</h3>
 
-	<div class="field">
-		<label for="featured">Featured</label>
-		<input type="checkbox" id="featured" name="featured" bind:value={project.featured} />
-	</div>
+			<div class="field">
+				<label for="hoverImg">Hover Img</label>
+				<input type="text" id="hoverImg" name="hoverImg" bind:value={project.hoverImg} />
+			</div>
 
-	<!-- <div class="field">
+			{#if project.hoverImg}
+				<div class="image">
+					<img src={project.hoverImg} alt={project.hoverImg} />
+				</div>
+			{/if}
+
+			<div class="field">
+				<label for="hoverVideo">Hover Video</label>
+				<input type="text" id="hoverVideo" name="hoverVideo" bind:value={project.hoverVideo} />
+			</div>
+
+			<div class="field">
+				<label for="followUrl">Follow Url</label>
+				<input type="text" id="followUrl" name="followUrl" bind:value={project.followUrl} />
+			</div>
+
+			<div class="field">
+				<label for="featured">Featured</label>
+				<input type="checkbox" id="featured" name="featured" bind:value={project.featured} />
+			</div>
+
+			<div class="field">
 				<label for="tags">tags</label>
-				<input type="text" id="tags" name="tags" />
-			</div> -->
+				<select name="tags" id="tags" bind:value={tag} on:change={addTag}>
+					{#each tagOptions as tagOptionItem}
+						<option value={tagOptionItem}>{tagOptionItem}</option>
+					{/each}
+				</select>
+			</div>
 
-	<div class="field">
-		<button class="submit" type="submit" on:click={submit}>Submit</button>
+			{#if project.tags && project.tags.length > 0}
+				<div class="tag-list">
+					{#each project.tags as tagItem}
+						<div class="tag">
+							<div class="text">
+								{tagItem}
+							</div>
+							<div class="remove clickable" on:click={(tag) => removeTag(tagItem)}>x</div>
+						</div>
+					{/each}
+				</div>
+			{/if}
+
+			<div class="field">
+				<button class="submit" type="submit" on:click={submit}>Submit</button>
+			</div>
+		</div>
 	</div>
 </section>
 
