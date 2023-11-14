@@ -1,10 +1,12 @@
 <script lang="ts">
-	import { auth, addNewProject, addNewImage } from '$lib/services/firebase';
+	import { addNewImage } from '$lib/services/firebase';
+	import Banner from '$lib/components/Banner.svelte';
 
 	let fileName: string = '';
 	let previewSrc: string = '';
 	let file: File;
 	let returnedFilePath: string = '';
+	let banner: Banner;
 
 	async function preview(e: any) {
 		if (!e) return;
@@ -17,14 +19,17 @@
 		reader.readAsDataURL(image);
 		reader.onload = (e) => {
 			previewSrc = e.target?.result as string;
-			console.log(previewSrc);
 		};
 	}
 
 	async function uploadMedia() {
-		if (previewSrc == null || fileName == '') return;
+		banner.show('Uploading', 'info');
+		if (previewSrc == null || fileName == '') return banner.show('No File Selected', 'error');
 
 		returnedFilePath = await addNewImage(file, fileName);
+		if (returnedFilePath == '') return banner.show('Error Uploading', 'error');
+
+		banner.show('File Uploaded', 'success');
 	}
 </script>
 
@@ -56,6 +61,8 @@
 		</div>
 	{/if}
 </section>
+
+<Banner bind:this={banner} />
 
 <style lang="scss">
 	@import './admin.scss';

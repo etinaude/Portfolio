@@ -1,8 +1,20 @@
 <script lang="ts">
+	import Banner from '$lib/components/Banner.svelte';
 	import Card from '$lib/components/project/Card.svelte';
 	import Tile from '$lib/components/project/Tile.svelte';
-	import { addNewProject, getProjectSingleData, getProjectsData } from '$lib/services/firebase';
+	import { addNewProject, getProjectSingleData } from '$lib/services/firebase';
 	import type { ProjectT } from '$lib/types/types';
+
+	const tagOptions: string[] = [
+		'Hardware',
+		'Software',
+		'Web',
+		'Mobile',
+		'Wood Work',
+		'Art',
+		'Design',
+		'Other'
+	];
 
 	let project: ProjectT = {
 		title: '',
@@ -14,24 +26,24 @@
 		featured: false,
 		tags: []
 	};
+
 	let tag: string = '';
-	let tagOptions: string[] = [
-		'Hardware',
-		'Software',
-		'Web',
-		'Mobile',
-		'Wood Work',
-		'Art',
-		'Design',
-		'Other'
-	];
+	let banner: Banner;
 
 	async function submit() {
-		if (project.title === '') return;
-		if (project.description === '') return;
-		if (project.imageUrl === '') return;
+		banner.show('Submitting', 'info');
 
-		addNewProject(project);
+		if (project.title === '') return banner.show('No Title', 'error');
+		if (project.description === '') return banner.show('No Description', 'error');
+		if (project.imageUrl === '') return banner.show('No Image Url', 'error');
+
+		const isSuccess = await addNewProject(project);
+
+		if (isSuccess) {
+			banner.show('Project added successfully', 'success');
+		} else {
+			banner.show('Error Reaching Firebase', 'error');
+		}
 	}
 
 	async function addTag() {
@@ -46,13 +58,11 @@
 	}
 
 	async function search() {
-		console.log(project);
+		banner.show('searching', 'info');
 		const foundProjects = (await getProjectSingleData(project.title)) as ProjectT[];
-		console.log(foundProjects);
+		if (foundProjects.length == 0) return banner.show('No project found', 'error');
 
-		if (foundProjects.length > 0) {
-			project = foundProjects[0];
-		}
+		project = foundProjects[0];
 	}
 
 	async function removeTag(tag: string) {
@@ -167,6 +177,8 @@
 		</div>
 	</div>
 </section>
+
+<Banner bind:this={banner} />
 
 <style lang="scss">
 	@import './admin.scss';

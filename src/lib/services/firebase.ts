@@ -75,11 +75,13 @@ export async function getData(collectionPath: string, fbQuery?: any) {
 	return data;
 }
 
-export async function addNewProject(project: ProjectT) {
+export async function addNewProject(project: ProjectT): Promise<boolean> {
 	try {
 		await setDoc(doc(db, BASE_PATH + "projects", project.title), project);
+		return true;
 	} catch (e) {
 		console.error(e);
+		return false;
 	}
 }
 

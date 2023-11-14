@@ -1,30 +1,22 @@
 <script lang="ts">
 	import Banner from '$lib/components/Banner.svelte';
 	import MailGun from '$lib/services/mailgunService';
-	import { BannerT, ContactFormT } from '$lib/types/types';
+	import { ContactFormT } from '$lib/types/types';
 	import Saos from 'saos';
 	import Links from '$lib/components/contact/LinksComp.svelte';
 	import MiniProfile from '$lib/components/contact/MiniProfile.svelte';
 
-	let bannerInfo: BannerT = new BannerT();
 	let form: ContactFormT = new ContactFormT();
+	let banner: Banner;
 
 	async function sendEmail() {
 		const validate = MailGun.validateAll(form);
 
-		bannerInfo = {
-			style: 'loading',
-			text: 'sending',
-			display: true
-		};
+		banner.show('Sending', 'info');
 
 		if (validate.valid) {
 			await MailGun.sendEmail(form);
-			bannerInfo = {
-				style: 'success',
-				text: 'Sent! I look forward to talking with you.',
-				display: true
-			};
+			banner.show('Sent! I look forward to talking with you.', 'success');
 
 			form = {
 				name: '',
@@ -32,16 +24,8 @@
 				message: ''
 			};
 		} else {
-			bannerInfo = {
-				style: 'error',
-				text: validate.message,
-				display: true
-			};
+			banner.show(validate.message, 'error');
 		}
-
-		setTimeout(() => {
-			bannerInfo.display = false;
-		}, 3000);
 	}
 </script>
 
@@ -83,7 +67,7 @@
 	</div>
 </div>
 
-<Banner {bannerInfo} />
+<Banner bind:this={banner} />
 
 <style lang="scss">
 	@import './../../styles/root.scss';

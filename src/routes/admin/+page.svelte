@@ -3,12 +3,17 @@
 	import { onMount } from 'svelte';
 	import AddMedia from './addMedia.svelte';
 	import AddProject from './addProject.svelte';
+	import Banner from '$lib/components/Banner.svelte';
 
 	let isAuth = false;
 	let tab: 'editProject' | 'addFile' = 'editProject';
+	let banner: Banner;
 
 	onMount(async () => {
+		banner.show('Please Authorise', 'info');
 		isAuth = await auth();
+		if (!isAuth) return banner.show('Unauthorised', 'error');
+		banner.show('Authorised', 'success');
 	});
 </script>
 
@@ -41,6 +46,8 @@
 {:else}
 	<h1>Please Authorise with Google</h1>
 {/if}
+
+<Banner bind:this={banner} />
 
 <style lang="scss">
 	@import './admin.scss';
