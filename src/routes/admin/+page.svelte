@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { auth } from '$lib/services/firebase';
+	import { auth, addNewProject } from '$lib/services/firebase';
 	import type { ProjectT } from '$lib/types/types';
 	import { onMount } from 'svelte';
 
@@ -17,6 +17,7 @@
 
 	async function submit() {
 		console.log(project);
+		await addNewProject(project);
 	}
 
 	onMount(async () => {

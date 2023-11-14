@@ -1,7 +1,7 @@
 import { getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
 import KEYS from '../../keys.json';
-import { getFirestore, collection, query, getDocs, where } from 'firebase/firestore';
+import { getFirestore, collection, query, getDocs, where, setDoc, doc } from 'firebase/firestore';
 import type { ContactT, ProjectT } from '$lib/types/types';
 import { getPerformance } from 'firebase/performance';
 import { getAuth, signInWithPopup, GoogleAuthProvider, type UserCredential } from "firebase/auth";
@@ -66,6 +66,14 @@ export async function getData(collectionPath: string, fbQuery?: any) {
 		console.error(e);
 	}
 	return data;
+}
+
+export async function addNewProject(project: ProjectT) {
+	try {
+		await setDoc(doc(db, BASE_PATH + "projects", project.title), project);
+	} catch (e) {
+		console.error(e);
+	}
 }
 
 
