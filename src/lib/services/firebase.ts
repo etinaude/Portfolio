@@ -5,11 +5,14 @@ import { getFirestore, collection, query, getDocs, where, setDoc, doc } from 'fi
 import type { ContactT, ProjectT } from '$lib/types/types';
 import { getPerformance } from 'firebase/performance';
 import { getAuth, signInWithPopup, GoogleAuthProvider, type UserCredential } from "firebase/auth";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+
 
 const BASE_PATH = 'portfolio/all-data/';
 // Initialize Firebase
 const app = initializeApp(KEYS.firebase);
 const db = getFirestore(app);
+const storage = getStorage();
 
 export function initAnalytics() {
 	getPerformance(app);
@@ -73,6 +76,17 @@ export async function addNewProject(project: ProjectT) {
 		await setDoc(doc(db, BASE_PATH + "projects", project.title), project);
 	} catch (e) {
 		console.error(e);
+	}
+}
+
+export async function addNewImage(file: File, name: string): Promise<string> {
+	try {
+		const storageRef = ref(storage, name);
+		const snapshot = await uploadBytes(storageRef, file)
+		return snapshot.ref.fullPath;
+	} catch (e) {
+		console.error(e);
+		return "";
 	}
 }
 
