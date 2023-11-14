@@ -115,24 +115,12 @@
 				<input type="text" id="imageUrl" name="imageUrl" bind:value={project.imageUrl} />
 			</div>
 
-			{#if project.imageUrl}
-				<div class="image">
-					<img src={project.imageUrl} alt={project.imageUrl} />
-				</div>
-			{/if}
-
 			<h3>Optional</h3>
 
 			<div class="field">
 				<label for="hoverImg">Hover Img</label>
 				<input type="text" id="hoverImg" name="hoverImg" bind:value={project.hoverImg} />
 			</div>
-
-			{#if project.hoverImg}
-				<div class="image">
-					<img src={project.hoverImg} alt={project.hoverImg} />
-				</div>
-			{/if}
 
 			<div class="field">
 				<label for="hoverVideo">Hover Video</label>
