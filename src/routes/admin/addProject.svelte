@@ -28,6 +28,14 @@
 	</div>
 	<div class="field">
 		<label for="description">Description</label>
+			<h3>Preview</h3>
+
+			<div class="center">
+				<Card cardData={project} />
+			</div>
+			<p />
+
+			<div class="center">
 		<textarea id="description" name="description" bind:value={project.description} />
 	</div>
 
