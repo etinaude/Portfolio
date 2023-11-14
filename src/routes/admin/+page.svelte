@@ -5,7 +5,7 @@
 	import AddProject from './addProject.svelte';
 
 	let isAuth = false;
-	let tab: 'newProject' | 'editProject' | 'addFile' = 'newProject';
+	let tab: 'editProject' | 'addFile' = 'editProject';
 
 	onMount(async () => {
 		isAuth = await auth();
@@ -21,32 +21,18 @@
 	<div class="tabButtons">
 		<button
 			class="tabButton"
-			class:active={tab === 'newProject'}
-			on:click={() => (tab = 'newProject')}
-		>
-			Add Project
-		</button>
-		<button
-			class="tabButton"
 			class:active={tab === 'editProject'}
 			on:click={() => (tab = 'editProject')}
 		>
-			Edit Project
+			Project
 		</button>
 		<button class="tabButton" class:active={tab === 'addFile'} on:click={() => (tab = 'addFile')}>
 			Add File
 		</button>
 	</div>
 
-	{#if tab === 'newProject'}
-		<AddProject />
-	{/if}
-
 	{#if tab === 'editProject'}
-		<section>
-			<h1>Edit Project</h1>
-			<p>TODO :)</p>
-		</section>
+		<AddProject />
 	{/if}
 
 	{#if tab === 'addFile'}
