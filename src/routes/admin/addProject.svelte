@@ -15,19 +15,30 @@
 	let tag: string = '';
 
 	async function submit() {
+	async function search() {
 		console.log(project);
-		addNewProject(project);
+		const foundProjects = (await getProjectSingleData(project.title)) as ProjectT[];
+		console.log(foundProjects);
+
+		if (foundProjects.length > 0) {
+			project = foundProjects[0];
+	}
 	}
 </script>
 
 <section>
-	<h1>Add Project</h1>
-	<div class="field">
-		<label for="title">Title</label>
-		<input type="text" id="title" name="title" bind:value={project.title} />
-	</div>
-	<div class="field">
-		<label for="description">Description</label>
+	<div class="row">
+		<div class="column">
+			<h2>Search project</h2>
+			<div class="field">
+				<label for="title">Title</label>
+				<input type="text" id="title" name="title" bind:value={project.title} />
+			</div>
+
+			<div class="field">
+				<button class="submit" type="submit" on:click={search}>search</button>
+			</div>
+
 			<h3>Preview</h3>
 
 			<div class="center">
