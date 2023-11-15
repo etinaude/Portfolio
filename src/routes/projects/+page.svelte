@@ -5,17 +5,8 @@
 	import { getFeaturedProjectsData, getProjectsData } from '$lib/services/firebase';
 	import { onMount } from 'svelte';
 	import Showcase from '$lib/components/project/Showcase.svelte';
+	import { tagOptions } from '$lib/services/tags';
 
-	const tagOptions: string[] = [
-		'Hardware',
-		'Software',
-		'Web',
-		'Mobile',
-		'Wood Work',
-		'Art',
-		'Design',
-		'Other'
-	];
 	let currentFilter = '';
 	let allProjects: ProjectT[] = [];
 	let smallProjects: ProjectT[] = [];
@@ -55,24 +46,25 @@
 
 	<Showcase dataFunction={getFeaturedProjectsData} />
 
-	<div class="filter-bar">
-		<h2>Filters</h2>
-		<div class="tag-list">
-			{#each tagOptions as tagItem}
-				<div
-					class="tag {tagItem == currentFilter ? 'active' : ''}"
-					on:click={() => toggleTag(tagItem)}
-				>
-					<div class="text">
-						{tagItem}
-					</div>
-				</div>
-			{/each}
-		</div>
-	</div>
-
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>More Projects</h2>
+	</Saos>
+
+	<Saos animation={'from-bottom 1s ease'}>
+		<div class="filter-bar">
+			<div class="tag-list">
+				{#each tagOptions as tagItem}
+					<div
+						class="tag {tagItem == currentFilter ? 'active' : ''}"
+						on:click={() => toggleTag(tagItem)}
+					>
+						<div class="text">
+							{tagItem}
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
 	</Saos>
 
 	<div class="tiles">

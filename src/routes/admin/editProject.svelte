@@ -3,19 +3,9 @@
 	import Card from '$lib/components/project/Card.svelte';
 	import Tile from '$lib/components/project/Tile.svelte';
 	import { addNewProject, getProjectsData } from '$lib/services/firebase';
+	import { tagOptions } from '$lib/services/tags';
 	import type { ProjectT } from '$lib/types/types';
 	import { onMount } from 'svelte';
-
-	const tagOptions: string[] = [
-		'Hardware',
-		'Software',
-		'Web',
-		'Mobile',
-		'Wood Work',
-		'Art',
-		'Design',
-		'Other'
-	];
 
 	let allProjects: ProjectT[] = [];
 

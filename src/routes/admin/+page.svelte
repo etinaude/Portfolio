@@ -2,11 +2,11 @@
 	import { auth } from '$lib/services/firebase';
 	import { onMount } from 'svelte';
 	import AddMedia from './addMedia.svelte';
-	import AddProject from './addProject.svelte';
 	import Banner from '$lib/components/Banner.svelte';
+	import EditProject from './editProject.svelte';
 
 	let isAuth = false;
-	let tab: 'editProject' | 'addFile' = 'editProject';
+	let tab: 'editProject' | 'addFile' | 'dashboard' = 'editProject';
 	let banner: Banner;
 
 	onMount(async () => {
@@ -37,7 +37,7 @@
 	</div>
 
 	{#if tab === 'editProject'}
-		<AddProject />
+		<EditProject />
 	{/if}
 
 	{#if tab === 'addFile'}
