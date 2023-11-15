@@ -4,9 +4,10 @@
 	import AddMedia from './addMedia.svelte';
 	import Banner from '$lib/components/Banner.svelte';
 	import EditProject from './editProject.svelte';
+	import Dashboard from './dashboard.svelte';
 
 	let isAuth = false;
-	let tab: 'editProject' | 'addFile' | 'dashboard' = 'editProject';
+	let tab: 'editProject' | 'addFile' | 'dashboard' = 'dashboard';
 	let banner: Banner;
 
 	onMount(async () => {
@@ -34,6 +35,14 @@
 		<button class="tabButton" class:active={tab === 'addFile'} on:click={() => (tab = 'addFile')}>
 			Add File
 		</button>
+
+		<button
+			class="tabButton"
+			class:active={tab === 'dashboard'}
+			on:click={() => (tab = 'dashboard')}
+		>
+			Dashboard
+		</button>
 	</div>
 
 	{#if tab === 'editProject'}
@@ -42,6 +51,10 @@
 
 	{#if tab === 'addFile'}
 		<AddMedia />
+	{/if}
+
+	{#if tab === 'dashboard'}
+		<Dashboard />
 	{/if}
 {:else}
 	<h1>Please Authorise with Google</h1>

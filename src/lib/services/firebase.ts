@@ -2,7 +2,7 @@ import { getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
 import KEYS from '../../keys.json';
 import { getFirestore, collection, query, getDocs, where, setDoc, doc } from 'firebase/firestore';
-import type { ContactT, ProjectT } from '$lib/types/types';
+import type { ContactT, LinkT, ProjectT } from '$lib/types/types';
 import { getPerformance } from 'firebase/performance';
 import { getAuth, signInWithPopup, GoogleAuthProvider, type UserCredential } from "firebase/auth";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
@@ -32,6 +32,10 @@ export async function getSocialData() {
 	});
 }
 
+export function getLinksData() {
+	return getData('links');
+}
+
 export function getClubsData() {
 	return getData(BASE_PATH + 'clubs');
 }
@@ -57,7 +61,7 @@ export function getWorkData() {
 }
 
 export async function getData(collectionPath: string, fbQuery?: any) {
-	const data: (ProjectT | ContactT)[] = [];
+	const data: (ProjectT | ContactT | LinkT)[] = [];
 	try {
 		let q;
 		if (fbQuery) {

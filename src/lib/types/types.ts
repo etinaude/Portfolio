@@ -10,6 +10,13 @@ export type ProjectT = {
 	tags?: string[]
 };
 
+export type LinkT = {
+	title: string;
+	description: string;
+	imageUrl: string;
+	url: string;
+};
+
 export type Tags = "Hardware" | "Software" | "Web" | "Mobile" | "Wood Work" | "Art" | "Design" | "Other";
 
 export type ContactT = {
