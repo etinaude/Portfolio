@@ -6,10 +6,40 @@
 	import { onMount } from 'svelte';
 	import Showcase from '$lib/components/project/Showcase.svelte';
 
+	const tagOptions: string[] = [
+		'Hardware',
+		'Software',
+		'Web',
+		'Mobile',
+		'Wood Work',
+		'Art',
+		'Design',
+		'Other'
+	];
+	let currentFilter = '';
+	let allProjects: ProjectT[] = [];
 	let smallProjects: ProjectT[] = [];
 
+	function toggleTag(tag: string) {
+		if (currentFilter == tag) {
+			currentFilter = '';
+		} else {
+			currentFilter = tag;
+		}
+
+		if (currentFilter == '') {
+			smallProjects = allProjects;
+			return;
+		}
+
+		smallProjects = allProjects.filter((project) => {
+			return (project.tags ?? []).includes(currentFilter);
+		});
+	}
+
 	onMount(async () => {
-		smallProjects = (await getProjectsData()) as ProjectT[];
+		allProjects = (await getProjectsData()) as ProjectT[];
+		smallProjects = allProjects;
 	});
 </script>
 
@@ -24,6 +54,22 @@
 	</Saos>
 
 	<Showcase dataFunction={getFeaturedProjectsData} />
+
+	<div class="filter-bar">
+		<h2>Filters</h2>
+		<div class="tag-list">
+			{#each tagOptions as tagItem}
+				<div
+					class="tag {tagItem == currentFilter ? 'active' : ''}"
+					on:click={() => toggleTag(tagItem)}
+				>
+					<div class="text">
+						{tagItem}
+					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
 
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>More Projects</h2>
@@ -53,5 +99,30 @@
 	section {
 		--background: #333;
 		padding-top: 100px;
+	}
+
+	.filter-bar {
+		.tag-list {
+			display: flex;
+			flex-wrap: wrap;
+
+			.tag {
+				@include border-d;
+				padding: 10px 20px;
+				margin: 30px 10px;
+				color: $light;
+
+				&.active {
+					color: $primary;
+					background-color: $accent;
+				}
+			}
+		}
+
+		h2 {
+			margin-top: 2em;
+			text-align: center;
+			width: 100%;
+		}
 	}
 </style>
