@@ -2,8 +2,9 @@
 	import Banner from '$lib/components/Banner.svelte';
 	import Card from '$lib/components/project/Card.svelte';
 	import Tile from '$lib/components/project/Tile.svelte';
-	import { addNewProject, getProjectSingleData } from '$lib/services/firebase';
+	import { addNewProject, getProjectsData } from '$lib/services/firebase';
 	import type { ProjectT } from '$lib/types/types';
+	import { onMount } from 'svelte';
 
 	const tagOptions: string[] = [
 		'Hardware',
@@ -15,6 +16,8 @@
 		'Design',
 		'Other'
 	];
+
+	let allProjects: ProjectT[] = [];
 
 	let project: ProjectT = {
 		title: '',
@@ -57,18 +60,14 @@
 		project.tags = [...new Set(project.tags)];
 	}
 
-	async function search() {
-		banner.show('searching', 'info');
-		const foundProjects = (await getProjectSingleData(project.title)) as ProjectT[];
-		if (foundProjects.length == 0) return banner.show('No project found', 'error');
-
-		project = foundProjects[0];
-	}
-
 	async function removeTag(tag: string) {
 		if (!project.tags) return;
 		project.tags = project.tags.filter((t) => t !== tag);
 	}
+
+	onMount(async () => {
+		allProjects = (await getProjectsData()) as ProjectT[];
+	});
 </script>
 
 <section>
@@ -76,12 +75,14 @@
 		<div class="column">
 			<h2>Search project</h2>
 			<div class="field">
-				<label for="title">Title</label>
-				<input type="text" id="title" name="title" bind:value={project.title} />
-			</div>
-
-			<div class="field">
-				<button class="submit" type="submit" on:click={search}>search</button>
+				{#if allProjects.length > 0}
+					<select name="tags" id="tags" bind:value={project}>
+						{#each allProjects as projectItem}
+							<option value={projectItem}>{projectItem.title}</option>
+						{/each}
+						<option value={{}}>New </option>
+					</select>
+				{/if}
 			</div>
 
 			<h3>Preview</h3>
