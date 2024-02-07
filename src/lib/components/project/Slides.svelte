@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import { onDestroy, onMount } from 'svelte';
-	import { slide } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
+	import { swipe } from 'svelte-gestures';
 
 	const videoTypes = ['mp4', 'webm', 'ogg', 'mov'];
 
@@ -17,7 +18,7 @@
 	}
 
 	function left() {
-		if (slideIndex <= 0) slideIndex = mediaList.length + 1;
+		if (slideIndex <= 0) slideIndex = mediaList.length;
 		slideIndex--;
 		resetTime();
 		reload();
@@ -37,6 +38,16 @@
 				initTime = Date.now();
 				right();
 			}
+		}
+	}
+
+	function swipeHandler(event: CustomEvent) {
+		if (mediaList.length === 1) return;
+
+		if (event.detail.direction === 'left') {
+			right();
+		} else if (event.detail.direction === 'right') {
+			left();
 		}
 	}
 
@@ -80,18 +91,27 @@
 </script>
 
 {#if cardData}
-	<div class="image-cont">
+	<div
+		class="image-cont"
+		use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
+		on:swipe={swipeHandler}
+	>
 		{#if mediaList.length > 1}
 			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 			<div class="right btn" on:click={right}>
 				<span class="material-symbol"> keyboard_double_arrow_right </span>
+			</div>
+
+			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+			<div class="left btn" on:click={left}>
+				<span class="material-symbol"> keyboard_double_arrow_left </span>
 			</div>
 		{/if}
 
 		<div class="view">
 			{#if mediaList[slideIndex]}
 				{#key unique}
-					<div in:slide={{ duration: 300, axis: 'x' }} out:slide={{ duration: 300, axis: 'x' }}>
+					<div transition:fade={{ duration: 200 }}>
 						{#if mediaList[slideIndex].type === 'image'}
 							<img src={mediaList[slideIndex].url} alt={cardData.title} />
 						{:else}
@@ -140,12 +160,9 @@
 
 	.btn {
 		position: absolute;
-		bottom: 0;
-		left: 50%;
-		translate: -50% -20%;
+		bottom: 10px;
 
-		background-color: $primary-t;
-		color: white;
+		background-color: $primary-tt;
 		font-size: 1.2em;
 		padding: 10px 30px;
 		border-radius: 10px;
@@ -154,6 +171,16 @@
 		user-select: none;
 		scale: 0;
 		transform-origin: center bottom;
+		border: 2px solid $accent;
+		color: $accent;
+
+		&.left {
+			left: 7px;
+		}
+
+		&.right {
+			right: 7px;
+		}
 	}
 
 	@media (max-width: 600px) {
@@ -161,6 +188,10 @@
 			width: 100%;
 			margin-right: 0;
 			margin-bottom: 10px;
+		}
+
+		.btn {
+			scale: 0.7 !important;
 		}
 	}
 </style>

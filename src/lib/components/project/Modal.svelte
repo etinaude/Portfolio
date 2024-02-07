@@ -2,6 +2,7 @@
 	import type { ProjectT } from '$lib/types/types';
 	import Slides from './Slides.svelte';
 	import { fade, scale } from 'svelte/transition';
+	import { swipe } from 'svelte-gestures';
 
 	export let projectsList: ProjectT[];
 	export let projectIndex: number;
@@ -35,11 +36,20 @@
 		reload();
 		noExit(e);
 	}
+
+	function swipeHandler(event: CustomEvent) {
+		console.log(event.detail.direction);
+		if (event.detail.direction === 'left') {
+			right(event);
+		} else if (event.detail.direction === 'right') {
+			left(event);
+		}
+	}
 </script>
 
 {#if projectsList[projectIndex]}
 	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-	<div class="background" on:click={exit} transition:fade={{ duration: 200 }}>
+	<div class="background" on:click={exit} transition:fade={{ duration: 150 }}>
 		<div class="left next-btn" on:click={left}>
 			<span class="material-symbol"> keyboard_double_arrow_left </span>
 		</div>
@@ -60,15 +70,26 @@
 		{/if}
 
 		{#key unique}
-			<div class="inner" on:click={noExit} transition:scale={{ duration: 200, delay: 200 }}>
+			<div
+				class="inner"
+				on:click={noExit}
+				out:scale={{ duration: 150 }}
+				in:fade={{ delay: 200, duration: 400 }}
+				use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
+				on:swipe={swipeHandler}
+			>
 				<Slides cardData={projectsList[projectIndex]} />
 
-				<div class="text">
+				<div
+					class="text"
+					use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
+					on:swipe={swipeHandler}
+				>
 					<h3>{projectsList[projectIndex].title}</h3>
 
-					<caption
-						>{projectsList[projectIndex].description || projectsList[projectIndex].tldr}</caption
-					>
+					<caption>
+						{projectsList[projectIndex].description || projectsList[projectIndex].tldr}
+					</caption>
 
 					{#if projectsList[projectIndex].followUrl}
 						<a
@@ -96,6 +117,9 @@
 		overflow: auto;
 		margin-bottom: 30px;
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: min(400px, 85%);
 
 		h3 {
 			color: $accent;
@@ -105,7 +129,8 @@
 
 		caption {
 			margin-top: 10px;
-			width: 300px;
+			width: 100%;
+			font-size: 0.9em;
 		}
 	}
 
@@ -137,8 +162,8 @@
 		position: fixed;
 		left: 0;
 		top: 0;
-		width: 100vw;
-		height: 100vh;
+		width: 100%;
+		height: 100%;
 		background-color: $primary-tt;
 
 		.inner {
@@ -222,17 +247,23 @@
 
 	@media (max-width: 800px) {
 		.text {
-			padding: 10px;
 			max-height: 400px;
+			font-size: 0.9em;
+
+			h3 {
+				font-size: 1.6em;
+				margin-top: 5px;
+			}
 		}
 
 		.background {
 			.inner {
-				max-height: calc(100vh - 150px);
-				max-width: 80vw;
+				max-height: calc(100% - 150px);
+				max-width: calc(100% - 30px);
 				min-width: 0;
 				top: 10px;
 				transform: translate(-50%, 0);
+				padding: 0px;
 
 				flex-direction: column;
 			}

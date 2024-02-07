@@ -7,6 +7,7 @@
 	import Showcase from '$lib/components/project/Showcase.svelte';
 	import { tagOptions } from '$lib/services/tags';
 	import Modal from '$lib/components/project/Modal.svelte';
+	import Contact from '$lib/components/contact/Contact.svelte';
 
 	let currentFilter = '';
 	let allProjects: ProjectT[] = [];
@@ -45,7 +46,7 @@
 	<Modal projectsList={allProjects} projectIndex={openIndex} />
 
 	<Saos animation={'from-bottom 1s ease'}>
-		<h2>Featured Projects</h2>
+		<h2 class="featured-title">Featured Projects</h2>
 	</Saos>
 
 	<Showcase dataFunction={getFeaturedProjectsData} />
@@ -59,6 +60,7 @@
 		<div class="filter-bar">
 			<div class="tag-list">
 				{#each tagOptions as tagItem}
+					<!-- svelte-ignore a11y-no-static-element-interactions  a11y-click-events-have-key-events-->
 					<div
 						class="tag {tagItem == currentFilter ? 'active' : ''}"
 						on:click={() => toggleTag(tagItem)}
@@ -77,6 +79,8 @@
 			<Tile cardData={project} index={i} bind:openIndex />
 		{/each}
 	</div>
+
+	<Contact />
 </section>
 
 <style lang="scss">
@@ -86,7 +90,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		width: 100%;
-		margin-bottom: 2em;
+		margin-bottom: 10em;
 	}
 
 	h2 {
@@ -120,6 +124,29 @@
 			margin-top: 2em;
 			text-align: center;
 			width: 100%;
+		}
+	}
+
+	@media (max-width: 1100px) {
+		.filter-bar {
+			.tag-list {
+				justify-content: center;
+				margin-bottom: 40px;
+
+				.tag {
+					margin: 10px 5px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 600px) {
+		.tiles {
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		}
+
+		.featured-title {
+			display: none;
 		}
 	}
 </style>
