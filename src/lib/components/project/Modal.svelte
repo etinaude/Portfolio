@@ -2,6 +2,7 @@
 	import type { ProjectT } from '$lib/types/types';
 	import Slides from './Slides.svelte';
 	import { fade, scale } from 'svelte/transition';
+	import { swipe } from 'svelte-gestures';
 
 	export let projectsList: ProjectT[];
 	export let projectIndex: number;
@@ -35,11 +36,20 @@
 		reload();
 		noExit(e);
 	}
+
+	function swipeHandler(event: CustomEvent) {
+		console.log(event.detail.direction);
+		if (event.detail.direction === 'left') {
+			right(event);
+		} else if (event.detail.direction === 'right') {
+			left(event);
+		}
+	}
 </script>
 
 {#if projectsList[projectIndex]}
 	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-	<div class="background" on:click={exit} transition:fade={{ duration: 200 }}>
+	<div class="background" on:click={exit} transition:fade={{ duration: 150 }}>
 		<div class="left next-btn" on:click={left}>
 			<span class="material-symbol"> keyboard_double_arrow_left </span>
 		</div>
@@ -61,9 +71,13 @@
 
 		{#key unique}
 			<div class="inner" on:click={noExit} transition:scale={{ duration: 200, delay: 200 }}>
+				use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
+				on:swipe={swipeHandler}
 				<Slides cardData={projectsList[projectIndex]} />
 
 				<div class="text">
+					use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
+					on:swipe={swipeHandler}
 					<h3>{projectsList[projectIndex].title}</h3>
 
 					<caption

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import { onDestroy, onMount } from 'svelte';
-	import { slide } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
+	import { swipe } from 'svelte-gestures';
 
 	const videoTypes = ['mp4', 'webm', 'ogg', 'mov'];
 
@@ -37,6 +38,16 @@
 				initTime = Date.now();
 				right();
 			}
+		}
+	}
+
+	function swipeHandler(event: CustomEvent) {
+		if (mediaList.length === 1) return;
+
+		if (event.detail.direction === 'left') {
+			right();
+		} else if (event.detail.direction === 'right') {
+			left();
 		}
 	}
 
@@ -80,7 +91,11 @@
 </script>
 
 {#if cardData}
-	<div class="image-cont">
+	<div
+		class="image-cont"
+		use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
+		on:swipe={swipeHandler}
+	>
 		{#if mediaList.length > 1}
 			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 			<div class="right btn" on:click={right}>
