@@ -1,6 +1,9 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import Slides from './Slides.svelte';
+	import { fade, scale } from 'svelte/transition';
+	import { onMount, afterUpdate, tick } from 'svelte';
+	import { flip } from 'svelte/animate';
 
 	export let projectsList: ProjectT[];
 	export let projectIndex: number;
@@ -38,7 +41,7 @@
 
 {#if projectsList[projectIndex]}
 	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-	<div class="background" on:click={exit}>
+	<div class="background" on:click={exit} transition:fade={{ duration: 200 }}>
 		<div class="left next-btn" on:click={left}>
 			<span class="material-symbol"> keyboard_double_arrow_left </span>
 		</div>
@@ -47,7 +50,7 @@
 		</div>
 
 		{#key unique}
-			<div class="inner" on:click={noExit}>
+			<div class="inner" on:click={noExit} transition:scale={{ duration: 200, delay: 200 }}>
 				<Slides cardData={projectsList[projectIndex]} />
 
 				<div class="text">
@@ -103,7 +106,7 @@
 		top: 0;
 		width: 100vw;
 		height: 100vh;
-		background-color: $primary-t;
+		background-color: $primary-tt;
 
 		.inner {
 			@include border-d;
