@@ -36,7 +36,7 @@
 	}
 </script>
 
-{#if projectIndex >= 0}
+{#if projectsList[projectIndex]}
 	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 	<div class="background" on:click={exit}>
 		<div class="left next-btn" on:click={left}>
@@ -148,6 +148,44 @@
 
 		&:hover {
 			scale: 1.05;
+		}
+	}
+
+	@media (max-width: 1200px) {
+		.next-btn {
+			font-size: 2em;
+			padding: 5px;
+			bottom: -12px;
+			top: auto;
+			margin: 0;
+
+			&.left {
+				left: 20px;
+				transform-origin: top left;
+			}
+
+			&.right {
+				right: 20px;
+			}
+		}
+	}
+
+	@media (max-width: 800px) {
+		.text {
+			padding: 10px;
+			max-height: 400px;
+		}
+
+		.background {
+			.inner {
+				max-height: calc(100vh - 150px);
+				max-width: 80vw;
+				min-width: 0;
+				top: 10px;
+				transform: translate(-50%, 0);
+
+				flex-direction: column;
+			}
 		}
 	}
 </style>

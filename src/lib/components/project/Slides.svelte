@@ -56,9 +56,11 @@
 {#if cardData}
 	<div class="image-cont">
 		{#if cardData.hoverImg || cardData.hoverVideo}
+			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 			<div class="left btn" on:click={left}>
 				<span class="material-symbol"> keyboard_double_arrow_left </span>
 			</div>
+			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 			<div class="right btn" on:click={right}>
 				<span class="material-symbol"> keyboard_double_arrow_right </span>
 			</div>
@@ -136,6 +138,14 @@
 
 		&:hover {
 			scale: 1.05;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.image-cont {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 10px;
 		}
 	}
 </style>
