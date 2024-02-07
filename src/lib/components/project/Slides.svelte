@@ -123,31 +123,20 @@
 
 	.btn {
 		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
+		bottom: 0;
+		left: 50%;
+		translate: -50% -20%;
+
 		background-color: $primary-t;
 		color: white;
 		font-size: 1.2em;
-		padding: 10px;
+		padding: 10px 30px;
 		border-radius: 10px;
 		cursor: pointer;
 		z-index: 1000;
 		user-select: none;
 		scale: 0;
-
-		&.left {
-			left: 0;
-			transform-origin: top left;
-		}
-
-		&.right {
-			right: 0;
-			transform-origin: top right;
-		}
-
-		&:hover {
-			scale: 1.05;
-		}
+		transform-origin: center bottom;
 	}
 
 	@media (max-width: 600px) {
