@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { swipe } from 'svelte-gestures';
+
 	let showQR = false;
 
 	function toggleQr() {
@@ -25,7 +27,12 @@
 {#if showQR}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="qr-cont" on:click={toggleQr}>
+	<div
+		class="qr-cont"
+		on:click={toggleQr}
+		use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
+		on:swipe={toggleQr}
+	>
 		<img class="qrcode" src="images/qr.svg" alt="qr code" />
 
 		<p>etinaude.dev/contact</p>
@@ -66,11 +73,11 @@
 		@include flex-center;
 		flex-direction: column;
 
-		position: absolute;
+		position: fixed;
 		bottom: 0;
 		right: 0;
-		width: 100%;
-		height: 100%;
+		width: 100dvw;
+		height: 100dvh;
 		background-color: $primary;
 		z-index: 1;
 
