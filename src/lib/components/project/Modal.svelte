@@ -57,7 +57,7 @@
 
 					{#if projectsList[projectIndex].followUrl}
 						<div class="read-more clickable">
-							read more <span class="material-symbol"> double_arrow </span>
+							Open Link <span class="material-symbol"> double_arrow </span>
 						</div>
 					{/if}
 				</div>

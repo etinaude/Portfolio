@@ -11,7 +11,8 @@
 	let card: HTMLElement;
 
 	onMount(() => {
-		if (!Device.isMobile) VanillaTilt.init(card, { glare: true });
+		const mobile = Device.isMobile || Device.isTablet || Device.canHover === false;
+		if (!mobile) VanillaTilt.init(card, { glare: true, max: 6, 'max-glare': 0.7 });
 	});
 </script>
 
@@ -35,7 +36,8 @@
 		<caption>{cardData.description}</caption>
 
 		<div class="read-more clickable">
-			read more <span class="material-symbol"> double_arrow </span>
+			read more
+			<span class="material-symbol"> keyboard_double_arrow_right </span>
 		</div>
 	</div>
 </div>
@@ -97,6 +99,14 @@
 		margin-top: 20px;
 		font-size: 0.9em;
 		height: 10px;
+
+		background-color: $primary-t;
+		color: $accent;
+		min-width: 70%;
+
+		&:hover {
+			background-color: $primary-tt;
+		}
 	}
 
 	img,

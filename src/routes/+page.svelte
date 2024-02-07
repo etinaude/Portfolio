@@ -42,7 +42,7 @@
 		<a class="button more-projects-btn clickable" href="/projects">
 			More Projects
 
-			<span class="material-symbol"> arrow_forward </span>
+			<span class="material-symbol"> keyboard_double_arrow_right </span>
 		</a>
 	</Saos>
 </section>
