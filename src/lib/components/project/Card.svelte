@@ -5,27 +5,25 @@
 	import Device from 'svelte-device-info';
 
 	export let cardData: ProjectT;
+	export let index = -1;
+	export let openIndex = -1;
 
 	let card: HTMLElement;
 
 	onMount(() => {
-		if (!Device.isMobile) VanillaTilt.init(card, { glare: true });
+		const mobile = Device.isMobile || Device.isTablet || Device.canHover === false;
+		if (!mobile) VanillaTilt.init(card, { glare: true, max: 6, 'max-glare': 0.7 });
 	});
+
+	function open() {
+		openIndex = -1;
+		openIndex = index;
+	}
 </script>
 
-<div class="outer tilt">
+<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+<div class="outer tilt" on:click={open}>
 	<div class="card tilt" bind:this={card}>
-		{#if cardData.followUrl}
-			<!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-			<a
-				href={cardData.followUrl}
-				target="_blank"
-				rel="noopener"
-				class="clickable"
-				aria-label="project link {cardData.title}"
-			/>
-		{/if}
-
 		<div class="img clickable">
 			<img src={cardData.imageUrl} alt={cardData.title} />
 
@@ -40,13 +38,12 @@
 
 		<h3>{cardData.title}</h3>
 
-		<caption>{cardData.description}</caption>
+		<caption>{cardData.tldr || cardData.description}</caption>
 
-		{#if cardData.followUrl}
-			<div class="read-more clickable">
-				read more <span class="material-symbol"> double_arrow </span>
-			</div>
-		{/if}
+		<div class="read-more clickable">
+			read more
+			<span class="material-symbol"> keyboard_double_arrow_right </span>
+		</div>
 	</div>
 </div>
 
@@ -107,6 +104,14 @@
 		margin-top: 20px;
 		font-size: 0.9em;
 		height: 10px;
+
+		background-color: $primary-t;
+		color: $accent;
+		min-width: 70%;
+
+		&:hover {
+			background-color: $primary-tt;
+		}
 	}
 
 	img,

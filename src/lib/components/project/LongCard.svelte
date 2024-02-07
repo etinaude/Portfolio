@@ -11,7 +11,9 @@
 	const animationSide = cardData.side === 'left' ? 'from-right' : 'from-left';
 
 	onMount(() => {
-		if (!Device.isMobile) VanillaTilt.init(imgElement, { glare: true });
+		const mobile = Device.isMobile || Device.isTablet || Device.canHover === false;
+
+		if (mobile) VanillaTilt.init(imgElement, { glare: true, max: 6, 'max-glare': 0.7 });
 	});
 </script>
 
@@ -52,6 +54,11 @@
 
 			height: min(180px, 50vw);
 			place-self: center;
+
+			&:hover {
+				@include transition-long;
+				scale: 1.1;
+			}
 		}
 
 		&.right {

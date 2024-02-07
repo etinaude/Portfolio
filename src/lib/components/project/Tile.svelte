@@ -2,10 +2,19 @@
 	import type { ProjectT } from '$lib/types/types';
 	import Saos from 'saos';
 	export let cardData: ProjectT;
+	export let index = -1;
+
+	export let openIndex = -1;
+
+	function open() {
+		openIndex = -1;
+		openIndex = index;
+	}
 </script>
 
 <Saos animation={'from-bottom 1s ease'}>
-	<div class="tile">
+	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+	<div class="tile" on:click={open}>
 		<div class="img">
 			<img src={cardData.imageUrl} alt={cardData.title} loading="lazy" class="tile_image" />
 		</div>
@@ -13,19 +22,10 @@
 		<div class="text">
 			<h3>{cardData.title}</h3>
 
-			<caption>{cardData.description}</caption>
-
-			{#if cardData.followUrl}
-				<!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-				<a
-					class="read-more clickable tile_url"
-					href={cardData.followUrl}
-					target="_blank"
-					rel="noopener"
-					aria-label="project link {cardData.title}"
-					>Read More <span class="material-symbol"> double_arrow </span></a
-				>
-			{/if}
+			<div class="read-more clickable tile_url" aria-label="project link {cardData.title}">
+				Read More
+				<span class="material-symbol"> keyboard_double_arrow_right </span>
+			</div>
 		</div>
 	</div>
 </Saos>
@@ -34,6 +34,7 @@
 	@import '../../styles/root.scss';
 
 	.tile {
+		@include transition-long;
 		overflow: hidden;
 		border-radius: 0px;
 		background-color: $primary-xxl;
@@ -57,13 +58,23 @@
 			background-color: $primary-t;
 			display: flex;
 			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			overflow: hidden;
-			height: 0px;
+			max-height: 0;
 			backdrop-filter: blur(1px);
 		}
 
-		&:hover .text {
-			height: 100%;
+		&:hover {
+			scale: 1.1;
+			z-index: 10;
+			border-radius: 10px;
+
+			.text {
+				height: auto;
+				max-height: 50%;
+				padding-bottom: 40px;
+			}
 		}
 
 		.img {
@@ -76,10 +87,7 @@
 	h3 {
 		color: $accent;
 		margin-bottom: 8px;
-	}
-
-	caption {
-		padding: 0px 30px;
+		margin-top: 20px;
 	}
 
 	.img > * {
@@ -94,11 +102,15 @@
 		@include button;
 
 		height: 0;
-		position: absolute;
-		bottom: 20px;
-		left: 50%;
-		translate: -50%;
 		font-size: 0.7em;
+		margin-top: 10px;
+		background-color: $primary-t;
+		color: $accent;
+		min-width: 70%;
+
+		&:hover {
+			background-color: $primary-tt;
+		}
 	}
 
 	@media (max-width: 768px) {

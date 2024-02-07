@@ -3,8 +3,10 @@
 	import { onMount } from 'svelte';
 	import Card from './Card.svelte';
 	import Saos from 'saos';
+	import Modal from './Modal.svelte';
 
 	let data: ProjectT[] = [];
+	let openIndex = -1;
 
 	export let dataFunction: any;
 
@@ -13,11 +15,13 @@
 	});
 </script>
 
+<Modal projectsList={data} projectIndex={openIndex} />
+
 <Saos animation={'from-bottom 1s ease'}>
 	<div class="side-scroll-container">
 		<div class="card-side-scroll">
-			{#each data as card}
-				<Card cardData={card} />
+			{#each data as card, i}
+				<Card cardData={card} index={i} bind:openIndex />
 			{/each}
 		</div>
 	</div>

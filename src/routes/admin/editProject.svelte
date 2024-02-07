@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Banner from '$lib/components/Banner.svelte';
 	import Card from '$lib/components/project/Card.svelte';
+	import Modal from '$lib/components/project/Modal.svelte';
 	import Tile from '$lib/components/project/Tile.svelte';
 	import { addNewProject, getProjectsData } from '$lib/services/firebase';
 	import { tagOptions } from '$lib/services/tags';
@@ -12,6 +13,7 @@
 	let project: ProjectT = {
 		title: '',
 		description: '',
+		tldr: '',
 		imageUrl: '',
 		hoverImg: '',
 		hoverVideo: '',
@@ -96,9 +98,15 @@
 				<label for="title">Title</label>
 				<input type="text" id="title" name="title" bind:value={project.title} />
 			</div>
+
+			<div class="field">
+				<label for="tldr">TLDR</label>
+				<textarea id="tldr" name="tldr" rows="3" bind:value={project.tldr} />
+			</div>
+
 			<div class="field">
 				<label for="description">Description</label>
-				<textarea id="description" name="description" rows="5" bind:value={project.description} />
+				<textarea id="description" name="description" rows="7" bind:value={project.description} />
 			</div>
 
 			<div class="field">
