@@ -98,6 +98,9 @@ h2 {
 		padding: 6px 15px;
 		margin: 0px 10px;
 		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-weight: bold;
 
 		.remove {
 			margin-left: 10px;
