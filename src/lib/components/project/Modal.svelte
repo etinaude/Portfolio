@@ -46,6 +46,18 @@
 		<div class="right next-btn" on:click={right}>
 			<span class="material-symbol"> keyboard_double_arrow_right </span>
 		</div>
+		{#if projectsList[projectIndex].followUrl}
+			<a
+				href={projectsList[projectIndex].followUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="read-more mobile clickable"
+				transition:scale={{ duration: 200, delay: 200 }}
+			>
+				Open Link
+				<span class="material-symbol"> link </span>
+			</a>
+		{/if}
 
 		{#key unique}
 			<div class="inner" on:click={noExit} transition:scale={{ duration: 200, delay: 200 }}>
@@ -59,9 +71,15 @@
 					>
 
 					{#if projectsList[projectIndex].followUrl}
-						<div class="read-more clickable">
-							Open Link <span class="material-symbol"> double_arrow </span>
-						</div>
+						<a
+							href={projectsList[projectIndex].followUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="read-more desktop clickable"
+						>
+							Open Link
+							<span class="material-symbol"> link </span>
+						</a>
 					{/if}
 				</div>
 			</div>
@@ -89,13 +107,28 @@
 			margin-top: 10px;
 			width: 300px;
 		}
+	}
 
-		.read-more {
-			@include button;
+	.read-more {
+		@include button;
 
-			margin-top: 20px;
-			font-size: 0.9em;
-			height: 10px;
+		margin-top: 20px;
+		font-size: 0.9em;
+		height: 10px;
+
+		span {
+			margin-left: 10px;
+			scale: 1.4;
+		}
+
+		&.mobile {
+			display: none;
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			translate: -50% 0;
+			width: 150px;
+			min-width: 0;
 		}
 	}
 
@@ -167,11 +200,22 @@
 
 			&.left {
 				left: 20px;
-				transform-origin: top left;
+				translate: 0;
 			}
 
 			&.right {
 				right: 20px;
+				translate: 0;
+			}
+		}
+
+		.read-more {
+			&.mobile {
+				display: flex;
+			}
+
+			&.desktop {
+				display: none;
 			}
 		}
 	}
