@@ -1,9 +1,8 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
-	import { onMount } from 'svelte';
 	import Slides from './Slides.svelte';
 
-	export let allProjects: ProjectT[];
+	export let projectsList: ProjectT[];
 	export let projectIndex: number;
 
 	// used to reload the component
@@ -21,7 +20,7 @@
 	}
 
 	function left(e: Event) {
-		if (projectIndex <= 0) projectIndex = allProjects.length + 1;
+		if (projectIndex <= 0) projectIndex = projectsList.length + 1;
 
 		projectIndex--;
 		reload();
@@ -29,7 +28,7 @@
 	}
 
 	function right(e: Event) {
-		if (projectIndex >= allProjects.length - 1) projectIndex = -1;
+		if (projectIndex >= projectsList.length - 1) projectIndex = -1;
 
 		projectIndex++;
 		reload();
@@ -49,14 +48,14 @@
 
 		{#key unique}
 			<div class="inner" on:click={noExit}>
-				<Slides cardData={allProjects[projectIndex]} />
+				<Slides cardData={projectsList[projectIndex]} />
 
 				<div class="text">
-					<h3>{allProjects[projectIndex].title}</h3>
+					<h3>{projectsList[projectIndex].title}</h3>
 
-					<caption>{allProjects[projectIndex].description}</caption>
+					<caption>{projectsList[projectIndex].description}</caption>
 
-					{#if allProjects[projectIndex].followUrl}
+					{#if projectsList[projectIndex].followUrl}
 						<div class="read-more clickable">
 							read more <span class="material-symbol"> double_arrow </span>
 						</div>

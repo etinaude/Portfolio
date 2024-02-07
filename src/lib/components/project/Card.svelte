@@ -5,6 +5,8 @@
 	import Device from 'svelte-device-info';
 
 	export let cardData: ProjectT;
+	export let index = -1;
+	export let openIndex = -1;
 
 	let card: HTMLElement;
 
@@ -13,19 +15,9 @@
 	});
 </script>
 
-<div class="outer tilt">
+<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+<div class="outer tilt" on:click={() => (openIndex = index)}>
 	<div class="card tilt" bind:this={card}>
-		{#if cardData.followUrl}
-			<!-- svelte-ignore security-anchor-rel-noreferrer a11y-missing-content-->
-			<a
-				href={cardData.followUrl}
-				target="_blank"
-				rel="noopener"
-				class="clickable"
-				aria-label="project link {cardData.title}"
-			/>
-		{/if}
-
 		<div class="img clickable">
 			<img src={cardData.imageUrl} alt={cardData.title} />
 
@@ -42,11 +34,9 @@
 
 		<caption>{cardData.description}</caption>
 
-		{#if cardData.followUrl}
-			<div class="read-more clickable">
-				read more <span class="material-symbol"> double_arrow </span>
-			</div>
-		{/if}
+		<div class="read-more clickable">
+			read more <span class="material-symbol"> double_arrow </span>
+		</div>
 	</div>
 </div>
 

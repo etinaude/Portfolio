@@ -42,7 +42,7 @@
 </svelte:head>
 
 <section>
-	<Modal {allProjects} projectIndex={openIndex} />
+	<Modal projectsList={allProjects} projectIndex={openIndex} />
 
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>Featured Projects</h2>
