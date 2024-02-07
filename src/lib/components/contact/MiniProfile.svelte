@@ -12,7 +12,7 @@
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div class="profile" on:click={toggleQr}>
-		<img alt="mini me" src="images/me/black_profile.webp" />
+		<img alt="mini me" src="/images/me/black_profile.webp" />
 	</div>
 
 	<h2>Etienne Naude</h2>
@@ -33,7 +33,7 @@
 		use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
 		on:swipe={toggleQr}
 	>
-		<img class="qrcode" src="images/qr.svg" alt="qr code" />
+		<img class="qrcode" src="/images/qr.svg" alt="qr code" />
 
 		<p>etinaude.dev/contact</p>
 	</div>
