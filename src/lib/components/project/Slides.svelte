@@ -9,22 +9,25 @@
 	const imageWidth = 400;
 	let initTime = Date.now();
 	let interval: NodeJS.Timeout;
-	const maxSlides = cardData.hoverImg || cardData.hoverVideo ? 1 : 0;
+	let mediaList: { type: 'video' | 'image'; url: string | undefined }[] = [];
+
+	let unique = {};
+	function reload() {
+		unique = {};
+	}
 
 	function left() {
-		resetTime();
-		if (slideIndex <= 0) slideIndex = maxSlides + 1;
-
+		if (slideIndex <= 0) slideIndex = mediaList.length + 1;
 		slideIndex--;
-		image.style.transform = `translateX(${imageWidth * -slideIndex}px)`;
+		resetTime();
+		reload();
 	}
 
 	function right() {
-		resetTime();
-		if (slideIndex >= maxSlides) slideIndex = -1;
-
+		if (slideIndex >= mediaList.length - 1) slideIndex = -1;
 		slideIndex++;
-		image.style.transform = `translateX(${imageWidth * -slideIndex}px)`;
+		resetTime();
+		reload();
 	}
 
 	function autoSlide() {
