@@ -6,10 +6,12 @@
 	import { onMount } from 'svelte';
 	import Showcase from '$lib/components/project/Showcase.svelte';
 	import { tagOptions } from '$lib/services/tags';
+	import Modal from '$lib/components/project/Modal.svelte';
 
 	let currentFilter = '';
 	let allProjects: ProjectT[] = [];
 	let smallProjects: ProjectT[] = [];
+	let openIndex = -1;
 
 	function toggleTag(tag: string) {
 		if (currentFilter == tag) {
@@ -40,6 +42,8 @@
 </svelte:head>
 
 <section>
+	<Modal {allProjects} projectIndex={openIndex} />
+
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>Featured Projects</h2>
 	</Saos>
@@ -50,6 +54,7 @@
 		<h2>More Projects</h2>
 	</Saos>
 
+	<!-- tag list -->
 	<Saos animation={'from-bottom 1s ease'}>
 		<div class="filter-bar">
 			<div class="tag-list">
@@ -68,8 +73,8 @@
 	</Saos>
 
 	<div class="tiles">
-		{#each smallProjects as project}
-			<Tile cardData={project} />
+		{#each smallProjects as project, i}
+			<Tile cardData={project} index={i} bind:openIndex />
 		{/each}
 	</div>
 </section>
