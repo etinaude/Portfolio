@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import { onDestroy, onMount } from 'svelte';
+	import { scale, slide } from 'svelte/transition';
 
 	export let cardData: ProjectT;
 	let image: HTMLElement;
@@ -57,25 +58,33 @@
 	<div class="image-cont">
 		{#if cardData.hoverImg || cardData.hoverVideo}
 			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-			<div class="left btn" on:click={left}>
-				<span class="material-symbol"> keyboard_double_arrow_left </span>
-			</div>
-			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 			<div class="right btn" on:click={right}>
 				<span class="material-symbol"> keyboard_double_arrow_right </span>
 			</div>
 		{/if}
 
 		<div class="view" bind:this={image}>
-			<img src={cardData.imageUrl} alt={cardData.title} loading="eager" />
+			{#if mediaList[slideIndex]}
+				{#key unique}
+					<div in:slide={{ duration: 300, axis: 'x' }} out:slide={{ duration: 300, axis: 'x' }}>
+						{#if mediaList[slideIndex].type === 'image'}
+							<img src={mediaList[slideIndex].url} alt={cardData.title} />
+						{:else}
+							<video playsinline autoplay muted loop class="hover-img">
+								<source src={mediaList[slideIndex].url} />
+							</video>
+						{/if}
+					</div>
+				{/key}
+			{/if}
 
-			{#if cardData.hoverImg}
+			<!-- {#if cardData.hoverImg}
 				<img class="hover-img" src={cardData.hoverImg} alt="project hover" loading="lazy" />
 			{:else if cardData.hoverVideo}
 				<video playsinline autoplay muted loop class="hover-img">
 					<source src={cardData.hoverVideo} />
 				</video>
-			{/if}
+			{/if} -->
 		</div>
 	</div>
 {/if}
