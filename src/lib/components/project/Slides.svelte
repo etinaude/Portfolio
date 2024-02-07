@@ -49,7 +49,34 @@
 	onMount(() => {
 		clearInterval(interval);
 
-		if (maxSlides == 0) return;
+		mediaList = [];
+		mediaList = mediaList.concat([
+			{ type: 'image', url: cardData.imageUrl },
+			{ type: 'image', url: cardData.hoverImg },
+			{ type: 'video', url: cardData.hoverVideo }
+		]);
+		// mediaList = cardData.media?.concat(mediaList) || mediaList;
+
+		const videoTypes = ['mp4', 'webm', 'ogg', 'mov'];
+
+		if (cardData.media && cardData.media.length > 0) {
+			for (let item of cardData.media) {
+				const type = item.split('.').pop();
+				if (!type) continue;
+
+				if (videoTypes.includes(type)) {
+					mediaList.push({ type: 'video', url: item });
+				} else {
+					mediaList.push({ type: 'image', url: item });
+				}
+			}
+		}
+
+		mediaList = mediaList.filter((item) => item.url);
+
+		console.log(mediaList);
+
+		if (mediaList.length == 1) return;
 		interval = setInterval(autoSlide, 100);
 	});
 </script>
