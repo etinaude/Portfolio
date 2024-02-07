@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import { onDestroy, onMount } from 'svelte';
-	import { scale, slide } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
+
+	const videoTypes = ['mp4', 'webm', 'ogg', 'mov'];
 
 	export let cardData: ProjectT;
-	let image: HTMLElement;
 	let slideIndex = 0;
-	const imageWidth = 400;
 	let initTime = Date.now();
 	let interval: NodeJS.Timeout;
 	let mediaList: { type: 'video' | 'image'; url: string | undefined }[] = [];
@@ -58,9 +58,6 @@
 			{ type: 'image', url: cardData.hoverImg },
 			{ type: 'video', url: cardData.hoverVideo }
 		]);
-		// mediaList = cardData.media?.concat(mediaList) || mediaList;
-
-		const videoTypes = ['mp4', 'webm', 'ogg', 'mov'];
 
 		if (cardData.media && cardData.media.length > 0) {
 			for (let item of cardData.media) {
@@ -77,8 +74,6 @@
 
 		mediaList = mediaList.filter((item) => item.url);
 
-		console.log(mediaList);
-
 		if (mediaList.length == 1) return;
 		interval = setInterval(autoSlide, 100);
 	});
@@ -86,14 +81,14 @@
 
 {#if cardData}
 	<div class="image-cont">
-		{#if cardData.hoverImg || cardData.hoverVideo}
+		{#if mediaList.length > 1}
 			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 			<div class="right btn" on:click={right}>
 				<span class="material-symbol"> keyboard_double_arrow_right </span>
 			</div>
 		{/if}
 
-		<div class="view" bind:this={image}>
+		<div class="view">
 			{#if mediaList[slideIndex]}
 				{#key unique}
 					<div in:slide={{ duration: 300, axis: 'x' }} out:slide={{ duration: 300, axis: 'x' }}>
@@ -107,14 +102,6 @@
 					</div>
 				{/key}
 			{/if}
-
-			<!-- {#if cardData.hoverImg}
-				<img class="hover-img" src={cardData.hoverImg} alt="project hover" loading="lazy" />
-			{:else if cardData.hoverVideo}
-				<video playsinline autoplay muted loop class="hover-img">
-					<source src={cardData.hoverVideo} />
-				</video>
-			{/if} -->
 		</div>
 	</div>
 {/if}
