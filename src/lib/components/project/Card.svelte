@@ -14,10 +14,15 @@
 		const mobile = Device.isMobile || Device.isTablet || Device.canHover === false;
 		if (!mobile) VanillaTilt.init(card, { glare: true, max: 6, 'max-glare': 0.7 });
 	});
+
+	function open() {
+		openIndex = -1;
+		openIndex = index;
+	}
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-<div class="outer tilt" on:click={() => (openIndex = index)}>
+<div class="outer tilt" on:click={open}>
 	<div class="card tilt" bind:this={card}>
 		<div class="img clickable">
 			<img src={cardData.imageUrl} alt={cardData.title} />
@@ -33,7 +38,7 @@
 
 		<h3>{cardData.title}</h3>
 
-		<caption>{cardData.description}</caption>
+		<caption>{cardData.tldr || cardData.description}</caption>
 
 		<div class="read-more clickable">
 			read more

@@ -7,7 +7,11 @@ export type ProjectT = {
 	hoverVideo?: string;
 	followUrl?: string;
 	featured?: boolean;
-	tags?: string[]
+	tags?: string[];
+
+	media?: string[];
+	tldr?: string;
+	priority?: number;
 };
 
 export type LinkT = {

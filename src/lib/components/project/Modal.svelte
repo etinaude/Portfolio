@@ -2,8 +2,6 @@
 	import type { ProjectT } from '$lib/types/types';
 	import Slides from './Slides.svelte';
 	import { fade, scale } from 'svelte/transition';
-	import { onMount, afterUpdate, tick } from 'svelte';
-	import { flip } from 'svelte/animate';
 
 	export let projectsList: ProjectT[];
 	export let projectIndex: number;
@@ -56,7 +54,9 @@
 				<div class="text">
 					<h3>{projectsList[projectIndex].title}</h3>
 
-					<caption>{projectsList[projectIndex].description}</caption>
+					<caption
+						>{projectsList[projectIndex].description || projectsList[projectIndex].tldr}</caption
+					>
 
 					{#if projectsList[projectIndex].followUrl}
 						<div class="read-more clickable">
@@ -138,14 +138,17 @@
 		min-width: auto;
 		cursor: pointer;
 		z-index: 1000;
+		user-select: none;
 
 		&.left {
-			left: 100px;
+			left: 50%;
+			translate: -520px;
 			transform-origin: top left;
 		}
 
 		&.right {
-			right: 100px;
+			right: 50%;
+			translate: 520px;
 			transform-origin: top right;
 		}
 

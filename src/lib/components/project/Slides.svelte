@@ -67,10 +67,10 @@
 		{/if}
 
 		<div class="view" bind:this={image}>
-			<img src={cardData.imageUrl} alt={cardData.title} />
+			<img src={cardData.imageUrl} alt={cardData.title} loading="eager" />
 
 			{#if cardData.hoverImg}
-				<img class="hover-img" src={cardData.hoverImg} alt="project hover" />
+				<img class="hover-img" src={cardData.hoverImg} alt="project hover" loading="lazy" />
 			{:else if cardData.hoverVideo}
 				<video playsinline autoplay muted loop class="hover-img">
 					<source src={cardData.hoverVideo} />

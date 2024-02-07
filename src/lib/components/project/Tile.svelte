@@ -5,11 +5,16 @@
 	export let index = -1;
 
 	export let openIndex = -1;
+
+	function open() {
+		openIndex = -1;
+		openIndex = index;
+	}
 </script>
 
 <Saos animation={'from-bottom 1s ease'}>
 	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-	<div class="tile" on:click={() => (openIndex = index)}>
+	<div class="tile" on:click={open}>
 		<div class="img">
 			<img src={cardData.imageUrl} alt={cardData.title} loading="lazy" class="tile_image" />
 		</div>
