@@ -131,6 +131,7 @@
 			margin-top: 10px;
 			width: 100%;
 			font-size: 0.9em;
+			white-space: pre-line;
 		}
 	}
 

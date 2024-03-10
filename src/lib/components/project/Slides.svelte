@@ -131,10 +131,11 @@
 
 	img,
 	video {
-		width: 400px;
-		height: 400px;
+		width: 100%;
+		height: 100%;
 		aspect-ratio: 1;
 		object-fit: cover;
+		object-position: center;
 		left: 0;
 	}
 
