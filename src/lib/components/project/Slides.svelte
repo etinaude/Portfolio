@@ -184,9 +184,9 @@
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 768px) {
 		.image-cont {
-			width: 100%;
+			width: 85vw;
 			margin-right: 0;
 			margin-bottom: 10px;
 		}

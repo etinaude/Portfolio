@@ -246,7 +246,7 @@
 		}
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: 768px) {
 		.text {
 			max-height: 400px;
 			font-size: 0.9em;
@@ -259,8 +259,6 @@
 
 		.background {
 			.inner {
-				max-height: calc(100% - 150px);
-				max-width: calc(100% - 30px);
 				min-width: 0;
 				top: 10px;
 				transform: translate(-50%, 0);
