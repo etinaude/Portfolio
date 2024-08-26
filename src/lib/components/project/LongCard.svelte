@@ -6,9 +6,12 @@
 	import Device from 'svelte-device-info';
 
 	export let cardData: LongCardT;
+	export let index: number;
+
+	let side = index % 2 === 0 ? 'left' : 'right';
 
 	let imgElement: HTMLElement;
-	const animationSide = cardData.side === 'left' ? 'from-right' : 'from-left';
+	const animationSide = side === 'left' ? 'from-right' : 'from-left';
 
 	onMount(() => {
 		const mobile = Device.isMobile || Device.isTablet || Device.canHover === false;
@@ -17,7 +20,7 @@
 	});
 </script>
 
-<div class="long-card {cardData.side}">
+<div class="long-card {side}">
 	<div class="text">
 		<Saos animation={animationSide + ' 1s ease'}>
 			<h3>{cardData.title}</h3>
@@ -42,17 +45,18 @@
 		text-decoration: none;
 		flex-direction: row-reverse;
 		justify-content: space-between;
-		margin-bottom: 30px;
+		margin-bottom: 120px;
+		align-items: center;
 
 		.text {
-			max-width: calc(100% - 210px);
+			max-width: calc(100% - 280px);
 			margin-top: auto;
 		}
 
 		img {
 			@include border;
 
-			height: min(180px, 50vw);
+			height: min(200px, 50vw);
 			place-self: center;
 
 			&:hover {
