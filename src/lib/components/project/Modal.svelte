@@ -61,7 +61,7 @@
 				href={projectsList[projectIndex].followUrl}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="read-more mobile clickable"
+				class="open-link mobile clickable"
 				transition:scale={{ duration: 200, delay: 200 }}
 			>
 				Open Link
@@ -96,7 +96,7 @@
 							href={projectsList[projectIndex].followUrl}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="read-more desktop clickable"
+							class="open-link desktop clickable"
 						>
 							Open Link
 							<span class="material-symbol"> link </span>
@@ -135,8 +135,27 @@
 		}
 	}
 
-	.read-more {
-		@include read-more;
+	.open-link {
+		@include button;
+
+		margin-top: 20px;
+		font-size: 0.9em;
+		height: 10px;
+
+		span {
+			margin-left: 10px;
+			scale: 1.4;
+		}
+
+		&.mobile {
+			display: none;
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			translate: -50% 0;
+			width: 150px;
+			min-width: 0;
+		}
 	}
 
 	.background {
@@ -216,7 +235,7 @@
 			}
 		}
 
-		.read-more {
+		.open-link {
 			&.mobile {
 				display: flex;
 			}
