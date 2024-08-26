@@ -4,8 +4,7 @@
 	import Modal from './Modal.svelte';
 	import PageCard from './PageCard.svelte';
 	import { onMount } from 'svelte';
-	import { slide } from 'svelte/transition';
-	import { swipe } from 'svelte-gestures';
+	import { fade } from 'svelte/transition';
 
 	const SLIDE_DURATION = 3;
 	let slideIndex = 0;
@@ -34,7 +33,7 @@
 <Saos animation={'from-bottom 1s ease'}>
 	{#if currentData}
 		{#key unique}
-			<div class="side-scroll-container" transition:slide={{ duration: 1000, axis: 'y' }}>
+			<div class="side-scroll-container" transition:fade={{ duration: 1000 }}>
 				<PageCard cardData={currentData} />
 			</div>
 		{/key}

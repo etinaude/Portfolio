@@ -136,26 +136,7 @@
 	}
 
 	.read-more {
-		@include button;
-
-		margin-top: 20px;
-		font-size: 0.9em;
-		height: 10px;
-
-		span {
-			margin-left: 10px;
-			scale: 1.4;
-		}
-
-		&.mobile {
-			display: none;
-			position: absolute;
-			bottom: 20px;
-			left: 50%;
-			translate: -50% 0;
-			width: 150px;
-			min-width: 0;
-		}
+		@include read-more;
 	}
 
 	.background {

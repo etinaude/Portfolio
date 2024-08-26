@@ -99,18 +99,7 @@
 	}
 
 	.read-more {
-		@include button;
-
-		height: 0;
-		font-size: 0.7em;
-		margin-top: 10px;
-		background-color: $primary-t;
-		color: $accent;
-		min-width: 70%;
-
-		&:hover {
-			background-color: $primary-tt;
-		}
+		@include read-more;
 	}
 
 	@media (max-width: 768px) {

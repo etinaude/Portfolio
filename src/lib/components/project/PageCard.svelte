@@ -104,19 +104,7 @@
 		}
 
 		.read-more {
-			@include button;
-			position: absolute;
-			bottom: 0;
-
-			height: 0px;
-			font-size: 1em;
-			background-color: $primary-t;
-			color: $accent;
-			margin: 0;
-
-			&:hover {
-				background-color: $primary-tt;
-			}
+			@include read-more;
 		}
 	}
 </style>

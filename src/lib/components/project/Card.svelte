@@ -99,19 +99,7 @@
 	}
 
 	.read-more {
-		@include button;
-
-		margin-top: 20px;
-		font-size: 0.9em;
-		height: 10px;
-
-		background-color: $primary-t;
-		color: $accent;
-		min-width: 70%;
-
-		&:hover {
-			background-color: $primary-tt;
-		}
+		@include read-more;
 	}
 
 	img,
