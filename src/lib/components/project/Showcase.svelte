@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import { onMount } from 'svelte';
-	import Card from './Card.svelte';
 	import Saos from 'saos';
 	import Modal from './Modal.svelte';
+	import PageCard from './PageCard.svelte';
 
 	let data: ProjectT[] = [];
 	let openIndex = -1;
@@ -18,29 +18,24 @@
 <Modal projectsList={data} projectIndex={openIndex} />
 
 <Saos animation={'from-bottom 1s ease'}>
-	<div class="side-scroll-container">
-		<div class="card-side-scroll">
-			{#each data as card, i}
-				<Card cardData={card} index={i} bind:openIndex />
-			{/each}
+	<!-- if no data -->
+	{#if data.length === 0}
+		<div>Loading...</div>
+	{:else}
+		<div class="side-scroll-container">
+			<PageCard cardData={data[0]} />
 		</div>
-	</div>
+	{/if}
+
+	<!-- else -->
 </Saos>
 
 <style lang="scss">
 	.side-scroll-container {
-		max-width: 100vw;
-		justify-content: center;
-		display: flex;
+		height: 90vh;
 
-		.card-side-scroll {
-			width: 100%;
-			display: grid;
-			grid-auto-flow: column;
-			place-items: center;
-			grid-column-gap: 20px;
-			overflow-x: auto;
-			padding: 30px;
-		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 </style>
