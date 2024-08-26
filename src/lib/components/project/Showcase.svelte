@@ -1,33 +1,44 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
-	import { onMount } from 'svelte';
 	import Saos from 'saos';
 	import Modal from './Modal.svelte';
 	import PageCard from './PageCard.svelte';
+	import { onMount } from 'svelte';
+	import { slide } from 'svelte/transition';
+	import { swipe } from 'svelte-gestures';
+
+	const SLIDE_DURATION = 3;
+	let slideIndex = 0;
+	let currentData: ProjectT;
 
 	let data: ProjectT[] = [];
 	let openIndex = -1;
+	let unique = {};
 
 	export let dataFunction: any;
 
 	onMount(async () => {
 		data = await dataFunction();
+		currentData = data[slideIndex];
+
+		setInterval(() => {
+			slideIndex = (slideIndex + 1) % data.length;
+			currentData = data[slideIndex];
+			unique = {};
+		}, SLIDE_DURATION * 1000);
 	});
 </script>
 
 <Modal projectsList={data} projectIndex={openIndex} />
 
 <Saos animation={'from-bottom 1s ease'}>
-	<!-- if no data -->
-	{#if data.length === 0}
-		<div>Loading...</div>
-	{:else}
-		<div class="side-scroll-container">
-			<PageCard cardData={data[0]} />
-		</div>
+	{#if currentData}
+		{#key unique}
+			<div class="side-scroll-container" transition:slide={{ duration: 1000, axis: 'y' }}>
+				<PageCard cardData={currentData} />
+			</div>
+		{/key}
 	{/if}
-
-	<!-- else -->
 </Saos>
 
 <style lang="scss">
