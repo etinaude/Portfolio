@@ -8,6 +8,7 @@
 	import { tagOptions } from '$lib/services/tags';
 	import Modal from '$lib/components/project/Modal.svelte';
 	import Contact from '$lib/components/contact/Contact.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
 
 	let currentFilter = '';
 	let allProjects: ProjectT[] = [];
@@ -38,9 +39,11 @@
 </script>
 
 <svelte:head>
-	<title>Etienne Naude - Projects</title>
+	<title>Etienne Naude | Projects</title>
 	<meta name="description" content="Etienne Naude projects" />
 </svelte:head>
+
+<Header />
 
 <section>
 	<Modal projectsList={allProjects} projectIndex={openIndex} />

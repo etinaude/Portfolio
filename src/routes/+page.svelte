@@ -14,6 +14,7 @@
 	} from '$lib/services/firebase';
 	import type { LongCardT } from '$lib/types/types';
 	import HeroImage from '$lib/components/HeroImage.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
 
 	let workData: LongCardT[] = [];
 	let educationData: LongCardT[] = [];
@@ -27,26 +28,30 @@
 </script>
 
 <svelte:head>
-	<title>Etienne Naude</title>
+	<title>Etienne Naude | Portfolio</title>
 	<meta name="description" content="Etienne Naude Portfolio" />
 </svelte:head>
+
+<Header />
 
 <HeroImage />
 
 <section id="projects">
 	<Saos animation={'from-bottom 1s ease'}>
-		<h2>Projects</h2>
+		<div class="title">
+			<h2>Projects</h2>
+
+			<a class="button more-projects-btn clickable" href="/projects">
+				More Projects
+
+				<span class="material-symbol"> keyboard_double_arrow_right </span>
+			</a>
+		</div>
 	</Saos>
 
 	<Showcase dataFunction={getFeaturedProjectsData} />
 
-	<Saos animation={'from-bottom 1s ease'}>
-		<a class="button more-projects-btn clickable" href="/projects">
-			More Projects
-
-			<span class="material-symbol"> keyboard_double_arrow_right </span>
-		</a>
-	</Saos>
+	<Saos animation={'from-bottom 1s ease'} />
 </section>
 
 <section id="education">

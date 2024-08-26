@@ -1,11 +1,14 @@
 <script lang="ts">
 	import Contact from '$lib/components/contact/Contact.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
 </script>
 
 <svelte:head>
-	<title>Etienne Naude - Contact</title>
+	<title>Etienne Naude | Contact</title>
 	<meta name="description" content="Etienne Naude Contact Details" />
 </svelte:head>
+
+<Header />
 
 <section>
 	<Contact />
