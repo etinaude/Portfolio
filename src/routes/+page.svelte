@@ -21,6 +21,8 @@
 	onMount(async () => {
 		workData = (await getWorkData()) as LongCardT[];
 		educationData = (await getEducationData()) as LongCardT[];
+
+		educationData = educationData.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
 	});
 </script>
 
@@ -53,19 +55,19 @@
 	</Saos>
 
 	<div class="long-card-grid">
-		{#each educationData as education}
-			<LongCard cardData={education} />
+		{#each educationData as education, i (i)}
+			<LongCard cardData={education} index={i} />
 		{/each}
 	</div>
 </section>
 
-<section id="clubs">
+<!-- <section id="clubs">
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>Associations</h2>
 	</Saos>
 
 	<Showcase dataFunction={getClubsData} />
-</section>
+</section> -->
 
 <section id="work">
 	<Saos animation={'from-bottom 1s ease'}>
@@ -73,19 +75,19 @@
 	</Saos>
 
 	<div class="long-card-grid">
-		{#each workData as work}
-			<LongCard cardData={work} />
+		{#each workData as work, i (i)}
+			<LongCard cardData={work} index={i} />
 		{/each}
 	</div>
 </section>
 
-<section id="awards">
+<!-- <section id="awards">
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>Awards</h2>
 	</Saos>
 
 	<Showcase dataFunction={getAwardData} />
-</section>
+</section> -->
 
 <section id="contact">
 	<Contact />
