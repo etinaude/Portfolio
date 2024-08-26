@@ -61,8 +61,6 @@ h2 {
 	text-align: center;
 }
 
-
-
 .row {
 	display: flex;
 	flex-direction: row;
@@ -111,4 +109,8 @@ h2 {
 
 .active {
 	box-shadow: 0 4px 0 1px $accent-tt;
+}
+
+h2 {
+	font-size: 3em;
 }
