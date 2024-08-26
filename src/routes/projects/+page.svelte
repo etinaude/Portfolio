@@ -30,11 +30,18 @@
 		smallProjects = allProjects.filter((project) => {
 			return (project.tags ?? []).includes(currentFilter);
 		});
+
+		smallProjects = sortProjects(smallProjects);
+	}
+
+	function sortProjects(projects: ProjectT[]) {
+		return projects.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
 	}
 
 	onMount(async () => {
 		allProjects = (await getProjectsData()) as ProjectT[];
 		smallProjects = allProjects;
+		smallProjects = sortProjects(smallProjects);
 	});
 </script>
 
