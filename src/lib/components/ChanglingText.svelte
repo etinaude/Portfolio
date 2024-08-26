@@ -80,8 +80,16 @@
 			opacity: 1;
 		}
 	}
+
 	.change-text:after {
 		content: '|';
 		animation: blinking 1.2s infinite;
+	}
+
+	// mobile
+	@media (max-width: 768px) {
+		.change-text {
+			font-size: 2rem;
+		}
 	}
 </style>

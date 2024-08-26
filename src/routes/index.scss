@@ -1,8 +1,47 @@
 @import './../lib/styles/root.scss';
 
+h2 {
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	h2 {
+		font-size: 3em;
+	}
+}
+
 #projects {
 	--background: #333;
 	margin-top: 100vh;
+	box-shadow: #111 0 0 30px;
+	position: sticky;
+	height: 150vh;
+
+	.title {
+		display: grid;
+		place-items: center;
+		grid-template-columns: 2fr 1fr;
+		margin-top: 50px;
+		grid-gap: 6rem;
+		width: 80vw;
+
+		h2,
+		a {
+			margin: 0px;
+		}
+	}
+
+	// mobile
+	@media (max-width: 768px) {
+		.title {
+			grid-template-columns: 1fr;
+			grid-gap: 1.5rem;
+
+			a {
+				height: 10px;
+			}
+		}
+	}
 
 	.more-projects-btn {
 		@include button;
@@ -11,21 +50,23 @@
 
 #education {
 	--background: #272727;
+	box-shadow: #111 0 0 30px;
+
 	padding-top: 10vh;
 }
 
 #clubs {
-	--background: #3c3c3c;
+	--background: #333;
 	padding-top: 10vh;
 }
 
 #work {
-	--background: #4a4a4a;
+	--background: #333;
 	padding-top: 10vh;
 }
 
 #awards {
-	--background: #3c3c3c;
+	--background: #272727;
 	position: sticky;
 }
 

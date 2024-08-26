@@ -1,31 +1,63 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 	let isMenuOpen = false;
+
+	let homeLink = {
+		text: 'Home',
+		url: '/'
+	};
+	let projectsLink = {
+		text: 'Projects',
+		url: '/projects'
+	};
+	let contactLink = {
+		text: 'Contact',
+		url: '/contact'
+	};
+
+	let leftLink = homeLink;
+	let rightLink = contactLink;
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
 	}
+
+	onMount(() => {
+		let url = $page.url.pathname;
+
+		if (url === '/') {
+			leftLink = projectsLink;
+			rightLink = contactLink;
+		} else if (url.includes('projects')) {
+			leftLink = homeLink;
+			rightLink = contactLink;
+		} else if (url.includes('contact')) {
+			leftLink = homeLink;
+			rightLink = projectsLink;
+		}
+	});
 </script>
 
 <header>
 	<nav class="desktop-menu">
-		<svg class="left-border" viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li class:active={$page.url.pathname === '/'}>
-				<a class="clickable" href="/">Home</a>
-			</li>
-			<li class:active={$page.url.pathname === '/projects'}>
-				<a class="clickable" href="/projects">Projects</a>
-			</li>
-			<li class:active={$page.url.pathname === '/contact'}>
-				<a class="clickable" href="/contact">Contact</a>
-			</li>
-		</ul>
-		<svg class="right-border" viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
+		<div class="left side">
+			<div class="text">
+				<a class="clickable" href={leftLink.url}>{leftLink.text}</a>
+			</div>
+			<svg class="right-border" viewBox="0 0 2 3" aria-hidden="true">
+				<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
+			</svg>
+		</div>
+
+		<div class="right side">
+			<svg class="left-border" viewBox="0 0 2 3" aria-hidden="true">
+				<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+			</svg>
+			<div class="text">
+				<a class="clickable" href={rightLink.url}>{rightLink.text}</a>
+			</div>
+		</div>
 	</nav>
 
 	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
@@ -77,14 +109,10 @@
 	.desktop-menu {
 		display: flex;
 		position: absolute;
-		top: 0;
-		left: 50%;
-		translate: -50%;
 
 		a {
 			height: 100%;
 			padding: 0 1em;
-			color: $accent-l;
 			font-weight: 700;
 			font-size: 0.8rem;
 			text-transform: uppercase;
@@ -92,26 +120,27 @@
 			color: $light;
 		}
 
-		ul {
-			position: relative;
-			padding: 0;
-			margin: 0;
+		.side {
+			position: fixed;
 			display: flex;
-			list-style: none;
-			background: $primary;
+			align-items: center;
+			height: 3em;
 
-			li {
-				position: relative;
+			.text {
+				background-color: $primary;
 				height: 100%;
+			}
 
-				&.active::before {
-					$size: 6px;
-					content: '';
-					position: absolute;
-					left: calc(50% - $size);
-					border: $size solid transparent;
-					border-top: $size solid $accent;
-				}
+			&:hover {
+				scale: 1.1;
+			}
+
+			&.left {
+				left: 0;
+			}
+
+			&.right {
+				right: 0;
 			}
 		}
 	}
@@ -122,7 +151,7 @@
 	}
 
 	svg {
-		height: 3em;
+		height: 100%;
 		display: block;
 
 		path {

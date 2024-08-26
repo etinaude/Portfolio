@@ -7,7 +7,7 @@
 	import Dashboard from './dashboard.svelte';
 
 	let isAuth = false;
-	let tab: 'editProject' | 'addFile' | 'dashboard' = 'dashboard';
+	let tab: 'editProject' | 'addFile' | 'dashboard' = 'editProject';
 	let banner: Banner;
 
 	onMount(async () => {

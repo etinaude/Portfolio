@@ -1,46 +1,51 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
-	import { onMount } from 'svelte';
-	import Card from './Card.svelte';
 	import Saos from 'saos';
-	import Modal from './Modal.svelte';
+	import PageCard from './PageCard.svelte';
+	import { onMount } from 'svelte';
+
+	const SLIDE_DURATION = 3;
+	let slideIndex = 0;
+	let currentData: ProjectT;
 
 	let data: ProjectT[] = [];
-	let openIndex = -1;
 
 	export let dataFunction: any;
 
 	onMount(async () => {
 		data = await dataFunction();
+		currentData = data[slideIndex];
+
+		setInterval(() => {
+			slideIndex = (slideIndex + 1) % data.length;
+			currentData = data[slideIndex];
+		}, SLIDE_DURATION * 1000);
 	});
 </script>
 
-<Modal projectsList={data} projectIndex={openIndex} />
-
 <Saos animation={'from-bottom 1s ease'}>
-	<div class="side-scroll-container">
-		<div class="card-side-scroll">
-			{#each data as card, i}
-				<Card cardData={card} index={i} bind:openIndex />
-			{/each}
+	{#if currentData}
+		<div class="card-container">
+			<PageCard cardData={currentData} />
 		</div>
-	</div>
+	{/if}
 </Saos>
 
 <style lang="scss">
-	.side-scroll-container {
-		max-width: 100vw;
-		justify-content: center;
-		display: flex;
+	@import '../../styles/root.scss';
 
-		.card-side-scroll {
-			width: 100%;
-			display: grid;
-			grid-auto-flow: column;
-			place-items: center;
-			grid-column-gap: 20px;
-			overflow-x: auto;
-			padding: 30px;
+	.card-container {
+		height: 80vh;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@media (max-width: 768px) {
+		.card-container {
+			align-items: flex-start;
+			margin-top: 10px;
 		}
 	}
 </style>

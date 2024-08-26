@@ -2,6 +2,8 @@
 	import Banner from '$lib/components/Banner.svelte';
 	import Card from '$lib/components/project/Card.svelte';
 	import Modal from '$lib/components/project/Modal.svelte';
+	import PageCard from '$lib/components/project/PageCard.svelte';
+	import Showcase from '$lib/components/project/Showcase.svelte';
 	import Tile from '$lib/components/project/Tile.svelte';
 	import { addNewProject, getProjectsData } from '$lib/services/firebase';
 	import { tagOptions } from '$lib/services/tags';
@@ -19,6 +21,7 @@
 		hoverVideo: '',
 		followUrl: '',
 		featured: false,
+		priority: 10,
 		tags: []
 	};
 
@@ -44,6 +47,8 @@
 	async function addTag() {
 		if (!project.tags) project.tags = [];
 		if (tag === '') return;
+		if (project.priority === undefined) project.priority = 10;
+		if (project.featured == undefined) project.featured = false;
 
 		project.tags.push(tag);
 		tag = '';
@@ -133,7 +138,12 @@
 
 			<div class="field">
 				<label for="featured">Featured</label>
-				<input type="checkbox" id="featured" name="featured" bind:value={project.featured} />
+				<input type="checkbox" id="featured" name="featured" bind:checked={project.featured} />
+			</div>
+
+			<div class="field">
+				<label for="priority">Priority</label>
+				<input type="number" id="priority" name="priority" bind:value={project.priority} />
 			</div>
 
 			<div class="field">
@@ -163,6 +173,10 @@
 			</div>
 		</div>
 	</div>
+</section>
+
+<section>
+	<PageCard cardData={project} />
 </section>
 
 <Banner bind:this={banner} />

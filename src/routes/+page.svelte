@@ -14,6 +14,7 @@
 	} from '$lib/services/firebase';
 	import type { LongCardT } from '$lib/types/types';
 	import HeroImage from '$lib/components/HeroImage.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
 
 	let workData: LongCardT[] = [];
 	let educationData: LongCardT[] = [];
@@ -21,30 +22,37 @@
 	onMount(async () => {
 		workData = (await getWorkData()) as LongCardT[];
 		educationData = (await getEducationData()) as LongCardT[];
+
+		educationData = educationData.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
 	});
 </script>
 
 <svelte:head>
-	<title>Etienne Naude</title>
+	<title>Etienne Naude | Portfolio</title>
 	<meta name="description" content="Etienne Naude Portfolio" />
 </svelte:head>
+
+<Header />
 
 <HeroImage />
 
 <section id="projects">
-	<Saos animation={'from-bottom 1s ease'}>
-		<h2>Projects</h2>
-	</Saos>
+	<div class="title">
+		<Saos animation={'from-left 1s ease'}>
+			<h2>Projects</h2>
+		</Saos>
+
+		<Saos animation={'from-right 1s ease'}>
+			<a class="button more-projects-btn clickable" href="/projects">
+				More Projects
+				<span class="material-symbol"> keyboard_double_arrow_right </span>
+			</a>
+		</Saos>
+	</div>
 
 	<Showcase dataFunction={getFeaturedProjectsData} />
 
-	<Saos animation={'from-bottom 1s ease'}>
-		<a class="button more-projects-btn clickable" href="/projects">
-			More Projects
-
-			<span class="material-symbol"> keyboard_double_arrow_right </span>
-		</a>
-	</Saos>
+	<Saos animation={'from-bottom 1s ease'} />
 </section>
 
 <section id="education">
@@ -53,19 +61,19 @@
 	</Saos>
 
 	<div class="long-card-grid">
-		{#each educationData as education}
-			<LongCard cardData={education} />
+		{#each educationData as education, i (i)}
+			<LongCard cardData={education} index={i} />
 		{/each}
 	</div>
 </section>
 
-<section id="clubs">
+<!-- <section id="clubs">
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>Associations</h2>
 	</Saos>
 
 	<Showcase dataFunction={getClubsData} />
-</section>
+</section> -->
 
 <section id="work">
 	<Saos animation={'from-bottom 1s ease'}>
@@ -73,19 +81,19 @@
 	</Saos>
 
 	<div class="long-card-grid">
-		{#each workData as work}
-			<LongCard cardData={work} />
+		{#each workData as work, i (i)}
+			<LongCard cardData={work} index={i} />
 		{/each}
 	</div>
 </section>
 
-<section id="awards">
+<!-- <section id="awards">
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>Awards</h2>
 	</Saos>
 
 	<Showcase dataFunction={getAwardData} />
-</section>
+</section> -->
 
 <section id="contact">
 	<Contact />

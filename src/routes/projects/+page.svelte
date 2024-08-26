@@ -8,6 +8,7 @@
 	import { tagOptions } from '$lib/services/tags';
 	import Modal from '$lib/components/project/Modal.svelte';
 	import Contact from '$lib/components/contact/Contact.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
 
 	let currentFilter = '';
 	let allProjects: ProjectT[] = [];
@@ -29,18 +30,27 @@
 		smallProjects = allProjects.filter((project) => {
 			return (project.tags ?? []).includes(currentFilter);
 		});
+
+		smallProjects = sortProjects(smallProjects);
+	}
+
+	function sortProjects(projects: ProjectT[]) {
+		return projects.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
 	}
 
 	onMount(async () => {
 		allProjects = (await getProjectsData()) as ProjectT[];
 		smallProjects = allProjects;
+		smallProjects = sortProjects(smallProjects);
 	});
 </script>
 
 <svelte:head>
-	<title>Etienne Naude - Projects</title>
+	<title>Etienne Naude | Projects</title>
 	<meta name="description" content="Etienne Naude projects" />
 </svelte:head>
+
+<Header />
 
 <section>
 	<Modal projectsList={allProjects} projectIndex={openIndex} />
@@ -49,7 +59,9 @@
 		<h2 class="featured-title">Featured Projects</h2>
 	</Saos>
 
-	<Showcase dataFunction={getFeaturedProjectsData} />
+	<div class="showcase">
+		<Showcase dataFunction={getFeaturedProjectsData} />
+	</div>
 
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>More Projects</h2>
@@ -94,12 +106,12 @@
 	}
 
 	h2 {
-		margin-top: 2em;
+		margin: 60px 0 0px 0;
+		text-align: center;
 	}
 
 	section {
 		--background: #333;
-		padding-top: 100px;
 	}
 
 	.filter-bar {
@@ -140,13 +152,17 @@
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 768px) {
 		.tiles {
 			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 		}
 
 		.featured-title {
 			display: none;
+		}
+
+		.showcase {
+			margin-top: 100px;
 		}
 	}
 </style>
