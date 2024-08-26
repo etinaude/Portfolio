@@ -3,6 +3,21 @@
 #projects {
 	--background: #333;
 	margin-top: 100vh;
+	box-shadow: #111 0 0 30px;
+
+	.title {
+		display: grid;
+		place-items: center;
+		grid-template-columns: 2fr 1fr;
+		margin-top: 100px;
+		grid-gap: 6rem;
+		width: 80vw;
+
+		h2,
+		a {
+			margin: 0px;
+		}
+	}
 
 	.more-projects-btn {
 		@include button;

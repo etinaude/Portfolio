@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import VanillaTilt from 'vanilla-tilt';
 	import Device from 'svelte-device-info';
+	import { fade } from 'svelte/transition';
 
 	export let cardData: ProjectT;
 	let card: HTMLElement;
@@ -13,7 +14,7 @@
 	});
 </script>
 
-<div class="full-page-card">
+<div class="full-page-card" transition:fade={{ duration: 1000 }}>
 	<div class="image">
 		<img src={cardData.imageUrl} alt={cardData.title} />
 

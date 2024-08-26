@@ -4,7 +4,6 @@
 	import Modal from './Modal.svelte';
 	import PageCard from './PageCard.svelte';
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 
 	const SLIDE_DURATION = 3;
 	let slideIndex = 0;
@@ -12,7 +11,6 @@
 
 	let data: ProjectT[] = [];
 	let openIndex = -1;
-	let unique = {};
 
 	export let dataFunction: any;
 
@@ -23,7 +21,6 @@
 		setInterval(() => {
 			slideIndex = (slideIndex + 1) % data.length;
 			currentData = data[slideIndex];
-			unique = {};
 		}, SLIDE_DURATION * 1000);
 	});
 </script>
@@ -32,16 +29,14 @@
 
 <Saos animation={'from-bottom 1s ease'}>
 	{#if currentData}
-		{#key unique}
-			<div class="side-scroll-container" transition:fade={{ duration: 1000 }}>
-				<PageCard cardData={currentData} />
-			</div>
-		{/key}
+		<div class="card-container">
+			<PageCard cardData={currentData} />
+		</div>
 	{/if}
 </Saos>
 
 <style lang="scss">
-	.side-scroll-container {
+	.card-container {
 		height: 90vh;
 
 		display: flex;
