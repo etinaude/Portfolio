@@ -34,23 +34,7 @@
 </script>
 
 <section>
-	<h1>Add Media</h1>
-
-	<div class="field">
-		<label for="description">File Name</label>
-		<input id="fileName" name="fileName" bind:value={fileName} />
-	</div>
-	<p>Remember to start with "projects/" "logos/" "awards/" etc and end with a file extension</p>
-
-	<div class="field">
-		<label for="imageUrl">Image Url</label>
-		<input type="file" id="imageUrl" name="imageUrl" on:change={(e) => preview(e)} />
-	</div>
-
-	<div class="image">
-		<img src={previewSrc} alt={previewSrc} />
-	</div>
-	<button class="tabButton" on:click={uploadMedia}> Add File </button>
+	<h2>Add Media</h2>
 
 	{#if returnedFilePath}
 		<div class="url">
@@ -60,10 +44,42 @@
 			>
 		</div>
 	{/if}
+
+	<div class="grid">
+		<div class="form">
+			<div class="field">
+				<label for="description">File Name</label>
+				<input id="fileName" name="fileName" bind:value={fileName} />
+			</div>
+			<p>Start with "projects/" "logos/" "awards/" etc and end with a file extension</p>
+
+			<div class="field">
+				<label for="imageUrl">Image Url</label>
+				<input type="file" id="imageUrl" name="imageUrl" on:change={(e) => preview(e)} />
+			</div>
+
+			<button class="tabButton" on:click={uploadMedia}> Add File </button>
+		</div>
+
+		<div class="image">
+			<img src={previewSrc} alt={previewSrc} />
+		</div>
+	</div>
 </section>
 
 <Banner bind:this={banner} />
 
 <style lang="scss">
 	@import './admin.scss';
+
+	.grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		grid-gap: 20px;
+	}
+
+	.url {
+		margin: 30px 0;
+		font-size: 1.5em;
+	}
 </style>
