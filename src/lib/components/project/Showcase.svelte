@@ -37,7 +37,7 @@
 
 <style lang="scss">
 	.card-container {
-		height: 90vh;
+		height: 80vh;
 
 		display: flex;
 		justify-content: center;

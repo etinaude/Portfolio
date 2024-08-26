@@ -97,12 +97,11 @@
 	}
 
 	h2 {
-		margin-top: 2em;
+		margin: 60px 0 0px 0;
 	}
 
 	section {
 		--background: #333;
-		padding-top: 100px;
 	}
 
 	.filter-bar {

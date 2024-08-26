@@ -63,6 +63,7 @@
 			overflow: hidden;
 			max-height: 0;
 			backdrop-filter: blur(1px);
+			border-radius: 10px;
 		}
 
 		&:hover {
@@ -73,7 +74,7 @@
 			.text {
 				height: auto;
 				max-height: 50%;
-				padding-bottom: 40px;
+				padding-bottom: 80px;
 			}
 		}
 
@@ -88,6 +89,7 @@
 		color: $accent;
 		margin-bottom: 8px;
 		margin-top: 20px;
+		filter: drop-shadow(2px 3px 0 #151515);
 	}
 
 	.img > * {
@@ -100,6 +102,9 @@
 
 	.read-more {
 		@include read-more;
+		margin-bottom: 20px;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 
 	@media (max-width: 768px) {
