@@ -108,4 +108,26 @@
 			@include read-more;
 		}
 	}
+
+	@media (max-width: 768px) {
+		.full-page-card {
+			grid-template-columns: 1fr;
+			grid-gap: 1rem;
+			width: 90vw;
+			height: 70vh;
+			grid-template-rows: 1fr 2fr;
+
+			.image {
+				height: 100%;
+			}
+
+			.description {
+				margin-top: 0rem;
+			}
+
+			.read-more {
+				width: 90%;
+			}
+		}
+	}
 </style>

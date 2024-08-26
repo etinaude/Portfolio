@@ -52,7 +52,9 @@
 		<h2 class="featured-title">Featured Projects</h2>
 	</Saos>
 
-	<Showcase dataFunction={getFeaturedProjectsData} />
+	<div class="showcase">
+		<Showcase dataFunction={getFeaturedProjectsData} />
+	</div>
 
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2>More Projects</h2>
@@ -98,6 +100,7 @@
 
 	h2 {
 		margin: 60px 0 0px 0;
+		text-align: center;
 	}
 
 	section {
@@ -142,13 +145,17 @@
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 768px) {
 		.tiles {
 			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 		}
 
 		.featured-title {
 			display: none;
+		}
+
+		.showcase {
+			margin-top: 100px;
 		}
 	}
 </style>

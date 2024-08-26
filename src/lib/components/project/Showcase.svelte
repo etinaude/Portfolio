@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import Saos from 'saos';
-	import Modal from './Modal.svelte';
 	import PageCard from './PageCard.svelte';
 	import { onMount } from 'svelte';
 
@@ -10,7 +9,6 @@
 	let currentData: ProjectT;
 
 	let data: ProjectT[] = [];
-	let openIndex = -1;
 
 	export let dataFunction: any;
 
@@ -25,8 +23,6 @@
 	});
 </script>
 
-<Modal projectsList={data} projectIndex={openIndex} />
-
 <Saos animation={'from-bottom 1s ease'}>
 	{#if currentData}
 		<div class="card-container">
@@ -36,11 +32,20 @@
 </Saos>
 
 <style lang="scss">
+	@import '../../styles/root.scss';
+
 	.card-container {
 		height: 80vh;
 
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	@media (max-width: 768px) {
+		.card-container {
+			align-items: flex-start;
+			margin-top: 10px;
+		}
 	}
 </style>
