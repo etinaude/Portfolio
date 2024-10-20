@@ -1,8 +1,3 @@
 [build]
   command = "echo $KEYS | base64 -di > src/keys.json;bun run build"
   publish = "build"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
