@@ -13,9 +13,6 @@ const config = {
 			edge: true,
 			split: false
 		}),
-
-
-
 	},
 
 	onwarn: (warning, handler) => {
