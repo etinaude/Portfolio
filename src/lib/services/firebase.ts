@@ -4,9 +4,8 @@ import KEYS from '../../keys.json';
 import { getFirestore, collection, query, getDocs, where, setDoc, doc } from 'firebase/firestore';
 import type { ContactT, LinkT, ProjectT } from '$lib/types/types';
 import { getPerformance } from 'firebase/performance';
-import { getAuth, signInWithPopup, GoogleAuthProvider, type UserCredential } from "firebase/auth";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
-
+import { getAuth, signInWithPopup, GoogleAuthProvider, type UserCredential } from 'firebase/auth';
+import { getStorage, ref, uploadBytes } from 'firebase/storage';
 
 const BASE_PATH = 'portfolio/all-data/';
 // Initialize Firebase
@@ -81,7 +80,7 @@ export async function getData(collectionPath: string, fbQuery?: any) {
 
 export async function addNewProject(project: ProjectT): Promise<boolean> {
 	try {
-		await setDoc(doc(db, BASE_PATH + "projects", project.title), project);
+		await setDoc(doc(db, BASE_PATH + 'projects', project.title), project);
 		return true;
 	} catch (e) {
 		console.error(e);
@@ -92,46 +91,41 @@ export async function addNewProject(project: ProjectT): Promise<boolean> {
 export async function addNewImage(file: File, name: string): Promise<string> {
 	try {
 		const storageRef = ref(storage, name);
-		const snapshot = await uploadBytes(storageRef, file)
+		const snapshot = await uploadBytes(storageRef, file);
 		return snapshot.ref.fullPath;
 	} catch (e) {
 		console.error(e);
-		return "";
+		return '';
 	}
 }
-
 
 export async function auth(): Promise<boolean> {
 	const auth = getAuth();
 	const currentTime = new Date().getTime();
-	const lastSignedIn = parseInt(sessionStorage.getItem("lastSignedIn") ?? "0");
-	const lastUUID = sessionStorage.getItem("lastUUID");
+	const lastSignedIn = parseInt(sessionStorage.getItem('lastSignedIn') ?? '0');
+	const lastUUID = sessionStorage.getItem('lastUUID');
 
 	try {
 		// only need to sign in once ~ an hour
-		if (currentTime - lastSignedIn < (3000 * 1000) && lastUUID == "WFuEx") return true;
+		if (currentTime - lastSignedIn < 3000 * 1000 && lastUUID == 'WFuEx') return true;
 
 		const credential: UserCredential = await signInWithPopup(auth, new GoogleAuthProvider());
 		const user = credential.user;
 		const shortUID = user.uid.substring(0, 5);
-		console.log(credential);
+
 		// I ain't storing my full uid
-		if (shortUID != "WFuEx")
-			return false;
+		if (shortUID != 'WFuEx') return false;
 
-		sessionStorage.setItem("lastUUID", shortUID);
-		sessionStorage.setItem("lastSignedIn", "" + currentTime);
+		sessionStorage.setItem('lastUUID', shortUID);
+		sessionStorage.setItem('lastSignedIn', '' + currentTime);
 		return true;
-
-	}
-	catch (error: any) {
+	} catch (error: any) {
 		const errorCode = error.code;
 		const errorMessage = error.message;
 		const email = error.customData.email;
 		const credential = GoogleAuthProvider.credentialFromError(error);
 
-		console.error(errorCode, errorMessage, email, credential)
-		return false
+		console.error(errorCode, errorMessage, email, credential);
+		return false;
 	}
-
 }
