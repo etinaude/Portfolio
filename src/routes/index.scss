@@ -31,6 +31,12 @@ h2 {
 		}
 	}
 
+	.more-projects-btn {
+		@include button;
+		width: 100%;
+		place-self: center start;
+	}
+
 	// mobile
 	@media (max-width: 768px) {
 		.title {
@@ -41,12 +47,10 @@ h2 {
 				height: 10px;
 			}
 		}
-	}
 
-	.more-projects-btn {
-		@include button;
-		width: 100%;
-		place-self: center start;
+		.more-projects-btn {
+			width: 85%;
+		}
 	}
 }
 

@@ -97,4 +97,17 @@
 			margin: 0px;
 		}
 	}
+
+	// mobile
+	@media (max-width: 768px) {
+		.change-text {
+			font-size: 2rem;
+		}
+
+		.header-text {
+			position: absolute;
+			bottom: 30px;
+			text-align: right;
+		}
+	}
 </style>
