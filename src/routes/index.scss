@@ -45,6 +45,8 @@ h2 {
 
 	.more-projects-btn {
 		@include button;
+		width: 100%;
+		place-self: center start;
 	}
 }
 

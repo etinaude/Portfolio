@@ -14,10 +14,26 @@
 	});
 
 	function getHeroImage(): string {
-		if (Device.isMobile) {
-			return 'images/me/portrait.webp';
+		let width = window.outerWidth;
+		let height = window.outerHeight;
+
+		let location = 'images/me/';
+
+		// prefer landscape, only use portrait if substantially taller than wide
+		if (Device.isPhone || width * 1.2 < height) {
+			location += 'portrait/';
+			if (width < 500) return location + 'portrait_500.webp';
+			if (width < 750) return location + 'portrait_750.webp';
+			return location + 'portrait.webp';
 		} else {
-			return 'images/me/thoughtful.webp';
+			location += 'landscape/';
+			if (width < 750) return location + 'landscape_750.webp';
+			if (width < 1000) return location + 'landscape_1000.webp';
+			if (width < 1500) return location + 'landscape_1500.webp';
+			if (width < 2000) return location + 'landscape_2000.webp';
+			if (width < 3000) return location + 'landscape_3000.webp';
+			if (width < 4000) return location + 'landscape_4000.webp';
+			return location + 'landscape.webp';
 		}
 	}
 
@@ -27,7 +43,7 @@
 		const yPercent = event.clientY / image.clientHeight;
 
 		// translate image
-		image.style.transform = `translate(-${xPercent * 100}px, -${yPercent * 100}px)`;
+		image.style.transform = `translate(-${xPercent * 70}px, -${yPercent * 70}px)`;
 	}
 </script>
 
@@ -79,7 +95,6 @@
 
 		.name {
 			margin: 0px;
-			filter: drop-shadow(3px 5px 0 #151515);
 		}
 	}
 </style>

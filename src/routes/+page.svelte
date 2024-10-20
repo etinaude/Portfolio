@@ -37,22 +37,18 @@
 <HeroImage />
 
 <section id="projects">
-	<div class="title">
-		<Saos animation={'from-left 1s ease'}>
+	<Saos animation={'from-bottom 1s ease'}>
+		<div class="title">
 			<h2>Projects</h2>
-		</Saos>
 
-		<Saos animation={'from-right 1s ease'}>
 			<a class="button more-projects-btn clickable" href="/projects">
 				More Projects
 				<span class="material-symbol"> keyboard_double_arrow_right </span>
 			</a>
-		</Saos>
-	</div>
+		</div>
+	</Saos>
 
 	<Showcase dataFunction={getFeaturedProjectsData} />
-
-	<Saos animation={'from-bottom 1s ease'} />
 </section>
 
 <section id="education">
