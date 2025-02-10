@@ -19,29 +19,20 @@
 		tag = tag.toLowerCase();
 		currentFilter = currentFilter == tag ? '' : tag;
 
-		if (currentFilter == '') {
-			smallProjects = allProjects;
-		} else {
-			smallProjects = allProjects.filter((project) => {
-				return (project.tags ?? [])
-					.map((projectTag) => projectTag.toLowerCase())
-					.includes(currentFilter);
-			});
-		}
+		if (currentFilter == '') return (smallProjects = allProjects);
 
-		if (smallProjects.length == 0) {
-			smallProjects = allProjects;
-		}
+		smallProjects = allProjects.filter((project) => {
+			return (project.tags ?? [])
+				.map((projectTag) => projectTag.toLowerCase())
+				.includes(currentFilter);
+		});
 
-		smallProjects = sortProjects(smallProjects);
-	}
-
-	function sortProjects(projects: ProjectT[]) {
-		return projects.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
+		if (smallProjects.length == 0) smallProjects = allProjects;
 	}
 
 	onMount(async () => {
 		allProjects = (await getProjectsData()) as ProjectT[];
+		allProjects = allProjects.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
 
 		// get tags from url
 		const urlParams = new URLSearchParams(window.location.search);
@@ -117,7 +108,7 @@
 	}
 
 	section {
-		--background: #333;
+		--background: $primary-xl;
 	}
 
 	.filter-bar {
