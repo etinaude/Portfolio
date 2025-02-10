@@ -22,15 +22,18 @@
 		let tempProjects: ProjectT[] = [];
 		smallProjects = [];
 
-		if (currentFilter == '') return (tempProjects = allProjects);
+		if (currentFilter == '') {
+			tempProjects = allProjects;
+		} else {
+			tempProjects = allProjects.filter((project) => {
+				return (project.tags ?? [])
+					.map((projectTag) => projectTag.toLowerCase())
+					.includes(currentFilter);
+			});
+			if (tempProjects.length == 0) tempProjects = allProjects;
+		}
 
-		tempProjects = allProjects.filter((project) => {
-			return (project.tags ?? [])
-				.map((projectTag) => projectTag.toLowerCase())
-				.includes(currentFilter);
-		});
-
-		if (tempProjects.length == 0) tempProjects = allProjects;
+		console.log(tempProjects);
 
 		// delay to show loading spinner and avoid slow rendering bugs
 		setTimeout(() => {
