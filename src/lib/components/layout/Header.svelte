@@ -36,6 +36,14 @@
 			leftLink = homeLink;
 			rightLink = projectsLink;
 		}
+
+		// get tags from url
+		const urlParams = new URLSearchParams(window.location.search);
+		let tag = urlParams.get('tag') || '';
+
+		homeLink.url = `/?tag=${tag}`;
+		projectsLink.url = `/projects?tag=${tag}`;
+		contactLink.url = `/contact?tag=${tag}`;
 	});
 </script>
 
