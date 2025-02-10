@@ -9,6 +9,7 @@
 	import Modal from '$lib/components/project/Modal.svelte';
 	import Contact from '$lib/components/contact/Contact.svelte';
 	import Header from '$lib/components/layout/Header.svelte';
+	import Spinner from '$lib/components/layout/Spinner.svelte';
 
 	let currentFilter = '';
 	let allProjects: ProjectT[] = [];
@@ -18,16 +19,23 @@
 	function toggleTag(tag: string) {
 		tag = tag.toLowerCase();
 		currentFilter = currentFilter == tag ? '' : tag;
+		let tempProjects: ProjectT[] = [];
+		smallProjects = [];
 
-		if (currentFilter == '') return (smallProjects = allProjects);
+		if (currentFilter == '') return (tempProjects = allProjects);
 
-		smallProjects = allProjects.filter((project) => {
+		tempProjects = allProjects.filter((project) => {
 			return (project.tags ?? [])
 				.map((projectTag) => projectTag.toLowerCase())
 				.includes(currentFilter);
 		});
 
-		if (smallProjects.length == 0) smallProjects = allProjects;
+		if (tempProjects.length == 0) tempProjects = allProjects;
+
+		// delay to show loading spinner and avoid slow rendering bugs
+		setTimeout(() => {
+			smallProjects = tempProjects;
+		}, 100);
 	}
 
 	onMount(async () => {
@@ -82,6 +90,11 @@
 		</div>
 	</Saos>
 
+	{#if smallProjects.length == 0}
+		<div class="loading-container">
+			<Spinner />
+		</div>
+	{/if}
 	<div class="tiles">
 		{#each smallProjects as project, i}
 			<Tile cardData={project} index={i} bind:openIndex />
@@ -100,6 +113,13 @@
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		width: 100%;
 		margin-bottom: 10em;
+	}
+
+	.loading-container {
+		display: flex;
+		justify-content: center;
+		margin-top: 100px;
+		min-height: 100vh;
 	}
 
 	h2 {
