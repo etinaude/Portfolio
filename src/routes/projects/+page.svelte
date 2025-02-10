@@ -9,6 +9,7 @@
 	import Modal from '$lib/components/project/Modal.svelte';
 	import Contact from '$lib/components/contact/Contact.svelte';
 	import Header from '$lib/components/layout/Header.svelte';
+	import Spinner from '$lib/components/layout/Spinner.svelte';
 
 	let currentFilter = '';
 	let allProjects: ProjectT[] = [];
@@ -16,32 +17,35 @@
 	let openIndex = -1;
 
 	function toggleTag(tag: string) {
-		if (currentFilter == tag) {
-			currentFilter = '';
-		} else {
-			currentFilter = tag;
-		}
+		tag = tag.toLowerCase();
+		currentFilter = currentFilter == tag ? '' : tag;
+		let tempProjects: ProjectT[] = [];
+		smallProjects = [];
 
-		if (currentFilter == '') {
-			smallProjects = allProjects;
-			return;
-		}
+		if (currentFilter == '') return (tempProjects = allProjects);
 
-		smallProjects = allProjects.filter((project) => {
-			return (project.tags ?? []).includes(currentFilter);
+		tempProjects = allProjects.filter((project) => {
+			return (project.tags ?? [])
+				.map((projectTag) => projectTag.toLowerCase())
+				.includes(currentFilter);
 		});
 
-		smallProjects = sortProjects(smallProjects);
-	}
+		if (tempProjects.length == 0) tempProjects = allProjects;
 
-	function sortProjects(projects: ProjectT[]) {
-		return projects.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
+		// delay to show loading spinner and avoid slow rendering bugs
+		setTimeout(() => {
+			smallProjects = tempProjects;
+		}, 100);
 	}
 
 	onMount(async () => {
 		allProjects = (await getProjectsData()) as ProjectT[];
-		smallProjects = allProjects;
-		smallProjects = sortProjects(smallProjects);
+		allProjects = allProjects.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
+
+		// get tags from url
+		const urlParams = new URLSearchParams(window.location.search);
+		let tag = urlParams.get('tag') || '';
+		toggleTag(tag);
 	});
 </script>
 
@@ -74,7 +78,7 @@
 				{#each tagOptions as tagItem}
 					<!-- svelte-ignore a11y-no-static-element-interactions  a11y-click-events-have-key-events-->
 					<div
-						class="tag {tagItem == currentFilter ? 'active' : ''}"
+						class="tag {tagItem.toLowerCase() == currentFilter ? 'active' : ''}"
 						on:click={() => toggleTag(tagItem)}
 					>
 						<div class="text">
@@ -86,6 +90,11 @@
 		</div>
 	</Saos>
 
+	{#if smallProjects.length == 0}
+		<div class="loading-container">
+			<Spinner />
+		</div>
+	{/if}
 	<div class="tiles">
 		{#each smallProjects as project, i}
 			<Tile cardData={project} index={i} bind:openIndex />
@@ -96,7 +105,8 @@
 </section>
 
 <style lang="scss">
-	@import './../../lib/styles/root.scss';
+	@use 'src/lib/styles/mixins.scss' as *;
+	@use 'src/lib/styles/variables.scss' as *;
 
 	.tiles {
 		display: grid;
@@ -105,13 +115,20 @@
 		margin-bottom: 10em;
 	}
 
+	.loading-container {
+		display: flex;
+		justify-content: center;
+		margin-top: 100px;
+		min-height: 100vh;
+	}
+
 	h2 {
 		margin: 60px 0 0px 0;
 		text-align: center;
 	}
 
 	section {
-		--background: #333;
+		--background: $primary-xl;
 	}
 
 	.filter-bar {

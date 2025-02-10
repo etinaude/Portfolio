@@ -31,7 +31,9 @@
 <Banner bind:this={banner} />
 
 <style lang="scss">
-	@import './admin.scss';
+	@use './admin.scss';
+	@use 'src/lib/styles/mixins.scss' as *;
+	@use 'src/lib/styles/variables.scss' as *;
 
 	.link-card {
 		@include border-d;

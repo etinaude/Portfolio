@@ -20,10 +20,11 @@
 <Banner bind:this={banner} />
 
 <style lang="scss">
-	@import './../../styles/root.scss';
+	@use 'src/lib/styles/mixins.scss' as *;
+	@use 'src/lib/styles/variables.scss' as *;
 
 	.contacts {
-		--background: #222;
+		--background: $primary;
 		width: min(100%, 1200px);
 
 		display: flex;

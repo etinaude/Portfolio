@@ -1,4 +1,6 @@
-@import './../lib/styles/root.scss';
+@use 'src/lib/styles/mixins.scss' as *;
+@use 'src/lib/styles/variables.scss' as *;
+@use './../lib/styles/fonts.scss' as *;
 
 h2 {
 	text-align: center;
@@ -11,7 +13,7 @@ h2 {
 }
 
 #projects {
-	--background: #333;
+	--background: $primary-xl;
 	margin-top: 100vh;
 	box-shadow: #111 0 0 30px;
 	position: sticky;
@@ -62,12 +64,12 @@ h2 {
 }
 
 #clubs {
-	--background: #333;
+	--background: $primary-xl;
 	padding-top: 10vh;
 }
 
 #work {
-	--background: #333;
+	--background: $primary-xl;
 	padding-top: 10vh;
 }
 
@@ -79,7 +81,7 @@ h2 {
 #contact {
 	@include flex-center;
 	padding-bottom: 0;
-	--background: #222;
+	--background: $primary;
 }
 
 .long-card-grid {

@@ -1,10 +1,15 @@
+<script>
+	import Spinner from './Spinner.svelte';
+</script>
+
 <div class="background">
 	<div class="container">Welcome!</div>
-	<div class="loading" />
+	<Spinner />
 </div>
 
 <style lang="scss">
-	@import './../../styles/root.scss';
+	@use 'src/lib/styles/mixins.scss' as *;
+	@use 'src/lib/styles/variables.scss' as *;
 
 	.background {
 		@include flex-center;
@@ -44,23 +49,5 @@
 		font-size: max(3rem, 6vw);
 		font-weight: 600;
 		margin-bottom: 2rem;
-	}
-
-	.loading {
-		border: 15px solid $primary-xxl;
-		border-top: 15px solid $accent;
-		border-radius: 50%;
-		width: 30px;
-		height: 30px;
-		animation: spin 1s linear infinite;
-	}
-
-	@keyframes spin {
-		0% {
-			rotate: 0deg;
-		}
-		100% {
-			rotate: 360deg;
-		}
 	}
 </style>

@@ -31,7 +31,8 @@
 </Saos>
 
 <style lang="scss">
-	@import '../../styles/root.scss';
+	@use 'src/lib/styles/mixins.scss' as *;
+	@use 'src/lib/styles/variables.scss' as *;
 
 	.tile {
 		@include transition-long;

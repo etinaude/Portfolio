@@ -1,4 +1,6 @@
-@import './../lib/styles/root.scss';
+@use 'src/lib/styles/mixins.scss' as *;
+@use 'src/lib/styles/variables.scss' as *;
+@use './../lib/styles/fonts.scss' as *;
 
 body {
 	overflow-x: hidden;
