@@ -21,14 +21,17 @@
 
 		if (currentFilter == '') {
 			smallProjects = allProjects;
-			return;
+		} else {
+			smallProjects = allProjects.filter((project) => {
+				return (project.tags ?? [])
+					.map((projectTag) => projectTag.toLowerCase())
+					.includes(currentFilter);
+			});
 		}
 
-		smallProjects = allProjects.filter((project) => {
-			return (project.tags ?? [])
-				.map((projectTag) => projectTag.toLowerCase())
-				.includes(currentFilter);
-		});
+		if (smallProjects.length == 0) {
+			smallProjects = allProjects;
+		}
 
 		smallProjects = sortProjects(smallProjects);
 	}
