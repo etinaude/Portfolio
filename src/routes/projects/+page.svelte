@@ -16,11 +16,8 @@
 	let openIndex = -1;
 
 	function toggleTag(tag: string) {
-		if (currentFilter == tag) {
-			currentFilter = '';
-		} else {
-			currentFilter = tag;
-		}
+		tag = tag.toLowerCase();
+		currentFilter = currentFilter == tag ? '' : tag;
 
 		if (currentFilter == '') {
 			smallProjects = allProjects;
@@ -28,7 +25,9 @@
 		}
 
 		smallProjects = allProjects.filter((project) => {
-			return (project.tags ?? []).includes(currentFilter);
+			return (project.tags ?? [])
+				.map((projectTag) => projectTag.toLowerCase())
+				.includes(currentFilter);
 		});
 
 		smallProjects = sortProjects(smallProjects);
@@ -40,10 +39,11 @@
 
 	onMount(async () => {
 		allProjects = (await getProjectsData()) as ProjectT[];
-		smallProjects = allProjects;
-		smallProjects = sortProjects(smallProjects);
+
+		// get tags from url
 		const urlParams = new URLSearchParams(window.location.search);
-		currentFilter = urlParams.get('currentFilter') || '';
+		let tag = urlParams.get('tag') || '';
+		toggleTag(tag);
 	});
 </script>
 
@@ -76,7 +76,7 @@
 				{#each tagOptions as tagItem}
 					<!-- svelte-ignore a11y-no-static-element-interactions  a11y-click-events-have-key-events-->
 					<div
-						class="tag {tagItem == currentFilter ? 'active' : ''}"
+						class="tag {tagItem.toLowerCase() == currentFilter ? 'active' : ''}"
 						on:click={() => toggleTag(tagItem)}
 					>
 						<div class="text">
