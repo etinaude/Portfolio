@@ -39,7 +39,9 @@
 </div>
 
 <style lang="scss">
-	@import 'src/lib/styles/root.scss';
+	@use 'src/lib/styles/mixins.scss' as *;
+	@use 'src/lib/styles/variables.scss' as *;
+
 	.long-card {
 		display: flex;
 		text-decoration: none;

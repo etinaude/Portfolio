@@ -42,6 +42,8 @@
 		allProjects = (await getProjectsData()) as ProjectT[];
 		smallProjects = allProjects;
 		smallProjects = sortProjects(smallProjects);
+		const urlParams = new URLSearchParams(window.location.search);
+		currentFilter = urlParams.get('currentFilter') || '';
 	});
 </script>
 
@@ -96,7 +98,8 @@
 </section>
 
 <style lang="scss">
-	@import './../../lib/styles/root.scss';
+	@use 'src/lib/styles/mixins.scss' as *;
+	@use 'src/lib/styles/variables.scss' as *;
 
 	.tiles {
 		display: grid;

@@ -1,8 +1,8 @@
-@import './variables.scss';
+@use 'variables.scss';
 
 @mixin border-d {
-	border: 2px solid $primary-xxd;
-	box-shadow: 0 4px 0 1px $primary-xxd;
+	border: 2px solid variables.$primary-xxd;
+	box-shadow: 0 4px 0 1px variables.$primary-xxd;
 	border-radius: 10px;
 }
 
@@ -11,8 +11,8 @@
 }
 
 @mixin border {
-	border: 2px solid $primary;
-	box-shadow: 0 4px 0 1px $primary;
+	border: 2px solid variables.$primary;
+	box-shadow: 0 4px 0 1px variables.$primary;
 	border-radius: 10px;
 }
 
@@ -23,14 +23,14 @@
 
 	position: relative;
 	min-width: 250px;
-	background-color: $accent;
+	background-color: variables.$accent;
 	color: black;
 	padding: 20px 20px;
 	font-weight: bold;
 
 	&:hover {
 		scale: 1.1;
-		background: $accent-l;
+		background: variables.$accent-l;
 	}
 }
 
@@ -55,11 +55,11 @@
 
 	height: 0px;
 	font-size: 1em;
-	background-color: $primary-t;
-	color: $accent;
+	background-color: variables.$primary-t;
+	color: variables.$accent;
 	margin: 0;
 
 	&:hover {
-		background-color: $primary-tt;
+		background-color: variables.$primary-tt;
 	}
 }

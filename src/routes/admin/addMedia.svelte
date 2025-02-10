@@ -134,7 +134,7 @@
 <Banner bind:this={banner} />
 
 <style lang="scss">
-	@import './admin.scss';
+	@use './admin.scss';
 
 	.grid {
 		display: grid;

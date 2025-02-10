@@ -15,7 +15,8 @@
 </section>
 
 <style lang="scss">
-	@import './../../lib/styles/root.scss';
+	@use 'src/lib/styles/mixins.scss' as *;
+	@use 'src/lib/styles/variables.scss' as *;
 
 	section {
 		@include flex-center;
