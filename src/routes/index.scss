@@ -13,7 +13,7 @@ h2 {
 }
 
 #projects {
-	--background: $primary-xl;
+	--background: #333;
 	margin-top: 100vh;
 	box-shadow: #111 0 0 30px;
 	position: sticky;
@@ -64,12 +64,12 @@ h2 {
 }
 
 #clubs {
-	--background: $primary-xl;
+	--background: #333;
 	padding-top: 10vh;
 }
 
 #work {
-	--background: $primary-xl;
+	--background: #333;
 	padding-top: 10vh;
 }
 
@@ -81,7 +81,7 @@ h2 {
 #contact {
 	@include flex-center;
 	padding-bottom: 0;
-	--background: $primary;
+	--background: #222;
 }
 
 .long-card-grid {
