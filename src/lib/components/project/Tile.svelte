@@ -16,7 +16,7 @@
 	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 	<div class="tile" on:click={open}>
 		<div class="img">
-			<img src={cardData.imageUrl} alt={cardData.title} loading="lazy" class="tile_image" />
+			<img src={cardData.media[0]} alt={cardData.title} loading="lazy" class="tile_image" />
 		</div>
 
 		<div class="text">

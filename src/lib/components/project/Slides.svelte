@@ -32,7 +32,7 @@
 	}
 
 	function autoSlide() {
-		if (cardData.hoverImg || cardData.hoverVideo) {
+		if (cardData.media.length > 1) {
 			const deltaTime = Date.now() - initTime;
 			if (deltaTime >= 5000) {
 				initTime = Date.now();
@@ -64,11 +64,6 @@
 		clearInterval(interval);
 
 		mediaList = [];
-		mediaList = mediaList.concat([
-			{ type: 'image', url: cardData.imageUrl },
-			{ type: 'image', url: cardData.hoverImg },
-			{ type: 'video', url: cardData.hoverVideo }
-		]);
 
 		if (cardData.media && cardData.media.length > 0) {
 			for (let item of cardData.media) {

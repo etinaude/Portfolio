@@ -32,7 +32,7 @@
 		<img
 			class="tilt"
 			alt={cardData.title + 'logo'}
-			src={cardData.imageUrl}
+			src={cardData.media[0]}
 			bind:this={imgElement}
 		/>
 	</Saos>

@@ -25,14 +25,14 @@
 <div class="outer tilt" on:click={open}>
 	<div class="card tilt" bind:this={card}>
 		<div class="img clickable">
-			<img src={cardData.imageUrl} alt={cardData.title} />
+			<img src={cardData.media[0]} alt={cardData.title} />
 
-			{#if cardData.hoverImg}
-				<img class="hover-img" src={cardData.hoverImg} alt="project hover" />
-			{:else if cardData.hoverVideo}
-				<video playsinline autoplay muted loop class="hover-img">
-					<source src={cardData.hoverVideo} />
-				</video>
+			{#if cardData.media.length > 1}
+				<img class="hover-img" src={cardData.media[1]} alt="project hover" />
+				<!-- {:else if cardData.hoverVideo} -->
+				<!-- <video playsinline autoplay muted loop class="hover-img"> -->
+				<!-- <source src={cardData.hoverVideo} /> -->
+				<!-- </video> -->
 			{/if}
 		</div>
 
