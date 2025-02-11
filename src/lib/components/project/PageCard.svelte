@@ -5,13 +5,21 @@
 	import Device from 'svelte-device-info';
 	import { fade } from 'svelte/transition';
 
+	const videoTypesRegex = /(mp4)|(webm)|(mov)/;
+	let hoverisVideo = false;
+
 	export let cardData: ProjectT;
 	var card: HTMLElement;
 
 	onMount(() => {
 		const mobile = Device.isMobile || Device.isTablet || Device.canHover === false;
 		if (!mobile) VanillaTilt.init(card, { glare: true, max: 6, 'max-glare': 0.7 });
+		if (cardData.media.length > 1) updateImages(cardData.media[1]);
 	});
+
+	export function updateImages(url: string) {
+		hoverisVideo = Boolean(url.match(videoTypesRegex));
+	}
 </script>
 
 <div class="full-page-card" transition:fade={{ duration: 1000 }}>
@@ -19,11 +27,13 @@
 		<img src={cardData.media[0]} alt={cardData.title} />
 
 		{#if cardData.media.length > 1}
-			<img class="hover-img" src={cardData.media[1]} alt="project hover" />
-			<!-- {:else if cardData.hoverVideo} -->
-			<!-- <video playsinline autoplay muted loop class="hover-img"> -->
-			<!-- <source src={cardData.hoverVideo} /> -->
-			<!-- </video> -->
+			{#if hoverisVideo}
+				<video playsinline autoplay muted loop class="hover-img">
+					<source src={cardData.media[1]} />
+				</video>
+			{:else}
+				<img class="hover-img" src={cardData.media[1]} alt="project hover" />
+			{/if}
 		{/if}
 	</div>
 

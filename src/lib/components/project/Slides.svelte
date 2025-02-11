@@ -4,7 +4,7 @@
 	import { fade } from 'svelte/transition';
 	import { swipe } from 'svelte-gestures';
 
-	const videoTypes = ['mp4', 'webm', 'ogg', 'mov'];
+	const videoTypesRegex = /(mp4)|(webm)|(mov)/;
 
 	export let cardData: ProjectT;
 	let slideIndex = 0;
@@ -67,10 +67,7 @@
 
 		if (cardData.media && cardData.media.length > 0) {
 			for (let item of cardData.media) {
-				const type = item.split('.').pop();
-				if (!type) continue;
-
-				if (videoTypes.includes(type)) {
+				if (item.match(videoTypesRegex)) {
 					mediaList.push({ type: 'video', url: item });
 				} else {
 					mediaList.push({ type: 'image', url: item });

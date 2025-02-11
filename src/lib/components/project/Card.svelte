@@ -8,11 +8,15 @@
 	export let index = -1;
 	export let openIndex = -1;
 
+	const videoTypesRegex = /(mp4)|(webm)|(mov)/;
+	let hoverisVideo = false;
 	let card: HTMLElement;
 
 	onMount(() => {
 		const mobile = Device.isMobile || Device.isTablet || Device.canHover === false;
 		if (!mobile) VanillaTilt.init(card, { glare: true, max: 6, 'max-glare': 0.7 });
+
+		if ((cardData.media[1] || '').match(videoTypesRegex)) hoverisVideo = true;
 	});
 
 	function open() {
@@ -28,11 +32,13 @@
 			<img src={cardData.media[0]} alt={cardData.title} />
 
 			{#if cardData.media.length > 1}
-				<img class="hover-img" src={cardData.media[1]} alt="project hover" />
-				<!-- {:else if cardData.hoverVideo} -->
-				<!-- <video playsinline autoplay muted loop class="hover-img"> -->
-				<!-- <source src={cardData.hoverVideo} /> -->
-				<!-- </video> -->
+				{#if hoverisVideo}
+					<video playsinline autoplay muted loop class="hover-img">
+						<source src={cardData.media[1]} />
+					</video>
+				{:else}
+					<img class="hover-img" src={cardData.media[1]} alt="project hover" />
+				{/if}
 			{/if}
 		</div>
 
