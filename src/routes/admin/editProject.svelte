@@ -1,9 +1,7 @@
 <script lang="ts">
 	import Banner from '$lib/components/Banner.svelte';
 	import Card from '$lib/components/project/Card.svelte';
-	import Modal from '$lib/components/project/Modal.svelte';
 	import PageCard from '$lib/components/project/PageCard.svelte';
-	import Showcase from '$lib/components/project/Showcase.svelte';
 	import Tile from '$lib/components/project/Tile.svelte';
 	import { addNewProject, getProjectsData } from '$lib/services/firebase';
 	import { tagOptions } from '$lib/services/tags';
@@ -69,7 +67,7 @@
 
 <section>
 	<div class="row">
-		<div class="column">
+		<div class="column demo">
 			<h2>Search project</h2>
 			<div class="field">
 				{#if allProjects.length > 0}
@@ -83,11 +81,6 @@
 			</div>
 
 			<h3>Preview</h3>
-
-			<div class="center">
-				<Card cardData={project} />
-			</div>
-			<p />
 
 			<div class="center">
 				<div class="tiles">
@@ -183,4 +176,49 @@
 
 <style lang="scss">
 	@use './admin.scss';
+	@use 'src/lib/styles/mixins.scss' as *;
+	@use 'src/lib/styles/variables.scss' as *;
+
+	.row {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		.column {
+			width: 900px;
+
+			&:first-child {
+				margin-right: 100px;
+				width: 400px;
+			}
+
+			.center {
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+	}
+
+	.tag-list {
+		display: flex;
+
+		.tag {
+			@include border-d;
+			background-color: $accent;
+			border-radius: 20vw;
+			padding: 6px 15px;
+			margin: 0px 10px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			font-weight: bold;
+
+			.remove {
+				margin-left: 10px;
+				cursor: pointer;
+			}
+		}
+	}
 </style>
