@@ -4,7 +4,7 @@
 	import { fade } from 'svelte/transition';
 	import { swipe } from 'svelte-gestures';
 
-	const videoTypes = ['mp4', 'webm', 'ogg', 'mov'];
+	const videoTypesRegex = /(mp4)|(webm)|(mov)/;
 
 	export let cardData: ProjectT;
 	let slideIndex = 0;
@@ -32,7 +32,7 @@
 	}
 
 	function autoSlide() {
-		if (cardData.hoverImg || cardData.hoverVideo) {
+		if (cardData.media.length > 1) {
 			const deltaTime = Date.now() - initTime;
 			if (deltaTime >= 5000) {
 				initTime = Date.now();
@@ -64,18 +64,10 @@
 		clearInterval(interval);
 
 		mediaList = [];
-		mediaList = mediaList.concat([
-			{ type: 'image', url: cardData.imageUrl },
-			{ type: 'image', url: cardData.hoverImg },
-			{ type: 'video', url: cardData.hoverVideo }
-		]);
 
 		if (cardData.media && cardData.media.length > 0) {
 			for (let item of cardData.media) {
-				const type = item.split('.').pop();
-				if (!type) continue;
-
-				if (videoTypes.includes(type)) {
+				if (item.match(videoTypesRegex)) {
 					mediaList.push({ type: 'video', url: item });
 				} else {
 					mediaList.push({ type: 'image', url: item });
@@ -91,11 +83,7 @@
 </script>
 
 {#if cardData}
-	<div
-		class="image-cont"
-		use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
-		on:swipe={swipeHandler}
-	>
+	<div class="slides">
 		{#if mediaList.length > 1}
 			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 			<div class="right btn" on:click={right}>
@@ -107,21 +95,26 @@
 				<span class="material-symbol"> keyboard_double_arrow_left </span>
 			</div>
 		{/if}
-
-		<div class="view">
-			{#if mediaList[slideIndex]}
-				{#key unique}
-					<div transition:fade={{ duration: 200 }}>
-						{#if mediaList[slideIndex].type === 'image'}
-							<img src={mediaList[slideIndex].url} alt={cardData.title} />
-						{:else}
-							<video playsinline autoplay muted loop class="hover-img">
-								<source src={mediaList[slideIndex].url} />
-							</video>
-						{/if}
-					</div>
-				{/key}
-			{/if}
+		<div
+			class="image-cont"
+			use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
+			on:swipe={swipeHandler}
+		>
+			<div class="view">
+				{#if mediaList[slideIndex]}
+					{#key unique}
+						<div transition:fade={{ duration: 200 }}>
+							{#if mediaList[slideIndex].type === 'image'}
+								<img src={mediaList[slideIndex].url} alt={cardData.title} />
+							{:else}
+								<video playsinline autoplay muted loop class="hover-img">
+									<source src={mediaList[slideIndex].url} />
+								</video>
+							{/if}
+						</div>
+					{/key}
+				{/if}
+			</div>
 		</div>
 	</div>
 {/if}
@@ -145,43 +138,56 @@
 		flex-direction: row;
 	}
 
-	.image-cont {
+	.slides {
 		position: relative;
 		width: 400px;
 		height: 400px;
+		display: flex;
+		margin-right: 40px;
 		overflow: hidden;
+	}
+
+	.image-cont {
+		width: 100%;
+		height: 100%;
 		display: flex;
 		flex-direction: row;
 		border-radius: 10px;
-		margin-right: 40px;
-
-		&:hover .btn {
-			scale: 1;
-		}
+		overflow: hidden;
+		border: 2px solid $accent;
+		box-sizing: border-box;
 	}
 
 	.btn {
 		position: absolute;
-		bottom: 10px;
+		bottom: -2px;
 
-		background-color: $primary-tt;
+		background-color: $primary;
 		font-size: 1.2em;
-		padding: 10px 30px;
+		padding: 8px 15px 3px 15px;
 		border-radius: 10px;
 		cursor: pointer;
 		z-index: 1000;
 		user-select: none;
-		scale: 0;
 		transform-origin: center bottom;
 		border: 2px solid $accent;
 		color: $accent;
+		border-bottom: none;
+
+		&:hover {
+			scale: 1.05;
+		}
 
 		&.left {
-			left: 7px;
+			left: -2px;
+			border-radius: 0px 20px 0px 0px;
+			border-left: none;
 		}
 
 		&.right {
-			right: 7px;
+			right: -2px;
+			border-radius: 20px 0px 0px 0px;
+			border-right: none;
 		}
 	}
 

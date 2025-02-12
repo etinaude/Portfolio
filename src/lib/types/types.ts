@@ -1,15 +1,12 @@
 export type ProjectT = {
 	title: string;
 	description: string;
-	imageUrl: string;
 
-	hoverImg?: string;
-	hoverVideo?: string;
 	followUrl?: string;
 	featured?: boolean;
 	tags?: string[];
 
-	media?: string[];
+	media: string[];
 	tldr?: string;
 	priority?: number;
 };
@@ -21,7 +18,15 @@ export type LinkT = {
 	url: string;
 };
 
-export type Tags = "Hardware" | "Software" | "Web" | "Mobile" | "Wood Work" | "Art" | "Design" | "Other";
+export type Tags =
+	| 'Hardware'
+	| 'Software'
+	| 'Web'
+	| 'Mobile'
+	| 'Wood Work'
+	| 'Art'
+	| 'Design'
+	| 'Other';
 
 export type ContactT = {
 	displayUrl: string;

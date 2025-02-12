@@ -9,9 +9,9 @@
 
 	let slideIndex = 0;
 	let currentData: ProjectT;
+	let card: any;
 
 	let interval: NodeJS.Timeout;
-
 	let data: ProjectT[] = [];
 
 	export let dataFunction: any;
@@ -23,6 +23,10 @@
 	function gotoSlide(index: number, timeOut = SLIDE_DURATION) {
 		slideIndex = index;
 		currentData = JSON.parse(JSON.stringify(data[slideIndex]));
+
+		if (card) {
+			card.updateImages(currentData.media[1]);
+		}
 		clearInterval(interval);
 		interval = setInterval(() => {
 			nextSlide();
@@ -32,7 +36,6 @@
 	onMount(async () => {
 		data = await dataFunction();
 		data = data.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
-		currentData = data[slideIndex];
 		gotoSlide(0);
 	});
 </script>
@@ -40,7 +43,7 @@
 <Saos animation={'from-bottom 1s ease'}>
 	{#if currentData}
 		<div class="card-container">
-			<PageCard cardData={currentData} />
+			<PageCard cardData={currentData} bind:this={card} />
 
 			<div class="tabs">
 				{#each data as project, i}

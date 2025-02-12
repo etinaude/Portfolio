@@ -33,8 +33,6 @@
 			if (tempProjects.length == 0) tempProjects = allProjects;
 		}
 
-		console.log(tempProjects);
-
 		// delay to show loading spinner and avoid slow rendering bugs
 		setTimeout(() => {
 			smallProjects = tempProjects;

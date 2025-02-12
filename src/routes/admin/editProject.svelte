@@ -1,9 +1,6 @@
 <script lang="ts">
 	import Banner from '$lib/components/Banner.svelte';
-	import Card from '$lib/components/project/Card.svelte';
-	import Modal from '$lib/components/project/Modal.svelte';
 	import PageCard from '$lib/components/project/PageCard.svelte';
-	import Showcase from '$lib/components/project/Showcase.svelte';
 	import Tile from '$lib/components/project/Tile.svelte';
 	import { addNewProject, getProjectsData } from '$lib/services/firebase';
 	import { tagOptions } from '$lib/services/tags';
@@ -16,13 +13,11 @@
 		title: '',
 		description: '',
 		tldr: '',
-		imageUrl: '',
-		hoverImg: '',
-		hoverVideo: '',
 		followUrl: '',
 		featured: false,
 		priority: 10,
-		tags: []
+		tags: [],
+		media: []
 	};
 
 	let tag: string = '';
@@ -33,7 +28,7 @@
 
 		if (project.title === '') return banner.show('No Title', 'error');
 		if (project.description === '') return banner.show('No Description', 'error');
-		if (project.imageUrl === '') return banner.show('No Image Url', 'error');
+		if (project.media.length === 0) return banner.show('No Image Url', 'error');
 
 		const isSuccess = await addNewProject(project);
 
@@ -57,6 +52,10 @@
 		project.tags = [...new Set(project.tags)];
 	}
 
+	async function addMedia() {
+		project.media = [...project.media, ''];
+	}
+
 	async function removeTag(tag: string) {
 		if (!project.tags) return;
 		project.tags = project.tags.filter((t) => t !== tag);
@@ -64,12 +63,17 @@
 
 	onMount(async () => {
 		allProjects = (await getProjectsData()) as ProjectT[];
+
+		for (let projectItem of allProjects) {
+			projectItem.tags = projectItem.tags ?? [];
+			projectItem.media = projectItem.media ?? [];
+		}
 	});
 </script>
 
 <section>
 	<div class="row">
-		<div class="column">
+		<div class="column demo">
 			<h2>Search project</h2>
 			<div class="field">
 				{#if allProjects.length > 0}
@@ -83,11 +87,6 @@
 			</div>
 
 			<h3>Preview</h3>
-
-			<div class="center">
-				<Card cardData={project} />
-			</div>
-			<p />
 
 			<div class="center">
 				<div class="tiles">
@@ -114,22 +113,7 @@
 				<textarea id="description" name="description" rows="7" bind:value={project.description} />
 			</div>
 
-			<div class="field">
-				<label for="imageUrl">Image Url</label>
-				<input type="text" id="imageUrl" name="imageUrl" bind:value={project.imageUrl} />
-			</div>
-
 			<h3>Optional</h3>
-
-			<div class="field">
-				<label for="hoverImg">Hover Img</label>
-				<input type="text" id="hoverImg" name="hoverImg" bind:value={project.hoverImg} />
-			</div>
-
-			<div class="field">
-				<label for="hoverVideo">Hover Video</label>
-				<input type="text" id="hoverVideo" name="hoverVideo" bind:value={project.hoverVideo} />
-			</div>
 
 			<div class="field">
 				<label for="followUrl">Follow Url</label>
@@ -168,6 +152,22 @@
 				</div>
 			{/if}
 
+			<div class="extra-media">
+				<h3>Extra Media</h3>
+				{#each project.media as link}
+					<div class="field">
+						<input type="text" id="media" name="media" bind:value={link} />
+						<button
+							class="remove-media"
+							on:click={() => (project.media = project.media.filter((l) => l !== link))}
+							>Remove</button
+						>
+					</div>
+				{/each}
+
+				<button class="add-media" on:click={addMedia}>Add Media</button>
+			</div>
+
 			<div class="field">
 				<button class="submit" type="submit" on:click={submit}>Submit</button>
 			</div>
@@ -183,4 +183,49 @@
 
 <style lang="scss">
 	@use './admin.scss';
+	@use 'src/lib/styles/mixins.scss' as *;
+	@use 'src/lib/styles/variables.scss' as *;
+
+	.row {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		.column {
+			width: 900px;
+
+			&:first-child {
+				margin-right: 100px;
+				width: 400px;
+			}
+
+			.center {
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+	}
+
+	.tag-list {
+		display: flex;
+
+		.tag {
+			@include border-d;
+			background-color: $accent;
+			border-radius: 20vw;
+			padding: 6px 15px;
+			margin: 0px 10px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			font-weight: bold;
+
+			.remove {
+				margin-left: 10px;
+				cursor: pointer;
+			}
+		}
+	}
 </style>
