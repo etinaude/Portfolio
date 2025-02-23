@@ -58,7 +58,7 @@
 <Header />
 
 <section>
-	<Modal projectsList={allProjects} projectIndex={openIndex} />
+	<Modal projectsList={smallProjects} projectIndex={openIndex} />
 
 	<Saos animation={'from-bottom 1s ease'}>
 		<h2 class="featured-title">Featured Projects</h2>
