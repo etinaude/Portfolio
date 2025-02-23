@@ -66,6 +66,12 @@
 
 		returnedFilePath = await addNewImage(blob, fileName);
 		if (returnedFilePath == '') return banner.show('Error Uploading', 'error');
+		returnedFilePath = returnedFilePath.replace(/ /g, '%20');
+		returnedFilePath = returnedFilePath.replace('projects/', 'projects%2F');
+		returnedFilePath = returnedFilePath.replace('logos/', 'projlogosetcs%2F');
+		returnedFilePath = returnedFilePath.replace('awards/', 'awards%2F');
+
+		console.log(returnedFilePath);
 
 		banner.show('File Uploaded', 'success');
 	}

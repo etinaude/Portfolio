@@ -6,8 +6,10 @@
 	import { tagOptions } from '$lib/services/tags';
 	import type { ProjectT } from '$lib/types/types';
 	import { onMount } from 'svelte';
+	import Modal from '$lib/components/project/Modal.svelte';
 
 	let allProjects: ProjectT[] = [];
+	let openIndex = -1;
 
 	let project: ProjectT = {
 		title: '',
@@ -17,7 +19,7 @@
 		featured: false,
 		priority: 10,
 		tags: [],
-		media: []
+		media: ['']
 	};
 
 	let tag: string = '';
@@ -25,6 +27,8 @@
 
 	async function submit() {
 		banner.show('Submitting', 'info');
+
+		project.media = project.media.filter((l) => l !== '');
 
 		if (project.title === '') return banner.show('No Title', 'error');
 		if (project.description === '') return banner.show('No Description', 'error');
@@ -72,6 +76,8 @@
 </script>
 
 <section>
+	<Modal projectsList={[project]} projectIndex={openIndex} />
+
 	<div class="row">
 		<div class="column demo">
 			<h2>Search project</h2>
@@ -90,7 +96,7 @@
 
 			<div class="center">
 				<div class="tiles">
-					<Tile cardData={project} />
+					<Tile cardData={project} index={0} bind:openIndex />
 				</div>
 			</div>
 		</div>
@@ -104,11 +110,6 @@
 			</div>
 
 			<div class="field">
-				<label for="tldr">TLDR</label>
-				<textarea id="tldr" name="tldr" rows="3" bind:value={project.tldr} />
-			</div>
-
-			<div class="field">
 				<label for="description">Description</label>
 				<textarea id="description" name="description" rows="7" bind:value={project.description} />
 			</div>
@@ -116,11 +117,13 @@
 			<h3>Optional</h3>
 
 			<div class="field">
-				<label for="followUrl">Follow Url</label>
-				<input type="text" id="followUrl" name="followUrl" bind:value={project.followUrl} />
+				<label for="tldr">TLDR</label>
+				<textarea id="tldr" name="tldr" rows="3" bind:value={project.tldr} />
 			</div>
 
 			<div class="field">
+				<label for="followUrl">Follow Url</label>
+				<input type="text" id="followUrl" name="followUrl" bind:value={project.followUrl} />
 				<label for="featured">Featured</label>
 				<input type="checkbox" id="featured" name="featured" bind:checked={project.featured} />
 			</div>
@@ -128,9 +131,6 @@
 			<div class="field">
 				<label for="priority">Priority</label>
 				<input type="number" id="priority" name="priority" bind:value={project.priority} />
-			</div>
-
-			<div class="field">
 				<label for="tags">tags</label>
 				<select name="tags" id="tags" bind:value={tag} on:change={addTag}>
 					{#each tagOptions as tagOptionItem}
@@ -153,7 +153,7 @@
 			{/if}
 
 			<div class="extra-media">
-				<h3>Extra Media</h3>
+				<h3>Media URLs</h3>
 				{#each project.media as link}
 					<div class="field">
 						<input type="text" id="media" name="media" bind:value={link} />
