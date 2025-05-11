@@ -21,6 +21,7 @@
 	@include flex-center;
 	@include transition;
 
+	cursor: none;
 	position: relative;
 	min-width: 250px;
 	background-color: variables.$accent;

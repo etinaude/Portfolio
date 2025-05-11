@@ -104,6 +104,7 @@
 	a {
 		@include flex-center;
 		@include transition;
+		cursor: none;
 
 		transition: color 0.2s linear;
 		height: 100%;

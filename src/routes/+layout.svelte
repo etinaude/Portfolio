@@ -74,4 +74,8 @@
 			transform: none;
 		}
 	}
+
+	* {
+		cursor: none;
+	}
 </style>

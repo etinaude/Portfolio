@@ -79,7 +79,7 @@
 				{#each tagOptions as tagItem}
 					<!-- svelte-ignore a11y-no-static-element-interactions  a11y-click-events-have-key-events-->
 					<div
-						class="tag {tagItem.toLowerCase() == currentFilter ? 'active' : ''}"
+						class="clickable tag {tagItem.toLowerCase() == currentFilter ? 'active' : ''}"
 						on:click={() => toggleTag(tagItem)}
 					>
 						<div class="text">
@@ -101,7 +101,9 @@
 			<Tile cardData={project} index={i} bind:openIndex />
 		{/each}
 	</div>
+</section>
 
+<section id="contact">
 	<Contact />
 </section>
 
@@ -182,5 +184,11 @@
 		.showcase {
 			margin-top: 100px;
 		}
+	}
+
+	#contact {
+		@include flex-center;
+		padding-bottom: 0;
+		--background: #222;
 	}
 </style>

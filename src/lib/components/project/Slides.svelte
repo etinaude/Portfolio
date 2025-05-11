@@ -86,12 +86,12 @@
 	<div class="slides">
 		{#if mediaList.length > 1}
 			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-			<div class="right btn" on:click={right}>
+			<div class="right btn clickable" on:click={right}>
 				<span class="material-symbol"> keyboard_double_arrow_right </span>
 			</div>
 
 			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-			<div class="left btn" on:click={left}>
+			<div class="left btn clickable" on:click={left}>
 				<span class="material-symbol"> keyboard_double_arrow_left </span>
 			</div>
 		{/if}
@@ -166,7 +166,6 @@
 		font-size: 1.2em;
 		padding: 8px 15px 3px 15px;
 		border-radius: 10px;
-		cursor: pointer;
 		z-index: 1000;
 		user-select: none;
 		transform-origin: center bottom;

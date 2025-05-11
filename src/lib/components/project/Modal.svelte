@@ -50,10 +50,10 @@
 {#if projectsList[projectIndex]}
 	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 	<div class="background" on:click={exit} transition:fade={{ duration: 150 }}>
-		<div class="left next-btn" on:click={left}>
+		<div class="left next-btn clickable" on:click={left}>
 			<span class="material-symbol"> keyboard_double_arrow_left </span>
 		</div>
-		<div class="right next-btn" on:click={right}>
+		<div class="right next-btn clickable" on:click={right}>
 			<span class="material-symbol"> keyboard_double_arrow_right </span>
 		</div>
 		{#if projectsList[projectIndex].followUrl}
@@ -196,7 +196,6 @@
 		font-size: 2.5em;
 		padding: 10px;
 		min-width: auto;
-		cursor: pointer;
 		z-index: 1000;
 		user-select: none;
 

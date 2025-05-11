@@ -224,7 +224,6 @@
 
 			.remove {
 				margin-left: 10px;
-				cursor: pointer;
 			}
 		}
 	}

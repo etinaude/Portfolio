@@ -5,11 +5,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	let words = [
-		'Programmer',
-		'Tech Enthusiast',
-		'Nerd',
-		'Designer',
 		'Creative Technologist',
+		'Nerd',
+		'Roboticist',
+		'Designer',
+		'Tech Enthusiast',
 		'Maker'
 	];
 

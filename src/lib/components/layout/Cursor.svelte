@@ -30,10 +30,9 @@
 		width: 20px;
 		height: 20px;
 		background-color: transparent;
-		border: 1px solid $light;
+		border: 2px solid $light;
 
 		&.clickable {
-			cursor: pointer;
 			animation: pulse 1s infinite;
 
 			.inner {
@@ -51,22 +50,16 @@
 			border-color: $light;
 		}
 		100% {
-			scale: 1.5;
-			border-color: $accent;
+			scale: 1.8;
+			border-color: transparent;
 		}
 	}
 
 	.inner {
-		width: 4px;
-		height: 4px;
-		background-color: $accent;
+		width: 5px;
+		height: 5px;
+		background-color: #1aff8d;
 		border-radius: 50%;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		.outer {
-			border: 1px solid $light;
-		}
 	}
 
 	@media (hover: none) {
