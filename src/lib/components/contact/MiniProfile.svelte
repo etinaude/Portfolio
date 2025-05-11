@@ -18,9 +18,9 @@
 	<h2>Etienne Naude</h2>
 
 	<div class="bio">
-		🍞 Bread 💻 Tech <br />
-		🔒 Locks ♟️ Chess <br />
-		🎨 Design 🔦 Caves <br />
+		🤖 Robots&emsp; 🖊️ Design<br />
+		🍞 Bread! &emsp; 💻 Tech <br />
+		🔒 Locks! &emsp; 🔦 Caves <br />
 	</div>
 </div>
 
