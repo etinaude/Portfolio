@@ -24,6 +24,7 @@
 		educationData = (await getEducationData()) as LongCardT[];
 
 		educationData = educationData.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
+		workData = workData.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
 	});
 </script>
 
