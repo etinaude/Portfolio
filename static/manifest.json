@@ -1,30 +1,33 @@
 {
-  "short_name": "Etinaude",
-  "name": "Etienne Naude Portfolio",
-  "description": "A portfolio website showcasing the work of Etienne Naude as a software developer, designer and tech enthusiast. This portfolio highlights some of the projects I have worked on as well as my education background and previous work experience.",
-  "version": "3",
-  "scope": "/",
-  "start_url": "/",
-  "manifest_version": "1",
-  "display": "fullscreen",
-  "background_color": "#222222",
-  "theme_color": "#43d0ff",
-  "orientation": "landscape-primary",
-  "lang": "en-US",
-  "categories": [
-    "portfolio",
-    "portfolio website",
-    "etinaude",
-    "Etienne Naude",
-    "etinaude dev",
-    "development"
-  ],
-  "icons": [
-    {
-      "src": "./icon.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ]
+	"short_name": "Etinaude",
+	"name": "Etienne Naude's Portfolio",
+	"description": "Etienne is a Master's in Innovation Design Engineering at Imperial College and the Royal College of Art with comprehensive industry experience in design, technology and making.",
+	"version": "3",
+	"scope": "/",
+	"start_url": "/",
+	"manifest_version": "2",
+	"display": "fullscreen",
+	"background_color": "#222222",
+	"theme_color": "#008cff",
+	"orientation": "landscape-primary",
+	"lang": "en-US",
+	"categories": [
+		"etinaude",
+		"etienne",
+		"naude",
+		"etienne naude",
+		"software",
+		"robotics",
+		"innovation design engineering",
+		"design engineering",
+		"technology design"
+	],
+	"icons": [
+		{
+			"src": "./icon.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	]
 }
