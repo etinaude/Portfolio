@@ -7,6 +7,8 @@
 
 ## ✨ Portfolio Website
 
+I am Etienne - a student, maker and roboticist at the Royal College of Art and Imperial College London.
+
 This website showcases my projects across software development, hardware tinkering, design, and hands-on making. As I learn and experiment, my skills and projects keep evolving. This website reflects that growth, so it is in a constant state of redesign and improvement.
 
 ## 🛠️ Tools
@@ -52,7 +54,7 @@ I'm always open to feedback, questions, and inspiration. Connect with me, learn 
 
 ## 😀 Demo
 
-![Demo](./static/demo.webp)
+![Demo](./static/new_demo.webp)
 
 ## ⭐️ Like this project?
 
