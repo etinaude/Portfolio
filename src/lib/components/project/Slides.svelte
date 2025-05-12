@@ -89,35 +89,36 @@
 			use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
 			on:swipe={swipeHandler}
 		>
-			<div class="view">
-				{#if mediaList[slideIndex]}
-					{#key unique}
-						<div transition:fade={{ duration: 200 }}>
-							{#if mediaList[slideIndex].type === 'image'}
-								<img src={mediaList[slideIndex].url} alt={cardData.title} />
-							{:else}
-								<video playsinline autoplay muted loop class="hover-img">
-									<source src={mediaList[slideIndex].url} />
-								</video>
-							{/if}
-						</div>
-					{/key}
-				{/if}
-			</div>
+			{#if mediaList[slideIndex]}
+				{#key unique}
+					<div transition:fade={{ duration: 200 }}>
+						{#if mediaList[slideIndex].type === 'image'}
+							<img src={mediaList[slideIndex].url} alt={cardData.title} />
+						{:else}
+							<video playsinline autoplay muted loop class="hover-img">
+								<source src={mediaList[slideIndex].url} />
+							</video>
+						{/if}
+					</div>
+				{/key}
+			{/if}
 		</div>
 
-		<div class="index-dots">
-			{#each mediaList as _, i}
-				<div
-					class="dot"
-					class:active={i === slideIndex}
-					on:click={() => {
-						slideIndex = i;
-						reload();
-					}}
-				/>
-			{/each}
-		</div>
+		{#if mediaList.length > 1}
+			<div class="index-dots">
+				{#each mediaList as _, i}
+					<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions-->
+					<div
+						class="dot"
+						class:active={i === slideIndex}
+						on:click={() => {
+							slideIndex = i;
+							reload();
+						}}
+					/>
+				{/each}
+			</div>
+		{/if}
 	</div>
 {/if}
 
@@ -133,11 +134,6 @@
 		object-fit: cover;
 		object-position: center;
 		left: 0;
-	}
-
-	.view {
-		display: flex;
-		flex-direction: row;
 	}
 
 	.slides {
@@ -217,14 +213,22 @@
 	}
 
 	@media (max-width: 768px) {
-		.image-cont {
-			width: 85vw;
+		.image-cont,
+		.image-cont div,
+		img {
+			width: 100%;
 			margin-right: 0;
 			margin-bottom: 10px;
 		}
 
 		.btn {
 			scale: 0.7 !important;
+		}
+
+		.slides {
+			width: 85vw;
+			height: 85vw;
+			margin-right: 0;
 		}
 	}
 </style>
