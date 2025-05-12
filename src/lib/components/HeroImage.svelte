@@ -43,7 +43,7 @@
 		const yPercent = event.clientY / image.clientHeight;
 
 		// translate image
-		image.style.transform = `translate(-${xPercent * 70}px, -${yPercent * 70}px)`;
+		image.style.transform = `translate(-${xPercent * 20}px, -${yPercent * 20}px)`;
 	}
 </script>
 
