@@ -3,6 +3,7 @@
 	import Saos from 'saos';
 	import PageCard from './PageCard.svelte';
 	import { onMount } from 'svelte';
+	import { swipe } from 'svelte-gestures';
 
 	const SLIDE_DURATION = 3;
 	const LONG_SLIDE_DURATION = 6;
@@ -20,6 +21,10 @@
 		gotoSlide((slideIndex + 1) % data.length);
 	}
 
+	function prevSlide() {
+		gotoSlide((slideIndex - 1 + data.length) % data.length);
+	}
+
 	function gotoSlide(index: number, timeOut = SLIDE_DURATION) {
 		slideIndex = index;
 		currentData = JSON.parse(JSON.stringify(data[slideIndex]));
@@ -33,6 +38,14 @@
 		}, timeOut * 1000);
 	}
 
+	function swipeHandler(event: CustomEvent) {
+		if (event.detail.direction === 'left') {
+			nextSlide();
+		} else if (event.detail.direction === 'right') {
+			prevSlide();
+		}
+	}
+
 	onMount(async () => {
 		data = await dataFunction();
 		data = data.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
@@ -42,7 +55,11 @@
 
 <Saos animation={'from-bottom 1s ease'}>
 	{#if currentData}
-		<div class="card-container">
+		<div
+			class="card-container"
+			on:swipe={swipeHandler}
+			use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
+		>
 			<PageCard cardData={currentData} bind:this={card} />
 
 			<div class="tabs">
