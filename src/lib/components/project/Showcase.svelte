@@ -108,6 +108,8 @@
 			height: 100%;
 			background-color: transparent;
 
+			transition: 0.5s ease;
+
 			&.active {
 				background-color: $accent;
 			}

@@ -153,7 +153,8 @@
 			gap: 5px;
 
 			.dot {
-				width: 25px;
+				transition: 0.5s ease;
+				width: 8px;
 				height: 8px;
 				border-radius: 50px;
 				background-color: $primary-xxl;
@@ -161,6 +162,8 @@
 				cursor: pointer;
 
 				&.active {
+					width: 25px;
+
 					opacity: 1;
 					background-color: $accent;
 				}

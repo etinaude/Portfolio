@@ -58,7 +58,7 @@
 	.inner {
 		width: 5px;
 		height: 5px;
-		background-color: #1aff8d;
+		background-color: $accent;
 		border-radius: 50%;
 	}
 

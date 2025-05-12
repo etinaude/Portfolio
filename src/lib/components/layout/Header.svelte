@@ -106,7 +106,7 @@
 		@include transition;
 		cursor: none;
 
-		transition: color 0.2s linear;
+		transition: color 0.4s linear;
 		height: 100%;
 	}
 
@@ -144,15 +144,18 @@
 			}
 
 			&:hover {
-				scale: 1.1;
+				scale: 1.05;
+				filter: drop-shadow(0px 3px 0px $accent);
 			}
 
 			&.left {
 				left: 0;
+				transform-origin: top left;
 			}
 
 			&.right {
 				right: 0;
+				transform-origin: top right;
 			}
 		}
 	}
