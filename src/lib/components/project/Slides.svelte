@@ -84,17 +84,6 @@
 
 {#if cardData}
 	<div class="slides">
-		{#if mediaList.length > 1}
-			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-			<div class="right btn clickable" on:click={right}>
-				<span class="material-symbol"> keyboard_double_arrow_right </span>
-			</div>
-
-			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-			<div class="left btn clickable" on:click={left}>
-				<span class="material-symbol"> keyboard_double_arrow_left </span>
-			</div>
-		{/if}
 		<div
 			class="image-cont"
 			use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
@@ -115,6 +104,19 @@
 					{/key}
 				{/if}
 			</div>
+		</div>
+
+		<div class="index-dots">
+			{#each mediaList as _, i}
+				<div
+					class="dot"
+					class:active={i === slideIndex}
+					on:click={() => {
+						slideIndex = i;
+						reload();
+					}}
+				/>
+			{/each}
 		</div>
 	</div>
 {/if}
@@ -145,17 +147,41 @@
 		display: flex;
 		margin-right: 40px;
 		overflow: hidden;
+
+		.index-dots {
+			position: absolute;
+			bottom: 0px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			gap: 5px;
+
+			.dot {
+				width: 25px;
+				height: 8px;
+				border-radius: 50px;
+				background-color: $primary-xxl;
+				// border: 2px solid $accent;
+				cursor: pointer;
+
+				&.active {
+					opacity: 1;
+					background-color: $accent;
+				}
+			}
+		}
 	}
 
 	.image-cont {
 		width: 100%;
-		height: 100%;
+		height: calc(100% - 20px);
 		display: flex;
 		flex-direction: row;
 		border-radius: 10px;
 		overflow: hidden;
-		border: 2px solid $accent;
+		// border: 2px solid $accent;
 		box-sizing: border-box;
+		position: relative;
 	}
 
 	.btn {
