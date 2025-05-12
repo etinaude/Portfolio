@@ -53,9 +53,7 @@
 </section>
 
 <section id="education">
-	<Saos animation={'from-bottom 1s ease'}>
-		<h2>Education</h2>
-	</Saos>
+	<h2>Education</h2>
 
 	<div class="long-card-grid">
 		{#each educationData as education, i (i)}
@@ -73,9 +71,7 @@
 </section> -->
 
 <section id="work">
-	<Saos animation={'from-bottom 1s ease'}>
-		<h2>Current Work</h2>
-	</Saos>
+	<h2>Current Work</h2>
 
 	<div class="long-card-grid">
 		{#each workData as work, i (i)}

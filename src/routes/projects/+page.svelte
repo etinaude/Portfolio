@@ -60,9 +60,7 @@
 <section>
 	<Modal projectsList={smallProjects} projectIndex={openIndex} />
 
-	<Saos animation={'from-bottom 1s ease'}>
-		<h2 class="featured-title">Featured Projects</h2>
-	</Saos>
+	<h2 class="featured-title">Featured Projects</h2>
 
 	<div class="showcase">
 		<Showcase dataFunction={getFeaturedProjectsData} />

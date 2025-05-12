@@ -12,23 +12,21 @@
 	}
 </script>
 
-<Saos animation={'from-bottom 1s ease'}>
-	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-	<div class="tile" on:click={open}>
-		<div class="img">
-			<img src={cardData.media[0]} alt={cardData.title} loading="lazy" class="tile_image" />
-		</div>
+<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+<div class="tile" on:click={open}>
+	<div class="img">
+		<img src={cardData.media[0]} alt={cardData.title} loading="lazy" class="tile_image" />
+	</div>
 
-		<div class="text">
-			<h3>{cardData.title}</h3>
+	<div class="text">
+		<h3>{cardData.title}</h3>
 
-			<div class="read-more clickable tile_url" aria-label="project link {cardData.title}">
-				Read More
-				<span class="material-symbol"> keyboard_double_arrow_right </span>
-			</div>
+		<div class="read-more clickable tile_url" aria-label="project link {cardData.title}">
+			Read More
+			<span class="material-symbol"> keyboard_double_arrow_right </span>
 		</div>
 	</div>
-</Saos>
+</div>
 
 <style lang="scss">
 	@use 'src/lib/styles/mixins.scss' as *;
@@ -64,13 +62,14 @@
 			overflow: hidden;
 			max-height: 0;
 			backdrop-filter: blur(1px);
-			border-radius: 10px;
 		}
 
 		&:hover {
-			scale: 1.1;
 			z-index: 10;
-			border-radius: 10px;
+
+			.img {
+				scale: 1.1;
+			}
 
 			.text {
 				height: auto;
@@ -80,6 +79,8 @@
 		}
 
 		.img {
+			@include transition-long;
+
 			position: relative;
 			width: 100%;
 			aspect-ratio: 1;
