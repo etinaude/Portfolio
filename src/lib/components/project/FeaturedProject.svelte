@@ -22,42 +22,44 @@
 	}
 </script>
 
-<div class="full-page-card" transition:fade={{ duration: 1000 }}>
-	<div class="image">
-		<img src={cardData.media[0]} alt={cardData.title} />
+{#key cardData}
+	<div class="full-page-card" transition:fade={{ duration: 500 }}>
+		<div class="image">
+			<img src={cardData.media[0]} alt={cardData.title} />
 
-		{#if cardData.media.length > 1}
-			{#if hoverisVideo}
-				<video playsinline autoplay muted loop class="hover-img">
-					<source src={cardData.media[1]} />
-				</video>
-			{:else}
-				<img class="hover-img" src={cardData.media[1]} alt="project hover" />
+			{#if cardData.media.length > 1}
+				{#if hoverisVideo}
+					<video playsinline autoplay muted loop class="hover-img">
+						<source src={cardData.media[1]} />
+					</video>
+				{:else}
+					<img class="hover-img" src={cardData.media[1]} alt="project hover" />
+				{/if}
 			{/if}
-		{/if}
+		</div>
+
+		<div class="description">
+			<h3>
+				{cardData.title}
+			</h3>
+
+			{cardData.description || cardData.tldr}
+
+			<br />
+			<br />
+
+			<a
+				class="read-more clickable"
+				href={cardData.followUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				read more
+				<span class="material-symbol"> keyboard_double_arrow_right </span>
+			</a>
+		</div>
 	</div>
-
-	<div class="description">
-		<h3>
-			{cardData.title}
-		</h3>
-
-		{cardData.description || cardData.tldr}
-
-		<br />
-		<br />
-
-		<a
-			class="read-more clickable"
-			href={cardData.followUrl}
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			read more
-			<span class="material-symbol"> keyboard_double_arrow_right </span>
-		</a>
-	</div>
-</div>
+{/key}
 
 <style lang="scss">
 	@use 'src/lib/styles/mixins.scss' as *;
@@ -69,7 +71,7 @@
 		grid-gap: 6rem;
 		padding: 1rem;
 		width: 80vw;
-		position: relative;
+		position: absolute;
 
 		.image {
 			@include border;
