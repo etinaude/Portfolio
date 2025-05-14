@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import Saos from 'saos';
-	import PageCard from './PageCard.svelte';
+	import PageCard from './FeaturedProject.svelte';
 	import { onMount } from 'svelte';
 	import { swipe } from 'svelte-gestures';
 
@@ -62,16 +62,21 @@
 		>
 			<PageCard cardData={currentData} bind:this={card} />
 
-			<div class="tabs">
-				{#each data as project, i}
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<div
-						class="tab {i === slideIndex ? 'active' : ''}"
-						on:click={() => gotoSlide(i, LONG_SLIDE_DURATION)}
-					/>
-				{/each}
-			</div>
+			{#if data.length > 1}
+				<div class="index-dots">
+					{#each data as _, i}
+						<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions-->
+						<div
+							class="dot"
+							class:active={i === slideIndex}
+							on:click={() => {
+								slideIndex = i;
+								gotoSlide(i, LONG_SLIDE_DURATION);
+							}}
+						/>
+					{/each}
+				</div>
+			{/if}
 		</div>
 	{/if}
 </Saos>
@@ -95,22 +100,26 @@
 		position: relative;
 	}
 
-	.tabs {
-		width: 100vw;
-		height: 10px;
-		background-color: $primary;
-		display: flex;
+	.index-dots {
 		position: absolute;
-		bottom: -12px;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 5px;
 
-		.tab {
-			width: 33.3%;
-			height: 100%;
-			background-color: transparent;
-
+		.dot {
 			transition: 0.5s ease;
+			width: 50px;
+			height: 16px;
+			border-radius: 50px;
+			background-color: $primary-xxl;
+			cursor: pointer;
 
 			&.active {
+				width: 50px;
+
+				opacity: 1;
 				background-color: $accent;
 			}
 		}

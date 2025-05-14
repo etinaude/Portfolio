@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Banner from '$lib/components/Banner.svelte';
-	import PageCard from '$lib/components/project/PageCard.svelte';
+	import PageCard from '$lib/components/project/FeaturedProject.svelte';
 	import Tile from '$lib/components/project/Tile.svelte';
 	import { addNewProject, getProjectsData } from '$lib/services/firebase';
 	import { tagOptions } from '$lib/services/tags';
