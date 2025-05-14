@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import { onDestroy, onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 	import { swipe } from 'svelte-gestures';
 
 	const videoTypesRegex = /(mp4)|(webm)|(mov)/;
