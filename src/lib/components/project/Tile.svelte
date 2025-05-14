@@ -17,10 +17,10 @@
 		<img src={cardData.media[0]} alt={cardData.title} loading="lazy" class="tile_image" />
 	</div>
 
-	<div class="text">
+	<div class="text clickable">
 		<h3>{cardData.title}</h3>
 
-		<div class="read-more clickable tile_url" aria-label="project link {cardData.title}">
+		<div class="read-more" aria-label="project link {cardData.title}">
 			Read More
 			<span class="material-symbol"> keyboard_double_arrow_right </span>
 		</div>
@@ -53,14 +53,14 @@
 			@include transition-long;
 
 			z-index: 5;
-			background-color: $primary-t;
+			// background-color: $primary-t;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			overflow: hidden;
 			max-height: 0;
-			backdrop-filter: blur(1px);
+			backdrop-filter: blur(5px);
 		}
 
 		&:hover {
@@ -72,8 +72,8 @@
 
 			.text {
 				height: auto;
-				max-height: 50%;
-				padding-bottom: 80px;
+				max-height: 35%;
+				// padding-bottom: 80px;
 			}
 		}
 
@@ -102,10 +102,11 @@
 	}
 
 	.read-more {
-		@include read-more;
+		// @include read-more;
 		margin-bottom: 20px;
 		padding-left: 0px;
 		padding-right: 0px;
+		// text-shadow: 0px 0px 1px #000;
 	}
 
 	@media (max-width: 768px) {
