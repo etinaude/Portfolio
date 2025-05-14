@@ -26,8 +26,10 @@
 	function swipeHandler(event: CustomEvent) {
 		if (event.detail.direction === 'left') {
 			slideIndex = (slideIndex + 1) % data.length;
+			gotoSlide(slideIndex, SLIDE_DURATION);
 		} else if (event.detail.direction === 'right') {
 			slideIndex = (slideIndex - 1 + data.length) % data.length;
+			gotoSlide(slideIndex, SLIDE_DURATION);
 		}
 	}
 

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
-	import Saos from 'saos';
 	export let cardData: ProjectT;
 	export let index = -1;
 

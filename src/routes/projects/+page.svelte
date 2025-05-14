@@ -67,11 +67,12 @@
 	</div>
 
 	<Saos animation={'from-bottom 1s ease'}>
+		<br />
 		<h2>More Projects</h2>
-	</Saos>
+		<br />
+		<br />
 
-	<!-- tag list -->
-	<Saos animation={'from-bottom 1s ease'}>
+		<!-- tag list -->
 		<div class="filter-bar">
 			<div class="tag-list">
 				{#each tagOptions as tagItem}

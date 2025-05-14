@@ -6,55 +6,33 @@
 
 	const videoTypesRegex = /(mp4)|(webm)|(mov)/;
 
-	export let cardData: ProjectT;
+	const SLIDE_DURATION = 3;
+
 	let slideIndex = 0;
-	let initTime = Date.now();
+	export let cardData: ProjectT;
 	let interval: NodeJS.Timeout;
 	let mediaList: { type: 'video' | 'image'; url: string | undefined }[] = [];
 
-	let unique = {};
-	function reload() {
-		unique = {};
-	}
+	function gotoSlide(index: number, timeOut = SLIDE_DURATION) {
+		slideIndex = index;
 
-	function left() {
-		if (slideIndex <= 0) slideIndex = mediaList.length;
-		slideIndex--;
-		resetTime();
-		reload();
-	}
-
-	function right() {
-		if (slideIndex >= mediaList.length - 1) slideIndex = -1;
-		slideIndex++;
-		resetTime();
-		reload();
-	}
-
-	function autoSlide() {
-		if (cardData.media.length > 1) {
-			const deltaTime = Date.now() - initTime;
-			if (deltaTime >= 5000) {
-				initTime = Date.now();
-				right();
-			}
-		}
+		clearInterval(interval);
+		interval = setInterval(() => {
+			slideIndex = (slideIndex + 1) % mediaList.length;
+		}, timeOut * 1000);
 	}
 
 	function swipeHandler(event: CustomEvent) {
-		if (mediaList.length === 1) return;
+		if (mediaList.length <= 1) return;
 
 		if (event.detail.direction === 'left') {
-			right();
+			slideIndex = (slideIndex + 1) % mediaList.length;
+			gotoSlide(slideIndex, SLIDE_DURATION);
 		} else if (event.detail.direction === 'right') {
-			left();
+			slideIndex = (slideIndex - 1 + mediaList.length) % mediaList.length;
+			gotoSlide(slideIndex, SLIDE_DURATION);
 		}
 	}
-
-	// TODO
-	const resetTime = () => {
-		initTime = Date.now();
-	};
 
 	onDestroy(() => {
 		clearInterval(interval);
@@ -78,7 +56,7 @@
 		mediaList = mediaList.filter((item) => item.url);
 
 		if (mediaList.length == 1) return;
-		interval = setInterval(autoSlide, 100);
+		gotoSlide(0);
 	});
 </script>
 
@@ -90,16 +68,14 @@
 			on:swipe={swipeHandler}
 		>
 			{#if mediaList[slideIndex]}
-				{#key unique}
-					<div transition:fade={{ duration: 200 }}>
-						{#if mediaList[slideIndex].type === 'image'}
-							<img src={mediaList[slideIndex].url} alt={cardData.title} />
-						{:else}
-							<video playsinline autoplay muted loop class="hover-img">
-								<source src={mediaList[slideIndex].url} />
-							</video>
-						{/if}
-					</div>
+				{#key slideIndex}
+					{#if mediaList[slideIndex].type === 'image'}
+						<img src={mediaList[slideIndex].url} alt={cardData.title} />
+					{:else}
+						<video playsinline autoplay muted loop class="hover-img">
+							<source src={mediaList[slideIndex].url} />
+						</video>
+					{/if}
 				{/key}
 			{/if}
 		</div>
@@ -113,7 +89,6 @@
 						class:active={i === slideIndex}
 						on:click={() => {
 							slideIndex = i;
-							reload();
 						}}
 					/>
 				{/each}
