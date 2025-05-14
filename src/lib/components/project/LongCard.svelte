@@ -11,7 +11,6 @@
 	let side = index % 2 === 0 ? 'left' : 'right';
 
 	let imgElement: HTMLElement;
-	const animationSide = side === 'left' ? 'from-right' : 'from-left';
 
 	onMount(() => {
 		const mobile = Device.isMobile || Device.isTablet || Device.canHover === false;
@@ -22,13 +21,13 @@
 
 <div class="long-card {side}">
 	<div class="text">
-		<Saos animation={animationSide + ' 1s ease'}>
+		<Saos animation={'from-bottom' + ' 1s ease'}>
 			<h3>{cardData.title}</h3>
 			<p>{cardData.description}</p>
 		</Saos>
 	</div>
 
-	<Saos animation={animationSide + ' 1s ease'}>
+	<Saos animation={'from-bottom' + ' 1s ease'}>
 		<img
 			class="tilt"
 			alt={cardData.title + 'logo'}
