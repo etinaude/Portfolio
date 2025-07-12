@@ -10,11 +10,11 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			edge: true,
+			edge: false,
 			split: false
 		}),
 		paths: {
-			relative: false // Required for PostHog session replay to work correctly
+			relative: false
 		}
 	},
 

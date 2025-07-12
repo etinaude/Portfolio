@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
-	import PageCard from './FeaturedProject.svelte';
+	import PageCard from '$lib/components/project/FeaturedProject.svelte';
 	import { onMount } from 'svelte';
 
 	const SLIDE_DURATION = 3;

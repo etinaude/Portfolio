@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
-	import Slides from './Slides.svelte';
+	import Slides from '$lib/components/project/Slides.svelte';
 	import { fade, scale } from 'svelte/transition';
 	import { swipe } from 'svelte-gestures';
 

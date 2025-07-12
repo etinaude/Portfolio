@@ -1,5 +1,5 @@
 <script>
-	import Spinner from './Spinner.svelte';
+	import Spinner from '$lib/components/layout/Spinner.svelte';
 </script>
 
 <div class="background">
