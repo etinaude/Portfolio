@@ -1,8 +1,8 @@
 import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/kit/vite';
-import { ViteMinifyPlugin } from 'vite-plugin-minify'
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import { optimizeCssModules } from 'vite-plugin-optimize-css-modules';
-import { VitePWA } from 'vite-plugin-pwa'
+import { VitePWA } from 'vite-plugin-pwa';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,9 +10,12 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			edge: true,
+			edge: false,
 			split: false
 		}),
+		paths: {
+			// relative: false
+		}
 	},
 
 	onwarn: (warning, handler) => {
@@ -22,11 +25,7 @@ const config = {
 		handler(warning);
 	},
 
-	plugins: [
-		ViteMinifyPlugin({}),
-		optimizeCssModules(),
-		VitePWA()
-	],
+	plugins: [ViteMinifyPlugin({}), optimizeCssModules(), VitePWA()]
 };
 
 export default config;

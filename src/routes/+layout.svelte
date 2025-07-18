@@ -7,13 +7,21 @@
 	import type { posT } from '$lib/types/types';
 	import { onMount } from 'svelte';
 	import { initAnalytics } from '$lib/services/firebase';
-	import { onNavigate } from '$app/navigation';
+	import { onNavigate, beforeNavigate, afterNavigate } from '$app/navigation';
+	import posthog from 'posthog-js';
+	import { browser } from '$app/environment';
 
 	let pos: posT = { x: 0, y: 0, clickable: false };
 
 	onMount(async () => {
 		initAnalytics();
 	});
+
+	// PostHog pageleave & pageview tracking
+	if (browser) {
+		beforeNavigate(() => posthog.capture('$pageleave'));
+		afterNavigate(() => posthog.capture('$pageview'));
+	}
 
 	function mouseMove(event: any) {
 		pos.x = event.x;

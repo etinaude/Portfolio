@@ -17,10 +17,10 @@
 		<img src={cardData.media[0]} alt={cardData.title} loading="lazy" class="tile_image" />
 	</div>
 
-	<div class="text">
+	<div class="text clickable">
 		<h3>{cardData.title}</h3>
 
-		<div class="read-more clickable tile_url" aria-label="project link {cardData.title}">
+		<div class="read-more" aria-label="project link {cardData.title}">
 			Read More
 			<span class="material-symbol"> keyboard_double_arrow_right </span>
 		</div>
@@ -33,7 +33,7 @@
 
 	.tile {
 		@include transition-long;
-		overflow: hidden;
+		// overflow: hidden;
 		border-radius: 0px;
 		background-color: $primary-xxl;
 		display: flex;
@@ -53,36 +53,54 @@
 			@include transition-long;
 
 			z-index: 5;
-			background-color: $primary-t;
+			background-color: $primary;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			overflow: hidden;
 			max-height: 0;
-			backdrop-filter: blur(1px);
-		}
+			min-height: 0;
+			border-radius: 10px 10px 0 0;
 
-		&:hover {
-			z-index: 10;
-
-			.img {
-				scale: 1.1;
+			h3 {
+				font-size: 1.3rem;
+				margin-top: 15px;
 			}
 
-			.text {
-				height: auto;
-				max-height: 50%;
-				padding-bottom: 80px;
-			}
+			// backdrop-filter: blur(5px);
+			// top: 100%;
 		}
 
 		.img {
 			@include transition-long;
 
+			img {
+				@include transition-long;
+			}
+
 			position: relative;
 			width: 100%;
 			aspect-ratio: 1;
+			overflow: hidden;
+		}
+
+		&:hover {
+			z-index: 10;
+			box-shadow: 0px 0px 5px 0px $primary;
+
+			.img {
+				img {
+					scale: 1.1;
+				}
+			}
+
+			.text {
+				height: auto;
+				min-height: 30%;
+				max-height: 30%;
+				// box-shadow: 0px 2px 0 2px $accent;
+			}
 		}
 	}
 
@@ -102,10 +120,16 @@
 	}
 
 	.read-more {
-		@include read-more;
+		// @include read-more;
 		margin-bottom: 20px;
 		padding-left: 0px;
 		padding-right: 0px;
+		font-size: 0.9em;
+
+		.material-symbol {
+			font-size: 1.2em;
+			vertical-align: middle;
+		}
 	}
 
 	@media (max-width: 768px) {

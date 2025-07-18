@@ -206,7 +206,7 @@
 			flex-direction: column;
 			list-style: none;
 			height: 100vh;
-			background-color: $primary-tt;
+			background-color: $primary;
 			backdrop-filter: blur(2px);
 			z-index: -1;
 			overflow: hidden;
@@ -218,12 +218,23 @@
 				list-style: none;
 				text-align: left;
 
+				&.active a {
+					color: $accent;
+					font-size: 1.4em;
+				}
+
+				a {
+					color: $light;
+					font-size: 0.9em;
+				}
+
 				&.active::before {
-					$size: 10px;
+					$size: 20px;
 					content: '';
 					position: absolute;
 					left: 80px;
-					top: 40%;
+					top: 50%;
+					transform: translateY(-50%);
 					border: $size solid transparent;
 					border-left: $size solid $accent;
 				}

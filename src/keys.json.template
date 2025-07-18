@@ -8,5 +8,7 @@
 		"messagingSenderId": "xxxxxxxxxxxxxxxxxxxxxxxx",
 		"appId": "xxxxxxxxxxxxxxxxxxxxxxxx",
 		"measurementId": "xxxxxxxxxxxxxxxxxxxxxxxx"
-	}
+	},
+	"PUBLIC_POSTHOG_KEY": "...........",
+	"PUBLIC_POSTHOG_HOST": ".........."
 }

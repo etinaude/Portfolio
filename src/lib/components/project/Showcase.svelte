@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
-	import PageCard from './FeaturedProject.svelte';
+	import PageCard from '$lib/components/project/FeaturedProject.svelte';
 	import { onMount } from 'svelte';
-	import { swipe } from 'svelte-gestures';
 
 	const SLIDE_DURATION = 3;
 	const LONG_SLIDE_DURATION = 6;
@@ -23,16 +22,6 @@
 		}, timeOut * 1000);
 	}
 
-	function swipeHandler(event: CustomEvent) {
-		if (event.detail.direction === 'left') {
-			slideIndex = (slideIndex + 1) % data.length;
-			gotoSlide(slideIndex, SLIDE_DURATION);
-		} else if (event.detail.direction === 'right') {
-			slideIndex = (slideIndex - 1 + data.length) % data.length;
-			gotoSlide(slideIndex, SLIDE_DURATION);
-		}
-	}
-
 	onMount(async () => {
 		data = await dataFunction();
 		data = data.sort((a, b) => (a.priority ?? 10) - (b.priority ?? 10));
@@ -41,11 +30,7 @@
 </script>
 
 {#if data[slideIndex]}
-	<div
-		class="card-container"
-		on:swipe={swipeHandler}
-		use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
-	>
+	<div class="card-container">
 		<PageCard cardData={data[slideIndex]} />
 
 		{#if data.length > 1}

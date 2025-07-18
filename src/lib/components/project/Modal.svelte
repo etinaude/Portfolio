@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
-	import Slides from './Slides.svelte';
+	import Slides from '$lib/components/project/Slides.svelte';
 	import { fade, scale } from 'svelte/transition';
 	import { swipe } from 'svelte-gestures';
 
@@ -52,9 +52,11 @@
 	<div class="background" on:click={exit} transition:fade={{ duration: 150 }}>
 		<div class="left next-btn clickable" on:click={left}>
 			<span class="material-symbol"> keyboard_double_arrow_left </span>
+			<div class="btn-text">Prev</div>
 		</div>
 		<div class="right next-btn clickable" on:click={right}>
 			<span class="material-symbol"> keyboard_double_arrow_right </span>
+			<div class="btn-text">Next</div>
 		</div>
 		{#if projectsList[projectIndex].followUrl}
 			<a
@@ -142,6 +144,7 @@
 		margin-top: 20px;
 		font-size: 0.9em;
 		height: 10px;
+		z-index: 20;
 
 		span {
 			margin-left: 10px;
@@ -151,7 +154,7 @@
 		&.mobile {
 			display: none;
 			position: absolute;
-			bottom: 20px;
+			bottom: 36px;
 			left: 50%;
 			translate: -50% 0;
 			width: 150px;
@@ -193,11 +196,20 @@
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
-		font-size: 2.5em;
 		padding: 10px;
 		min-width: auto;
 		z-index: 1000;
 		user-select: none;
+		display: flex;
+		flex-direction: column;
+
+		.material-symbol {
+			font-size: 2.5em;
+		}
+
+		.btn-text {
+			font-size: 0.8em;
+		}
 
 		&.left {
 			left: 50%;
@@ -217,8 +229,12 @@
 	}
 
 	@media (max-width: 1200px) {
+		.open-link {
+			bottom: -12px;
+		}
+
 		.next-btn {
-			font-size: 2em;
+			font-size: 1.5em;
 			padding: 5px;
 			bottom: -12px;
 			top: auto;
@@ -232,6 +248,10 @@
 			&.right {
 				right: 20px;
 				translate: 0;
+			}
+
+			.btn-text {
+				display: none;
 			}
 		}
 
@@ -249,7 +269,7 @@
 	@media (max-width: 768px) {
 		.text {
 			max-height: 400px;
-			font-size: 0.9em;
+			font-size: 1em;
 
 			h3 {
 				font-size: 1.6em;
@@ -260,7 +280,7 @@
 		.background {
 			.inner {
 				min-width: 0;
-				top: 10px;
+				top: 40px;
 				transform: translate(-50%, 0);
 				padding: 0px;
 
