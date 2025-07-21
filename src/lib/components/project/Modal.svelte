@@ -80,7 +80,9 @@
 				use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
 				on:swipe={swipeHandler}
 			>
-				<Slides cardData={projectsList[projectIndex]} />
+				<div class="img-cont">
+					<Slides cardData={projectsList[projectIndex]} />
+				</div>
 
 				<div
 					class="text"
@@ -160,6 +162,11 @@
 			width: 150px;
 			min-width: 0;
 		}
+	}
+
+	.img-cont {
+		width: 400px;
+		height: 400px;
 	}
 
 	.background {
@@ -275,6 +282,11 @@
 				font-size: 1.6em;
 				margin-top: 5px;
 			}
+		}
+
+		.img-cont {
+			width: 85vw;
+			height: 85vw;
 		}
 
 		.background {

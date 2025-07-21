@@ -9,6 +9,12 @@ export type ProjectT = {
 	media: string[];
 	tldr?: string;
 	priority?: number;
+
+	why?: string;
+	how?: string;
+	process?: string;
+	awards?: string;
+	collaborators?: string[];
 };
 
 export type LinkT = {

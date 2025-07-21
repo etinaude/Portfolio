@@ -48,7 +48,19 @@ export function getProjectsData() {
 }
 
 export function getProjectSingleData(title: string) {
-	return getData(BASE_PATH + 'projects', where('title', '==', title));
+	const projectListData = getData(BASE_PATH + 'projects') as Promise<ProjectT[]>;
+
+	return projectListData.then((projects) => {
+		const formattedTitle = title.toLowerCase().replaceAll(' ', '-');
+		const project = projects.find(
+			(p) => p.title.toLowerCase().replaceAll(' ', '-') === formattedTitle
+		);
+		if (project) {
+			return project as ProjectT;
+		} else {
+			throw new Error(`Project with title ${title} not found`);
+		}
+	});
 }
 
 export function getFeaturedProjectsData() {
