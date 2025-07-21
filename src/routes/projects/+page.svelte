@@ -60,8 +60,6 @@
 <section>
 	<Modal projectsList={smallProjects} projectIndex={openIndex} />
 
-	<h2 class="featured-title">Featured Projects</h2>
-
 	<div class="showcase">
 		<Showcase dataFunction={getFeaturedProjectsData} />
 	</div>
@@ -88,6 +86,8 @@
 				{/each}
 			</div>
 		</div>
+		<br />
+		<br />
 	</Saos>
 
 	{#if smallProjects.length == 0}
@@ -112,8 +112,13 @@
 
 	.tiles {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		width: 100%;
+		// grid-template-columns: 1fr 1fr 1fr 1fr;
+		// grid-template-rows: repeat(auto-fill, 200px);
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		width: 70%;
 		margin-bottom: 10em;
 	}
 
@@ -154,6 +159,12 @@
 		h2 {
 			margin-top: 2em;
 			text-align: center;
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 1400px) {
+		.tiles {
 			width: 100%;
 		}
 	}
