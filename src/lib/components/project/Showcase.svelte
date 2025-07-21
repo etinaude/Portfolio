@@ -93,6 +93,7 @@
 		.card-container {
 			align-items: flex-start;
 			margin-top: 10px;
+			height: 90vh;
 		}
 
 		.tabs {

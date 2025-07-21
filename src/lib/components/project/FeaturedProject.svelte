@@ -71,7 +71,6 @@
 		grid-gap: 6rem;
 		padding: 1rem;
 		width: 80vw;
-		position: absolute;
 
 		.image {
 			@include border;
@@ -127,11 +126,11 @@
 			grid-template-columns: 1fr;
 			grid-gap: 1rem;
 			width: 90vw;
-			height: 70vh;
+			height: 80vh;
 			grid-template-rows: 1fr 2fr;
 
 			.image {
-				height: 100%;
+				height: 40vh;
 			}
 
 			.description {
