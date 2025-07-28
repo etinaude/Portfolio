@@ -5,12 +5,11 @@
 
 	import { onMount } from 'svelte';
 
-	let image: HTMLElement;
 	let heroImage = '';
+	let image: HTMLImageElement;
 
 	onMount(async () => {
 		heroImage = getHeroImage();
-		image = document.getElementById('hero-pic')!;
 	});
 
 	function getHeroImage(): string {
@@ -50,7 +49,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions-->
 <section id="base" on:mousemove={mouseMove}>
 	<div class="hero-pic" id="hero-pic">
-		<img src={heroImage} alt="background hero" />
+		<img src={heroImage} alt="background hero" bind:this={image} />
 	</div>
 
 	<div class="header-text">

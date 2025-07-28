@@ -91,9 +91,9 @@
 				>
 					<h3>{projectsList[projectIndex].title}</h3>
 
-					<caption>
+					<div class="caption">
 						{projectsList[projectIndex].description || projectsList[projectIndex].tldr}
-					</caption>
+					</div>
 
 					{#if projectsList[projectIndex].followUrl}
 						<a
@@ -132,7 +132,7 @@
 			text-align: center;
 		}
 
-		caption {
+		.caption {
 			margin-top: 10px;
 			width: 100%;
 			font-size: 0.9em;
