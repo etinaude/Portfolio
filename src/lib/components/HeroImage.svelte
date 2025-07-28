@@ -5,7 +5,7 @@
 
 	import { onMount } from 'svelte';
 
-	let heroImage = '';
+	let heroImage = 'images/me/landscape/landscape_750.webp';
 	let image: HTMLImageElement;
 
 	onMount(async () => {
@@ -49,7 +49,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions-->
 <section id="base" on:mousemove={mouseMove}>
 	<div class="hero-pic" id="hero-pic">
-		<img src={heroImage} alt="background hero" bind:this={image} />
+		<img src={heroImage} alt="background hero" fetchpriority="high" bind:this={image} />
 	</div>
 
 	<div class="header-text">
