@@ -71,7 +71,7 @@
 </section> -->
 
 <section id="work">
-	<h2>Current Work</h2>
+	<h2>Work</h2>
 
 	<div class="long-card-grid">
 		{#each workData as work, i (i)}

@@ -18,10 +18,7 @@
 			<a href={link.url} class="clickable" target="_blank" rel="noopener noreferrer">
 				{#if link.icon}
 					<div class="icon">
-						<img
-							src={'images/icons/' + link.icon.replace(/.*%2F/, '').replace(/\?alt=.*$/, '')}
-							alt={link.name}
-						/>
+						<img src={link.icon} alt={link.name} />
 					</div>
 				{/if}
 				{link.name}
