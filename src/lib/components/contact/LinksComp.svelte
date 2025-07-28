@@ -18,7 +18,10 @@
 			<a href={link.url} class="clickable" target="_blank" rel="noopener noreferrer">
 				{#if link.icon}
 					<div class="icon">
-						<img src={link.icon} alt={link.name} />
+						<img
+							src={'images/icons/' + link.icon.replace(/.*%2F/, '').replace(/\?alt=.*$/, '')}
+							alt={link.name}
+						/>
 					</div>
 				{/if}
 				{link.name}
@@ -68,7 +71,9 @@
 			translate: 0 50%;
 
 			z-index: 5;
-			transition: height 0.5s ease, translate 0s 0.5s ease;
+			transition:
+				height 0.5s ease,
+				translate 0s 0.5s ease;
 
 			display: flex;
 			flex-direction: column;
@@ -96,7 +101,9 @@
 				box-shadow: 0 4px 0 1px $primary-d;
 				border-radius: 10px;
 				translate: 110% 50%;
-				transition: height 0.5s ease, translate 0.3s ease;
+				transition:
+					height 0.5s ease,
+					translate 0.3s ease;
 			}
 		}
 	}

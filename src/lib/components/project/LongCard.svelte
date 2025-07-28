@@ -12,6 +12,15 @@
 
 	let imgElement: HTMLElement;
 
+	let imageUrl = cardData.media[0];
+	imageUrl = imageUrl.replace(
+		'https://firebasestorage.googleapis.com/v0/b/portfolio-aa70a.appspot.com/o/logos%2F',
+		''
+	);
+	// ?alt=media&token=... regex
+	imageUrl = imageUrl.replace(/\?alt=.*$/, '');
+	imageUrl = 'images/logos/' + imageUrl;
+
 	onMount(() => {
 		const mobile = Device.isMobile || Device.isTablet || Device.canHover === false;
 
@@ -28,12 +37,7 @@
 	</div>
 
 	<Saos animation={'from-bottom' + ' 1s ease'}>
-		<img
-			class="tilt"
-			alt={cardData.title + 'logo'}
-			src={cardData.media[0]}
-			bind:this={imgElement}
-		/>
+		<img class="tilt" alt={cardData.title + 'logo'} src={imageUrl} bind:this={imgElement} />
 	</Saos>
 </div>
 
