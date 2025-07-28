@@ -19,9 +19,10 @@ const config = {
 	},
 
 	onwarn: (warning, handler) => {
-		if (warning.code === 'css-unused-selector') {
-			return;
-		}
+		if (warning.code === 'css_unused_selector') return;
+		if (warning.code === 'element_invalid_self_closing_tag') return;
+
+
 		handler(warning);
 	},
 
