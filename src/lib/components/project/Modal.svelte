@@ -91,9 +91,9 @@
 				>
 					<h3>{projectsList[projectIndex].title}</h3>
 
-					<caption>
+					<div class="caption">
 						{projectsList[projectIndex].description || projectsList[projectIndex].tldr}
-					</caption>
+					</div>
 
 					{#if projectsList[projectIndex].followUrl}
 						<a
@@ -113,8 +113,8 @@
 {/if}
 
 <style lang="scss">
-	@use 'src/lib/styles/mixins.scss' as *;
-	@use 'src/lib/styles/variables.scss' as *;
+	@use '$lib/styles/mixins.scss' as *;
+	@use '$lib/styles/variables.scss' as *;
 
 	.text {
 		padding: 20px;
@@ -132,7 +132,7 @@
 			text-align: center;
 		}
 
-		caption {
+		.caption {
 			margin-top: 10px;
 			width: 100%;
 			font-size: 0.9em;

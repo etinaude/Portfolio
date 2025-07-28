@@ -24,8 +24,8 @@
 </section>
 
 <style lang="scss">
-	@use 'src/lib/styles/mixins.scss' as *;
-	@use 'src/lib/styles/variables.scss' as *;
+	@use '$lib/styles/mixins.scss' as *;
+	@use '$lib/styles/variables.scss' as *;
 
 	section {
 		@include flex-center;
