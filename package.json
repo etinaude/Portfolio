@@ -25,6 +25,7 @@
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"sass": "^1.89.2",
+		"super-sitemap": "^1.0.5",
 		"svelte": "^5.37.0",
 		"svelte-check": "^4.3.0",
 		"tslib": "^2.8.1",
