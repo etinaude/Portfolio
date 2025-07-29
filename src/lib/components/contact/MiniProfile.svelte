@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { swipe } from 'svelte-gestures';
-
 	let showQR = false;
 
 	function toggleQr() {
@@ -9,8 +7,6 @@
 </script>
 
 <div>
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div class="profile" on:click={toggleQr}>
 		<img alt="mini me" src="/images/me/black_profile.webp" />
 	</div>
@@ -25,14 +21,7 @@
 </div>
 
 {#if showQR}
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div
-		class="qr-cont"
-		on:click={toggleQr}
-		use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
-		on:swipe={toggleQr}
-	>
+	<div class="qr-cont" on:click={toggleQr}>
 		<img class="qrcode" src="/images/qr.svg" alt="qr code" />
 
 		<p>etinaude.dev/contact</p>

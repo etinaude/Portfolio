@@ -48,7 +48,6 @@
 </script>
 
 {#if projectsList[projectIndex]}
-	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 	<div class="background" on:click={exit} transition:fade={{ duration: 150 }}>
 		<div class="left next-btn clickable" on:click={left}>
 			<span class="material-symbol"> keyboard_double_arrow_left </span>
@@ -77,18 +76,14 @@
 				on:click={noExit}
 				out:scale={{ duration: 150 }}
 				in:fade={{ delay: 200, duration: 400 }}
-				use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
+				use:swipe
 				on:swipe={swipeHandler}
 			>
 				<div class="img-cont">
 					<Slides cardData={projectsList[projectIndex]} />
 				</div>
 
-				<div
-					class="text"
-					use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
-					on:swipe={swipeHandler}
-				>
+				<div class="text" use:swipe on:swipe={swipeHandler}>
 					<h3>{projectsList[projectIndex].title}</h3>
 
 					<div class="caption">

@@ -74,7 +74,6 @@
 		<div class="filter-bar">
 			<div class="tag-list">
 				{#each tagOptions as tagItem}
-					<!-- svelte-ignore a11y-no-static-element-interactions  a11y-click-events-have-key-events-->
 					<div
 						class="clickable tag {tagItem.toLowerCase() == currentFilter ? 'active' : ''}"
 						on:click={() => toggleTag(tagItem)}

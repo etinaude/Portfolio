@@ -70,7 +70,6 @@
 		</div>
 	</nav>
 
-	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 	<nav class="mobile-menu" on:click={toggleMenu}>
 		<div>☰</div>
 		<ul class={isMenuOpen ? 'open' : 'close'}>

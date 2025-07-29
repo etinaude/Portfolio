@@ -46,7 +46,6 @@
 	}
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions-->
 <section id="base" on:mousemove={mouseMove}>
 	<div class="hero-pic" id="hero-pic">
 		<img src={heroImage} alt="background hero" fetchpriority="high" bind:this={image} />

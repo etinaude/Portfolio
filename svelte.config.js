@@ -13,17 +13,19 @@ const config = {
 			edge: false,
 			split: false
 		}),
-		paths: {
-			// relative: false
-		}
 	},
 
-	onwarn: (warning, handler) => {
-		if (warning.code === 'css_unused_selector') return;
-		if (warning.code === 'element_invalid_self_closing_tag') return;
-
-
-		handler(warning);
+	compilerOptions: {
+		warningFilter: (warning) => {
+			// Return false to discard the warning, true to keep it
+			const ignoreCodes = [
+				'a11y_no_static_element_interactions',
+				'a11y_click_events_have_key_events',
+				'element_invalid_self_closing_tag',
+				'css_unused_selector',
+			];
+			return !ignoreCodes.includes(warning.code);
+		},
 	},
 
 	plugins: [ViteMinifyPlugin({}), optimizeCssModules(), VitePWA()]

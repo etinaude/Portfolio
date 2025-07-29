@@ -2,9 +2,8 @@
 	import type { ProjectT } from '$lib/types/types';
 	import PageCard from '$lib/components/project/FeaturedProject.svelte';
 	import { onMount } from 'svelte';
-
-	const SLIDE_DURATION = 3;
-	const LONG_SLIDE_DURATION = 6;
+	import { swipe } from 'svelte-gestures';
+	import { slide } from 'svelte/transition';
 
 	let slideIndex = 0;
 
@@ -13,13 +12,21 @@
 
 	export let dataFunction: any;
 
-	function gotoSlide(index: number, timeOut = SLIDE_DURATION) {
-		slideIndex = index;
+	function swipeHandler(event: CustomEvent) {
+		if (event.detail.direction === 'left') {
+			gotoSlide(slideIndex + 1);
+		} else if (event.detail.direction === 'right') {
+			gotoSlide(slideIndex - 1);
+		}
+	}
+
+	function gotoSlide(index: number) {
+		slideIndex = (index + data.length) % data.length;
 
 		clearInterval(interval);
 		interval = setInterval(() => {
 			slideIndex = (slideIndex + 1) % data.length;
-		}, timeOut * 10000);
+		}, 10000);
 	}
 
 	onMount(async () => {
@@ -30,7 +37,7 @@
 </script>
 
 {#if data[slideIndex]}
-	<div class="card-container">
+	<div class="card-container" use:swipe on:swipe={swipeHandler}>
 		<div class="slides" style="transform: translateX(-{slideIndex * 110}%)">
 			{#each data as projectItem}
 				<PageCard cardData={projectItem} />
@@ -40,13 +47,12 @@
 		{#if data.length > 1}
 			<div class="index-dots">
 				{#each data as _, i}
-					<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions-->
 					<div
 						class="dot"
 						class:active={i === slideIndex}
 						on:click={() => {
 							slideIndex = i;
-							gotoSlide(i, LONG_SLIDE_DURATION);
+							gotoSlide(i);
 						}}
 					/>
 				{/each}

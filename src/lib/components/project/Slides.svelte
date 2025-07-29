@@ -61,11 +61,7 @@
 
 {#if cardData}
 	<div class="slides">
-		<div
-			class="image-cont"
-			use:swipe={{ timeframe: 300, minSwipeDistance: 100 }}
-			on:swipe={swipeHandler}
-		>
+		<div class="image-cont" use:swipe on:swipe={swipeHandler}>
 			{#if mediaList[slideIndex]}
 				{#key slideIndex}
 					{#if mediaList[slideIndex].type === 'image'}
@@ -82,7 +78,6 @@
 		{#if mediaList.length > 1}
 			<div class="index-dots">
 				{#each mediaList as _, i}
-					<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions-->
 					<div
 						class="dot"
 						class:active={i === slideIndex}
