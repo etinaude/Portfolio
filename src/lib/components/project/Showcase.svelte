@@ -3,7 +3,6 @@
 	import PageCard from '$lib/components/project/FeaturedProject.svelte';
 	import { onMount } from 'svelte';
 	import { swipe } from 'svelte-gestures';
-	import { slide } from 'svelte/transition';
 
 	let slideIndex = 0;
 
@@ -66,9 +65,8 @@
 	@use '$lib/styles/variables.scss' as *;
 
 	.card-container {
-		height: 80vh;
+		height: 70vh;
 		width: 85vw;
-		margin-top: 100px;
 
 		display: flex;
 		position: relative;
@@ -111,6 +109,15 @@
 				background-color: $accent;
 			}
 		}
+	}
+
+	.more-projects-btn {
+		width: 90%;
+		position: absolute;
+		bottom: 70px;
+		margin: auto;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 
 	@media (max-width: 768px) {

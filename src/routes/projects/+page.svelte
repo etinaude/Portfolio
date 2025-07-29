@@ -59,7 +59,6 @@
 
 <section>
 	<Modal projectsList={smallProjects} projectIndex={openIndex} />
-
 	<div class="showcase">
 		<Showcase dataFunction={getFeaturedProjectsData} />
 	</div>
@@ -131,6 +130,10 @@
 	h2 {
 		margin: 60px 0 0px 0;
 		text-align: center;
+	}
+
+	.showcase {
+		margin-top: 200px;
 	}
 
 	section {

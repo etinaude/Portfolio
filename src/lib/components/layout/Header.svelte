@@ -27,11 +27,11 @@
 		let url = $page.url.pathname;
 
 		if (url === '/') {
-			leftLink = projectsLink;
-			rightLink = contactLink;
+			leftLink = contactLink;
+			rightLink = projectsLink;
 		} else if (url.includes('projects')) {
-			leftLink = homeLink;
-			rightLink = contactLink;
+			leftLink = contactLink;
+			rightLink = homeLink;
 		} else if (url.includes('contact')) {
 			leftLink = homeLink;
 			rightLink = projectsLink;
