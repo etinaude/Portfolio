@@ -25,16 +25,16 @@
 	let tag: string = '';
 	let banner: Banner;
 
-	async function submit() {
+	async function submit(currentProject: ProjectT = project) {
 		banner.show('Submitting', 'info');
 
-		project.media = project.media.filter((l) => l !== '');
+		currentProject.media = currentProject.media.filter((l) => l !== '');
 
-		if (project.title === '') return banner.show('No Title', 'error');
-		if (project.description === '') return banner.show('No Description', 'error');
-		if (project.media.length === 0) return banner.show('No Image Url', 'error');
+		if (currentProject.title === '') return banner.show('No Title', 'error');
+		if (currentProject.description === '') return banner.show('No Description', 'error');
+		if (currentProject.media.length === 0) return banner.show('No Image Url', 'error');
 
-		const isSuccess = await addNewProject(project);
+		const isSuccess = await addNewProject(currentProject);
 
 		if (isSuccess) {
 			banner.show('Project added successfully', 'success');
