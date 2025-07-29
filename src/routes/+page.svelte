@@ -104,6 +104,7 @@
 			font-weight: bold;
 			left: 50%;
 			transform: translateX(-50%);
+			transform-origin: left;
 		}
 
 		// mobile
