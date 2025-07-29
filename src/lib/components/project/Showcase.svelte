@@ -31,7 +31,7 @@
 
 {#if data[slideIndex]}
 	<div class="card-container">
-		<div class="slides" style="transform: translateX(-{slideIndex * 100}%)">
+		<div class="slides" style="transform: translateX(-{slideIndex * 110}%)">
 			{#each data as projectItem}
 				<PageCard cardData={projectItem} />
 			{/each}
@@ -61,7 +61,7 @@
 
 	.card-container {
 		height: 80vh;
-		width: 80vw;
+		width: 85vw;
 		margin-top: 100px;
 
 		display: flex;
@@ -75,8 +75,10 @@
 			width: 99%;
 			height: 100%;
 			display: grid;
-			grid-template-columns: repeat(4, 80vw);
-			transition: transform 1s ease;
+			grid-template-columns: repeat(4, 100%);
+			transition: transform 1.5s ease;
+			gap: 10%;
+			left: 0;
 		}
 	}
 

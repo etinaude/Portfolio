@@ -63,12 +63,14 @@
 	@use '$lib/styles/variables.scss' as *;
 
 	.full-page-card {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-		grid-gap: 6rem;
-		padding: 1rem;
-		margin: 0 20px;
+		display: flex;
+		margin: 0 40px;
 		height: 60vh;
+		width: 100%;
+		position: relative;
+		flex-direction: row;
+		justify-self: center;
+		justify-content: space-between;
 
 		.image {
 			@include border;
@@ -77,7 +79,7 @@
 			border-radius: 10px;
 			max-height: 100%;
 			position: relative;
-			width: 100%;
+			width: 60%;
 			aspect-ratio: 1;
 
 			img,
@@ -104,6 +106,7 @@
 		.description {
 			position: relative;
 			font-size: 1rem;
+			width: 35%;
 
 			h3 {
 				font-size: 1.5rem;
@@ -123,22 +126,24 @@
 
 	@media (max-width: 768px) {
 		.full-page-card {
-			grid-template-columns: 1fr;
-			grid-gap: 1rem;
-			width: 90vw;
-			height: 80vh;
-			grid-template-rows: 1fr 2fr;
+			flex-direction: column;
+			height: calc(100% - 80px);
+			justify-content: space-between;
 
 			.image {
 				height: 40vh;
+				width: 100%;
 			}
 
 			.description {
-				margin-top: 0rem;
+				margin-top: 20px;
+				width: 100%;
+				font-size: 0.9em;
+				height: 50%;
 			}
 
 			.read-more {
-				width: 90%;
+				width: 85%;
 			}
 		}
 	}
