@@ -19,7 +19,7 @@
 		clearInterval(interval);
 		interval = setInterval(() => {
 			slideIndex = (slideIndex + 1) % data.length;
-		}, timeOut * 1000);
+		}, timeOut * 10000);
 	}
 
 	onMount(async () => {
@@ -31,7 +31,11 @@
 
 {#if data[slideIndex]}
 	<div class="card-container">
-		<PageCard cardData={data[slideIndex]} />
+		<div class="slides" style="transform: translateX(-{slideIndex * 100}%)">
+			{#each data as projectItem}
+				<PageCard cardData={projectItem} />
+			{/each}
+		</div>
 
 		{#if data.length > 1}
 			<div class="index-dots">
@@ -57,11 +61,23 @@
 
 	.card-container {
 		height: 80vh;
+		width: 80vw;
+		margin-top: 100px;
 
 		display: flex;
-		justify-content: center;
-		align-items: center;
 		position: relative;
+		left: 50%;
+		translate: -50%;
+		overflow: hidden;
+
+		.slides {
+			position: absolute;
+			width: 99%;
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(4, 80vw);
+			transition: transform 1s ease;
+		}
 	}
 
 	.index-dots {
