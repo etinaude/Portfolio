@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LongCard from '$lib/components/project/LongCard.svelte';
+	import LongCard from '$lib/components/layout/LongCard.svelte';
 	import Showcase from '$lib/components/project/Showcase.svelte';
 
 	import Contact from '$lib/components/contact/Contact.svelte';
