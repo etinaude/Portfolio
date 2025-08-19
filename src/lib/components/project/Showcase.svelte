@@ -2,7 +2,6 @@
 	import type { ProjectT } from '$lib/types/types';
 	import PageCard from '$lib/components/project/FeaturedProject.svelte';
 	import { onMount } from 'svelte';
-	import { swipe } from 'svelte-gestures';
 
 	let slideIndex = 0;
 
@@ -10,14 +9,6 @@
 	let data: ProjectT[] = [];
 
 	export let dataFunction: any;
-
-	function swipeHandler(event: CustomEvent) {
-		if (event.detail.direction === 'left') {
-			gotoSlide(slideIndex + 1);
-		} else if (event.detail.direction === 'right') {
-			gotoSlide(slideIndex - 1);
-		}
-	}
 
 	function gotoSlide(index: number) {
 		slideIndex = (index + data.length) % data.length;
@@ -36,7 +27,7 @@
 </script>
 
 {#if data[slideIndex]}
-	<div class="card-container" use:swipe on:swipe={swipeHandler}>
+	<div class="card-container">
 		<div class="slides" style="transform: translateX(-{slideIndex * 110}%)">
 			{#each data as projectItem}
 				<PageCard cardData={projectItem} />
