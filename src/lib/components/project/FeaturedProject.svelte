@@ -107,6 +107,7 @@
 			position: relative;
 			font-size: 1rem;
 			width: 35%;
+			white-space: pre-wrap;
 
 			h3 {
 				font-size: 1.5rem;

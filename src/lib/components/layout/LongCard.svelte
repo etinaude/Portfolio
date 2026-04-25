@@ -52,6 +52,7 @@
 		.text {
 			max-width: calc(100% - 280px);
 			margin-top: auto;
+			white-space: pre-wrap;
 		}
 
 		img {
