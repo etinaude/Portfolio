@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { ProjectT } from '$lib/types/types';
 	import { onDestroy, onMount } from 'svelte';
-	import { swipe } from 'svelte-gestures';
+	import * as svelteGestures from 'svelte-gestures';
+	const { swipe } = svelteGestures;
 
 	const videoTypesRegex = /(mp4)|(webm)|(mov)/;
 

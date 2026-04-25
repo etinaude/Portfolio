@@ -2,7 +2,8 @@
 	import type { ProjectT } from '$lib/types/types';
 	import Slides from '$lib/components/project/Slides.svelte';
 	import { fade, scale } from 'svelte/transition';
-	import { swipe } from 'svelte-gestures';
+	import * as svelteGestures from 'svelte-gestures';
+	const { swipe } = svelteGestures;
 
 	export let projectsList: ProjectT[];
 	export let projectIndex: number;
