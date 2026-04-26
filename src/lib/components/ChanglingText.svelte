@@ -5,12 +5,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	let words = [
+		'Mechatronics',
 		'Creative Technologist',
 		'Nerd',
 		'Roboticist',
 		'Designer',
 		'Tech Enthusiast',
-		'Maker'
+		'Maker',
+		'Developer',
 	];
 
 	var textEl: HTMLElement;
@@ -55,7 +57,7 @@
 	}
 </script>
 
-<h2 class="change-text">Programmer</h2>
+<h2 class="change-text">Design Engineer</h2>
 
 <style lang="scss">
 	@use '$lib/styles/mixins.scss' as *;
