@@ -12,7 +12,7 @@
 		'Designer',
 		'Tech Enthusiast',
 		'Maker',
-		'Developer',
+		'Developer'
 	];
 
 	var textEl: HTMLElement;
