@@ -7,7 +7,7 @@
 
 ## ✨ Portfolio Website
 
-I am Etienne - a student, maker and roboticist at the Royal College of Art and Imperial College London.
+I am Etienne - an experienced mechatronics engineer, roboticist and maker with qualifications from the Royal College of Art, Imperial College London, and the University of Auckland.
 
 This website showcases my projects across software development, hardware tinkering, design, and hands-on making. As I learn and experiment, my skills and projects keep evolving. This website reflects that growth, so it is in a constant state of redesign and improvement.
 
@@ -18,8 +18,6 @@ This website showcases my projects across software development, hardware tinkeri
 ![Cloudflare](https://img.shields.io/badge/cloudflare-%2523f1413d?style=for-the-badge&logo=cloudflare&logoColor=white&labelColor=%23F38020&color=%23F38020)
 
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![Mailgun](https://img.shields.io/badge/mailgun-%2523f1413d?style=for-the-badge&logo=mailgun&logoColor=white&labelColor=%23F06B66&color=%23F06B66)
-![Node](https://img.shields.io/badge/node.js-%2523f1413d?style=for-the-badge&logo=nodedotjs&logoColor=white&labelColor=%23339933&color=%23339933)
 ![bun](https://img.shields.io/badge/bun-%2523f1413d?style=for-the-badge&logo=bun&logoColor=white&labelColor=%23000&color=%23000)
 ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 ![GitHub](https://img.shields.io/badge/github-%2523f1413d?style=for-the-badge&logo=github&logoColor=white&labelColor=%23181717&color=%23181717)
@@ -28,12 +26,12 @@ This website showcases my projects across software development, hardware tinkeri
 
 ### Prerequisites
 
-Install [Node.js](https://nodejs.org/en/)
+Install [Bun.js](https://bun.com/)
 
 Install the dependencies
 
 ```zsh
-npm i
+bun i
 ```
 
 ### Run
@@ -41,10 +39,10 @@ npm i
 Run the following command in your terminal:
 
 ```zsh
-npm run dev
+bun run dev
 ```
 
-Then navigate to your browser and open **[localhost:3000](https://localhost:3000)**
+Then navigate to your browser and open **[localhost:5173](http://localhost:5173/)**
 
 ## 📪 Contact me
 
